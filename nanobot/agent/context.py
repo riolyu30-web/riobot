@@ -13,6 +13,7 @@ from nanobot.agent.skills import SkillsLoader
 from nanobot.utils.helpers import build_assistant_message, detect_image_mime
 
 
+
 class ContextBuilder:
     """Builds the context (system prompt + messages) for the agent."""
 

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanobot 聊天</title>
+    <style>
+        :root {
+            --bg-color: #f5f7fa;
+            --chat-bg: #ffffff;
+            --user-msg-bg: #e3f2fd;
+            --bot-msg-bg: #f8f9fa;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --primary-color: #1976d2;
+            --primary-hover: #1565c0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 800px;
+            height: 90vh;
+            background-color: var(--chat-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 16px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-header .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #4caf50;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            line-height: 1.5;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background-color: var(--user-msg-bg);
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.bot {
+            align-self: flex-start;
+            background-color: var(--bot-msg-bg);
+            border: 1px solid var(--border-color);
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-input-area {
+            padding: 16px 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 12px;
+            background-color: var(--chat-bg);
+        }
+
+        textarea {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            resize: none;
+            height: 50px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        button {
+            padding: 0 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        button:disabled {
+            background-color: #9e9e9e;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            align-self: flex-start;
+            display: none;
+            padding: 12px 16px;
+            background-color: var(--bot-msg-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            border-bottom-left-radius: 4px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .dots {
+            display: inline-block;
+        }
+
+        .dots::after {
+            content: '';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <span class="status-dot"></span>
+            Nanobot
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">你好！我是 Nanobot。有什么我可以帮你的吗？</div>
+        </div>
+        <div class="loading" id="loadingIndicator">
+            正在思考<span class="dots"></span>
+        </div>
+        <div class="chat-input-area">
+            <textarea 
+                id="messageInput" 
+                placeholder="输入消息... (按 Enter 发送，Shift+Enter 换行)"
+                rows="1"
+            ></textarea>
+            <button id="sendBtn">发送</button>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://127.0.0.1:8000/process';
+        const USER_ID = 'web_user_' + Math.random().toString(36).substring(2, 9); // 随机生成一个用户ID
+
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+
+        // 自动调整输入框高度
+        messageInput.addEventListener('input', function() {
+            this.style.height = '50px';
+            this.style.height = (this.scrollHeight) + 'px';
+            if(this.scrollHeight > 150) {
+                this.style.overflowY = 'auto';
+            } else {
+                this.style.overflowY = 'hidden';
+            }
+        });
+
+        // 处理回车发送
+        messageInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        sendBtn.addEventListener('click', sendMessage);
+
+        function appendMessage(content, sender) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${sender}`;
+            msgDiv.textContent = content;
+            chatMessages.appendChild(msgDiv);
+            scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function setLoading(isLoading) {
+            if (isLoading) {
+                loadingIndicator.classList.add('active');
+                chatMessages.appendChild(loadingIndicator); // 将loading移到最下面
+                scrollToBottom();
+            } else {
+                loadingIndicator.classList.remove('active');
+            }
+            messageInput.disabled = isLoading;
+            sendBtn.disabled = isLoading;
+            if (!isLoading) {
+                messageInput.focus();
+            }
+        }
+
+        async function sendMessage() {
+            const content = messageInput.value.trim();
+            if (!content) return;
+
+            // 清空输入框并重置高度
+            messageInput.value = '';
+            messageInput.style.height = '50px';
+
+            // 显示用户消息
+            appendMessage(content, 'user');
+            
+            // 显示加载状态
+            setLoading(true);
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        sender_id: USER_ID,
+                        content: content
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                // 隐藏加载状态并显示机器人回复
+                setLoading(false);
+                appendMessage(data.content, 'bot');
+
+            } catch (error) {
+                console.error('Error sending message:', error);
+                setLoading(false);
+                appendMessage('抱歉，发送消息时出现错误。请检查服务是否已启动 (API Channel)。', 'bot');
+            }
+        }
+    </script>
+</body>
+</html>

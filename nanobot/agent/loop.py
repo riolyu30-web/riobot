@@ -26,10 +26,15 @@ from nanobot.bus.queue import MessageBus
 from nanobot.providers.base import LLMProvider
 from nanobot.session.manager import Session, SessionManager
 
+
+# 导入同步模板目录结构的辅助函数
+from nanobot.utils.helpers import sync_workspace_templates
+# 导入 get_data_dir 获取项目的基础数据目录
+from nanobot.config.paths import get_data_dir
+
 if TYPE_CHECKING:
     from nanobot.config.schema import ChannelsConfig, ExecToolConfig
     from nanobot.cron.service import CronService
-
 
 class AgentLoop:
     """
@@ -81,7 +86,10 @@ class AgentLoop:
         self.exec_config = exec_config or ExecToolConfig()
         self.cron_service = cron_service
         self.restrict_to_workspace = restrict_to_workspace
-
+        
+        # 缓存工作空间相关的组件
+        self._workspace_components: dict[str, dict] = {}
+        
         self.context = ContextBuilder(workspace)
         self.sessions = session_manager or SessionManager(workspace)
         self.tools = ToolRegistry()
@@ -116,6 +124,19 @@ class AgentLoop:
             get_tool_definitions=self.tools.get_definitions,
         )
         self._register_default_tools()
+        
+        # 保存初始工作空间的组件到缓存中
+        self._cache_workspace_components(str(self.workspace.resolve()))
+
+    def _cache_workspace_components(self, ws_key: str) -> None:
+        """Cache components tied to a specific workspace."""
+        self._workspace_components[ws_key] = {
+            "context": self.context,
+            "sessions": self.sessions,
+            "tools": self.tools,
+            "subagents": self.subagents,
+            "memory_consolidator": self.memory_consolidator,
+        }
 
     def _register_default_tools(self) -> None:
         """Register the default set of tools."""
@@ -197,7 +218,15 @@ class AgentLoop:
             iteration += 1
 
             tool_defs = self.tools.get_definitions()
-
+            # --- 新增的打印与字数统计代码开始 ---
+            try:
+                # 将 messages 转换为带 2 个空格缩进的 JSON 字符串，ensure_ascii=False 保证中文正常显示
+                formatted_msgs = json.dumps(messages, indent=2, ensure_ascii=False)
+                char_count = len(formatted_msgs)
+                logger.info("当前请求的 messages (共 {} 个字符):\n{}", char_count, formatted_msgs)
+            except Exception as e:
+                logger.warning("无法格式化 messages: {}", e)
+            # --- 新增的打印与字数统计代码结束 ---            
             response = await self.provider.chat_with_retry(
                 messages=messages,
                 tools=tool_defs,
@@ -394,6 +423,87 @@ class AgentLoop:
         if cmd == "/help":
             return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id,
                                   content="🐈 nanobot commands:\n/new — Start a new conversation\n/stop — Stop the current task\n/help — Show available commands")
+
+        if cmd.startswith("/id "):
+            # 提取命令行中的新工作空间名称
+            spacename = msg.content.strip()[4:].strip()
+            # 如果名称为空则返回提示
+            if not spacename:
+                # 返回需要提供名称的提示信息
+                return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content="Please provide a workspace name: /id {spacename}")
+
+            # 计算新工作空间的绝对路径，将其放在数据目录下的 workspaces 目录中
+            new_workspace = (get_data_dir() / spacename).expanduser().resolve()
+            
+            # 记录是否为新建工作空间
+            is_new_workspace = not new_workspace.exists()
+            
+            # 检查该工作空间目录是否已经存在
+            if is_new_workspace:
+
+                # 在新工作空间创建或同步完整的 Markdown 文档目录结构
+                sync_workspace_templates(new_workspace)
+            # 获取新工作空间的唯一键（绝对路径的字符串形式）
+            ws_key = str(new_workspace)
+            
+            # 更新当前 AgentLoop 的 workspace 属性
+            self.workspace = new_workspace
+            
+            # 如果缓存中已存在该工作空间的组件，则直接复用
+            if ws_key in self._workspace_components:
+                cached = self._workspace_components[ws_key]
+                self.context = cached["context"]
+                self.sessions = cached["sessions"]
+                self.tools = cached["tools"]
+                self.subagents = cached["subagents"]
+                self.memory_consolidator = cached["memory_consolidator"]
+            else:
+                # 否则重新实例化这些组件
+                # 重新实例化 ContextBuilder 以使用新工作空间
+                self.context = ContextBuilder(new_workspace)
+                # 重新实例化 SessionManager 以使用新工作空间
+                self.sessions = SessionManager(new_workspace)
+                # 重新实例化子代理管理器以使用新工作空间
+                self.subagents = SubagentManager(
+                    provider=self.provider,
+                    workspace=new_workspace,
+                    bus=self.bus,
+                    model=self.model,
+                    temperature=self.temperature,
+                    max_tokens=self.max_tokens,
+                    reasoning_effort=self.reasoning_effort,
+                    brave_api_key=self.brave_api_key,
+                    web_proxy=self.web_proxy,
+                    exec_config=self.exec_config,
+                    restrict_to_workspace=self.restrict_to_workspace,
+                )
+                # 重置工具注册表
+                self.tools = ToolRegistry()
+                # 重新注册默认工具，使它们绑定到新工作空间
+                self._register_default_tools()
+                # 重新实例化 MemoryConsolidator 以使用新工作空间和相关新组件
+                self.memory_consolidator = MemoryConsolidator(
+                    workspace=new_workspace,
+                    provider=self.provider,
+                    model=self.model,
+                    sessions=self.sessions,
+                    context_window_tokens=self.context_window_tokens,
+                    build_messages=self.context.build_messages,
+                    get_tool_definitions=self.tools.get_definitions,
+                )
+                # 将新实例化的组件存入缓存
+                self._cache_workspace_components(ws_key)
+            
+            # 判断是否是新创建的工作空间
+            if is_new_workspace:
+                # 构造成功切换工作空间并初始化的提示信息
+                response_content = f"Switched workspace to {new_workspace}\nInitialized markdown documentation directory structure."
+            else:
+                # 构造成功切换工作空间的提示信息
+                response_content = f"Switched workspace to {new_workspace}"
+            
+            # 返回包含成功信息的 OutboundMessage
+            return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content=response_content)
 
         await self.memory_consolidator.maybe_consolidate_by_tokens(session)
 

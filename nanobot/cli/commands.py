@@ -273,12 +273,12 @@ def _load_runtime_config(config: str | None = None, workspace: str | None = None
     config_path = None
     if config:
         config_path = Path(config).expanduser().resolve()
+
         if not config_path.exists():
             console.print(f"[red]Error: Config file not found: {config_path}[/red]")
             raise typer.Exit(1)
         set_config_path(config_path)
         console.print(f"[dim]Using config: {config_path}[/dim]")
-
     loaded = load_config(config_path)
     if workspace:
         loaded.agents.defaults.workspace = workspace

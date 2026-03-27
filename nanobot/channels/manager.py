@@ -138,6 +138,18 @@ class ChannelManager:
             except ImportError as e:
                 logger.warning("QQ channel not available: {}", e)
 
+        # WeChat channel
+        if self.config.channels.wechat.enabled:
+            try:
+                from nanobot.channels.wechat import WeChatChannel
+                self.channels["wechat"] = WeChatChannel(
+                    self.config.channels.wechat,
+                    self.bus,
+                )
+                logger.info("WeChat channel enabled")
+            except ImportError as e:
+                logger.warning("WeChat channel not available: {}", e)
+
         # Matrix channel
         if self.config.channels.matrix.enabled:
             try:
@@ -149,6 +161,18 @@ class ChannelManager:
                 logger.info("Matrix channel enabled")
             except ImportError as e:
                 logger.warning("Matrix channel not available: {}", e)
+
+        # API channel
+        if self.config.channels.api.enabled:
+            try:
+                from nanobot.channels.api import APIChannel
+                self.channels["api"] = APIChannel(
+                    self.config.channels.api,
+                    self.bus,
+                )
+                logger.info("API channel enabled")
+            except ImportError as e:
+                logger.warning("API channel not available: {}", e)
 
         self._validate_allow_from()
 

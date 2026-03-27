@@ -200,6 +200,25 @@ class QQConfig(Base):
     )  # Allowed user openids (empty = public access)
 
 
+class WechatConfig(Base):  # 定义微信配置类，继承自 Base
+    """Wechat channel configuration."""  # 微信渠道配置的文档字符串
+
+    enabled: bool = False  # 微信渠道是否启用标志，默认值为 False
+    token: str = ""  # 微信接口调用所需的 Token 字符串
+    base_url: str = ""  # 微信相关服务的基础请求地址 (baseUrl)
+    account_id: str = ""  # 微信关联的账号 ID (accountId)
+    user_id: str = ""  # 微信对应的用户 ID (userId)
+    saved_at: str = ""  # 凭据最后保存的时间戳 (savedAt)
+    allow_from: list[str] = Field(default_factory=list)  # 允许访问的用户ID列表
+
+
+class APIConfig(Base):
+    """API gateway channel configuration."""
+
+    enabled: bool = False
+    host: str = "127.0.0.1"
+    port: int = 8000
+    allow_from: list[str] = Field(default_factory=list)
 
 
 class ChannelsConfig(Base):
@@ -216,13 +235,15 @@ class ChannelsConfig(Base):
     email: EmailConfig = Field(default_factory=EmailConfig)
     slack: SlackConfig = Field(default_factory=SlackConfig)
     qq: QQConfig = Field(default_factory=QQConfig)
+    wechat: WechatConfig = Field(default_factory=WechatConfig)  # 在 ChannelsConfig 中注册 wechat 配置字段
     matrix: MatrixConfig = Field(default_factory=MatrixConfig)
+    api: APIConfig = Field(default_factory=APIConfig)
 
 
 class AgentDefaults(Base):
     """Default agent configuration."""
 
-    workspace: str = "~/.nanobot/workspace"
+    workspace: str = ".nanobot/workspace"
     model: str = "anthropic/claude-opus-4-5"
     provider: str = (
         "auto"  # Provider name (e.g. "anthropic", "openrouter") or "auto" for auto-detection
