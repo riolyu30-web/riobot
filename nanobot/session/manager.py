@@ -11,8 +11,10 @@ from loguru import logger
 
 from nanobot.config.paths import get_legacy_sessions_dir
 from nanobot.utils.helpers import ensure_dir, safe_filename
-
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
+CONOLIDATED_NUM = int(os.getenv("CONOLIDATED_NUM", 5))
 @dataclass
 class Session:
     """
@@ -45,8 +47,10 @@ class Session:
 
     def get_history(self, max_messages: int = 500) -> list[dict[str, Any]]:
         """Return unconsolidated messages for LLM input, aligned to a user turn."""
-        unconsolidated = self.messages[self.last_consolidated:]
-        sliced = unconsolidated[-max_messages:]
+        #unconsolidated = self.messages[self.last_consolidated:]
+        #sliced = unconsolidated[-max_messages:]
+        unconsolidated = self.messages
+        sliced = unconsolidated[-CONOLIDATED_NUM:]
 
         # Drop leading non-user messages to avoid orphaned tool_result blocks
         for i, m in enumerate(sliced):

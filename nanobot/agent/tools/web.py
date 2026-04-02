@@ -66,44 +66,95 @@ class WebSearchTool(Tool):
     @property
     def api_key(self) -> str:
         """Resolve API key at call time so env/config changes are picked up."""
-        return self._init_api_key or os.environ.get("BRAVE_API_KEY", "")
+        return self._init_api_key or os.environ.get("BOCHA_API_KEY", "")
 
     async def execute(self, query: str, count: int | None = None, **kwargs: Any) -> str:
+        # 检查是否配置了 API 密钥
         if not self.api_key:
+            # 如果未配置，返回错误提示信息
             return (
-                "Error: Brave Search API key not configured. Set it in "
+                # 提示配置 Bocha Search API 密钥
+                "Error: Bocha Search API key not configured. Set it in "
+                # 说明配置文件路径
                 "~/.nanobot/config.json under tools.web.search.apiKey "
-                "(or export BRAVE_API_KEY), then restart the gateway."
+                # 说明环境变量，并提示重启
+                "(or export BOCHA_API_KEY), then restart the gateway."
             )
 
+        # 开始异常捕获块
         try:
+            # 限制返回结果的数量在 1 到 10 之间
             n = min(max(count or self.max_results, 1), 10)
+            # 记录日志，说明是否启用了代理
             logger.debug("WebSearch: {}", "proxy enabled" if self.proxy else "direct connection")
+            
+            # 准备请求目标 URL
+            url = "https://api.bocha.cn/v1/web-search"
+            # 构造 JSON 格式的请求体数据
+            payload = {"query": query, "summary": True, "count": n}
+            # 构造请求头，包含认证信息和内容类型
+            headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
+            
+            # 使用 httpx 创建异步客户端实例，并配置代理
             async with httpx.AsyncClient(proxy=self.proxy) as client:
-                r = await client.get(
-                    "https://api.search.brave.com/res/v1/web/search",
-                    params={"q": query, "count": n},
-                    headers={"Accept": "application/json", "X-Subscription-Token": self.api_key},
-                    timeout=10.0
-                )
+                # 发送 POST 异步请求，传入 url、headers、json 和超时时间
+                r = await client.post(url, headers=headers, json=payload, timeout=10.0)
+                # 如果响应状态码不是 2xx，抛出 HTTP 异常
                 r.raise_for_status()
 
-            results = r.json().get("web", {}).get("results", [])[:n]
+            # 解析响应的 JSON 数据
+            response_data = r.json()
+            
+            # 检查业务状态码是否为 200，防止请求失败
+            if response_data.get("code") != 200:
+                # 提取错误信息，默认为未知错误
+                error_msg = response_data.get("msg") or "Unknown API Error"
+                # 返回错误提示给调用方
+                return f"API Error: {error_msg}"
+                
+            # 获取数据字段，默认为空字典
+            data = response_data.get("data", {})
+            # 尝试获取网页结果对象，默认为空字典
+            web_pages = data.get("webPages", {})
+            # 从 webPages 中获取 value 列表，或者退化为从 data 获取 results
+            results = web_pages.get("value", data.get("results", []))
+            # 截取前 n 个结果，避免超过限制
+            results = results[:n]
+            
+            # 检查结果列表是否为空
             if not results:
+                # 如果为空，返回没有找到结果的提示
                 return f"No results for: {query}"
 
+            # 初始化用于存储格式化结果的字符串列表
             lines = [f"Results for: {query}\n"]
+            # 遍历搜索结果列表，带上索引
             for i, item in enumerate(results, 1):
-                lines.append(f"{i}. {item.get('title', '')}\n   {item.get('url', '')}")
-                if desc := item.get("description"):
+                # 提取标题，优先取 name，没有则取 title
+                title = item.get("name") or item.get("title", "")
+                # 将标题和 URL 拼接到列表中
+                lines.append(f"{i}. {title}\n   {item.get('url', '')}")
+                # 提取描述，优先取 summary，没有则取 snippet 或 description
+                desc = item.get("summary") or item.get("snippet") or item.get("description")
+                # 检查描述是否存在
+                if desc:
+                    # 如果有描述信息，则添加到列表中
                     lines.append(f"   {desc}")
+            # 将列表中的字符串用换行符连接并返回
             return "\n".join(lines)
+        # 捕获代理错误异常
         except httpx.ProxyError as e:
+            # 记录代理错误的日志
             logger.error("WebSearch proxy error: {}", e)
+            # 返回代理错误信息
             return f"Proxy error: {e}"
+        # 捕获其他所有异常
         except Exception as e:
+            # 记录通用错误的日志
             logger.error("WebSearch error: {}", e)
+            # 返回通用错误信息
             return f"Error: {e}"
+
 
 
 class WebFetchTool(Tool):

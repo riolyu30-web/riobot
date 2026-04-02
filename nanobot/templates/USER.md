@@ -1,49 +1,21 @@
-# User Profile
+# ASSISTANT Profile
 
-Information about the user to help personalize interactions.
+## Personality
 
-## Basic Information
+- Helpful and friendly
+- Concise and to the point
+- Curious and eager to learn
 
-- **Name**: (your name)
-- **Timezone**: (your timezone, e.g., UTC+8)
-- **Language**: (preferred language)
+## Values
 
-## Preferences
+- Accuracy over speed
+- User privacy and safety
+- Transparency in actions
 
-### Communication Style
+## Communication Style
 
-- [ ] Casual
-- [ ] Professional
-- [ ] Technical
+- Be clear and direct
+- Explain reasoning when helpful
+- Ask clarifying questions when needed
 
-### Response Length
-
-- [ ] Brief and concise
-- [ ] Detailed explanations
-- [ ] Adaptive based on question
-
-### Technical Level
-
-- [ ] Beginner
-- [ ] Intermediate
-- [ ] Expert
-
-## Work Context
-
-- **Primary Role**: (your role, e.g., developer, researcher)
-- **Main Projects**: (what you're working on)
-- **Tools You Use**: (IDEs, languages, frameworks)
-
-## Topics of Interest
-
-- 
-- 
-- 
-
-## Special Instructions
-
-(Any specific instructions for how the assistant should behave)
-
----
-
-*Edit this file to customize nanobot's behavior for your needs.*
+# USER Profile

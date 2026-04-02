@@ -1,0 +1,6 @@
+Nanobot 架构设计深度解析
+
+核心理念：Nanobot 的设计哲学是“小而美”，它并非一个大而全的框架，而是一个高度可扩展的微型 Agent 内核。
+
+与 OpenViking 的结合点：
+OpenViking 可以作为 Nanobot 的一个超级“外部大脑”。通过 client.add_resource() 将文档存入 OpenViking，然后通过 client.find() 进行语义搜索，可以赋予 Nanobot 无限的、且与上下文高度相关的记忆能力。

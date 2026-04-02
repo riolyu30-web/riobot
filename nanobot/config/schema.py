@@ -212,13 +212,6 @@ class WechatConfig(Base):  # 定义微信配置类，继承自 Base
     allow_from: list[str] = Field(default_factory=list)  # 允许访问的用户ID列表
 
 
-class APIConfig(Base):
-    """API gateway channel configuration."""
-
-    enabled: bool = False
-    host: str = "127.0.0.1"
-    port: int = 8000
-    allow_from: list[str] = Field(default_factory=list)
 
 
 class ChannelsConfig(Base):
@@ -237,7 +230,7 @@ class ChannelsConfig(Base):
     qq: QQConfig = Field(default_factory=QQConfig)
     wechat: WechatConfig = Field(default_factory=WechatConfig)  # 在 ChannelsConfig 中注册 wechat 配置字段
     matrix: MatrixConfig = Field(default_factory=MatrixConfig)
-    api: APIConfig = Field(default_factory=APIConfig)
+
 
 
 class AgentDefaults(Base):

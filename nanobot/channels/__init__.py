@@ -19,5 +19,4 @@ __all__ = [
     "QQChannel",
     "WeChatChannel",
     "MatrixChannel",
-    "APIChannel",
 ]

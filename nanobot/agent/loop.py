@@ -26,6 +26,9 @@ from nanobot.bus.queue import MessageBus
 from nanobot.providers.base import LLMProvider
 from nanobot.session.manager import Session, SessionManager
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # 导入同步模板目录结构的辅助函数
 from nanobot.utils.helpers import sync_workspace_templates
@@ -35,6 +38,9 @@ from nanobot.config.paths import get_data_dir
 if TYPE_CHECKING:
     from nanobot.config.schema import ChannelsConfig, ExecToolConfig
     from nanobot.cron.service import CronService
+
+CONOLIDATED_NUM = int(os.getenv("CONOLIDATED_NUM", 5))
+
 
 class AgentLoop:
     """
@@ -339,6 +345,26 @@ class AgentLoop:
                         channel=msg.channel, chat_id=msg.chat_id,
                         content="", metadata=msg.metadata or {},
                     ))
+
+                # 获取或创建当前消息对应的会话对象
+                session = self.sessions.get_or_create(msg.session_key)
+                # 获取会话专属的异步锁以确保并发安全
+                lock = self.memory_consolidator.get_lock(session.key)
+                # 加锁执行会话的压缩整理逻辑
+                async with lock:
+                    # 获取当前所有尚未合并的消息列表
+                    unconsolidated = session.messages[session.last_consolidated:]
+
+                    # 如果未合并的消息数量超过5条，则触发压缩机制
+                    if len(unconsolidated) > CONOLIDATED_NUM:
+                        # 截取剩余5条之前的记录作为压缩块
+                        chunk = unconsolidated[:-CONOLIDATED_NUM]
+                        # 调用方法将这部分消息进行归档压缩
+                        if await self.memory_consolidator.consolidate_messages(chunk):
+                            # 压缩成功后，更新会话的最后合并位置
+                            session.last_consolidated += len(chunk)
+                            # 将更新后的会话状态持久化保存
+                            self.sessions.save(session)
             except asyncio.CancelledError:
                 logger.info("Task cancelled for session {}", msg.session_key)
                 raise

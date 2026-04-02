@@ -162,17 +162,7 @@ class ChannelManager:
             except ImportError as e:
                 logger.warning("Matrix channel not available: {}", e)
 
-        # API channel
-        if self.config.channels.api.enabled:
-            try:
-                from nanobot.channels.api import APIChannel
-                self.channels["api"] = APIChannel(
-                    self.config.channels.api,
-                    self.bus,
-                )
-                logger.info("API channel enabled")
-            except ImportError as e:
-                logger.warning("API channel not available: {}", e)
+
 
         self._validate_allow_from()
 

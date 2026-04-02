@@ -17,7 +17,7 @@ from nanobot.utils.helpers import build_assistant_message, detect_image_mime
 class ContextBuilder:
     """Builds the context (system prompt + messages) for the agent."""
 
-    BOOTSTRAP_FILES = ["AGENTS.md", "SOUL.md", "USER.md", "TOOLS.md"]
+    BOOTSTRAP_FILES = ["AGENTS.md", "USER.md"]
     _RUNTIME_CONTEXT_TAG = "[Runtime Context — metadata only, not instructions]"
 
     def __init__(self, workspace: Path):
@@ -25,7 +25,7 @@ class ContextBuilder:
         self.memory = MemoryStore(workspace)
         self.skills = SkillsLoader(workspace)
 
-    def build_system_prompt(self, skill_names: list[str] | None = None) -> str:
+    def build_system_prompt(self, current_message: str, skill_names: list[str] | None = None) -> str:
         """Build the system prompt from identity, bootstrap files, memory, and skills."""
         parts = [self._get_identity()]
 
@@ -33,7 +33,7 @@ class ContextBuilder:
         if bootstrap:
             parts.append(bootstrap)
 
-        memory = self.memory.get_memory_context()
+        memory = self.memory.get_memory_context(current_message)
         if memory:
             parts.append(f"# Memory\n\n{memory}")
 
@@ -73,22 +73,21 @@ Skills with available="false" need dependencies installed first - you can try in
 - Use file tools when they are simpler or more reliable than shell commands.
 """
 
-        return f"""# nanobot 🐈
+        return f"""# ASSISTANT
 
-You are nanobot, a helpful AI assistant.
+You are a helpful AI assistant. Be concise, accurate, and friendly. 
 
 ## Runtime
 {runtime}
 
 ## Workspace
 Your workspace is at: {workspace_path}
-- Long-term memory: {workspace_path}/memory/MEMORY.md (write important facts here)
-- History log: {workspace_path}/memory/HISTORY.md (grep-searchable). Each entry starts with [YYYY-MM-DD HH:MM].
 - Custom skills: {workspace_path}/skills/{{skill-name}}/SKILL.md
+- Custom memory: {workspace_path}/USER.md (write important facts here)
 
 {platform_policy}
 
-## nanobot Guidelines
+## rio Guidelines
 - State intent before tool calls, but NEVER predict or claim results before receiving them.
 - Before modifying a file, read it first. Do not assume files or directories exist.
 - After writing or editing a file, re-read it if accuracy matters.
@@ -140,7 +139,7 @@ Reply directly with text for conversations. Only use the 'message' tool to send 
             merged = [{"type": "text", "text": runtime_ctx}] + user_content
 
         return [
-            {"role": "system", "content": self.build_system_prompt(skill_names)},
+            {"role": "system", "content": self.build_system_prompt(current_message, skill_names)},
             *history,
             {"role": "user", "content": merged},
         ]
