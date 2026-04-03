@@ -6,7 +6,7 @@ import os
 app = FastAPI()
 
 # 存储位置数据的文件
-DATA_FILE = "location_data.json"
+DATA_FILE = ".nanobot/location.json"
 
 @app.post("/owntracks")
 async def receive_location(request: Request):
@@ -36,7 +36,7 @@ async def receive_location(request: Request):
             with open(DATA_FILE, "w", encoding="utf-8") as f:
                 json.dump(record, f, ensure_ascii=False, indent=2)
                 
-            print(f"[{time_str}] 收到新位置: 经度 {lon}, 纬度 {lat}, 电量 {batt}%")
+            #print(f"[{time_str}] 收到新位置: 经度 {lon}, 纬度 {lat}, 电量 {batt}%")
             
         # OwnTracks 要求服务端返回空的 JSON 数组表示接收成功
         return []
