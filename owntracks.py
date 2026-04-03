@@ -15,28 +15,12 @@ async def receive_location(request: Request):
         # OwnTracks 会发送 JSON 格式的数据
         data = await request.json()
         
-        # _type 为 'location' 表示这是一条位置数据
-        if data.get("_type") == "location":
-            lat = data.get("lat") # 纬度
-            lon = data.get("lon") # 经度
-            batt = data.get("batt") # 手机电量
             
-            # OwnTracks 传过来的是 Unix 时间戳，转成人类可读的时间
-            timestamp = data.get("tst", 0)
-            time_str = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')
-            
-            record = {
-                "time": time_str,
-                "lat": lat,
-                "lon": lon,
-                "battery": f"{batt}%"
-            }
-            
-            # 把最新的位置覆盖写入文件（你也可以改成追加写入记录轨迹）
-            with open(DATA_FILE, "w", encoding="utf-8") as f:
-                json.dump(record, f, ensure_ascii=False, indent=2)
+        # 把最新的位置覆盖写入文件（你也可以改成追加写入记录轨迹）
+        with open(DATA_FILE, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
                 
-            #print(f"[{time_str}] 收到新位置: 经度 {lon}, 纬度 {lat}, 电量 {batt}%")
+        #print(f"[{time_str}] 收到新位置: 经度 {lon}, 纬度 {lat}, 电量 {batt}%")
             
         # OwnTracks 要求服务端返回空的 JSON 数组表示接收成功
         return []
