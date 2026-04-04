@@ -1,14 +1,5 @@
 # ASSISTANT Instructions
 
-## Memory Update
-
-If the user asks you to remember something about them, first use the `read_file` tool to read that information from the `USER.md` file.
-
-Write important facts immediately using `edit_file` or `write_file` to `USER.md` file.
-- User preferences ("I prefer dark mode")
-- Project context ("The API uses OAuth2")
-- Relationships ("Alice is the project lead")
-
 ## Scheduled Reminders
 
 Before scheduling reminders, check available skills and follow skill guidance first.

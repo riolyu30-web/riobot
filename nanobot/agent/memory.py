@@ -32,20 +32,35 @@ _SAVE_MEMORY_TOOL = [
             "parameters": {
                 "type": "object",
                 "properties": {
+                    "memory_update": {
+                        "type": "string",
+                        "description": "Full updated long-term memory as markdown. Include existing memory plus new explicit decisions or requests you were told to remember. "
+                        "Ignore general conversation, user questions, or vague corrections."
+                        "Only save finalized information or direct remember this instructions. Return unchanged if nothing new."
+                    },
+                },
+                "required": ["memory_update"],
+            },
+        },
+    }
+]
+
+_SAVE_HISTORY_TOOL = [
+    {
+        "type": "function",
+        "function": {
+            "name": "save_history",
+            "description": "Save the history entry to persistent storage.",
+            "parameters": {
+                "type": "object",
+                "properties": {
                     "history_entry": {
                         "type": "string",
                         "description": "A paragraph summarizing key events/decisions/topics. "
                         "Start with [YYYY-MM-DD HH:MM]. Include detail useful for grep search.",
                     },
-                    "memory_update": {
-                        "type": "string",
-                        "description": "Update User Profile Memory."
-                        "Scan text for: User's choices, explicit 'don'ts' or 'dos', and personal habits."
-                        "IGNORE: Article summaries, general facts, or non-user-specific data."
-                        "Output: A brief Markdown list in Chinese. Return nothing new if no user-specific updates exist.",
-                    },
                 },
-                "required": ["history_entry", "memory_update"],
+                "required": ["history_entry",],
             },
         },
     }
@@ -70,97 +85,44 @@ class MemoryStore:
     def __init__(self, workspace: Path):
         self.memory_dir = ensure_dir(workspace / "memory")
         self.history_file = self.memory_dir / "HISTORY.md"
-        self.user_file = self.memory_dir.parent / "USER.md"
-        
-        # 初始化 OpenViking 客户端
-        self.viking_db_path = self.memory_dir /"viking_db"
-        ensure_dir(self.viking_db_path.parent)
-        # 1. 设置与检查配置文件
-        config_path = workspace.parent /"ov.config.json"
-        if not config_path.exists():
-            logger.error(f"❌ 错误：配置文件不存在！")
-            logger.error(f"请在以下路径创建 ov.config.json 文件：\n{config_path}")
-        os.environ['OPENVIKING_CONFIG_FILE'] = str(config_path)
-        self.viking = OpenViking(path=str(self.viking_db_path))
-        
-        try:
-            self.viking.initialize()
-            logger.info("OpenViking initialized successfully in MemoryStore.")
-        except Exception as e:
-            logger.error(f"Failed to initialize OpenViking in MemoryStore: {e}")
+        self.memory_file = self.memory_dir / "MEMORY.md"
 
-    def append_history(self, entry: str) -> None:
-        """记录合并日志，用于调试和 grep 搜索。"""
-        with open(self.history_file, "a", encoding="utf-8") as f:
-            f.write(entry.rstrip() + "\n\n")
-        
-    def get_uesr_context(self):
-        """获取用户上下文，用于合并记忆。"""
-        if self.user_file.exists():
-            return self.user_file.read_text(encoding="utf-8")
+    def read_long_term(self) -> str:
+        if self.memory_file.exists():
+            return self.memory_file.read_text(encoding="utf-8")
         return ""
 
-    def write_user_context(self, content: str) -> None:
-        self.user_file.write_text(content, encoding="utf-8")
+    def write_long_term(self, content: str) -> None:
+        self.memory_file.write_text(content, encoding="utf-8")
 
-    def get_memory_context(self, current_message: str= "") -> str:
-        """根据用户当前的提问，从 OpenViking 中检索相关的记忆片段。"""
-        if not current_message:
-            return ""
-            
-        try:
-            results = self.viking.find(current_message, limit=3)
-            if not results or not results.resources:
-                return ""
-            
-            memory_snippets = []
-            seen_base_uris = set()
-            
-            for res in results.resources:
-                print(f"  🎯 命中: {res}")
-                # 获取分数
-                score = getattr(res, 'score', 0) or 0
-                uri = getattr(res, 'uri', '')
+    def append_history(self, entry: str) -> None:
+        with open(self.history_file, "a", encoding="utf-8") as f:
+            f.write(entry.rstrip() + "\n\n")
 
-                # 1. 分层检索策略
-                if score > MEMORY_SCORE and uri and uri.startswith("viking://resources/"):                
-                # 2. 提取基础 URI 去重 (去掉最后的文件名)
-                # 例如将 'viking://resources/mem_123/.overview.md' 变成 'viking://resources/mem_123'
-                    base_uri = ""
-
-                    parts = uri.split('/')
-                    if len(parts) > 1 and (parts[-1].endswith('.md') or parts[-1].startswith('.')):
-                        base_uri = '/'.join(parts[:-1])
-                    else:
-                        base_uri = uri
-                            
-                    # 如果这个基础 URI 已经处理过，直接跳过，防止重复加载
-                    if base_uri and base_uri in seen_base_uris:
-                        continue                       
-                    if base_uri:
-                        seen_base_uris.add(base_uri)
-                    try:                       
-                        # 如果是 viking://resources/ 开头，读取格式为 viking://resources/ABC/ABC.md
-                        resource_name = base_uri.split('/')[-1]
-                        read_uri = f"{base_uri}/{resource_name}.md"
-                           
-                            # 尝试直接读取基础目录，OpenViking 默认会读取其中的原文件
-                        content = self.viking.read(read_uri)
-
-                        if content:
-                            memory_snippets.append(f"- Memory:\n{content}")
-                        continue
-                    except Exception as e:
-                        logger.warning(f"Failed to read L2 content for base URI {base_uri}: {e}")           
-            if memory_snippets:
-                return "\n".join(memory_snippets)
-            return ""
-        except Exception as e:
-            logger.error(f"Failed to retrieve memory from OpenViking: {e}")
-            return ""
+    def get_memory_context(self) -> str:
+        long_term = self.read_long_term()
+        return f"{long_term}" if long_term else ""
 
     @staticmethod
-    def _format_messages(messages: list[dict]) -> str:
+    def _format_all_messages(messages: list[dict]) -> str:
+        # 初始化一个空列表，用于存储格式化后的消息行
+        lines = []
+        # 遍历传入的消息列表
+        for message in messages:
+            # 如果消息没有内容，则跳过当前循环
+            if not message.get("content"):
+                # 跳过无内容的消息
+                continue
+            # 将格式化后的消息追加到列表中，格式为：[时间戳] 角色: 内容
+            lines.append(
+                # 拼接时间戳、角色和内容字符串
+                f"[{message.get('timestamp', '?')[:16]}] {message['role'].upper()}: {message['content']}"
+            )
+        # 将列表中的所有行用换行符连接成一个完整的字符串并返回
+        return "\n".join(lines)
+
+    @staticmethod
+    def _format_user_messages(messages: list[dict]) -> str:
         # 初始化一个空列表，用于存储格式化后的消息行
         lines = []
         # 遍历传入的消息列表
@@ -170,26 +132,14 @@ class MemoryStore:
                 # 跳过无内容的消息
                 continue
             # 如果消息包含工具使用记录，则过滤掉该条记录
-            if message.get("tools_used"):
-                # 跳过使用了工具的消息
-                continue
-            # 将格式化后的消息追加到列表中，格式为：[时间戳] 角色: 内容
-            lines.append(
-                # 拼接时间戳、角色和内容字符串
-                f"[{message.get('timestamp', '?')[:16]}] {message['role'].upper()}: {message['content']}"
-            )
+            if message['role'].upper() == "USER":
+                # 将格式化后的消息追加到列表中，格式为：[时间戳] 角色: 内容
+                lines.append(
+                    # 拼接时间戳、角色和内容字符串
+                    f"[{message.get('timestamp', '?')[:16]}] {message['role'].upper()}: {message['content']}"
+                )
         # 将列表中的所有行用换行符连接成一个完整的字符串并返回
         return "\n".join(lines)
-        
-    @staticmethod
-    def _filter_messages(messages: list[dict]) -> list[dict]:
-        """过滤掉工具调用和空消息和用户消息，只保留助手消息。"""
-        filtered_messages = []
-        for message in messages:
-            if not message.get("content") or message['role'].upper() == "USER" or message['role'].upper() == "TOOL" or message.get("tool_calls") or message.get("function_call"):
-                continue
-            filtered_messages.append(message)
-        return filtered_messages
 
     async def consolidate(
         self,
@@ -202,18 +152,43 @@ class MemoryStore:
         if not messages:
             return True
         try:
-            conversation_context = self._format_messages(messages)
-                        
+            conversation_context = self._format_all_messages(messages)
+            # 1. 提取历史记录            
             if conversation_context:
-                current_memory = self.get_uesr_context()
-                prompt = f"""Process this conversation and call the save_memory tool with your consolidation.
-
-        ## Current User Memory
-        {current_memory or "(empty)"}
+                
+                prompt = f"""Process this conversation and call the save_history tool with your consolidation.
 
         ## Conversation to Process
         {conversation_context}"""
 
+                response = await provider.chat_with_retry(
+                    messages=[
+                        {"role": "system", "content": "You are a memory consolidation agent. Call the save_history tool with your consolidation of the conversation."},
+                        {"role": "user", "content": prompt},
+                    ],
+                    tools=_SAVE_HISTORY_TOOL,
+                    model=model,
+                )
+
+                if not response.has_tool_calls:
+                    logger.warning("Memory consolidation: LLM did not call save_history, skipping")
+                    return False
+
+                args = _normalize_save_memory_args(response.tool_calls[0].arguments)
+
+                if entry := args.get("history_entry"):
+                    self.append_history(_ensure_text(entry))
+                # 2. 提取用户记
+            conversation_context = self._format_user_messages(messages)
+            if conversation_context:
+                current_memory = self.get_memory_context()
+                prompt = f"""Process this conversation and call the save_memory tool with your consolidation.
+
+        ## Current Long-term Memory
+        {current_memory or "(empty)"}            
+
+        ## Conversation to Process
+        {conversation_context}"""
 
                 response = await provider.chat_with_retry(
                     messages=[
@@ -229,37 +204,11 @@ class MemoryStore:
                     return False
 
                 args = _normalize_save_memory_args(response.tool_calls[0].arguments)
-
-                if entry := args.get("history_entry"):
-                    self.append_history(_ensure_text(entry))
                 if update := args.get("memory_update"):
                     update = _ensure_text(update)
                     if update != current_memory:
-                        self.write_user_context(update)
-            assistant_messages = self._filter_messages(messages)
-            if assistant_messages:
-                for i, message in enumerate(assistant_messages) :
-                    message_entry = message.get("content", "")
-                    if not message_entry:
-                        continue
-                    timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-                    temp_name = f"mem_{timestamp}_{i}"
-                    temp_file = self.memory_dir / f"{temp_name}.md"
-                    # 2. 将总结内容写入临时文件并交给 OpenViking 处理 (非阻塞)
-                    try:
-                        temp_file.write_text(message_entry, encoding="utf-8")
-                        self.viking.add_resource(
-                            path=str(temp_file),
-                            name=temp_name
-                        )
-                        logger.info(f"Memory chunk :{temp_name} submitted to OpenViking for background processing.")
-                    except Exception as e:
-                        logger.error(f"Failed to save memory to OpenViking: {e}")
-                    finally:
-                        # 3. 无论成功失败，立刻清理掉临时文件
-                        if temp_file.exists():
-                            os.remove(temp_file)
-
+                        self.write_long_term(update)
+        
             logger.info("Memory consolidation done for {} messages", len(messages))
             return True
         except Exception:

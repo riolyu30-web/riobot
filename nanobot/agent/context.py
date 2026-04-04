@@ -33,7 +33,7 @@ class ContextBuilder:
         if bootstrap:
             parts.append(bootstrap)
 
-        memory = self.memory.get_memory_context(current_message)
+        memory = self.memory.get_memory_context()
         if memory:
             parts.append(f"# Memory\n\n{memory}")
 
@@ -83,7 +83,6 @@ You are a helpful AI assistant. Be concise, accurate, and friendly.
 ## Workspace
 Your workspace is at: {workspace_path}
 - Custom skills: {workspace_path}/skills/{{skill-name}}/SKILL.md
-- Custom memory: {workspace_path}/USER.md (write important facts here)
 
 {platform_policy}
 
@@ -113,6 +112,7 @@ Reply directly with text for conversations. Only use the 'message' tool to send 
             try:
                 data = json.loads(location_file.read_text(encoding="utf-8"))
                 lines.append(f"[User Current Status]") 
+                lines.append(f"- 坐标体系: wgs84ll")
                 lines.append(f"- 所在纬度 (Latitude): {data.get('lat', '未知')}")
                 lines.append(f"- 所在经度 (Longitude): {data.get('lon', '未知')}") 
                 lines.append(f"- 所在海拔 (altitude): {data.get('alt', '未知')}")
@@ -163,7 +163,7 @@ Reply directly with text for conversations. Only use the 'message' tool to send 
         # Merge runtime context and user content into a single user message
         # to avoid consecutive same-role messages that some providers reject.
         if isinstance(user_content, str):
-            merged = f"{runtime_ctx}\n\n{user_content}"
+            merged = f"{runtime_ctx}\n\n[User Message]\n{user_content}"
         else:
             merged = [{"type": "text", "text": runtime_ctx}] + user_content
 
