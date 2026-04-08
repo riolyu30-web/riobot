@@ -45,12 +45,11 @@ class Session:
         self.messages.append(msg)
         self.updated_at = datetime.now()
 
-    def get_history(self, max_messages: int = 500) -> list[dict[str, Any]]:
+    def get_history(self, max_messages: int = 50) -> list[dict[str, Any]]:
         """Return unconsolidated messages for LLM input, aligned to a user turn."""
-        #unconsolidated = self.messages[self.last_consolidated:]
-        #sliced = unconsolidated[-max_messages:]
-        unconsolidated = self.messages
-        sliced = unconsolidated[-CONOLIDATED_NUM:]
+        if max_messages <= 0:
+            return []
+        sliced = self.messages[-max_messages:]
 
         # Drop leading non-user messages to avoid orphaned tool_result blocks
         for i, m in enumerate(sliced):

@@ -145,6 +145,23 @@ PROVIDERS: tuple[ProviderSpec, ...] = (
         strip_model_prefix=False,
         model_overrides=(),
     ),
+    # JieKou AI (接口.ai): OpenAI-compatible gateway
+    ProviderSpec(
+        name="jiekou",
+        keywords=("jiekou",),
+        env_key="OPENAI_API_KEY",
+        display_name="JieKou AI",
+        litellm_prefix="openai",
+        skip_prefixes=(),
+        env_extras=(),
+        is_gateway=True,
+        is_local=False,
+        detect_by_key_prefix="",
+        detect_by_base_keyword="jiekou",
+        default_api_base="https://api.jiekou.ai/openai/v1",
+        strip_model_prefix=False,
+        model_overrides=(),
+    ),
     # VolcEngine (火山引擎): OpenAI-compatible gateway
     ProviderSpec(
         name="volcengine",
@@ -300,7 +317,7 @@ PROVIDERS: tuple[ProviderSpec, ...] = (
         is_local=False,
         detect_by_key_prefix="",
         detect_by_base_keyword="",
-        default_api_base="",
+        default_api_base="https://dashscope.aliyuncs.com/compatible-mode/v1",
         strip_model_prefix=False,
         model_overrides=(),
     ),

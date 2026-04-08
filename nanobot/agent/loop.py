@@ -8,7 +8,7 @@ import re
 from contextlib import AsyncExitStack
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Awaitable, Callable
-
+import shutil
 from loguru import logger
 
 from nanobot.agent.context import ContextBuilder
@@ -21,11 +21,13 @@ from nanobot.agent.tools.registry import ToolRegistry
 from nanobot.agent.tools.shell import ExecTool
 from nanobot.agent.tools.spawn import SpawnTool
 from nanobot.agent.tools.web import WebFetchTool, WebSearchTool
+from nanobot.agent.tools.history import HistoryTool
 from nanobot.bus.events import InboundMessage, OutboundMessage
 from nanobot.bus.queue import MessageBus
 from nanobot.providers.base import LLMProvider
 from nanobot.session.manager import Session, SessionManager
-
+# 引入 estimate_message_tokens 方法用于计算单个消息的 token 数量
+from nanobot.utils.helpers import estimate_message_tokens
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -159,6 +161,7 @@ class AgentLoop:
         self.tools.register(WebFetchTool(proxy=self.web_proxy))
         self.tools.register(MessageTool(send_callback=self.bus.publish_outbound))
         self.tools.register(SpawnTool(manager=self.subagents))
+        self.tools.register(HistoryTool(session_manager=self.sessions))
         if self.cron_service:
             self.tools.register(CronTool(self.cron_service))
 
@@ -219,19 +222,13 @@ class AgentLoop:
         iteration = 0
         final_content = None
         tools_used: list[str] = []
+        total_tokens_used = 0
 
         while iteration < self.max_iterations:
             iteration += 1
 
             tool_defs = self.tools.get_definitions()
-            # --- 新增的打印与字数统计代码开始 ---
-            try:
-                # 将 messages 转换为带 2 个空格缩进的 JSON 字符串，ensure_ascii=False 保证中文正常显示
-                formatted_msgs = json.dumps(messages, indent=2, ensure_ascii=False)
-                char_count = len(formatted_msgs)
-                logger.info("当前请求的 messages (共 {} 个字符):\n{}", char_count, formatted_msgs)
-            except Exception as e:
-                logger.warning("无法格式化 messages: {}", e)
+
             # --- 新增的打印与字数统计代码结束 ---            
             response = await self.provider.chat_with_retry(
                 messages=messages,
@@ -274,6 +271,9 @@ class AgentLoop:
                     messages = self.context.add_tool_result(
                         messages, tool_call.id, tool_call.name, result
                     )
+                # --- 字数统计代码 ---
+                total_tokens_used = self._count_tokens(messages, iteration, total_tokens_used)
+
             else:
                 clean = self._strip_think(response.content)
                 # Don't persist error responses to session history — they can
@@ -287,7 +287,10 @@ class AgentLoop:
                     thinking_blocks=response.thinking_blocks,
                 )
                 final_content = clean
+                # --- 字数统计代码 ---
+                total_tokens_used = self._count_tokens(messages, iteration, total_tokens_used)
                 break
+
 
         if final_content is None and iteration >= self.max_iterations:
             logger.warning("Max iterations ({}) reached", self.max_iterations)
@@ -297,7 +300,34 @@ class AgentLoop:
             )
 
         return final_content, tools_used, messages
-
+    
+    def _count_tokens(self, messages: list[dict], iteration: int, total_tokens_used: int) -> int:
+        """Count the number of tokens in the messages."""
+        try:
+            # 初始化本次请求的 token 计数器为 0
+            current_tokens = 0
+            # 遍历当前 messages 列表中的每一条消息
+            for msg in messages:
+                # 累加每条消息预估的 token 数量
+                current_tokens += estimate_message_tokens(msg)
+                
+            # 将本次请求使用的 token 数量累加到总数中
+            total_tokens_used += current_tokens
+            
+            # 将 messages 转换为带缩进的 JSON 字符串，仅用于日志展示（确保中文可读）
+            formatted_msgs = json.dumps(messages, indent=2, ensure_ascii=False)
+            
+            # 打印日志，展示本次和累计使用的 token 数量，并附带完整消息内容
+            logger.info(f"{formatted_msgs}\n--- 第{iteration}次请求 (本次 {current_tokens} tokens, 累计 {total_tokens_used} tokens)")
+            
+            # 返回本次使用的 token 数和累计使用的 token 总数
+            return total_tokens_used
+        except Exception as e:
+            # 如果计算或格式化过程中出现异常，则记录警告日志
+            logger.warning("无法计算 tokens 或格式化 messages: {}", e)
+            # 发生异常时原样返回传入的 total_tokens_used，当前 token 计为 0
+            return total_tokens_used
+    
     async def run(self) -> None:
         """Run the agent loop, dispatching messages as tasks to stay responsive to /stop."""
         self._running = True
@@ -346,25 +376,6 @@ class AgentLoop:
                         content="", metadata=msg.metadata or {},
                     ))
 
-                # 获取或创建当前消息对应的会话对象
-                session = self.sessions.get_or_create(msg.session_key)
-                # 获取会话专属的异步锁以确保并发安全
-                lock = self.memory_consolidator.get_lock(session.key)
-                # 加锁执行会话的压缩整理逻辑
-                async with lock:
-                    # 获取当前所有尚未合并的消息列表
-                    unconsolidated = session.messages[session.last_consolidated:]
-
-                    # 如果未合并的消息数量超过5条，则触发压缩机制
-                    if len(unconsolidated) > CONOLIDATED_NUM:
-                        # 截取剩余5条之前的记录作为压缩块
-                        chunk = unconsolidated[:-CONOLIDATED_NUM]
-                        # 调用方法将这部分消息进行归档压缩
-                        if await self.memory_consolidator.consolidate_messages(chunk):
-                            # 压缩成功后，更新会话的最后合并位置
-                            session.last_consolidated += len(chunk)
-                            # 将更新后的会话状态持久化保存
-                            self.sessions.save(session)
             except asyncio.CancelledError:
                 logger.info("Task cancelled for session {}", msg.session_key)
                 raise
@@ -403,7 +414,6 @@ class AgentLoop:
             logger.info("Processing system message from {}", msg.sender_id)
             key = f"{channel}:{chat_id}"
             session = self.sessions.get_or_create(key)
-            await self.memory_consolidator.maybe_consolidate_by_tokens(session)
             self._set_tool_context(channel, chat_id, msg.metadata.get("message_id"))
             history = session.get_history(max_messages=0)
             messages = self.context.build_messages(
@@ -413,42 +423,91 @@ class AgentLoop:
             final_content, _, all_msgs = await self._run_agent_loop(messages)
             self._save_turn(session, all_msgs, 1 + len(history))
             self.sessions.save(session)
-            await self.memory_consolidator.maybe_consolidate_by_tokens(session)
             return OutboundMessage(channel=channel, chat_id=chat_id,
                                   content=final_content or "Background task completed.")
 
         preview = msg.content[:80] + "..." if len(msg.content) > 80 else msg.content
         logger.info("Processing message from {}:{}: {}", msg.channel, msg.sender_id, preview)
 
-        key = session_key or msg.session_key
-        session = self.sessions.get_or_create(key)
-
         # Slash commands
         cmd = msg.content.strip().lower()
-        if cmd == "/new":
-            try:
-                if not await self.memory_consolidator.archive_unconsolidated(session):
-                    return OutboundMessage(
-                        channel=msg.channel,
-                        chat_id=msg.chat_id,
-                        content="Memory archival failed, session not cleared. Please try again.",
-                    )
-            except Exception:
-                logger.exception("/new archival failed for {}", session.key)
-                return OutboundMessage(
-                    channel=msg.channel,
-                    chat_id=msg.chat_id,
-                    content="Memory archival failed, session not cleared. Please try again.",
-                )
+        if cmd.startswith("/add "):
+            # 获取用户要添加的技能名称
+            skill_name = msg.content.strip()[5:].strip()
+            if not skill_name:
+                return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content="Please provide a skill name: /add {skill_name}")
+            
+            # 计算 skill-room 的根目录路径
+            skill_room_dir = Path.cwd() / "skill-room"
+            
+            # 初始化目标源路径为空
+            skill_source = None
+            # 遍历 skill-room 目录下的所有子目录
+            if skill_room_dir.exists() and skill_room_dir.is_dir():
+                for item in skill_room_dir.iterdir():
+                    # 检查是否为目录且名称包含要添加的技能关键字（忽略大小写）
+                    if item.is_dir() and skill_name.lower() in item.name.lower():
+                        # 找到第一个匹配的目录，将其作为源路径
+                        skill_source = item
+                        # 更新 skill_name 为实际的完整目录名，以便后续安装路径使用
+                        skill_name = item.name
+                        break
+                        
+            # 如果没有找到匹配的目录，返回未找到的提示
+            if not skill_source:
+                return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content=f"Skill matching '{skill_name}' not found in skill-room")
+            # 目标安装路径
+            skill_dest = self.workspace / "skills" / skill_name
 
-            session.clear()
-            self.sessions.save(session)
-            self.sessions.invalidate(session.key)
-            return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id,
-                                  content="New session started.")
+            try:
+                # 拷贝目录及子文件
+                shutil.copytree(skill_source, skill_dest, dirs_exist_ok=True)
+                return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content=f"{skill_name}技能安装成功")
+            except Exception as e:
+                logger.error(f"Failed to copy skill {skill_name}: {e}")
+                return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content=f"Failed to install skill {skill_name}: {e}")
+
+        if cmd.startswith("/del "):
+            # 获取用户要删除的技能关键字
+            skill_name = msg.content.strip()[5:].strip()        
+            # 如果关键字为空，则返回提示信息要求提供名称
+            if not skill_name:
+                return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content="Please provide a skill name to delete: /del {skill_name}")
+            
+            # 计算当前工作空间下的 skills 目录路径
+            skills_dir = self.workspace / "skills"
+            
+            # 初始化目标删除路径为空
+            skill_target = None
+            # 遍历 skills 目录下的所有子目录
+            if skills_dir.exists() and skills_dir.is_dir():
+                for item in skills_dir.iterdir():
+                    # 检查是否为目录且名称包含要删除的技能关键字（忽略大小写）
+                    if item.is_dir() and skill_name.lower() in item.name.lower():
+                        # 找到第一个匹配的目录，将其作为要删除的目标路径
+                        skill_target = item
+                        # 更新 skill_name 为实际的完整目录名，用于日志和提示信息
+                        skill_name = item.name
+                        break
+            
+            # 如果没有找到匹配的目录，返回未找到的提示
+            if not skill_target:
+                return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content=f"Skill matching '{skill_name}' not found in workspace skills")
+            
+            try:
+                # 使用 shutil.rmtree 删除该目录及其包含的所有子文件和子目录
+                shutil.rmtree(skill_target)
+                # 返回删除成功的提示信息
+                return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content=f"{skill_name}技能卸载成功")
+            except Exception as e:
+                # 记录删除失败的错误日志
+                logger.error(f"Failed to delete skill {skill_name}: {e}")
+                # 返回删除失败的提示信息给用户
+                return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content=f"Failed to delete skill {skill_name}: {e}")
+        
         if cmd == "/help":
             return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id,
-                                  content="🐈 nanobot commands:\n/new — Start a new conversation\n/stop — Stop the current task\n/help — Show available commands")
+                                  content="rio commands:\n/add {skill_name} — Add a skill from skill-room\n/del {skill_name} — Delete a skill from workspace skills\n/id {spacename} — Set the other workspace\n/stop — Stop the current task\n/help — Show available commands")
 
         if cmd.startswith("/id "):
             # 提取命令行中的新工作空间名称
@@ -530,10 +589,11 @@ class AgentLoop:
             
             # 返回包含成功信息的 OutboundMessage
             return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content=response_content)
-
-        await self.memory_consolidator.maybe_consolidate_by_tokens(session)
-
+        
+        key = session_key or msg.session_key
+        session = self.sessions.get_or_create(key)
         self._set_tool_context(msg.channel, msg.chat_id, msg.metadata.get("message_id"))
+        # 准备处理消息之前，重置发消息工具的状态
         if message_tool := self.tools.get("message"):
             if isinstance(message_tool, MessageTool):
                 message_tool.start_turn()
@@ -563,13 +623,33 @@ class AgentLoop:
 
         self._save_turn(session, all_msgs, 1 + len(history))
         self.sessions.save(session)
-        await self.memory_consolidator.maybe_consolidate_by_tokens(session)
 
+        # 定义一个异步后台任务来处理会话的压缩整理，避免阻塞主流程
+        async def _background_consolidate(session_obj: Session) -> None:
+            # 获取当前消息对应的会话对象专属异步锁
+            lock = self.memory_consolidator.get_lock(session_obj.key)
+            # 加锁执行会话的压缩整理逻辑
+            async with lock:
+                # 获取当前所有尚未合并的消息列表
+                chunk = session_obj.messages[session_obj.last_consolidated:]
+                # 如果未合并的消息数量大于0条，则触发压缩机制
+                if len(chunk) > 0:
+                    # 调用方法将这部分消息进行归档压缩
+                    if await self.memory_consolidator.consolidate_messages(chunk):
+                        # 压缩成功后，更新会话的最后合并位置
+                        session_obj.last_consolidated += len(chunk)
+                        # 将更新后的会话状态持久化保存
+                        self.sessions.save(session_obj)
+
+        # 使用 asyncio.create_task 将压缩任务放入后台异步执行
+        asyncio.create_task(_background_consolidate(session))
+
+        # 有时候大模型会在执行过程中，**主动调用系统提供的发消息工具（比如 MessageTool ）**来和用户沟通。
+        # 如果它已经通过工具把想说的话发给用户了，系统最后再自动打包发一遍 final_content ，用户就会收到两条重复或者矛盾的消息。
         if (mt := self.tools.get("message")) and isinstance(mt, MessageTool) and mt._sent_in_turn:
             return None
 
-        preview = final_content[:120] + "..." if len(final_content) > 120 else final_content
-        logger.info("Response to {}:{}: {}", msg.channel, msg.sender_id, preview)
+
         return OutboundMessage(
             channel=msg.channel, chat_id=msg.chat_id, content=final_content,
             metadata=msg.metadata or {},

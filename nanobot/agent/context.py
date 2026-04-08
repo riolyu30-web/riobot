@@ -73,7 +73,7 @@ Skills with available="false" need dependencies installed first - you can try in
 - Use file tools when they are simpler or more reliable than shell commands.
 """
 
-        return f"""# ASSISTANT
+        return f"""# Rio
 
 You are a helpful AI assistant. Be concise, accurate, and friendly. 
 
@@ -82,11 +82,11 @@ You are a helpful AI assistant. Be concise, accurate, and friendly.
 
 ## Workspace
 Your workspace is at: {workspace_path}
-- Custom skills: {workspace_path}/skills/{{skill-name}}/SKILL.md
+- Custom skills: {workspace_path}\\skills\\{{skill-name}}\\SKILL.md
 
 {platform_policy}
 
-## rio Guidelines
+## Guidelines
 - State intent before tool calls, but NEVER predict or claim results before receiving them.
 - Before modifying a file, read it first. Do not assume files or directories exist.
 - After writing or editing a file, re-read it if accuracy matters.

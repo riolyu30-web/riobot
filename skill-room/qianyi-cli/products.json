@@ -1,0 +1,1905 @@
+[
+  {
+    "id": "prod-801",
+    "productNo": "801#",
+    "name": "涤天丝（曲天丝）",
+    "slug": "di-tian-si-qu-tian-si",
+    "description": "涤天丝混纺面料，柔软舒适，垂感极佳",
+    "whitePrice": 4.5,
+    "colorPrice": 4.8,
+    "samplePrice": 7,
+    "price": 4.5,
+    "images": [
+      "/images/products/801_1.jpg",
+      "/images/products/801_2.jpg",
+      "/images/products/801_3.jpg",
+      "/images/products/801_4.jpg",
+      "/images/products/801_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 90
+      },
+      {
+        "name": "涤纶",
+        "percentage": 10
+      }
+    ],
+    "tags": [
+      "New"
+    ],
+    "inStock": true,
+    "width": 150,
+    "weight": 55,
+    "hc": 91,
+    "createdAt": "2024-11-01",
+    "featured": true
+  },
+  {
+    "id": "prod-802",
+    "productNo": "802#",
+    "name": "天丝仙女条",
+    "slug": "tian-si-xian-nv-tiao",
+    "description": "天丝锦纶混纺条纹面料，轻盈飘逸",
+    "whitePrice": 4.2,
+    "colorPrice": 4.5,
+    "samplePrice": 6,
+    "price": 4.2,
+    "images": [
+      "/images/products/802_1.jpg",
+      "/images/products/802_2.jpg",
+      "/images/products/802_3.jpg",
+      "/images/products/802_4.jpg",
+      "/images/products/802_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 75
+      },
+      {
+        "name": "锦纶",
+        "percentage": 25
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 65,
+    "hc": 91,
+    "createdAt": "2024-11-01",
+    "featured": false
+  },
+  {
+    "id": "prod-803",
+    "productNo": "803#",
+    "name": "天丝彩虹条（曲丝缎）",
+    "slug": "tian-si-cai-hong-tiao",
+    "description": "天丝聚酯纤维混纺，彩虹色条纹设计",
+    "whitePrice": 7.1,
+    "colorPrice": 7.3,
+    "samplePrice": 10,
+    "price": 7.1,
+    "images": [
+      "/images/products/803_1.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 80
+      },
+      {
+        "name": "聚酯纤维",
+        "percentage": 20
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 58,
+    "hc": 93,
+    "createdAt": "2024-11-02",
+    "featured": true
+  },
+  {
+    "id": "prod-804",
+    "productNo": "804#",
+    "name": "天丝千鸟格",
+    "slug": "tian-si-qian-niao-ge",
+    "description": "经典千鸟格纹理，天丝混纺面料",
+    "whitePrice": 7.6,
+    "colorPrice": 8,
+    "samplePrice": 10,
+    "price": 7.6,
+    "images": [
+      "/images/products/804_1.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 80
+      },
+      {
+        "name": "聚酯纤维",
+        "percentage": 20
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 58,
+    "hc": 93,
+    "createdAt": "2024-11-02",
+    "featured": false
+  },
+  {
+    "id": "prod-805",
+    "productNo": "805#",
+    "name": "加密花丝缎",
+    "slug": "jia-mi-hua-si-duan",
+    "description": "高密度织造，丝滑细腻",
+    "whitePrice": 2.2,
+    "colorPrice": 2.4,
+    "samplePrice": 5,
+    "price": 2.2,
+    "images": [
+      "/images/products/805_1.jpg",
+      "/images/products/805_2.jpg",
+      "/images/products/805_3.jpg",
+      "/images/products/805_4.jpg",
+      "/images/products/805_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Satin",
+    "content": [
+      {
+        "name": "涤纶",
+        "percentage": 80
+      },
+      {
+        "name": "棉",
+        "percentage": 20
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 65,
+    "hc": 93,
+    "createdAt": "2024-11-03",
+    "featured": false
+  },
+  {
+    "id": "prod-806",
+    "productNo": "806#",
+    "name": "洛施棉（彩珠纱）",
+    "slug": "luo-shi-mian-cai-zhu-sha",
+    "description": "人棉锦纶混纺，珠光效果",
+    "whitePrice": 3.8,
+    "colorPrice": 4,
+    "samplePrice": 6,
+    "price": 3.8,
+    "images": [
+      "/images/products/806_1.jpg",
+      "/images/products/806_2.jpg",
+      "/images/products/806_3.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Rayon Blend",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 68
+      },
+      {
+        "name": "锦纶",
+        "percentage": 32
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 60,
+    "hc": 91,
+    "createdAt": "2024-11-03",
+    "featured": false
+  },
+  {
+    "id": "prod-807",
+    "productNo": "807#",
+    "name": "莺之麻（单丝提朵）",
+    "slug": "ying-zhi-ma-dan-si-ti-duo",
+    "description": "轻薄透气，适合夏季服装",
+    "whitePrice": 5.8,
+    "colorPrice": 6,
+    "samplePrice": 9,
+    "price": 5.8,
+    "images": [
+      "/images/products/807_1.jpg",
+      "/images/products/807_2.jpg",
+      "/images/products/807_3.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Rayon Blend",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 85
+      },
+      {
+        "name": "锦纶",
+        "percentage": 15
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 80,
+    "hc": 91,
+    "createdAt": "2024-11-04",
+    "featured": false
+  },
+  {
+    "id": "prod-808",
+    "productNo": "808#",
+    "name": "天丝缎（仙丝缎）",
+    "slug": "tian-si-duan-xian-si-duan",
+    "description": "天丝缎面，丝滑光泽感强",
+    "whitePrice": 4.1,
+    "colorPrice": 4.2,
+    "samplePrice": 6,
+    "price": 4.1,
+    "images": [
+      "/images/products/808_1.jpg",
+      "/images/products/808_2.jpg",
+      "/images/products/808_3.jpg",
+      "/images/products/808_4.jpg",
+      "/images/products/808_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Satin",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 65
+      },
+      {
+        "name": "锦纶",
+        "percentage": 35
+      }
+    ],
+    "tags": [
+      "Featured"
+    ],
+    "inStock": true,
+    "width": 150,
+    "weight": 65,
+    "hc": 91,
+    "createdAt": "2024-11-04",
+    "featured": true
+  },
+  {
+    "id": "prod-809",
+    "productNo": "809#",
+    "name": "闪光天丝",
+    "slug": "shan-guang-tian-si",
+    "description": "闪光效果，时尚华丽",
+    "whitePrice": 5,
+    "colorPrice": 5.2,
+    "samplePrice": 7,
+    "price": 5,
+    "images": [
+      "/images/products/809_1.jpg",
+      "/images/products/809_2.jpg",
+      "/images/products/809_3.jpg",
+      "/images/products/809_4.jpg",
+      "/images/products/809_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 75
+      },
+      {
+        "name": "锦纶",
+        "percentage": 25
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 60,
+    "hc": 91,
+    "createdAt": "2024-11-05",
+    "featured": false
+  },
+  {
+    "id": "prod-810",
+    "productNo": "810#",
+    "name": "亮丝麻",
+    "slug": "liang-si-ma",
+    "description": "亮丝效果，麻质感",
+    "whitePrice": 5.2,
+    "colorPrice": 5.4,
+    "samplePrice": 7,
+    "price": 5.2,
+    "images": [
+      "/images/products/810_1.jpg",
+      "/images/products/810_2.jpg",
+      "/images/products/810_3.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Polyester",
+    "content": [
+      {
+        "name": "涤纶",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 50,
+    "hc": 91,
+    "createdAt": "2024-11-05",
+    "featured": false
+  },
+  {
+    "id": "prod-811",
+    "productNo": "811#",
+    "name": "天丝蜂蜜缎（天丝网纹缎）",
+    "slug": "tian-si-feng-mi-duan",
+    "description": "复合材质，蜂蜜色泽网纹肌理",
+    "whitePrice": 5.1,
+    "colorPrice": 5.2,
+    "samplePrice": 7,
+    "price": 5.1,
+    "images": [
+      "/images/products/811_1.jpg",
+      "/images/products/811_2.jpg",
+      "/images/products/811_3.jpg",
+      "/images/products/811_4.jpg",
+      "/images/products/811_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 36
+      },
+      {
+        "name": "锦纶",
+        "percentage": 25
+      },
+      {
+        "name": "人棉",
+        "percentage": 13
+      },
+      {
+        "name": "聚酯纤维",
+        "percentage": 26
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 65,
+    "hc": 91,
+    "createdAt": "2024-11-06",
+    "featured": false
+  },
+  {
+    "id": "prod-812",
+    "productNo": "812#",
+    "name": "天丝竖皱条",
+    "slug": "tian-si-shu-zhou-tiao",
+    "description": "竖向皱纹肌理，立体感强",
+    "whitePrice": 6.7,
+    "colorPrice": 6.9,
+    "samplePrice": 8,
+    "price": 6.7,
+    "images": [
+      "/images/products/812_1.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 80
+      },
+      {
+        "name": "锦纶",
+        "percentage": 20
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 65,
+    "hc": 93,
+    "createdAt": "2024-11-06",
+    "featured": false
+  },
+  {
+    "id": "prod-813",
+    "productNo": "813#",
+    "name": "天丝大竖条（天丝小辫麻）",
+    "slug": "tian-si-da-shu-tiao",
+    "description": "大竖条纹理，小辫麻质感",
+    "whitePrice": 4.5,
+    "colorPrice": 6.7,
+    "samplePrice": 6,
+    "price": 4.5,
+    "images": [
+      "/images/products/813_1.jpg",
+      "/images/products/813_2.jpg",
+      "/images/products/813_3.jpg",
+      "/images/products/813_4.jpg",
+      "/images/products/813_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 85
+      },
+      {
+        "name": "锦纶",
+        "percentage": 15
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 85,
+    "hc": 91,
+    "createdAt": "2024-11-07",
+    "featured": false
+  },
+  {
+    "id": "prod-814",
+    "productNo": "814#",
+    "name": "天丝闪光缎",
+    "slug": "tian-si-shan-guang-duan",
+    "description": "天丝缎面带闪光效果",
+    "whitePrice": 6.1,
+    "colorPrice": 6.2,
+    "samplePrice": 8,
+    "price": 6.1,
+    "images": [
+      "/images/products/814_1.jpg",
+      "/images/products/814_2.jpg",
+      "/images/products/814_3.jpg",
+      "/images/products/814_4.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Satin",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 75
+      },
+      {
+        "name": "尼龙",
+        "percentage": 25
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 148,
+    "weight": 68,
+    "hc": 91,
+    "createdAt": "2024-11-07",
+    "featured": false
+  },
+  {
+    "id": "prod-815",
+    "productNo": "815#",
+    "name": "桑丝宇母条（奢桑丝）",
+    "slug": "sang-si-yu-mu-tiao",
+    "description": "奢华桑丝质感，柔软亲肤",
+    "whitePrice": 4.1,
+    "colorPrice": 4.2,
+    "samplePrice": 6,
+    "price": 4.1,
+    "images": [
+      "/images/products/815_1.jpg",
+      "/images/products/815_2.jpg",
+      "/images/products/815_3.jpg",
+      "/images/products/815_4.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Rayon Blend",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 80
+      },
+      {
+        "name": "锦纶",
+        "percentage": 20
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 80,
+    "hc": 91,
+    "createdAt": "2024-11-08",
+    "featured": false
+  },
+  {
+    "id": "prod-816",
+    "productNo": "816#",
+    "name": "高密天丝666",
+    "slug": "gao-mi-tian-si-666",
+    "description": "高密度织造，品质卓越",
+    "whitePrice": 5,
+    "colorPrice": 5.2,
+    "samplePrice": 7,
+    "price": 5,
+    "images": [
+      "/images/products/816_1.jpg",
+      "/images/products/816_2.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Rayon Blend",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 65
+      },
+      {
+        "name": "聚酯纤维",
+        "percentage": 35
+      }
+    ],
+    "tags": [
+      "Featured"
+    ],
+    "inStock": true,
+    "width": 150,
+    "weight": 120,
+    "hc": 91,
+    "createdAt": "2024-11-08",
+    "featured": true
+  },
+  {
+    "id": "prod-817",
+    "productNo": "817#",
+    "name": "天丝竹节（加密高品质）",
+    "slug": "tian-si-zhu-jie-jia-mi",
+    "description": "竹节肌理，加密高品质织造",
+    "whitePrice": 3.7,
+    "colorPrice": 4.3,
+    "samplePrice": 6,
+    "price": 3.7,
+    "images": [
+      "/images/products/817_1.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Rayon Blend",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 65
+      },
+      {
+        "name": "涤纶",
+        "percentage": 35
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 85,
+    "hc": 91,
+    "createdAt": "2024-11-09",
+    "featured": false
+  },
+  {
+    "id": "prod-818",
+    "productNo": "818#",
+    "name": "天丝亚运条",
+    "slug": "tian-si-ya-yun-tiao",
+    "description": "亚运主题条纹面料",
+    "whitePrice": 4.3,
+    "colorPrice": 4.5,
+    "samplePrice": 7,
+    "price": 4.3,
+    "images": [
+      "/images/products/818_1.jpg",
+      "/images/products/818_2.jpg",
+      "/images/products/818_3.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 78
+      },
+      {
+        "name": "锦纶",
+        "percentage": 22
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 80,
+    "hc": 91,
+    "createdAt": "2024-11-09",
+    "featured": false
+  },
+  {
+    "id": "prod-822",
+    "productNo": "822#",
+    "name": "加厚鼎盛天丝",
+    "slug": "jia-hou-ding-sheng-tian-si",
+    "description": "加厚版天丝，保暖舒适",
+    "whitePrice": 7.4,
+    "colorPrice": 7.6,
+    "samplePrice": 10,
+    "price": 7.4,
+    "images": [
+      "/images/products/822_1.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 80
+      },
+      {
+        "name": "涤纶",
+        "percentage": 12
+      },
+      {
+        "name": "醋酯",
+        "percentage": 8
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 73,
+    "hc": 91,
+    "createdAt": "2024-11-10",
+    "featured": false
+  },
+  {
+    "id": "prod-823",
+    "productNo": "823#",
+    "name": "天丝亚麻",
+    "slug": "tian-si-ya-ma",
+    "description": "天丝与亚麻混纺，清爽透气",
+    "whitePrice": 5.5,
+    "colorPrice": 5.7,
+    "samplePrice": 10,
+    "price": 5.5,
+    "images": [
+      "/images/products/823_1.jpg",
+      "/images/products/823_2.jpg",
+      "/images/products/823_3.jpg",
+      "/images/products/823_4.jpg",
+      "/images/products/823_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Linen Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 55
+      },
+      {
+        "name": "锦纶",
+        "percentage": 35
+      },
+      {
+        "name": "亚麻",
+        "percentage": 10
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 155,
+    "weight": 85,
+    "hc": 91,
+    "createdAt": "2024-11-10",
+    "featured": false
+  },
+  {
+    "id": "prod-825",
+    "productNo": "825#",
+    "name": "加厚曲天丝",
+    "slug": "jia-hou-qu-tian-si",
+    "description": "加厚版曲天丝，垂感好",
+    "whitePrice": 7.3,
+    "colorPrice": 7.5,
+    "samplePrice": 10,
+    "price": 7.3,
+    "images": [
+      "/images/products/825_1.jpg",
+      "/images/products/825_2.jpg",
+      "/images/products/825_3.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      {
+        "name": "天丝",
+        "percentage": 85
+      },
+      {
+        "name": "锦纶",
+        "percentage": 15
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 80,
+    "hc": 91,
+    "createdAt": "2024-11-11",
+    "featured": false
+  },
+  {
+    "id": "prod-826",
+    "productNo": "826#",
+    "name": "冷面平纹",
+    "slug": "leng-mian-ping-wen",
+    "description": "冷感面料，夏季首选",
+    "whitePrice": 5.7,
+    "colorPrice": 6.3,
+    "samplePrice": 7,
+    "price": 5.7,
+    "images": [
+      "/images/products/826_1.jpg",
+      "/images/products/826_2.jpg",
+      "/images/products/826_3.jpg",
+      "/images/products/826_4.jpg",
+      "/images/products/826_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Cotton Blend",
+    "content": [
+      {
+        "name": "全棉",
+        "percentage": 65
+      },
+      {
+        "name": "人棉",
+        "percentage": 25
+      },
+      {
+        "name": "锦纶",
+        "percentage": 10
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 140,
+    "hc": 91,
+    "createdAt": "2024-11-11",
+    "featured": false
+  },
+  {
+    "id": "prod-827",
+    "productNo": "827#",
+    "name": "香格麻",
+    "slug": "xiang-ge-ma",
+    "description": "香格里拉风格麻质面料",
+    "whitePrice": 5.5,
+    "colorPrice": 5.7,
+    "samplePrice": 7,
+    "price": 5.5,
+    "images": [
+      "/images/products/827_1.jpg",
+      "/images/products/827_2.jpg",
+      "/images/products/827_3.jpg",
+      "/images/products/827_4.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Rayon Blend",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 5
+      },
+      {
+        "name": "聚酯纤维",
+        "percentage": 44
+      },
+      {
+        "name": "其他",
+        "percentage": 51
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 160,
+    "hc": 91,
+    "createdAt": "2024-11-12",
+    "featured": false
+  },
+  {
+    "id": "prod-828",
+    "productNo": "828#",
+    "name": "韩国棉",
+    "slug": "han-guo-mian",
+    "description": "韩式风格棉质面料",
+    "whitePrice": 5.4,
+    "colorPrice": 5.6,
+    "samplePrice": 7,
+    "price": 5.4,
+    "images": [
+      "/images/products/828_1.jpg",
+      "/images/products/828_2.jpg",
+      "/images/products/828_3.jpg",
+      "/images/products/828_4.jpg",
+      "/images/products/828_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Rayon Blend",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 85
+      },
+      {
+        "name": "锦纶",
+        "percentage": 15
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 120,
+    "hc": 91,
+    "createdAt": "2024-11-12",
+    "featured": false
+  },
+  {
+    "id": "prod-829",
+    "productNo": "829#",
+    "name": "复古棉",
+    "slug": "fu-gu-mian",
+    "description": "复古风格棉质面料",
+    "whitePrice": 6.4,
+    "colorPrice": 6.6,
+    "samplePrice": 9,
+    "price": 6.4,
+    "images": [
+      "/images/products/829_1.jpg",
+      "/images/products/829_2.jpg",
+      "/images/products/829_3.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Rayon Blend",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 85
+      },
+      {
+        "name": "锦纶",
+        "percentage": 15
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 145,
+    "hc": 91,
+    "createdAt": "2024-11-13",
+    "featured": false
+  },
+  {
+    "id": "prod-830",
+    "productNo": "830#",
+    "name": "干纹麻（亚麻平纹）",
+    "slug": "gan-wen-ma-ya-ma-ping-wen",
+    "description": "干纹肌理亚麻平纹布",
+    "whitePrice": 6.1,
+    "colorPrice": 6.3,
+    "samplePrice": 8,
+    "price": 6.1,
+    "images": [
+      "/images/products/830_3.jpg",
+      "/images/products/830_1.jpg",
+      "/images/products/830_2.jpg",
+      "/images/products/830_4.jpg",
+      "/images/products/830_5.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Linen Blend",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 70
+      },
+      {
+        "name": "锦纶",
+        "percentage": 18
+      },
+      {
+        "name": "亚麻",
+        "percentage": 12
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 110,
+    "hc": 91,
+    "createdAt": "2024-11-13",
+    "featured": false
+  },
+  {
+    "id": "prod-831",
+    "productNo": "831#",
+    "name": "乱麻格（单丝乱朵）",
+    "slug": "luan-ma-ge-dan-si-luan-duo",
+    "description": "乱麻格纹，独特质感",
+    "whitePrice": 4.5,
+    "colorPrice": 4.7,
+    "samplePrice": 7,
+    "price": 4.5,
+    "images": [
+      "/images/products/831_1.jpg",
+      "/images/products/831_2.jpg",
+      "/images/products/831_3.jpg",
+      "/images/products/831_4.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Rayon Blend",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 80
+      },
+      {
+        "name": "锦纶",
+        "percentage": 20
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 120,
+    "hc": 91,
+    "createdAt": "2024-11-13",
+    "featured": false
+  },
+  {
+    "id": "prod-832",
+    "productNo": "832#",
+    "name": "双股树皮缎",
+    "slug": "shuang-gu-shu-pi-duan",
+    "description": "双股织造，树皮质感缎面",
+    "whitePrice": 4.5,
+    "colorPrice": 4.7,
+    "samplePrice": 7,
+    "price": 4.5,
+    "images": [
+      "/images/products/832_1.jpg",
+      "/images/products/832_2.jpg",
+      "/images/products/832_3.jpg"
+    ],
+    "category": "tencel",
+    "fabricType": "Rayon Satin",
+    "content": [
+      {
+        "name": "人棉",
+        "percentage": 85
+      },
+      {
+        "name": "锦纶",
+        "percentage": 15
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 130,
+    "hc": 91,
+    "createdAt": "2024-11-13",
+    "featured": false
+  },
+  {
+    "id": "prod-601",
+    "productNo": "601#",
+    "name": "75D珍珠雪纺",
+    "slug": "75d-zhen-zhu-xue-fang",
+    "description": "轻薄珍珠雪纺，适合印花刺绣",
+    "whitePrice": 3.1,
+    "colorPrice": 3.9,
+    "samplePrice": 5,
+    "price": 3.1,
+    "images": [
+      "/images/products/601_1.jpg",
+      "/images/products/601_2.jpg"
+    ],
+    "category": "embroidery",
+    "fabricType": "Chiffon",
+    "content": [
+      {
+        "name": "涤纶",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 85,
+    "createdAt": "2024-10-15",
+    "featured": false
+  },
+  {
+    "id": "prod-602",
+    "productNo": "602#",
+    "name": "75D雪纺缎",
+    "slug": "75d-xue-fang-duan",
+    "description": "雪纺缎面，光滑细腻",
+    "whitePrice": 3.1,
+    "colorPrice": 3.7,
+    "samplePrice": 5,
+    "price": 3.1,
+    "images": [
+      "/images/products/602_1.jpg",
+      "/images/products/602_2.jpg",
+      "/images/products/602_3.jpg"
+    ],
+    "category": "embroidery",
+    "fabricType": "Chiffon Satin",
+    "content": [
+      {
+        "name": "涤纶",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 85,
+    "createdAt": "2024-10-15",
+    "featured": false
+  },
+  {
+    "id": "prod-603",
+    "productNo": "603#",
+    "name": "30D单丝缎",
+    "slug": "30d-dan-si-duan",
+    "description": "超薄单丝缎，透气轻盈",
+    "whitePrice": 3.65,
+    "colorPrice": 3.85,
+    "samplePrice": 5,
+    "price": 3.65,
+    "images": [
+      "/images/products/603_1.jpg",
+      "/images/products/603_2.jpg",
+      "/images/products/603_3.jpg"
+    ],
+    "category": "embroidery",
+    "fabricType": "Monofilament Satin",
+    "content": [
+      {
+        "name": "涤纶",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 160,
+    "weight": 35,
+    "createdAt": "2024-10-16",
+    "featured": false
+  },
+  {
+    "id": "prod-604",
+    "productNo": "604#",
+    "name": "全涤闪光天丝（可数码印花）",
+    "slug": "quan-di-shan-guang-tian-si",
+    "description": "全涤闪光天丝，可数码印花",
+    "whitePrice": 6.2,
+    "colorPrice": 6.2,
+    "samplePrice": 7,
+    "price": 6.2,
+    "images": [
+      "/images/products/604_1.jpg",
+      "/images/products/604_2.jpg",
+      "/images/products/604_3.jpg"
+    ],
+    "category": "embroidery",
+    "fabricType": "Polyester Tencel-Like",
+    "content": [
+      {
+        "name": "涤纶",
+        "percentage": 100
+      }
+    ],
+    "tags": [
+      "Digital Print"
+    ],
+    "inStock": true,
+    "width": 150,
+    "weight": 60,
+    "hc": 93,
+    "createdAt": "2024-10-16",
+    "featured": true
+  },
+  {
+    "id": "prod-605",
+    "productNo": "605#",
+    "name": "麻纱",
+    "slug": "ma-sha",
+    "description": "麻纱面料，透气清爽",
+    "whitePrice": 2.8,
+    "colorPrice": 3.8,
+    "samplePrice": 5,
+    "price": 2.8,
+    "images": [
+      "/images/products/605_1.jpg",
+      "/images/products/605_2.jpg",
+      "/images/products/605_3.jpg"
+    ],
+    "category": "embroidery",
+    "fabricType": "Gauze",
+    "content": [
+      {
+        "name": "涤纶",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 65,
+    "createdAt": "2024-10-17",
+    "featured": false
+  },
+  {
+    "id": "prod-606",
+    "productNo": "606#",
+    "name": "40支棉感竹节",
+    "slug": "40zhi-mian-gan-zhu-jie",
+    "description": "棉感竹节面料，肌理丰富",
+    "whitePrice": 4.9,
+    "colorPrice": 4.9,
+    "price": 4.9,
+    "images": [
+      "/images/products/606_1.jpg",
+      "/images/products/606_2.jpg",
+      "/images/products/606_3.jpg"
+    ],
+    "category": "embroidery",
+    "fabricType": "Slub",
+    "content": [
+      {
+        "name": "聚酯纤维",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 95,
+    "createdAt": "2024-10-17",
+    "featured": false
+  },
+  {
+    "id": "prod-901",
+    "productNo": "901#",
+    "name": "2060洗水竹节",
+    "slug": "2060-xi-shui-zhu-jie",
+    "description": "洗水竹节棉布，柔软舒适",
+    "whitePrice": 4.9,
+    "colorPrice": 5.4,
+    "samplePrice": 8,
+    "price": 4.9,
+    "images": [
+      "/images/products/901_1.jpg",
+      "/images/products/901_2.jpg",
+      "/images/products/901_3.jpg",
+      "/images/products/901_4.jpg",
+      "/images/products/901_5.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton Slub",
+    "content": [
+      {
+        "name": "全棉",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 100,
+    "hc": 91,
+    "createdAt": "2024-10-20",
+    "featured": true
+  },
+  {
+    "id": "prod-903",
+    "productNo": "903#",
+    "name": "4438#高品质",
+    "slug": "4438-gao-pin-zhi",
+    "description": "高品质混纺面料",
+    "whitePrice": 6.2,
+    "colorPrice": 5.9,
+    "samplePrice": 9,
+    "price": 6.2,
+    "images": [
+      "/images/products/903_1.jpg",
+      "/images/products/903_2.jpg",
+      "/images/products/903_3.jpg",
+      "/images/products/903_4.jpg",
+      "/images/products/903_5.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton Linen Blend",
+    "content": [
+      {
+        "name": "棉",
+        "percentage": 50
+      },
+      {
+        "name": "亚麻",
+        "percentage": 30
+      },
+      {
+        "name": "涤纶",
+        "percentage": 20
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 140,
+    "weight": 180,
+    "hc": 99,
+    "createdAt": "2024-10-20",
+    "featured": false
+  },
+  {
+    "id": "prod-904",
+    "productNo": "904#",
+    "name": "加厚砂洗竹节（高品质）",
+    "slug": "jia-hou-sha-xi-zhu-jie",
+    "description": "加厚砂洗竹节，高品质全棉",
+    "whitePrice": 6.7,
+    "colorPrice": 7.1,
+    "samplePrice": 10,
+    "price": 6.7,
+    "images": [
+      "/images/products/904_1.jpg",
+      "/images/products/904_2.jpg",
+      "/images/products/904_3.jpg",
+      "/images/products/904_4.jpg",
+      "/images/products/904_5.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton Slub",
+    "content": [
+      {
+        "name": "全棉",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 145,
+    "weight": 145,
+    "hc": 91,
+    "createdAt": "2024-10-21",
+    "featured": false
+  },
+  {
+    "id": "prod-912",
+    "productNo": "912#",
+    "name": "加厚双层平布",
+    "slug": "jia-hou-shuang-ceng-ping-bu",
+    "description": "双层织造，厚实保暖",
+    "whitePrice": 6.9,
+    "colorPrice": 7.2,
+    "samplePrice": 10,
+    "price": 6.9,
+    "images": [
+      "/images/products/912_1.jpg",
+      "/images/products/912_2.jpg",
+      "/images/products/912_3.jpg",
+      "/images/products/912_4.jpg",
+      "/images/products/912_5.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton Double Layer",
+    "content": [
+      {
+        "name": "棉",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 125,
+    "hc": 91,
+    "createdAt": "2024-10-21",
+    "featured": false
+  },
+  {
+    "id": "prod-905",
+    "productNo": "905#",
+    "name": "双层绒布",
+    "slug": "shuang-ceng-rong-bu",
+    "description": "双层绒面，柔软温暖",
+    "whitePrice": 6.3,
+    "colorPrice": 6.8,
+    "samplePrice": 9,
+    "price": 6.3,
+    "images": [
+      "/images/products/905_1.jpg",
+      "/images/products/905_2.jpg",
+      "/images/products/905_3.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton Fleece",
+    "content": [
+      {
+        "name": "全棉",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 135,
+    "weight": 125,
+    "hc": 91,
+    "createdAt": "2024-10-22",
+    "featured": false
+  },
+  {
+    "id": "prod-906",
+    "productNo": "906#",
+    "name": "12+12粘麻竹节砂洗",
+    "slug": "12-12-nian-ma-zhu-jie-sha-xi",
+    "description": "粘麻竹节砂洗面料，质感独特",
+    "whitePrice": 9.3,
+    "colorPrice": 8.8,
+    "samplePrice": 12,
+    "price": 9.3,
+    "images": [
+      "/images/products/906_1.jpg",
+      "/images/products/906_2.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Viscose Linen Blend",
+    "content": [
+      {
+        "name": "粘胶",
+        "percentage": 70
+      },
+      {
+        "name": "亚麻",
+        "percentage": 30
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 140,
+    "weight": 210,
+    "hc": 97,
+    "createdAt": "2024-10-22",
+    "featured": false
+  },
+  {
+    "id": "prod-907",
+    "productNo": "907#",
+    "name": "20支洗水缎",
+    "slug": "20zhi-xi-shui-duan",
+    "description": "20支纱洗水缎面，光泽柔和",
+    "whitePrice": 4.9,
+    "colorPrice": 5.3,
+    "samplePrice": 8,
+    "price": 4.9,
+    "images": [
+      "/images/products/907_1.jpg",
+      "/images/products/907_2.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton Satin",
+    "content": [
+      {
+        "name": "全棉",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 140,
+    "weight": 130,
+    "hc": 91,
+    "createdAt": "2024-10-23",
+    "featured": false
+  },
+  {
+    "id": "prod-908",
+    "productNo": "908#",
+    "name": "9088半工艺",
+    "slug": "9088-ban-gong-yi",
+    "description": "9088半工艺处理，轻薄舒适",
+    "whitePrice": 3.8,
+    "colorPrice": 4.3,
+    "price": 3.8,
+    "images": [
+      "/images/products/908_1.jpg",
+      "/images/products/908_2.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton",
+    "content": [
+      {
+        "name": "全棉",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 60,
+    "createdAt": "2024-10-23",
+    "featured": false
+  },
+  {
+    "id": "prod-909",
+    "productNo": "909#",
+    "name": "9088全工艺",
+    "slug": "9088-quan-gong-yi",
+    "description": "9088全工艺处理，质感升级",
+    "whitePrice": 4.5,
+    "colorPrice": 5.1,
+    "price": 4.5,
+    "images": [
+      "/images/products/909_1.jpg",
+      "/images/products/909_2.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton",
+    "content": [
+      {
+        "name": "全棉",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 75,
+    "createdAt": "2024-10-24",
+    "featured": false
+  },
+  {
+    "id": "prod-910",
+    "productNo": "910#",
+    "name": "40支平纹仿天丝",
+    "slug": "40zhi-ping-wen-fang-tian-si",
+    "description": "40支纱平纹，仿天丝质感",
+    "whitePrice": 6.2,
+    "colorPrice": 6.6,
+    "samplePrice": 9,
+    "price": 6.2,
+    "images": [
+      "/images/products/910_1.jpg",
+      "/images/products/910_2.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton Tencel-Like",
+    "content": [
+      {
+        "name": "全棉",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 156,
+    "weight": 125,
+    "hc": 92,
+    "createdAt": "2024-10-24",
+    "featured": false
+  },
+  {
+    "id": "prod-911",
+    "productNo": "911#",
+    "name": "天然麻",
+    "slug": "tian-ran-ma",
+    "description": "天然麻质面料，透气清爽",
+    "whitePrice": 6.6,
+    "colorPrice": 6.9,
+    "samplePrice": 10,
+    "price": 6.6,
+    "images": [
+      "/images/products/911_1.jpg",
+      "/images/products/911_2.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Linen Blend",
+    "content": [
+      {
+        "name": "棉",
+        "percentage": 50
+      },
+      {
+        "name": "人棉",
+        "percentage": 50
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 150,
+    "weight": 140,
+    "hc": 91,
+    "createdAt": "2024-10-25",
+    "featured": false
+  },
+  {
+    "id": "prod-913",
+    "productNo": "913#",
+    "name": "24支砂洗竹节",
+    "slug": "24zhi-sha-xi-zhu-jie",
+    "description": "24支砂洗竹节棉布",
+    "whitePrice": 5.8,
+    "samplePrice": 8,
+    "price": 5.8,
+    "images": [
+      "/images/products/913_1.jpg",
+      "/images/products/913_2.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton Slub",
+    "content": [
+      {
+        "name": "棉",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 145,
+    "weight": 110,
+    "hc": 91,
+    "createdAt": "2024-10-25",
+    "featured": false
+  },
+  {
+    "id": "prod-914",
+    "productNo": "914#",
+    "name": "高密2060竹节",
+    "slug": "gao-mi-2060-zhu-jie",
+    "description": "高密度2060竹节棉布",
+    "whitePrice": 5.6,
+    "colorPrice": 6.1,
+    "samplePrice": 8,
+    "price": 5.6,
+    "images": [
+      "/images/products/914_1.jpg",
+      "/images/products/914_2.jpg",
+      "/images/products/914_3.jpg"
+    ],
+    "category": "cotton",
+    "fabricType": "Cotton Slub",
+    "content": [
+      {
+        "name": "棉",
+        "percentage": 100
+      }
+    ],
+    "tags": [],
+    "inStock": true,
+    "width": 145,
+    "weight": 120,
+    "hc": 91,
+    "createdAt": "2024-10-26",
+    "featured": false
+  },
+  {
+    "id": "prod-501",
+    "productNo": "501#",
+    "name": "乐富丝竹节麻（红富竹节）",
+    "slug": "le-fu-si-zhu-jie-ma",
+    "description": "乐富丝竹节麻，全涤材质，适合多种用途",
+    "whitePrice": 2,
+    "colorPrice": 2.1,
+    "samplePrice": 5,
+    "price": 2,
+    "images": [],
+    "category": "tencel",
+    "fabricType": "Polyester",
+    "content": [
+      {
+        "name": "全涤",
+        "percentage": 100
+      }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 150,
+    "weight": 135,
+    "hc": 91,
+    "createdAt": "2024-11-20",
+    "featured": false
+  },
+  {
+    "id": "prod-502",
+    "productNo": "502#",
+    "name": "乐富丝双色平纹（平纹麻）",
+    "slug": "le-fu-si-shuang-se-ping-wen",
+    "description": "乐富丝双色平纹麻，全涤材质，质地平整",
+    "whitePrice": 3.6,
+    "colorPrice": 3.8,
+    "samplePrice": 6,
+    "price": 3.6,
+    "images": [],
+    "category": "tencel",
+    "fabricType": "Polyester",
+    "content": [
+      {
+        "name": "全涤",
+        "percentage": 100
+      }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 150,
+    "weight": 135,
+    "hc": 91,
+    "createdAt": "2024-11-20",
+    "featured": false
+  },
+  {
+    "id": "prod-507",
+    "productNo": "507#",
+    "name": "乐富丝乱麻",
+    "slug": "le-fu-si-luan-ma",
+    "description": "乐富丝乱麻，涤纶氨纶混纺，微弹舒适",
+    "whitePrice": 4,
+    "colorPrice": 4.1,
+    "samplePrice": 6,
+    "price": 4,
+    "images": [],
+    "category": "tencel",
+    "fabricType": "Polyester Blend",
+    "content": [
+      {
+        "name": "涤纶",
+        "percentage": 97
+      },
+      {
+        "name": "氨纶",
+        "percentage": 3
+      }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 150,
+    "weight": 135,
+    "hc": 91,
+    "createdAt": "2024-11-20",
+    "featured": false
+  },
+  {
+    "id": "prod-508",
+    "productNo": "508#",
+    "name": "乐富丝雪纺麻",
+    "slug": "le-fu-si-xue-fang-ma",
+    "description": "乐富丝雪纺麻，全涤雪纺质感，轻盈飘逸",
+    "whitePrice": 2.4,
+    "colorPrice": 2.6,
+    "samplePrice": 6,
+    "price": 2.4,
+    "images": [],
+    "category": "tencel",
+    "fabricType": "Polyester",
+    "content": [
+      {
+        "name": "全涤",
+        "percentage": 100
+      }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 150,
+    "weight": 135,
+    "hc": 91,
+    "createdAt": "2024-11-20",
+    "featured": false
+  },
+  {
+    "id": "prod-A801",
+    "productNo": "A801#",
+    "name": "曲天丝",
+    "slug": "qu-tian-si-a801",
+    "description": "曲天丝",
+    "whitePrice": 5.2,
+    "colorPrice": 5.5,
+    "samplePrice": 7,
+    "price": 5.2,
+    "images": [],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      { "name": "天丝", "percentage": 90 },
+      { "name": "涤纶", "percentage": 10 }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 150,
+    "weight": 58,
+    "hc": 91,
+    "createdAt": "2024-11-20",
+    "featured": false
+  },
+  {
+    "id": "prod-B801",
+    "productNo": "B801#",
+    "name": "曲天丝",
+    "slug": "qu-tian-si-b801",
+    "description": "曲天丝",
+    "whitePrice": 4.6,
+    "colorPrice": 4.7,
+    "samplePrice": 5,
+    "price": 4.6,
+    "images": [],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      { "name": "天丝", "percentage": 90 },
+      { "name": "涤纶", "percentage": 10 }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 150,
+    "weight": 55,
+    "hc": 91,
+    "createdAt": "2024-11-20",
+    "featured": false
+  },
+  {
+    "id": "prod-703",
+    "productNo": "703#",
+    "name": "天丝麻",
+    "slug": "tian-si-ma-703",
+    "description": "天丝麻",
+    "colorPrice": 5.7,
+    "samplePrice": 8,
+    "price": 5.7,
+    "images": [],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      { "name": "涤纶", "percentage": 50 },
+      { "name": "人棉", "percentage": 50 }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 150,
+    "weight": 165,
+    "hc": 99,
+    "createdAt": "2024-11-20",
+    "featured": false
+  },
+  {
+    "id": "prod-713",
+    "productNo": "713#",
+    "name": "天丝棉",
+    "slug": "tian-si-mian-713",
+    "description": "天丝棉",
+    "colorPrice": 6.3,
+    "samplePrice": 8,
+    "price": 6.3,
+    "images": [],
+    "category": "tencel",
+    "fabricType": "Tencel Blend",
+    "content": [
+      { "name": "涤纶", "percentage": 30 },
+      { "name": "人棉", "percentage": 70 }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 150,
+    "weight": 140,
+    "hc": 99,
+    "createdAt": "2024-11-20",
+    "featured": false
+  },
+  {
+    "id": "prod-726",
+    "productNo": "726#",
+    "name": "32支斜纹",
+    "slug": "32-zhi-xie-wen-726",
+    "description": "32支斜纹",
+    "colorPrice": 6.6,
+    "samplePrice": 8,
+    "price": 6.6,
+    "images": [],
+    "category": "tencel",
+    "fabricType": "Blend",
+    "content": [
+      { "name": "涤纶", "percentage": 60 },
+      { "name": "人棉", "percentage": 40 }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 150,
+    "weight": 145,
+    "hc": 99,
+    "createdAt": "2024-11-20",
+    "featured": false
+  },
+  {
+    "id": "prod-746",
+    "productNo": "746#",
+    "name": "3236免洗牛仔",
+    "slug": "3236-mian-xi-niu-zai",
+    "description": "3236免洗牛仔",
+    "colorPrice": 8.6,
+    "samplePrice": 10,
+    "price": 8.6,
+    "images": [],
+    "category": "denim",
+    "fabricType": "Denim",
+    "content": [
+      { "name": "涤纶", "percentage": 30 },
+      { "name": "人棉", "percentage": 70 }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 150,
+    "weight": 160,
+    "hc": 99,
+    "createdAt": "2024-11-20",
+    "featured": false
+  },
+  {
+    "id": "prod-915",
+    "productNo": "915#",
+    "name": "高密洗水皱",
+    "slug": "gao-mi-xi-shui-zhou-915",
+    "description": "高密洗水皱",
+    "whitePrice": 5.3,
+    "colorPrice": 5.8,
+    "samplePrice": 7,
+    "price": 5.3,
+    "images": [],
+    "category": "cotton",
+    "fabricType": "Cotton",
+    "content": [
+      { "name": "棉", "percentage": 100 }
+    ],
+    "tags": ["New"],
+    "inStock": true,
+    "width": 145,
+    "weight": 135,
+    "hc": 91,
+    "createdAt": "2024-11-20",
+    "featured": false
+  }
+]

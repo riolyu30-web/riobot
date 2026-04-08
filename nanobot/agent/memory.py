@@ -34,9 +34,9 @@ _SAVE_MEMORY_TOOL = [
                 "properties": {
                     "memory_update": {
                         "type": "string",
-                        "description": "Full updated long-term memory as markdown. Include existing memory plus new explicit decisions or requests you were told to remember. "
-                        "Ignore general conversation, user questions, or vague corrections."
-                        "Only save finalized information or direct remember this instructions. Return unchanged if nothing new."
+                        "description": "Full updated long-term memory as markdown. ONLY include information that the user explicitly and deliberately instructed you to remember. "
+                        "Do NOT record anything else (such as general conversation, user questions, or vague corrections). "
+                        "Keep existing memory intact and only append the newly requested information. Return unchanged if there are no explicit instructions to remember."
                     },
                 },
                 "required": ["memory_update"],
@@ -141,6 +141,26 @@ class MemoryStore:
         # 将列表中的所有行用换行符连接成一个完整的字符串并返回
         return "\n".join(lines)
 
+    @staticmethod
+    def _format_assistant_messages(messages: list[dict]) -> str:
+        # 初始化一个空列表，用于存储格式化后的消息行
+        lines = []
+        # 遍历传入的消息列表
+        for message in messages:
+            # 如果消息没有内容，则跳过当前循环
+            if not message.get("content"):
+                # 跳过无内容的消息
+                continue
+            # 如果消息包含工具使用记录，则过滤掉该条记录
+            if message['role'].upper() == "ASSISTANT":
+                # 将格式化后的消息追加到列表中，格式为：[时间戳] 角色: 内容
+                lines.append(
+                    # 拼接时间戳、角色和内容字符串
+                    f"[{message.get('timestamp', '?')[:16]}] {message['role'].upper()}: {message['content']}"
+                )
+        # 将列表中的所有行用换行符连接成一个完整的字符串并返回
+        return "\n".join(lines)
+
     async def consolidate(
         self,
         messages: list[dict],
@@ -187,8 +207,10 @@ class MemoryStore:
         ## Current Long-term Memory
         {current_memory or "(empty)"}            
 
-        ## Conversation to Process
-        {conversation_context}"""
+        ## User Messages to Process
+        {conversation_context}
+
+        """
 
                 response = await provider.chat_with_retry(
                     messages=[
@@ -212,7 +234,7 @@ class MemoryStore:
             logger.info("Memory consolidation done for {} messages", len(messages))
             return True
         except Exception:
-                logger.exception("Memory consolidation failed")
+            logger.exception("Memory consolidation failed")
         return False
 
 
@@ -346,105 +368,3 @@ class MemoryConsolidator:
                 return True
             # 将获取到的消息快照进行合并归档，并返回结果
             return await self.consolidate_messages(snapshot)
-
-    async def maybe_consolidate_by_tokens(self, session: Session) -> None:
-        """Loop: archive old messages until prompt fits within half the context window."""
-        # 如果会话没有消息，或未设置上下文 Token 限制，则直接返回
-        if not session.messages or self.context_window_tokens <= 0:
-            # 退出当前方法
-            return
-
-        # 获取会话专属的异步锁以防并发冲突
-        lock = self.get_lock(session.key)
-        # 进入异步上下文管理器获取锁
-        async with lock:
-            # 设定目标 Token 数为上下文窗口阈值的一半
-            target = self.context_window_tokens // 2
-            # 估算当前会话历史占用的 Token 数和计算来源
-            estimated, source = self.estimate_session_prompt_tokens(session)
-            # 如果估算值异常（<= 0）
-            if estimated <= 0:
-                # 直接退出
-                return
-            # 如果当前占用还没有达到上下文阈值限制
-            if estimated < self.context_window_tokens:
-                # 记录调试日志，说明目前不需要合并
-                logger.debug(
-                    # 格式化字符串
-                    "Token consolidation idle {}: {}/{} via {}",
-                    # 会话 key
-                    session.key,
-                    # 当前估算 Token
-                    estimated,
-                    # 最大允许 Token
-                    self.context_window_tokens,
-                    # 来源信息
-                    source,
-                )
-                # 退出方法
-                return
-
-            # 最多循环执行 _MAX_CONSOLIDATION_ROUNDS 次归档操作
-            for round_num in range(self._MAX_CONSOLIDATION_ROUNDS):
-                # 如果估算值已经降低到目标阈值及以下
-                if estimated <= target:
-                    # 退出循环，完成归档
-                    return
-
-                # 计算需要移除的 Token 数，并挑选出合适的切分边界
-                boundary = self.pick_consolidation_boundary(session, max(1, estimated - target))
-                # 如果找不到安全的边界（例如没有用户消息作为分隔点）
-                if boundary is None:
-                    # 记录调试日志说明情况
-                    logger.debug(
-                        # 格式化字符串
-                        "Token consolidation: no safe boundary for {} (round {})",
-                        # 会话 key
-                        session.key,
-                        # 当前轮次
-                        round_num,
-                    )
-                    # 无法继续合并，退出
-                    return
-
-                # 提取边界的结束索引
-                end_idx = boundary[0]
-                # 截取从上次合并位置到结束索引之间的消息块
-                chunk = session.messages[session.last_consolidated:end_idx]
-                # 如果切片为空
-                if not chunk:
-                    # 退出循环
-                    return
-
-                # 记录信息日志，开始进行一轮合并归档
-                logger.info(
-                    # 格式化字符串
-                    "Token consolidation round {} for {}: {}/{} via {}, chunk={} msgs",
-                    # 当前轮次
-                    round_num,
-                    # 会话 key
-                    session.key,
-                    # 估算 Token
-                    estimated,
-                    # 上下文窗口限制
-                    self.context_window_tokens,
-                    # 来源信息
-                    source,
-                    # 消息块的长度
-                    len(chunk),
-                )
-                # 调用 consolidate_messages 异步执行合并，如果失败
-                if not await self.consolidate_messages(chunk):
-                    # 直接退出
-                    return
-                # 更新会话的最后一次合并索引位置
-                session.last_consolidated = end_idx
-                # 将更新后的会话状态持久化保存
-                self.sessions.save(session)
-
-                # 重新估算当前剩余历史消息的 Token 数
-                estimated, source = self.estimate_session_prompt_tokens(session)
-                # 如果重新估算结果异常
-                if estimated <= 0:
-                    # 直接退出
-                    return
