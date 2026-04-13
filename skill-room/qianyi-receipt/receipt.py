@@ -6,19 +6,38 @@ import json
 
 def get_font(size):
     windir = os.environ.get('WINDIR', r'C:\Windows')
+    
+    # 扩大 Linux 下常见中文字体的搜索范围
     fonts = [
         os.path.join(windir, "Fonts", "msyh.ttc"),    # 微软雅黑 (Win10+)
         os.path.join(windir, "Fonts", "msyh.ttf"),    # 微软雅黑 (旧版)
         os.path.join(windir, "Fonts", "simhei.ttf"),  # 黑体
         os.path.join(windir, "Fonts", "simsun.ttc"),  # 宋体
         "/System/Library/Fonts/PingFang.ttc",         # Mac
-        "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc" # Linux
+        "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc", # Linux 文泉驿微米黑
+        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",   # Linux 文泉驿正黑
+        "/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf", # Linux Droid Sans
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",    # Linux Noto Sans CJK
+        "/usr/share/fonts/truetype/arphic/uming.ttc",     # Linux AR PL UMing
     ]
+    
+    # 尝试寻找预装的中文字体
     for font in fonts:
         if os.path.exists(font):
             return ImageFont.truetype(font, size)
+            
+    # 如果系统路径都没找到，尝试在当前脚本所在目录的 fonts 文件夹中寻找
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    local_font_dir = os.path.join(current_dir, "fonts")
+    if os.path.exists(local_font_dir):
+        for file in os.listdir(local_font_dir):
+            if file.lower().endswith(('.ttf', '.ttc', '.otf')):
+                try:
+                    return ImageFont.truetype(os.path.join(local_font_dir, file), size)
+                except Exception:
+                    continue
     
-    click.echo("警告：未找到合适的中文字体，中文可能会显示为方块。请安装微软雅黑或黑体字体。", err=True)
+    click.echo("⚠️ 警告：未找到合适的中文字体，中文可能会显示为方块（乱码）。\n建议在 Ubuntu 中执行：sudo apt-get install fonts-wqy-microhei\n或者在当前目录下创建 fonts 文件夹并放入任意中文字体文件（.ttf/.ttc）。", err=True)
     return ImageFont.load_default()
 
 def num2rmb(n):
