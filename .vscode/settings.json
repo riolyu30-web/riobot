@@ -1,0 +1,14 @@
+{
+    "python-envs.pythonProjects": [
+        {
+            "path": "skill-room",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        },
+        {
+            "path": "skill-room/baidu-cli",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ]
+}

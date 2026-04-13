@@ -1,0 +1,152 @@
+{% extends "sqladmin/list.html" %}
+
+{% block content %}
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 0.5rem; margin-top: -0.5rem;margin-right: 0.5rem; gap: 0.5rem;">
+        <button class="btn btn-secondary" onclick="batchUpdateFlag()">
+            <i class="fa-solid fa-tags"></i> 批量修改标签
+        </button>
+        <input type="file" id="importNamecards" multiple accept="image/*" style="display: none;" onchange="uploadNamecards(this)">
+        <button class="btn btn-primary" onclick="document.getElementById('importNamecards').click()">
+            <i class="fa-solid fa-camera"></i>  导入名片图片
+        </button>
+        <button class="btn btn-success" onclick="mineAccounts(this)">
+            <i class="fa-solid fa-magnifying-glass"></i>  挖掘
+        </button>
+    </div>
+    
+    <script>
+    // 定义批量修改标签的函数
+    function batchUpdateFlag() {
+        // 获取所有被勾选的多选框元素
+        const checkboxes = document.querySelectorAll('input.select-box:checked');
+        // 初始化一个空数组用于存放选中的 ID
+        const pks = [];
+        // 遍历所有被勾选的多选框
+        checkboxes.forEach(cb => {
+            // 获取当前多选框的父级 td 元素
+            const tdElement = cb.parentElement;
+            // 在父级 td 元素中查找隐藏的 input 元素，它包含了真实的 ID
+            const hiddenInput = tdElement.querySelector('input[type="hidden"]');
+            // 如果找到了隐藏 input 元素并且它有值
+            if (hiddenInput && hiddenInput.value) {
+                // 将值转换为整数并存入数组
+                pks.push(parseInt(hiddenInput.value));
+            }
+        });
+        
+        // 检查数组是否为空
+        if (pks.length === 0) {
+            // 弹出提示要求用户勾选
+            alert("请先勾选需要修改标签的公司");
+            // 结束函数执行
+            return;
+        }
+        
+        // 弹出输入框要求用户输入新标签
+        const newFlag = prompt(`您已选中 ${pks.length} 个公司，请输入新的标签名称：`);
+        // 如果用户点击了取消
+        if (newFlag === null) {
+            // 结束函数执行
+            return;
+        }
+        
+        // 向后端发送批量修改的 POST 请求
+        fetch('/account/batch_update_flag', {
+            // 指定请求方法为 POST
+            method: 'POST',
+            // 设置请求头
+            headers: {
+                // 声明发送 JSON 格式的数据
+                'Content-Type': 'application/json'
+            },
+            // 将数据对象转换为 JSON 字符串并发送
+            body: JSON.stringify({ pks: pks, flag: newFlag })
+        })
+        // 将响应转换为 JSON 格式
+        .then(response => response.json())
+        // 处理后端返回的数据
+        .then(data => {
+            // 如果后端返回了错误信息
+            if (data.detail) {
+                // 弹出失败提示
+                alert('修改失败: ' + data.detail);
+            } else {
+                // 弹出成功提示
+                alert(data.message || '修改成功');
+                // 刷新当前页面以显示最新数据
+                window.location.reload();
+            }
+        })
+        // 捕获网络请求异常
+        .catch(error => {
+            // 弹出请求失败的提示
+            alert('请求失败: ' + error);
+        });
+    }
+
+    function uploadNamecards(input) {
+        if (!input.files || input.files.length === 0) return;
+        
+        const formData = new FormData();
+        for (let i = 0; i < input.files.length; i++) {
+            formData.append("files", input.files[i]);
+        }
+        
+        // Show loading state
+        const btn = input.nextElementSibling;
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在识别导入中，请稍候...';
+        btn.disabled = true;
+        
+        fetch('/account/add', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message || '导入完成');
+            window.location.reload();
+        })
+        .catch(error => {
+            alert('导入请求失败: ' + error);
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        });
+        
+        // Reset file input
+        input.value = '';
+    }
+
+    function mineAccounts(btn) {
+        // 保存原始文本和状态
+        const originalText = btn.innerHTML;
+        // 修改按钮为加载状态
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在挖掘中，请稍候...';
+        btn.disabled = true;
+        
+        // 调用挖掘接口
+        fetch('/account/mine', {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.detail) {
+                alert('挖掘失败: ' + data.detail);
+            } else {
+                alert(data.message || '挖掘完成');
+                window.location.reload();
+            }
+        })
+        .catch(error => {
+            alert('请求失败: ' + error);
+        })
+        .finally(() => {
+            // 恢复按钮状态
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        });
+    }
+    </script>
+    
+    {{ super() }}
+{% endblock %}
