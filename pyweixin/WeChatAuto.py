@@ -1055,35 +1055,90 @@ class FriendSettings():
             is_maximize:微信界面是否全屏，默认不全屏
             close_weixin:任务结束后是否关闭微信，默认关闭
         '''
+        # 如果未指定是否最大化，则使用全局配置中的默认设置
         if is_maximize is None:
+            # 获取全局配置的最大化设置
             is_maximize=GlobalConfig.is_maximize
+        # 如果未指定任务结束后是否关闭微信，则使用全局配置
         if close_weixin is None:
+            # 获取全局配置的关闭微信设置
             close_weixin=GlobalConfig.close_weixin
+        # 导航打开“添加朋友”面板，并返回该面板和主窗口对象
         add_friend_pane,main_window=Navigator.open_add_friend_panel(is_maximize=is_maximize)
-        edit=add_friend_pane.child_window(control_type='Edit')
-        edit.set_text('')
-        edit.set_text(number)
-        edit.type_keys('{ENTER}')
+        # 在添加朋友面板中定位输入微信号的编辑框控件
+        edit=add_friend_pane.child_window(control_type='Edit', class_name='mmui::XValidatorTextEdit')
+        # 鼠标点击激活该编辑框
+        edit.click_input()
+        # 模拟键盘按下Ctrl+A全选，并按下Backspace清空输入框内容
+        edit.type_keys('^a{BACKSPACE}')
+        # 将传入的微信号/手机号逐字输入到编辑框中（保留空格）
+        edit.type_keys(number, with_spaces=True)
+        # 等待1秒，让UI响应输入操作
         time.sleep(1)
+        # 模拟按下回车键，执行搜索操作
+        edit.type_keys('{ENTER}')
+        # 等待1秒，等待搜索结果加载
+        time.sleep(1)
+        # 尝试在面板中定位联系人资料视图（搜索结果页面）
         contact_profile_view=add_friend_pane.child_window(**Groups.ContactProfileViewGroup)
-        if contact_profile_view.exists(timeout=0.1):
+        # 判断联系人资料视图是否在3秒内出现（即是否搜索到了用户）
+        if contact_profile_view.exists(timeout=3):
+            # 如果搜索到了，尝试定位“添加到通讯录”按钮
             add_to_contact=contact_profile_view.child_window(**Buttons.AddToContactsButton)
-            if add_to_contact.exists(timeout=0.1):
+            # 判断“添加到通讯录”按钮是否在1秒内出现（若已经是好友则该按钮可能不显示）
+            if add_to_contact.exists(timeout=1):
+                # 点击“添加到通讯录”按钮，弹出验证申请窗口
                 add_to_contact.click_input()
+                # 将验证申请窗口移动到屏幕中央，并获取该窗口对象
                 verify_friend_window=Tools.move_window_to_center(Window=Windows.VerifyFriendWindow)
+                # 定位验证申请窗口中的第一个编辑框（用于输入发送的验证申请打招呼内容）
                 request_content_edit=verify_friend_window.child_window(control_type='Edit',found_index=0)
+                # 定位验证申请窗口中的第二个编辑框（用于输入好友备注）
                 remark_edit=verify_friend_window.child_window(control_type='Edit',found_index=1)
+                # 定位“仅聊天”权限的选项组控件
                 chat_only_group=verify_friend_window.child_window(**Groups.ChatOnlyGroup)
+                # 定位“确定”按钮控件
                 confirm_button=verify_friend_window.child_window(**Buttons.ConfirmButton)
+                # 如果传入了打招呼用语，则执行文本设置
                 if greetings is not None:
+                    # 设置验证申请文本框的内容为传入的 greetings
                     request_content_edit.set_text(greetings)
+                # 如果传入了备注信息，则执行文本设置
                 if remark is not None:
+                    # 设置备注文本框的内容为传入的 remark
                     remark_edit.set_text(remark)
+                # 如果要求设置朋友权限为“仅聊天”
                 if chat_only:
+                    # 点击“仅聊天”选项进行勾选
                     chat_only_group.click_input()
+                # 点击“确定”按钮发送好友申请
                 confirm_button.click_input()
+            # 如果未找到“添加到通讯录”按钮
+            else:
+                # 关闭添加朋友面板
+                add_friend_pane.close()
+                # 根据配置决定是否关闭微信主窗口
+                if close_weixin:
+                    # 关闭微信主窗口
+                    main_window.close()
+                # 抛出异常，提示无法添加该好友的可能原因
+                raise RuntimeError("无法添加该好友：可能已是好友、账号状态异常或查找频繁。")
+        # 如果未搜索到用户
+        else:
+            # 关闭添加朋友面板
+            add_friend_pane.close()
+            # 根据配置决定是否关闭微信主窗口
+            if close_weixin:
+                # 关闭微信主窗口
+                main_window.close()
+            # 抛出异常，提示未找到用户或搜索超时
+            raise RuntimeError("未找到该用户或搜索超时，请检查微信号是否正确。")
+            
+        # 操作成功完成，关闭添加朋友面板
         add_friend_pane.close()
+        # 根据配置决定是否关闭微信主窗口
         if close_weixin:
+            # 关闭微信主窗口
             main_window.close()
 
     @staticmethod

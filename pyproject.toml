@@ -71,6 +71,7 @@ dependencies = [
     "pywin32-ctypes>=0.2.3",
     "pywinauto>=0.6.9",
     "emoji>=2.15.0",
+    "pyvirtualdisplay>=3.0",
 ]
 
 [project.optional-dependencies]

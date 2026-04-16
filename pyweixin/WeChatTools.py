@@ -1181,7 +1181,7 @@ class Navigator():
         quick_actions_list=main_window.child_window(**Lists.QuickActionsList)
         chat_button.click_input()
         quick_actions_button.click_input()
-        quick_actions_list.type_keys('{UP}'*2)
+        quick_actions_list.type_keys('{DOWN}'*2)
         quick_actions_list.type_keys('{ENTER}')
         addfriendWindow=Tools.move_window_to_center(Window=Independent_window.AddFriendWindow)
         return addfriendWindow,main_window

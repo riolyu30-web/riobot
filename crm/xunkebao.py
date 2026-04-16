@@ -160,7 +160,7 @@ def search_account(account_list:list[Account]):
                                     # 判断该手机号是否已存在
                                     if not existing_contact:
                                         # 如果不存在，则创建新的Contact实例
-                                        new_contact = Contact(account_id=account.id, name=contact_name+'('+name+')', phone=contact_value, tags=contact_title)
+                                        new_contact = Contact(account_id=account.id, name=contact_name+'('+name+')', phone=contact_value)
                                         # 将新的联系人对象添加到会话中
                                         session.add(new_contact)
                 # 提交所有新增联系人到数据库

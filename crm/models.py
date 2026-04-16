@@ -35,6 +35,7 @@ class Contact(Base):
     account_id = Column(Integer, ForeignKey('accounts.id'))
     name = Column(String(50), nullable=False)
     phone = Column(String(20))
+    tags = Column(String(20), default='未知')
     status = Column(String(20), default='未验证')  # 未验证, 已请求, 被拒绝，已失效，已通过
     created_at = Column(DateTime, default=datetime.now)
 
