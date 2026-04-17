@@ -6,8 +6,9 @@ import os
 import warnings
 import numpy as np
 from typing import List
-from models import get_session, Account
+from models import get_session, Account, Contact
 from xunkebao import search_account
+from pyweixin import FriendSettings
 
 
 api_router = APIRouter()
@@ -176,4 +177,58 @@ def mine_unmined_accounts():
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
     finally:
+        db.close()
+
+# 定义链接商机请求数据模型
+class LinkOpportunityRequest(BaseModel):
+    # 主键列表
+    pks: List[int]
+
+# 定义链接商机的路由
+@api_router.post("/contact/link_opportunity")
+async def link_opportunity(req: LinkOpportunityRequest):
+    """把勾选的客户 逐一调用 /add_friend 并修改状态"""
+    # 获取数据库会话
+    db = get_session()
+    try:
+        # 查询所有匹配的主键
+        contacts = db.query(Contact).filter(Contact.id.in_(req.pks)).all()
+        # 记录成功处理的数量
+        success_count = 0
+        
+        # 遍历查询到的客户
+        for contact in contacts:
+            # 如果没有电话号码，则跳过无法添加微信
+            if not contact.phone:
+                continue
+            try:    
+                # 逐一调用 pyweixin 里的添加好友方法
+                FriendSettings.add_new_friend(
+                    number=contact.phone, # 传入电话号码
+                    greetings="您好，我们在中大专供天丝面料，希望能和您合作", # 默认打招呼用语
+                    remark=f"{contact.name}-{contact.phone}", # 默认给对方的备注名称
+                    close_weixin=False # 连续处理时不要每次关闭微信
+                )
+                
+                # 将客户状态修改为“已请求”
+                contact.status = "已请求"
+                # 增加成功计数
+                success_count += 1
+            except Exception as e:
+                if "无法添加该好友" in str(e):
+                    contact.status = "已拒绝"
+                else:
+                    contact.status = "已失效"
+            finally:
+                db.commit()
+
+        # 提交数据库事务保存状态修改
+        return {"message": f"成功链接 {success_count} 个客户并发送了好友请求"}
+    except Exception as e:
+        # 发生异常时回滚事务
+        db.rollback()
+        # 抛出 HTTP 500 异常
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        # 关闭数据库会话
         db.close()

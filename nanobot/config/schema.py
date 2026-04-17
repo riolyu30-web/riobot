@@ -212,6 +212,10 @@ class WechatConfig(Base):  # 定义微信配置类，继承自 Base
     allow_from: list[str] = Field(default_factory=list)  # 允许访问的用户ID列表
 
 
+class CrmConfig(Base): # 定义 CRM 配置类，继承自 Base
+    """CRM channel configuration.""" # CRM 渠道配置的文档字符串
+
+    enabled: bool = False # CRM 渠道是否启用标志，默认值为 False
 
 
 class ChannelsConfig(Base):
@@ -229,6 +233,7 @@ class ChannelsConfig(Base):
     slack: SlackConfig = Field(default_factory=SlackConfig)
     qq: QQConfig = Field(default_factory=QQConfig)
     wechat: WechatConfig = Field(default_factory=WechatConfig)  # 在 ChannelsConfig 中注册 wechat 配置字段
+    crm: CrmConfig = Field(default_factory=CrmConfig) # 在 ChannelsConfig 中注册 crm 配置字段
     matrix: MatrixConfig = Field(default_factory=MatrixConfig)
 
 

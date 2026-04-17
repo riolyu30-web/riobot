@@ -1066,13 +1066,11 @@ class FriendSettings():
         # 导航打开“添加朋友”面板，并返回该面板和主窗口对象
         add_friend_pane,main_window=Navigator.open_add_friend_panel(is_maximize=is_maximize)
         # 在添加朋友面板中定位输入微信号的编辑框控件
-        edit=add_friend_pane.child_window(control_type='Edit', class_name='mmui::XValidatorTextEdit')
+        edit=add_friend_pane.child_window(class_name='mmui::XValidatorTextEdit')
         # 鼠标点击激活该编辑框
         edit.click_input()
-        # 模拟键盘按下Ctrl+A全选，并按下Backspace清空输入框内容
-        edit.type_keys('^a{BACKSPACE}')
-        # 将传入的微信号/手机号逐字输入到编辑框中（保留空格）
-        edit.type_keys(number, with_spaces=True)
+        # 使用set_edit_text直接设置输入框内容，比模拟键盘输入更稳定（避免被输入法拦截）
+        edit.set_edit_text(number)
         # 等待1秒，让UI响应输入操作
         time.sleep(1)
         # 模拟按下回车键，执行搜索操作
@@ -2725,6 +2723,8 @@ class Messages():
                 time.sleep(send_delay)
                 pyautogui.hotkey('alt','s',_pause=False)
                 warn(message=f"微信消息字数上限为2000,超过2000字部分将被省略,该条长文本消息已为你转换为txt发送",category=LongTextWarning)
+        #基于红点策略，每次操作回到公众号会话，确保新消息可以被捕捉到
+        Messages.goback_to_official(main_window)
         if close_weixin:
             main_window.close()
 
@@ -2840,13 +2840,14 @@ class Messages():
             main_window.close()
 
     @staticmethod
-    def check_new_messages(is_maximize:bool=None,search_pages:int=None,close_weixin:bool=None):
+    def check_new_messages(is_maximize:bool=None,search_pages:int=None,with_sender:bool=False,close_weixin:bool=None):
     
         '''
         该函数用来检查一遍微信会话列表内的新消息
         Args:
             search_pages:打开好友聊天窗口时在会话列表中查找好友时滚动列表的次数,默认为5,一次可查询5-12人,为0时,直接从顶部搜索栏搜索好友信息打开聊天界面
             is_maximize:微信界面是否全屏，默认不全屏
+            with_sender:是否区分发送者，默认不区分
             close_weixin:任务结束后是否关闭微信，默认关闭
         Returns:
             newMessages_dict
@@ -2864,15 +2865,27 @@ class Messages():
             new_messages=[]
             new_message_dict=scan_for_new_messages(main_window=main_window,is_maximize=is_maximize,close_weixin=False)
             for friend,num in new_message_dict.items():
-                message=Messages.pull_messages(friend=friend,number=num,close_weixin=False,search_pages=search_pages)
+                if with_sender:
+                    message=Messages.pull_messages_with_sender(friend=friend,number=num,close_weixin=False,search_pages=search_pages)
+                else:
+                    message=Messages.pull_messages(friend=friend,number=num,close_weixin=False,search_pages=search_pages)
                 new_messages.append(message)
             newMessages_dict=dict(zip(new_message_dict.keys(),new_messages))
-        if not new_message_num:
-            print(f'未发现新消息')
+            #基于红点策略，每次操作回到公众号会话，确保新消息可以被捕捉到
+            Messages.goback_to_official(main_window)
         if close_weixin:
             main_window.close()
         return newMessages_dict
     
+    @staticmethod
+    def goback_to_official(main_window:Window)->None:
+        session_list=main_window.child_window(**Main_window.SessionList)
+        session_list.type_keys('{HOME}')
+        time.sleep(0.5)
+        official_item = session_list.child_window(control_type='ListItem', auto_id='session_item_公众号')
+        if official_item.exists(timeout=1):
+            official_item.click_input()            
+
     # #session_pick_window中使用ui自动化选择2个以上好友时微信会莫名奇妙白屏卡死，所以先暂时不实现这个方法了
     @staticmethod
     def forward_message(friends:list[str],message:str,clear:bool=None,

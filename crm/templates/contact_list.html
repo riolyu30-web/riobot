@@ -1,0 +1,85 @@
+{% extends "sqladmin/list.html" %}
+
+{% block content %}
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 0.5rem; margin-top: -0.5rem;margin-right: 0.5rem; gap: 0.5rem;">
+        <button class="btn btn-success" onclick="linkOpportunities(this)">
+            <i class="fa-solid fa-handshake"></i> 链接商机
+        </button>
+    </div>
+    
+    <script>
+    // 定义链接商机的函数
+    function linkOpportunities(btn) {
+        // 获取所有被勾选的多选框元素
+        const checkboxes = document.querySelectorAll('input.select-box:checked');
+        // 初始化一个空数组用于存放选中的 ID
+        const pks = [];
+        // 遍历所有被勾选的多选框
+        checkboxes.forEach(cb => {
+            // 获取当前多选框的父级 td 元素
+            const tdElement = cb.parentElement;
+            // 在父级 td 元素中查找隐藏的 input 元素，它包含了真实的 ID
+            const hiddenInput = tdElement.querySelector('input[type="hidden"]');
+            // 如果找到了隐藏 input 元素并且它有值
+            if (hiddenInput && hiddenInput.value) {
+                // 将值转换为整数并存入数组
+                pks.push(parseInt(hiddenInput.value));
+            }
+        });
+        
+        // 检查数组是否为空
+        if (pks.length === 0) {
+            // 弹出提示要求用户勾选
+            alert("请先勾选需要链接商机的客户");
+            // 结束函数执行
+            return;
+        }
+        
+        // 保存原始文本和状态
+        const originalText = btn.innerHTML;
+        // 修改按钮为加载状态
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在链接中，请稍候...';
+        btn.disabled = true;
+        
+        // 向后端发送链接商机的 POST 请求
+        fetch('/contact/link_opportunity', {
+            // 指定请求方法为 POST
+            method: 'POST',
+            // 设置请求头
+            headers: {
+                // 声明发送 JSON 格式的数据
+                'Content-Type': 'application/json'
+            },
+            // 将数据对象转换为 JSON 字符串并发送
+            body: JSON.stringify({ pks: pks })
+        })
+        // 将响应转换为 JSON 格式
+        .then(response => response.json())
+        // 处理后端返回的数据
+        .then(data => {
+            // 如果后端返回了错误信息
+            if (data.detail) {
+                // 弹出失败提示
+                alert('链接失败: ' + data.detail);
+            } else {
+                // 弹出成功提示
+                alert(data.message || '链接完成');
+                // 刷新当前页面以显示最新数据
+                window.location.reload();
+            }
+        })
+        // 捕获网络请求异常
+        .catch(error => {
+            // 弹出请求失败的提示
+            alert('请求失败: ' + error);
+        })
+        .finally(() => {
+            // 恢复按钮状态
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        });
+    }
+    </script>
+    
+    {{ super() }}
+{% endblock %}

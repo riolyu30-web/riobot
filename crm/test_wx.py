@@ -34,7 +34,7 @@ def test_get_messages(): # 定义测试获取消息接口的函数
 def test_add_friend(): # 定义测试添加好友接口的函数
     url = f"{BASE_URL}/add_friend" # 拼接完整的请求 URL
     payload = { # 定义请求体数据字典
-        "number": "13800138000", # 需要添加的微信号或手机号 (请替换为真实号码)
+        "number": "13751790235", # 需要添加的微信号或手机号 (请替换为真实号码)
         "greetings": "你好，我是通过API添加的", # 发送的打招呼内容
         "remark": "API测试好友" # 给好友设置的备注信息
     } # 请求体数据定义结束
@@ -46,6 +46,21 @@ def test_add_friend(): # 定义测试添加好友接口的函数
     except Exception as e: # 捕获发生的异常对象 e
         print(f"添加好友接口请求失败: {e}") # 打印错误信息
 
+        
+
+def test_check_new_messages(): # 定义测试检查新消息接口的函数
+    url = f"{BASE_URL}/check_new_messages" # 拼接完整的请求 URL
+    params = { # 定义 GET 请求的查询参数字典
+        "with_sender": True # 是否区分发送者
+    } # 查询参数字典定义结束
+    try: # 开始捕获可能发生的异常
+        response = requests.get(url, params=params) # 发送 GET 请求并接收响应
+        print(f"检查新消息接口响应状态码: {response.status_code}") # 打印响应状态码
+        # 为了更好地展示返回的 JSON 结构，使用 json.dumps 格式化输出
+        print(f"检查新消息接口响应内容: {json.dumps(response.json(), ensure_ascii=False, indent=2)}") # 打印格式化后的响应内容
+    except Exception as e: # 捕获发生的异常对象 e
+        print(f"检查新消息接口请求失败: {e}") # 打印错误信息
+
 if __name__ == "__main__": # 判断是否作为主程序运行
     print("--- 开始测试发送消息接口 ---") # 打印测试开始提示语
     #test_send_messages() # 调用测试发送消息接口的函数
@@ -53,9 +68,12 @@ if __name__ == "__main__": # 判断是否作为主程序运行
     print("\n--- 开始测试获取消息接口 ---") # 打印测试开始提示语
     #test_get_messages() # 调用测试获取消息接口的函数
     
+    print("\n--- 开始测试检查新消息接口 ---") # 打印测试开始提示语
+    test_check_new_messages() # 调用测试检查新消息接口的函数
+    
     # 为了防止误触发加好友操作，默认将其注释掉，需要时可以解除注释并修改手机号
     # print("\n--- 开始测试添加好友接口 ---") # 打印测试开始提示语
-    test_add_friend() # 调用测试添加好友接口的函数
+    #test_add_friend() # 调用测试添加好友接口的函数
 
 '''
 # 以下为您原有的本地调用测试代码备份：

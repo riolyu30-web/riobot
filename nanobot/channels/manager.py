@@ -150,6 +150,18 @@ class ChannelManager:
             except ImportError as e:
                 logger.warning("WeChat channel not available: {}", e)
 
+        # CRM channel
+        if self.config.channels.crm.enabled: # 如果 CRM 渠道在配置中被启用
+            try:
+                from nanobot.channels.crm import CRMChannel # 尝试从 nanobot.channels.crm 导入 CRMChannel
+                self.channels["crm"] = CRMChannel( # 将 CRMChannel 实例添加到 channels 字典中
+                    self.config.channels.crm, # 传入 CRM 渠道的配置
+                    self.bus, # 传入消息总线
+                )
+                logger.info("CRM channel enabled") # 记录 CRM 渠道已启用的日志
+            except ImportError as e:
+                logger.warning("CRM channel not available: {}", e) # 如果导入失败，记录警告日志
+
         # Matrix channel
         if self.config.channels.matrix.enabled:
             try:

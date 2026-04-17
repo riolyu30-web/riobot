@@ -96,4 +96,31 @@ async def add_friend(request: AddFriendRequest): # 接收符合 AddFriendRequest
     except Exception as e: # 如果发生异常，捕获异常对象 e
         raise HTTPException(status_code=500, detail=str(e)) # 抛出 500 错误，并返回异常的具体信息
 
+@wx_router.get("/wx/check_new_messages") # 定义处理 GET 请求的路由 /check_new_messages
+async def check_new_messages( # 定义检查新消息的异步函数
+    with_sender: bool = Query(True, description="是否区分发送者"), # 接收是否区分发送者作为查询参数，默认 True
+    search_pages: Optional[int] = Query(None, description="查找好友翻页次数"), # 接收翻页次数作为选填查询参数
+    is_maximize: Optional[bool] = Query(None, description="微信界面是否全屏"), # 接收是否最大化作为选填查询参数
+    close_weixin: Optional[bool] = Query(None, description="任务结束后是否关闭微信") # 接收是否关闭微信作为选填查询参数
+): # 函数参数定义结束
+    """
+    获取当前未读信息
+    """
+    try: # 尝试执行检查新消息的逻辑
+        new_msgs_dict = Messages.check_new_messages( # 调用 pyweixin 中的检查新消息方法
+            with_sender=with_sender, # 传入是否区分发送者配置
+            search_pages=search_pages, # 传入搜索页数配置
+            is_maximize=is_maximize, # 传入是否最大化配置
+            close_weixin=close_weixin # 传入是否关闭微信配置
+        ) # 检查新消息方法调用结束
+        
+        result = [] # 初始化结果列表
+        for chat, msgs in new_msgs_dict.items(): # 遍历获取到的新消息字典
+            result.append({"message": msgs, "chat": chat}) # 将消息和对应的聊天对象重新组装并添加到结果列表中
+            
+        return {"code": 200, "data": result} # 获取成功，返回成功状态码及重新组装后的数据
+    except Exception as e: # 如果发生异常，捕获异常对象 e
+        raise HTTPException(status_code=500, detail=str(e)) # 抛出 500 错误，并返回异常的具体信息
+
+
 

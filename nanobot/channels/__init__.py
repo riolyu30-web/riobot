@@ -5,6 +5,7 @@ from nanobot.channels.manager import ChannelManager
 from .telegram import TelegramChannel
 from .wechat import WeChatChannel
 from .whatsapp import WhatsAppChannel
+from .crm import CRMChannel # 导入 CRMChannel
 
 __all__ = [
     "BaseChannel",
@@ -19,4 +20,5 @@ __all__ = [
     "QQChannel",
     "WeChatChannel",
     "MatrixChannel",
+    "CRMChannel", # 将 CRMChannel 添加到 __all__ 列表中
 ]

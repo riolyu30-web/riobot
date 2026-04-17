@@ -51,9 +51,13 @@ print(f"找到浏览器可执行文件: {chrome_path}")
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
 try:
-    # 使用 creationflags 防止 Python 退出时子进程也被强制关闭
-    DETACHED_PROCESS = 0x00000008
-    
+    # 跨平台处理进程分离，防止 Python 退出时子进程也被强制关闭
+    kwargs = {}
+    if sys.platform == "win32":
+        kwargs["creationflags"] = 0x00000008  # DETACHED_PROCESS
+    else:
+        kwargs["start_new_session"] = True
+        
     # 使用 Popen 启动独立的浏览器进程
     process = subprocess.Popen([
         # 浏览器的可执行文件路径
@@ -92,7 +96,7 @@ try:
         # 禁用 `/dev/shm` 的使用，防止在内存较小的服务器上发生崩溃
         "--disable-dev-shm-usage",
         
-    ], creationflags=DETACHED_PROCESS)
+    ], **kwargs)
 
     # 等待 2 秒检查进程是否闪退
     time.sleep(2)

@@ -1,3 +1,4 @@
+from calendar import c
 import re
 import time
 import emoji
@@ -361,7 +362,6 @@ def scan_for_new_messages(main_window:WindowSpecification=None,delay:float=0.3,i
     #微信会话列表内ListItem标准格式:备注\s(已置顶)\s(\d+)条未读\s最后一条消息内容\s时间
     new_message_pattern=re.compile(r'\n\[(\d+)条\]')#只给数量分组.group(1)获取
     if not new_message_num:
-        print(f'没有新消息')
         return {}
     if new_message_num:
         new_message_num=int(new_message_num.group(0))
