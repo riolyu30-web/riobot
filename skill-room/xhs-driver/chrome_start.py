@@ -15,7 +15,12 @@ else:
 # =======================================================
 
 # 指定一个独立的用户数据目录，避免和日常使用的浏览器实例冲突
-user_data_dir = os.path.join(os.getcwd(), "chrome-data")
+if sys.platform.startswith("linux"):
+    # Linux下尤其是Snap版Chromium对 /var/www 等目录有严格权限限制，放家目录最安全
+    user_data_dir = os.path.expanduser("~/.riobot-chrome-data")
+else:
+    user_data_dir = os.path.join(os.getcwd(), "chrome-data")
+
 print(f"用户数据目录: {user_data_dir}")
 
 # 自动查找 Chrome 或 Edge 的安装路径 (跨平台支持)
@@ -90,7 +95,12 @@ try:
         "--hide-crash-restore-bubble",
         # 禁用同步设置弹窗
         "--disable-sync",
+        # 彻底禁用 GPU，防止在无显卡的服务器上报错
+        "--disable-gpu",
+        "--disable-software-rasterizer",
         
+        # 禁用一些没用的桌面/网络服务探测，减少报错日志
+        "--disable-features=NetworkServiceInProcess",        
         # 提升在某些受限环境（如 Linux 容器）下的运行稳定性
         "--no-sandbox",
         # 禁用 `/dev/shm` 的使用，防止在内存较小的服务器上发生崩溃
