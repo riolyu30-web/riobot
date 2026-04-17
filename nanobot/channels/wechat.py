@@ -23,6 +23,11 @@ if TYPE_CHECKING:
     from wechatbot.client import WeChatBot
     from wechatbot.types import IncomingMessage
 
+from nanobot.config.paths import get_media_dir
+import time
+                    
+# 获取 wechat 通道的专属媒体存放目录
+MEDIA_PATH = get_media_dir("wechat")
 
 class WeChatChannel(BaseChannel):
     """WeChat channel using wechatbot SDK."""
@@ -33,6 +38,7 @@ class WeChatChannel(BaseChannel):
         super().__init__(config, bus)
         self.config: WechatConfig = config
         self._bot: "WeChatBot | None" = None
+        self._media_cache: dict[str, list[tuple[str, str]]] = {}
 
     async def start(self) -> None:
         """Start the WeChat bot."""
@@ -154,14 +160,62 @@ class WeChatChannel(BaseChannel):
             content = (msg.text or "").strip()
             if not content and not (msg.images or msg.voices or msg.files or msg.videos):
                 return
-            
+                
             chat_id = msg.user_id
             sender_id = msg.user_id
+
+            if sender_id not in self._media_cache:
+                self._media_cache[sender_id] = []
+
+            # 1. 尝试下载新到达的媒体文件并加入缓存
+            if msg.images or msg.voices or msg.files or msg.videos:
+                downloaded = await self._bot.download(msg)
+                if downloaded:
+                   
+                    # 生成唯一文件名
+                    if downloaded.file_name:
+                        filename = f"{int(time.time())}_{downloaded.file_name}"
+                    else:
+                        ext = ""
+                        if downloaded.type == "image":
+                            ext = ".jpg"
+                        elif downloaded.type == "voice":
+                            ext = ".silk" if downloaded.format == "silk" else ".amr"
+                        elif downloaded.type == "video":
+                            ext = ".mp4"
+                        else:
+                            ext = ".bin"
+                        filename = f"{int(time.time())}{ext}"
+                    
+                    # 写入文件
+                    file_path = MEDIA_PATH / filename
+                    with open(file_path, "wb") as f:
+                        f.write(downloaded.data)
+                    
+                    # 构建媒体标签以便追加到 content 中 (如 [image: path] 或 [file: path])
+                    media_type = "image" if downloaded.type == "image" else "file"
+                    media_tag = f"[{media_type}: {file_path}]"
+                    
+                    # 将下载好的媒体信息放入该用户的缓存中
+                    self._media_cache[sender_id].append((media_tag, str(file_path)))
+            
+            # 2. 如果没有文本内容，说明这是一条纯媒体消息，则先暂存，不立即下发给系统
+
+            if not content or content in "[image]" or content in "[file]" or content in "[video]":
+                return
+
+            # 3. 如果收到了文本，提取该用户之前缓存的所有媒体记录，与本次文本一起合并发送
+            media_paths = []
+            cached_media = self._media_cache.pop(sender_id, [])
+            for m_tag, m_path in cached_media:
+                content = f"{content}\n{m_tag}" if content else m_tag
+                media_paths.append(m_path)
 
             await self._handle_message(
                 sender_id=sender_id,
                 chat_id=chat_id,
                 content=content,
+                media=media_paths,
             )
         except Exception:
             logger.exception("Error handling WeChat message")

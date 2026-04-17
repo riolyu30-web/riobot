@@ -72,6 +72,10 @@ dependencies = [
     "pywinauto>=0.6.9 ; sys_platform == 'win32'",
     "emoji>=2.15.0",
     "pyvirtualdisplay>=3.0",
+    "faster-whisper>=1.2.1",
+    "pilk>=0.2.4",
+    "pydub>=0.25.1",
+    "imageio-ffmpeg>=0.6.0",
 ]
 
 [project.optional-dependencies]

@@ -2878,7 +2878,7 @@ class Messages():
         return newMessages_dict
     
     @staticmethod
-    def goback_to_official(main_window:Window)->None:
+    def goback_to_official(main_window)->None:
         session_list=main_window.child_window(**Main_window.SessionList)
         session_list.type_keys('{HOME}')
         time.sleep(0.5)
