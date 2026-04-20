@@ -174,6 +174,18 @@ class ChannelManager:
             except ImportError as e:
                 logger.warning("Matrix channel not available: {}", e)
 
+        # WebSocket channel
+        if self.config.channels.websocket.enabled:
+            try:
+                from nanobot.channels.websocket import WebSocketChannel
+                self.channels["websocket"] = WebSocketChannel(
+                    self.config.channels.websocket,
+                    self.bus,
+                )
+                logger.info("WebSocket channel enabled")
+            except ImportError as e:
+                logger.warning("WebSocket channel not available: {}", e)
+
 
 
         self._validate_allow_from()

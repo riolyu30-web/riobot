@@ -6,38 +6,19 @@ import json
 
 def get_font(size):
     windir = os.environ.get('WINDIR', r'C:\Windows')
-    
-    # 扩大 Linux 下常见中文字体的搜索范围
     fonts = [
         os.path.join(windir, "Fonts", "msyh.ttc"),    # 微软雅黑 (Win10+)
         os.path.join(windir, "Fonts", "msyh.ttf"),    # 微软雅黑 (旧版)
         os.path.join(windir, "Fonts", "simhei.ttf"),  # 黑体
         os.path.join(windir, "Fonts", "simsun.ttc"),  # 宋体
         "/System/Library/Fonts/PingFang.ttc",         # Mac
-        "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc", # Linux 文泉驿微米黑
-        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",   # Linux 文泉驿正黑
-        "/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf", # Linux Droid Sans
-        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",    # Linux Noto Sans CJK
-        "/usr/share/fonts/truetype/arphic/uming.ttc",     # Linux AR PL UMing
+        "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc" # Linux
     ]
-    
-    # 尝试寻找预装的中文字体
     for font in fonts:
         if os.path.exists(font):
             return ImageFont.truetype(font, size)
-            
-    # 如果系统路径都没找到，尝试在当前脚本所在目录的 fonts 文件夹中寻找
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    local_font_dir = os.path.join(current_dir, "fonts")
-    if os.path.exists(local_font_dir):
-        for file in os.listdir(local_font_dir):
-            if file.lower().endswith(('.ttf', '.ttc', '.otf')):
-                try:
-                    return ImageFont.truetype(os.path.join(local_font_dir, file), size)
-                except Exception:
-                    continue
     
-    click.echo("⚠️ 警告：未找到合适的中文字体，中文可能会显示为方块（乱码）。\n建议在 Ubuntu 中执行：sudo apt-get install fonts-wqy-microhei\n或者在当前目录下创建 fonts 文件夹并放入任意中文字体文件（.ttf/.ttc）。", err=True)
+    click.echo("警告：未找到合适的中文字体，中文可能会显示为方块。请安装微软雅黑或黑体字体。", err=True)
     return ImageFont.load_default()
 
 def num2rmb(n):
@@ -76,19 +57,49 @@ def num2rmb(n):
     return res
 
 @click.command()
-@click.option('--items', '-i', required=True, help='JSON格式的商品数组字符串，例如: [{"model": "802", "color": "#3", "meters": [5,6,7], "unit_price": 10.00}]')
+@click.option('--items', '-i', required=True, help='商品数组字符串，例如: {802-#3-m[5,6,7]-10.00}')
 @click.option('--output', '-o', default=None, help='指定输出的图片路径。默认会保存在脚本同级目录的image文件夹下。')
 def generate_receipt(items, output):
     """生成明细码单凭证图片"""
     # 解析商品数组
-    try:
-        items_data = json.loads(items)
-    except json.JSONDecodeError:
-        click.echo("❌ JSON格式错误，请检查入参是否是合法的JSON字符串", err=True)
+    import re
+    items_data = []
+    blocks = re.findall(r'\{([^}]+)\}', items)
+    if not blocks:
+        click.echo("❌ 格式错误，请检查入参是否是合法的字符串，例如: {802-#3-m[5,6,7]-10.00}", err=True)
         raise click.Abort()
-
-    if not isinstance(items_data, list):
-        items_data = [items_data]
+        
+    for block in blocks:
+        try:
+            parts = block.split('-m[')
+            if len(parts) != 2:
+                raise ValueError("缺少 '-m['")
+            right_parts = parts[1].split(']-')
+            if len(right_parts) != 2:
+                raise ValueError("缺少 ']-'")
+                
+            meters_str = right_parts[0]
+            unit_price_str = right_parts[1]
+            
+            left_parts = parts[0].rsplit('-', 1)
+            if len(left_parts) != 2:
+                raise ValueError("型号和颜色之间缺少 '-'")
+                
+            model = left_parts[0].strip()
+            color = left_parts[1].strip()
+            
+            meters = [float(x.strip()) if '.' in x else int(x.strip()) for x in meters_str.split(',') if x.strip()]
+            unit_price = float(unit_price_str.strip())
+            
+            items_data.append({
+                "model": model,
+                "color": color,
+                "meters": meters,
+                "unit_price": unit_price
+            })
+        except Exception as e:
+            click.echo(f"❌ 解析商品 '{{{block}}}' 失败: {e}", err=True)
+            raise click.Abort()
         
     # 图片基础设置
     width, height = 840, 600

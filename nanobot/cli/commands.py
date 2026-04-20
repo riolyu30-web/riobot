@@ -771,6 +771,15 @@ def channels_status():
         em_config
     )
 
+    # WebSocket
+    ws = config.channels.websocket
+    ws_config = f"ws://{ws.host}:{ws.port}{ws.path}" if ws.enabled else "[dim]not configured[/dim]"
+    table.add_row(
+        "WebSocket",
+        "✓" if ws.enabled else "✗",
+        ws_config
+    )
+
     console.print(table)
 
 

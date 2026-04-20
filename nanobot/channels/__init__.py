@@ -6,6 +6,7 @@ from .telegram import TelegramChannel
 from .wechat import WeChatChannel
 from .whatsapp import WhatsAppChannel
 from .crm import CRMChannel # 导入 CRMChannel
+from .websocket import WebSocketChannel # 导入 WebSocketChannel
 
 __all__ = [
     "BaseChannel",
@@ -21,4 +22,5 @@ __all__ = [
     "WeChatChannel",
     "MatrixChannel",
     "CRMChannel", # 将 CRMChannel 添加到 __all__ 列表中
+    "WebSocketChannel", # 将 WebSocketChannel 添加到 __all__ 列表中
 ]

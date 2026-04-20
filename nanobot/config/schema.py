@@ -3,9 +3,10 @@
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from pydantic.alias_generators import to_camel
 from pydantic_settings import BaseSettings
+from typing_extensions import Self
 
 
 class Base(BaseModel):
@@ -218,6 +219,79 @@ class CrmConfig(Base): # 定义 CRM 配置类，继承自 Base
     enabled: bool = False # CRM 渠道是否启用标志，默认值为 False
 
 
+def _strip_trailing_slash(path: str) -> str:
+    if len(path) > 1 and path.endswith("/"):
+        return path.rstrip("/")
+    return path or "/"
+
+
+def _normalize_config_path(path: str) -> str:
+    return _strip_trailing_slash(path)
+
+
+class WebSocketConfig(Base):
+    """WebSocket server channel configuration.
+
+    Clients connect with URLs like ``ws://{host}:{port}{path}?client_id=...&token=...``.
+    - ``client_id``: Used for ``allow_from`` authorization; if omitted, a value is generated and logged.
+    - ``token``: If non-empty, the ``token`` query param may match this static secret; short-lived tokens
+      from ``token_issue_path`` are also accepted.
+    - ``token_issue_path``: If non-empty, **GET** (HTTP/1.1) to this path returns JSON
+      ``{"token": "...", "expires_in": <seconds>}``; use ``?token=...`` when opening the WebSocket.
+      Must differ from ``path`` (the WS upgrade path). If the client runs in the **same process** as
+      nanobot and shares the asyncio loop, use a thread or async HTTP client for GET—do not call
+      blocking ``urllib`` or synchronous ``httpx`` from inside a coroutine.
+    - ``token_issue_secret``: If non-empty, token requests must send ``Authorization: Bearer <secret>`` or
+      ``X-Nanobot-Auth: <secret>``.
+    - ``websocket_requires_token``: If True, the handshake must include a valid token (static or issued and not expired).
+    - Each connection has its own session: a unique ``chat_id`` maps to the agent session internally.
+    - ``media`` field in outbound messages contains local filesystem paths; remote clients need a
+      shared filesystem or an HTTP file server to access these files.
+    """
+
+    enabled: bool = False
+    host: str = "127.0.0.1"
+    port: int = 8765
+    path: str = "/"
+    token: str = ""
+    token_issue_path: str = ""
+    token_issue_secret: str = ""
+    token_ttl_s: int = Field(default=300, ge=30, le=86_400)
+    websocket_requires_token: bool = True
+    allow_from: list[str] = Field(default_factory=lambda: ["*"])
+    streaming: bool = True
+    max_message_bytes: int = Field(default=1_048_576, ge=1024, le=16_777_216)
+    ping_interval_s: float = Field(default=20.0, ge=5.0, le=300.0)
+    ping_timeout_s: float = Field(default=20.0, ge=5.0, le=300.0)
+    ssl_certfile: str = ""
+    ssl_keyfile: str = ""
+
+    @field_validator("path")
+    @classmethod
+    def path_must_start_with_slash(cls, value: str) -> str:
+        if not value.startswith("/"):
+            raise ValueError('path must start with "/"')
+        return _normalize_config_path(value)
+
+    @field_validator("token_issue_path")
+    @classmethod
+    def token_issue_path_format(cls, value: str) -> str:
+        value = value.strip()
+        if not value:
+            return ""
+        if not value.startswith("/"):
+            raise ValueError('token_issue_path must start with "/"')
+        return _normalize_config_path(value)
+
+    @model_validator(mode="after")
+    def token_issue_path_differs_from_ws_path(self) -> Self:
+        if not self.token_issue_path:
+            return self
+        if _normalize_config_path(self.token_issue_path) == _normalize_config_path(self.path):
+            raise ValueError("token_issue_path must differ from path (the WebSocket upgrade path)")
+        return self
+
+
 class ChannelsConfig(Base):
     """Configuration for chat channels."""
 
@@ -235,7 +309,7 @@ class ChannelsConfig(Base):
     wechat: WechatConfig = Field(default_factory=WechatConfig)  # 在 ChannelsConfig 中注册 wechat 配置字段
     crm: CrmConfig = Field(default_factory=CrmConfig) # 在 ChannelsConfig 中注册 crm 配置字段
     matrix: MatrixConfig = Field(default_factory=MatrixConfig)
-
+    websocket: WebSocketConfig = Field(default_factory=WebSocketConfig)
 
 
 class AgentDefaults(Base):
