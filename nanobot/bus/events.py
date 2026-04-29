@@ -17,6 +17,8 @@ class InboundMessage:
     media: list[str] = field(default_factory=list)  # Media URLs
     metadata: dict[str, Any] = field(default_factory=dict)  # Channel-specific data
     session_key_override: str | None = None  # Optional override for thread-scoped sessions
+    # 定义 workspace 属性，默认值为 "workspace"
+    identity: str = "*" #人格标识 ，由工作空间+工具+模型组成格式为[workspace][xxx,xxx]，默认值为 "*" 随机值
 
     @property
     def session_key(self) -> str:

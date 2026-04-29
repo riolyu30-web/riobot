@@ -6,8 +6,8 @@ import re
 import shutil
 from pathlib import Path
 
-# Default builtin skills directory (relative to this file)
-BUILTIN_SKILLS_DIR = Path(__file__).parent.parent / "skills"
+# Default builtin skills directory
+BUILTIN_SKILLS_DIR = Path("nanobot/skills")
 
 
 class SkillsLoader:
@@ -39,7 +39,7 @@ class SkillsLoader:
         if self.workspace_skills.exists():
             for skill_dir in self.workspace_skills.iterdir():
                 if skill_dir.is_dir():
-                    skill_file = skill_dir / "SKILL.md"
+                    skill_file = (skill_dir / "SKILL.md").resolve()
                     if skill_file.exists():
                         skills.append({"name": skill_dir.name, "path": str(skill_file), "source": "workspace"})
 
@@ -47,7 +47,7 @@ class SkillsLoader:
         if self.builtin_skills and self.builtin_skills.exists():
             for skill_dir in self.builtin_skills.iterdir():
                 if skill_dir.is_dir():
-                    skill_file = skill_dir / "SKILL.md"
+                    skill_file = (skill_dir / "SKILL.md").resolve()
                     if skill_file.exists() and not any(s["name"] == skill_dir.name for s in skills):
                         skills.append({"name": skill_dir.name, "path": str(skill_file), "source": "builtin"})
 

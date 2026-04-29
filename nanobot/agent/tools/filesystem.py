@@ -20,6 +20,13 @@ def _resolve_path(
             resolved.relative_to(allowed_dir.resolve())
         except ValueError:
             raise PermissionError(f"Path {path} is outside allowed directory {allowed_dir}")
+            
+    # Check forbidden suffixes
+    forbidden_suffixes = [".env", ".key", ".pem", ".crt", ".sqlite", ".db"]
+    name = resolved.name.lower()
+    if any(name.endswith(suffix) for suffix in forbidden_suffixes):
+        raise PermissionError(f"Access to sensitive file {resolved.name} is not allowed")
+        
     return resolved
 
 
@@ -63,7 +70,19 @@ class ReadFileTool(Tool):
                     f"Use exec tool with head/tail/grep to read portions."
                 )
 
+            # 读取文件内容，指定编码为utf-8
             content = file_path.read_text(encoding="utf-8")
+            
+            # 判断文件内容中是否包含参数"{workspace}"
+            if "{workspace}" in content:
+                # 将"{workspace}"替换为self._workspace的字符串表示（绝对路径）
+                content = content.replace("{workspace}", str(self._workspace.resolve()))
+                
+            # 判断文件内容中是否包含参数"{homespace}"
+            if "{homespace}" in content:
+                # 将"{homespace}"替换为项目当前位置（即当前工作目录）的绝对路径
+                content = content.replace("{homespace}", str(Path.cwd().resolve()))
+                
             if len(content) > self._MAX_CHARS:
                 return content[: self._MAX_CHARS] + f"\n\n... (truncated — file is {len(content):,} chars, limit {self._MAX_CHARS:,})"
             return content

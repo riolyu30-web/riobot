@@ -23,27 +23,6 @@ from dotenv import load_dotenv
 load_dotenv()
 MEMORY_SCORE = float(os.getenv("MEMORY_SCORE", 0.3))
 
-_SAVE_MEMORY_TOOL = [
-    {
-        "type": "function",
-        "function": {
-            "name": "save_memory",
-            "description": "Save the memory consolidation result to persistent storage.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "memory_update": {
-                        "type": "string",
-                        "description": "Full updated long-term memory as markdown. ONLY include information that the user explicitly and deliberately instructed you to remember. "
-                        "Do NOT record anything else (such as general conversation, user questions, or vague corrections). "
-                        "Keep existing memory intact and only append the newly requested information. Return unchanged if there are no explicit instructions to remember."
-                    },
-                },
-                "required": ["memory_update"],
-            },
-        },
-    }
-]
 
 _SAVE_HISTORY_TOOL = [
     {
@@ -168,7 +147,7 @@ class MemoryStore:
         model: str,
     ) -> bool:
 
-        """Consolidate the provided message chunk into USER.md + HISTORY.md + OpenViking resources."""
+        """Consolidate the provided message chunk into USER.md"""
         if not messages:
             return True
         try:
@@ -198,40 +177,6 @@ class MemoryStore:
 
                 if entry := args.get("history_entry"):
                     self.append_history(_ensure_text(entry))
-                # 2. 提取用户记
-            conversation_context = self._format_user_messages(messages)
-            if conversation_context:
-                current_memory = self.get_memory_context()
-                prompt = f"""Process this conversation and call the save_memory tool with your consolidation.
-
-        ## Current Long-term Memory
-        {current_memory or "(empty)"}            
-
-        ## User Messages to Process
-        {conversation_context}
-
-        """
-
-                response = await provider.chat_with_retry(
-                    messages=[
-                        {"role": "system", "content": "You are a memory consolidation agent. Call the save_memory tool with your consolidation of the conversation."},
-                        {"role": "user", "content": prompt},
-                    ],
-                    tools=_SAVE_MEMORY_TOOL,
-                    model=model,
-                )
-
-                if not response.has_tool_calls:
-                    logger.warning("Memory consolidation: LLM did not call save_memory, skipping")
-                    return False
-
-                args = _normalize_save_memory_args(response.tool_calls[0].arguments)
-                if update := args.get("memory_update"):
-                    update = _ensure_text(update)
-                    if update != current_memory:
-                        self.write_long_term(update)
-        
-            logger.info("Memory consolidation done for {} messages", len(messages))
             return True
         except Exception:
             logger.exception("Memory consolidation failed")

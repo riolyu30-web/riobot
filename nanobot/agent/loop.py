@@ -10,7 +10,9 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any, Awaitable, Callable
 import shutil
 from loguru import logger
+from torchvision.models import mobilenet
 
+from nanobot.config.schema import Config
 from nanobot.agent.context import ContextBuilder
 from nanobot.agent.memory import MemoryConsolidator
 from nanobot.agent.subagent import SubagentManager
@@ -22,6 +24,8 @@ from nanobot.agent.tools.shell import ExecTool
 from nanobot.agent.tools.spawn import SpawnTool
 from nanobot.agent.tools.web import WebFetchTool, WebSearchTool
 from nanobot.agent.tools.history import HistoryTool
+from nanobot.agent.tools.memory import MemoryTool
+from nanobot.agent.tools.location import LocationTool
 from nanobot.bus.events import InboundMessage, OutboundMessage
 from nanobot.bus.queue import MessageBus
 from nanobot.providers.base import LLMProvider
@@ -61,7 +65,8 @@ class AgentLoop:
     def __init__(
         self,
         bus: MessageBus,
-        provider: LLMProvider,
+        config: Config,
+        default_provider: LLMProvider | None ,
         workspace: Path,
         model: str | None = None,
         max_iterations: int = 40,
@@ -80,10 +85,13 @@ class AgentLoop:
     ):
         from nanobot.config.schema import ExecToolConfig
         self.bus = bus
+        self.config = config
         self.channels_config = channels_config
-        self.provider = provider
         self.workspace = workspace
-        self.model = model or provider.get_default_model()
+        self.model = model 
+        self.default_model = self.model
+        self.provider = self._make_provider(self.model)
+        self.default_provider = default_provider or self.provider
         self.max_iterations = max_iterations
         self.temperature = temperature
         self.max_tokens = max_tokens
@@ -102,7 +110,7 @@ class AgentLoop:
         self.sessions = session_manager or SessionManager(workspace)
         self.tools = ToolRegistry()
         self.subagents = SubagentManager(
-            provider=provider,
+            provider=self.provider,
             workspace=workspace,
             bus=bus,
             model=self.model,
@@ -124,7 +132,7 @@ class AgentLoop:
         self._processing_lock = asyncio.Lock()
         self.memory_consolidator = MemoryConsolidator(
             workspace=workspace,
-            provider=provider,
+            provider=self.default_provider,
             model=self.model,
             sessions=self.sessions,
             context_window_tokens=context_window_tokens,
@@ -146,6 +154,161 @@ class AgentLoop:
             "memory_consolidator": self.memory_consolidator,
         }
 
+    def _switch_workspace(self, spacename: str) -> bool:
+        """Switch to a different workspace and initialize its components."""
+        if not spacename:
+            return False
+        else:
+            # 计算新工作空间的绝对路径，将其放在数据目录下的 workspaces 目录中
+            new_workspace = (get_data_dir() / spacename).expanduser().resolve()
+        
+        # 记录是否为新建工作空间
+        is_new_workspace = not new_workspace.exists()
+        
+        # 检查该工作空间目录是否已经存在
+        if is_new_workspace:
+
+            # 在新工作空间创建或同步完整的 Markdown 文档目录结构
+            sync_workspace_templates(new_workspace)
+        # 获取新工作空间的唯一键（绝对路径的字符串形式）
+        ws_key = str(new_workspace)
+        
+        # 更新当前 AgentLoop 的 workspace 属性
+        self.workspace = new_workspace
+        
+        # 如果缓存中已存在该工作空间的组件，则直接复用
+        if ws_key in self._workspace_components:
+            cached = self._workspace_components[ws_key]
+            self.context = cached["context"]
+            self.sessions = cached["sessions"]
+            self.tools = cached["tools"]
+            self.subagents = cached["subagents"]
+            self.memory_consolidator = cached["memory_consolidator"]
+        else:
+            # 否则重新实例化这些组件
+            # 重新实例化 ContextBuilder 以使用新工作空间
+            self.context = ContextBuilder(new_workspace)
+            # 重新实例化 SessionManager 以使用新工作空间
+            self.sessions = SessionManager(new_workspace)
+            # 重新实例化子代理管理器以使用新工作空间
+            self.subagents = SubagentManager(
+                provider=self.provider,
+                workspace=new_workspace,
+                bus=self.bus,
+                model=self.model,
+                temperature=self.temperature,
+                max_tokens=self.max_tokens,
+                reasoning_effort=self.reasoning_effort,
+                brave_api_key=self.brave_api_key,
+                web_proxy=self.web_proxy,
+                exec_config=self.exec_config,
+                restrict_to_workspace=self.restrict_to_workspace,
+            )
+            # 重置工具注册表
+            self.tools = ToolRegistry()
+            # 重新注册默认工具，使它们绑定到新工作空间
+            self._register_default_tools()
+            # 重新实例化 MemoryConsolidator 以使用新工作空间和相关新组件
+            self.memory_consolidator = MemoryConsolidator(
+                workspace=new_workspace,
+                provider=self.default_provider,
+                model=self.model,
+                sessions=self.sessions,
+                context_window_tokens=self.context_window_tokens,
+                build_messages=self.context.build_messages,
+                get_tool_definitions=self.tools.get_definitions,
+            )
+            # 将新实例化的组件存入缓存
+            self._cache_workspace_components(ws_key)
+
+        return is_new_workspace
+        
+
+    def _apply_identity(self, msg: Any) -> None:
+        """Apply workspace and tool constraints from message identity."""
+        # 解析 identity，推荐使用更优雅且扩展性更强的 [WorkspaceName][tool1,tool2][profile] 格式
+        if hasattr(msg, "identity") and msg.identity and msg.identity != "*":
+            # 提取去除两端空白的 identity 字符串
+            identity_str = msg.identity.strip()
+            # 使用正则表达式查找所有方括号内的内容，兼容 []、[xxx]、[][][] 等任意组合
+            parts = re.findall(r"\[(.*?)\]", identity_str)
+            # 如果成功解析出方括号块
+            if parts:
+                if len(parts) > 2:
+                    model_str = parts[2].strip()
+                    if model_str and model_str != "*":
+                        self.model = model_str
+                        self.provider = self._make_provider(model_str)
+                
+                # 如果存在第二块，则解析为工具列表
+                if len(parts) > 1:
+                    # 注意处理中文逗号的情况，替换为英文逗号
+                    tool_str = parts[1].replace("，", ",")
+                    tool_names = [t.strip() for t in tool_str.split(",") if t.strip()]
+                    # 只有当解析出的工具列表不为空时，才覆盖默认的所有工具设置
+                    if tool_names and tool_names != ["*"]:
+                        self.tools.set_available_tools(tool_names)
+
+
+                # 获取第一块作为工作空间名称
+                parsed_workspace = parts[0].strip()
+                # 如果解析出的工作空间名称不为空，且不是占位符，则进行切换
+                if parsed_workspace and parsed_workspace != "*":
+                    self._switch_workspace(parsed_workspace)
+
+
+    def _make_provider(self, model: str):
+        """Create the appropriate LLM provider from config."""
+        from nanobot.providers.openai_codex_provider import OpenAICodexProvider
+        from nanobot.providers.azure_openai_provider import AzureOpenAIProvider
+
+        provider_name = self.config.get_provider_name(model)
+        p = self.config.get_provider(model)
+
+        # OpenAI Codex (OAuth)
+        if provider_name == "openai_codex" or model.startswith("openai-codex/"):
+            return OpenAICodexProvider(default_model=model)
+
+        # Custom: direct OpenAI-compatible endpoint, bypasses LiteLLM
+        from nanobot.providers.custom_provider import CustomProvider
+        if provider_name == "custom":
+            return CustomProvider(
+                api_key=p.api_key if p else "no-key",
+                api_base=self.config.get_api_base(model) or "http://localhost:8000/v1",
+                default_model=model,
+            )
+
+        # Azure OpenAI: direct Azure OpenAI endpoint with deployment name
+        if provider_name == "azure_openai":
+            if not p or not p.api_key or not p.api_base:
+                logger.info("Error: Azure OpenAI requires api_key and api_base.")
+                logger.info("Set them in ~/.nanobot/config.json under providers.azure_openai section")
+                logger.info("Use the model field to specify the deployment name.")
+                raise typer.Exit(1)
+            
+            return AzureOpenAIProvider(
+                api_key=p.api_key,
+                api_base=p.api_base,
+                default_model=model,
+            )
+
+        from nanobot.providers.litellm_provider import LiteLLMProvider
+        from nanobot.providers.registry import find_by_name
+        spec = find_by_name(provider_name)
+        if not model.startswith("bedrock/") and not (p and p.api_key) and not (spec and spec.is_oauth):
+            logger.info("Error: No API key configured.")
+            logger.info("Set one in ~/.nanobot/config.json under providers section")
+            raise typer.Exit(1)
+
+        return LiteLLMProvider(
+            api_key=p.api_key if p else None,
+            api_base=self.config.get_api_base(model),
+            default_model=model,
+            extra_headers=p.extra_headers if p else None,
+            provider_name=provider_name,
+        )
+
+
     def _register_default_tools(self) -> None:
         """Register the default set of tools."""
         allowed_dir = self.workspace if self.restrict_to_workspace else None
@@ -161,7 +324,9 @@ class AgentLoop:
         self.tools.register(WebFetchTool(proxy=self.web_proxy))
         self.tools.register(MessageTool(send_callback=self.bus.publish_outbound))
         self.tools.register(SpawnTool(manager=self.subagents))
-        self.tools.register(HistoryTool(session_manager=self.sessions))
+        self.tools.register(HistoryTool(sessions=self.sessions))
+        self.tools.register(MemoryTool(workspace=self.workspace))
+        self.tools.register(LocationTool(workspace=self.workspace))
         if self.cron_service:
             self.tools.register(CronTool(self.cron_service))
 
@@ -507,89 +672,20 @@ class AgentLoop:
         
         if cmd == "/help":
             return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id,
-                                  content="rio commands:\n/add {skill_name} — Add a skill from skill-room\n/del {skill_name} — Delete a skill from workspace skills\n/id {spacename} — Set the other workspace\n/stop — Stop the current task\n/help — Show available commands")
+                                  content="rio commands:\n/add {skill_name} — Add a skill from skill-room\n/del {skill_name} — Delete a skill from workspace skills")
 
-        if cmd.startswith("/id "):
-            # 提取命令行中的新工作空间名称
-            spacename = msg.content.strip()[4:].strip()
-            # 如果名称为空则返回提示
-            if not spacename:
-                # 返回需要提供名称的提示信息
-                return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content="Please provide a workspace name: /id {spacename}")
-
-            # 计算新工作空间的绝对路径，将其放在数据目录下的 workspaces 目录中
-            new_workspace = (get_data_dir() / spacename).expanduser().resolve()
-            
-            # 记录是否为新建工作空间
-            is_new_workspace = not new_workspace.exists()
-            
-            # 检查该工作空间目录是否已经存在
-            if is_new_workspace:
-
-                # 在新工作空间创建或同步完整的 Markdown 文档目录结构
-                sync_workspace_templates(new_workspace)
-            # 获取新工作空间的唯一键（绝对路径的字符串形式）
-            ws_key = str(new_workspace)
-            
-            # 更新当前 AgentLoop 的 workspace 属性
-            self.workspace = new_workspace
-            
-            # 如果缓存中已存在该工作空间的组件，则直接复用
-            if ws_key in self._workspace_components:
-                cached = self._workspace_components[ws_key]
-                self.context = cached["context"]
-                self.sessions = cached["sessions"]
-                self.tools = cached["tools"]
-                self.subagents = cached["subagents"]
-                self.memory_consolidator = cached["memory_consolidator"]
-            else:
-                # 否则重新实例化这些组件
-                # 重新实例化 ContextBuilder 以使用新工作空间
-                self.context = ContextBuilder(new_workspace)
-                # 重新实例化 SessionManager 以使用新工作空间
-                self.sessions = SessionManager(new_workspace)
-                # 重新实例化子代理管理器以使用新工作空间
-                self.subagents = SubagentManager(
-                    provider=self.provider,
-                    workspace=new_workspace,
-                    bus=self.bus,
-                    model=self.model,
-                    temperature=self.temperature,
-                    max_tokens=self.max_tokens,
-                    reasoning_effort=self.reasoning_effort,
-                    brave_api_key=self.brave_api_key,
-                    web_proxy=self.web_proxy,
-                    exec_config=self.exec_config,
-                    restrict_to_workspace=self.restrict_to_workspace,
-                )
-                # 重置工具注册表
-                self.tools = ToolRegistry()
-                # 重新注册默认工具，使它们绑定到新工作空间
-                self._register_default_tools()
-                # 重新实例化 MemoryConsolidator 以使用新工作空间和相关新组件
-                self.memory_consolidator = MemoryConsolidator(
-                    workspace=new_workspace,
-                    provider=self.provider,
-                    model=self.model,
-                    sessions=self.sessions,
-                    context_window_tokens=self.context_window_tokens,
-                    build_messages=self.context.build_messages,
-                    get_tool_definitions=self.tools.get_definitions,
-                )
-                # 将新实例化的组件存入缓存
-                self._cache_workspace_components(ws_key)
-            
-            # 判断是否是新创建的工作空间
-            if is_new_workspace:
-                # 构造成功切换工作空间并初始化的提示信息
-                response_content = f"Switched workspace to {new_workspace}\nInitialized markdown documentation directory structure."
-            else:
-                # 构造成功切换工作空间的提示信息
-                response_content = f"Switched workspace to {new_workspace}"
-            
+        if cmd == "/root":
+            # 调用私有方法切换工作空间
+            self._switch_workspace("root")
+            # 构造成功切换工作空间的提示信息
+            response_content = f"切换到工作空间: root"            
             # 返回包含成功信息的 OutboundMessage
             return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content=response_content)
-        
+
+
+        # 调用私有方法解析并应用 identity
+        self._apply_identity(msg)
+
         key = session_key or msg.session_key
         session = self.sessions.get_or_create(key)
         self._set_tool_context(msg.channel, msg.chat_id, msg.metadata.get("message_id"))
@@ -696,10 +792,11 @@ class AgentLoop:
         session_key: str = "cli:direct",
         channel: str = "cli",
         chat_id: str = "direct",
+        identity: str = "[root]",
         on_progress: Callable[[str], Awaitable[None]] | None = None,
     ) -> str:
         """Process a message directly (for CLI or cron usage)."""
         await self._connect_mcp()
-        msg = InboundMessage(channel=channel, sender_id="user", chat_id=chat_id, content=content)
+        msg = InboundMessage(channel=channel, sender_id="user", chat_id=chat_id, content=content, identity=identity)
         response = await self._process_message(msg, session_key=session_key, on_progress=on_progress)
         return response.content if response else ""

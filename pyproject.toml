@@ -76,6 +76,13 @@ dependencies = [
     "pilk>=0.2.4",
     "pydub>=0.25.1",
     "imageio-ffmpeg>=0.6.0",
+    "watchdog>=6.0.0",
+    "uiautomator2>=3.5.0",
+    "uiautodev>=0.14.0",
+    "langchain-community>=0.4.1",
+    "minify-html>=0.18.1",
+    "html2text>=2025.4.15",
+    "beautifulsoup4>=4.14.3",
 ]
 
 [project.optional-dependencies]

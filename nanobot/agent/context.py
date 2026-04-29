@@ -29,9 +29,10 @@ class ContextBuilder:
         """Build the system prompt from identity, bootstrap files, memory, and skills."""
         parts = [self._get_identity()]
 
-        bootstrap = self._load_bootstrap_files()
-        if bootstrap:
-            parts.append(bootstrap)
+        # 不需要插入bootstrap文件 
+        #bootstrap = self._load_bootstrap_files()
+        #if bootstrap:
+        #    parts.append(bootstrap)
 
         memory = self.memory.get_memory_context()
         if memory:
@@ -73,8 +74,7 @@ Skills with available="false" need dependencies installed first - you can try in
 - Use file tools when they are simpler or more reliable than shell commands.
 """
 
-        return f"""# Rio
-
+        return f"""## Identity
 You are a helpful AI assistant. Be concise, accurate, and friendly. 
 
 ## Runtime
@@ -82,7 +82,6 @@ You are a helpful AI assistant. Be concise, accurate, and friendly.
 
 ## Workspace
 Your workspace is at: {workspace_path}
-- Custom skills: {workspace_path}\\skills\\{{skill-name}}\\SKILL.md
 
 {platform_policy}
 
@@ -98,41 +97,12 @@ Reply directly with text for conversations. Only use the 'message' tool to send 
     @staticmethod
     def _build_runtime_context(workspace: Path, channel: str | None, chat_id: str | None) -> str:
         """Build untrusted runtime metadata block for injection before the user message."""
-
-        
         now = datetime.now().strftime("%Y-%m-%d %H:%M (%A)")
         tz = time.strftime("%Z") or "UTC"
         lines = [f"- Current Time: {now} ({tz})"]
         if channel and chat_id:
             lines.append(f"- Channel: {channel}")
-            lines.append(f"- Chat ID: {chat_id}")       
-        # 读取并解析 OwnTracks 位置信息
-        location_file = workspace.parent / "location.json"
-        if location_file.exists():
-            try:
-                data = json.loads(location_file.read_text(encoding="utf-8"))
-                lines.append(f"[User Current Status]") 
-                lines.append(f"- 坐标体系: wgs84ll")
-                lines.append(f"- 所在纬度 (Latitude): {data.get('lat', '未知')}")
-                lines.append(f"- 所在经度 (Longitude): {data.get('lon', '未知')}") 
-                lines.append(f"- 所在海拔 (altitude): {data.get('alt', '未知')}")
-                lines.append(f"- 定位精度: {data.get('acc', '未知')}")
-                lines.append(f"- 垂直精度: {data.get('vac', '未知')}")
-                lines.append(f"- 移动速度: {data.get('vel', '未知')}")
-                lines.append(f"- 气压 {data.get('p', '未知')}")                             
-                lines.append(f"- 手机电量百分比: {data.get('batt', '未知')}")   
-                bs_map = {0: "未知", 1: "未充电", 2: "正在充电", 3: "已充满"}
-                bs_val = data.get('bs', 0)
-                lines.append(f"- 电池充电状态: ({bs_map.get(bs_val, '未知')})")
-                motion_map = {"stationary": "静止/放置", "walking": "走路", "automotive": "开车"}
-                motion_val = data.get('motionactivities', ['未知'])[0] if data.get('motionactivities') else '未知'
-                lines.append(f"- 当前运动状态: {motion_map.get(motion_val, motion_val)}")                
-                conn_map = {"w": "Wi-Fi 连接", "m": "蜂窝移动网络", "o": "离线"}
-                conn_val = data.get('conn', '未知')
-                lines.append(f"- 当前网络连接类型: ({conn_map.get(conn_val, '未知')})")
-            except Exception as e:
-                pass
-        
+            lines.append(f"- Chat ID: {chat_id}")              
         return ContextBuilder._RUNTIME_CONTEXT_TAG + "\n" + "\n".join(lines)
 
     def _load_bootstrap_files(self) -> str:

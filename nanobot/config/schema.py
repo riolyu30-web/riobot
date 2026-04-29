@@ -315,7 +315,7 @@ class ChannelsConfig(Base):
 class AgentDefaults(Base):
     """Default agent configuration."""
 
-    workspace: str = ".nanobot/workspace"
+    workspace: str = ".nanobot/root"
     model: str = "anthropic/claude-opus-4-5"
     provider: str = (
         "auto"  # Provider name (e.g. "anthropic", "openrouter") or "auto" for auto-detection

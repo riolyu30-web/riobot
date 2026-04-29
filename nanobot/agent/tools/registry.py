@@ -14,6 +14,11 @@ class ToolRegistry:
 
     def __init__(self):
         self._tools: dict[str, Tool] = {}
+        self._available_tools: list[str] = []
+
+    def set_available_tools(self, names: list[str]) -> None:
+        """Set the available tool names."""
+        self._available_tools = names
 
     def register(self, tool: Tool) -> None:
         """Register a tool."""
@@ -33,7 +38,13 @@ class ToolRegistry:
 
     def get_definitions(self) -> list[dict[str, Any]]:
         """Get all tool definitions in OpenAI format."""
-        return [tool.to_schema() for tool in self._tools.values()]
+        # 如果没有指定可用的工具名称列表
+        if not self._available_tools:
+            # 遍历并返回所有已注册工具的 schema
+            return [tool.to_schema() for tool in self._tools.values()]
+        # 遍历指定可用的工具名称，如果在已注册字典中存在，则返回其 schema
+        return [self._tools[name].to_schema() for name in self._available_tools if name in self._tools]
+
 
     async def execute(self, name: str, params: dict[str, Any]) -> str:
         """Execute a tool by name with given parameters."""

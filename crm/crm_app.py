@@ -22,7 +22,7 @@ async def crm_background_loop():
             # 使用 to_thread 避免同步网络/数据库操作阻塞 FastAPI 主事件循环
             await asyncio.to_thread(check_and_process)
             logging.info("等待 5 分钟后进行下一轮检查...")
-            await asyncio.sleep(300)  # 异步等待 5 分钟
+            await asyncio.sleep(60)  # 异步等待 5 分钟
         except asyncio.CancelledError:
             logging.info("CRM 微信消息监听服务正在安全关闭...")
             break

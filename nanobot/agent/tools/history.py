@@ -12,9 +12,9 @@ class HistoryTool(Tool):
 
     def __init__(
         self,
-        session_manager: SessionManager | None = None,
+        sessions: SessionManager | None = None,
     ):
-        self.sessions = session_manager 
+        self.sessions = sessions 
 
     @property
     def name(self) -> str:

@@ -142,10 +142,12 @@ class CRMChannel(BaseChannel):
                             
                             # 构造 InboundMessage 消息对象
                             inbound_msg = InboundMessage(
+                                # 设置人格
+                                identity=f"[sales][read_file]",
                                 # 设置渠道名称为当前渠道
-                                channel=self.name,
-                                # 设置发送者 ID，如果客户存在则使用客户名称，否则为 unknown
-                                sender_id=str(opp.contact.name) if getattr(opp, 'contact', None) else "unknown",
+                                channel="crm",
+                                # 设置发送者 ID，如果客户存在则使用客户手机号，否则为商机名称
+                                sender_id=str(opp.contact.phone) if getattr(opp, 'contact', None) else str(opp.name),
                                 # 设置聊天 ID 为当前商机 ID
                                 chat_id=str(opp.id),
                                 # 填入刚刚构造好的内容
@@ -169,6 +171,6 @@ class CRMChannel(BaseChannel):
                 if 'db' in locals():
                     # 关闭数据库会话
                     db.close()
-            logger.info(f"CRM 渠道轮询任务完成，等待 60 秒后继续下一次轮询")
+            logger.info(f"CRM 渠道轮询任务完成，等待 60 秒后继续")
             # 异步等待 60 秒（即 1分钟）后进行下一次轮询
             await asyncio.sleep(60)
