@@ -1,4 +1,4 @@
 call .venv\Scripts\activate
-call cd tool-room
-call cd chrome-cli
+call cd tools
+call cd chromecli
 call python service-start.py

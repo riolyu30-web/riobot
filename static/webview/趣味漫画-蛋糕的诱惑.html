@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+    <style>
+        body { display: flex; flex-direction: column; align-items: center; background-color: #f0f0f0; padding: 20px; font-family: Arial, sans-serif; }
+        .image-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1800px; }
+        .image-container {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+            width: 600px; /* 加宽以适应左右布局 */
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .image-container > a {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+        .image-container img {
+            max-width: 250px;
+            max-height: 250px;
+            height: auto;
+            border-radius: 4px;
+            object-fit: contain;
+        }
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+            flex: 1;
+            overflow: hidden; /* 防止内容撑破容器 */
+        }
+        .text-container .image-path {
+            font-size: 8px;
+            color: #888;
+            margin: 0 0 5px 0;
+            word-break: break-all;
+            cursor: pointer;
+        }
+        .text-container .description {
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            flex: 1; /* 占据剩余高度 */
+            overflow: hidden; /* 裁切长于图片的部分 */
+            white-space: pre-wrap; /* 保留空白符和换行符 */
+            cursor: pointer;
+        }
+        .loading { font-size: 24px; color: #555; }
+    </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('已复制到剪贴板:\n' + text);
+            }, function(err) {
+                console.error('无法复制文本: ', err);
+            });
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="image-gallery">
+        <!-- 图片将追加到这里 -->
+        <div class="image-container">
+            <a href="C:\develop\nanobot\static\temp\gpt-1778121348229_0.png" target="_blank">
+                <img src="C:\develop\nanobot\static\/temp/gpt-1778121348229_0.png" alt="A humorous comic-style illustration, warm cartoon art style. Scene: A traditional Chinese zen master's room with wooden furniture, incense smoke, and a small table. A worried middle-aged woman in casual clothes sits across from a calm Buddhist master wearing orange robes. The woman has an anxious expression, hands clasped together, asking a question. The master sits peacefully with a slight mysterious smile. Soft warm lighting from a paper lantern, cozy atmosphere. Comic speech bubble style text overlay in Chinese: '大师，为什么我老公出轨？' Decorative elements: lotus pattern border, warm golden tones. Digital illustration, clean lines, expressive character faces, similar to modern Chinese webcomic style." title="A humorous comic-style illustration, warm cartoon art style. Scene: A traditional Chinese zen master's room with wooden furniture, incense smoke, and a small table. A worried middle-aged woman in casual clothes sits across from a calm Buddhist master wearing orange robes. The woman has an anxious expression, hands clasped together, asking a question. The master sits peacefully with a slight mysterious smile. Soft warm lighting from a paper lantern, cozy atmosphere. Comic speech bubble style text overlay in Chinese: '大师，为什么我老公出轨？' Decorative elements: lotus pattern border, warm golden tones. Digital illustration, clean lines, expressive character faces, similar to modern Chinese webcomic style.">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:\develop\nanobot\static\temp\gpt-1778121348229_0.png" onclick="copyToClipboard(this.innerText)">C:\develop\nanobot\static\temp\gpt-1778121348229_0.png</p>
+                <p class="description" title="老婆找到大师：为什么我老公出轨？" onclick="copyToClipboard(this.innerText)">老婆找到大师：为什么我老公出轨？</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

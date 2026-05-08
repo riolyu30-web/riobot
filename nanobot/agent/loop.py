@@ -17,7 +17,7 @@ from nanobot.agent.context import ContextBuilder
 from nanobot.agent.memory import MemoryConsolidator
 from nanobot.agent.subagent import SubagentManager
 from nanobot.agent.tools.cron import CronTool
-from nanobot.agent.tools.filesystem import EditFileTool, ListDirTool, ReadFileTool, WriteFileTool
+from nanobot.agent.tools.filesystem import EditFileTool, ListDirTool, ReadFileTool, WriteFileTool, ReadImageTool
 from nanobot.agent.tools.message import MessageTool
 from nanobot.agent.tools.registry import ToolRegistry
 from nanobot.agent.tools.shell import ExecTool
@@ -312,7 +312,7 @@ class AgentLoop:
     def _register_default_tools(self) -> None:
         """Register the default set of tools."""
         allowed_dir = self.workspace if self.restrict_to_workspace else None
-        for cls in (ReadFileTool, WriteFileTool, EditFileTool, ListDirTool):
+        for cls in (ReadFileTool, WriteFileTool, EditFileTool, ListDirTool, ReadImageTool):
             self.tools.register(cls(workspace=self.workspace, allowed_dir=allowed_dir))
         self.tools.register(ExecTool(
             working_dir=str(self.workspace),
@@ -603,7 +603,7 @@ class AgentLoop:
                 return OutboundMessage(channel=msg.channel, chat_id=msg.chat_id, content="Please provide a skill name: /add {skill_name}")
             
             # 计算 skill-room 的根目录路径
-            skill_room_dir = Path.cwd() / "skill-room"
+            skill_room_dir = Path.cwd() / "skills"
             
             # 初始化目标源路径为空
             skill_source = None
@@ -698,7 +698,7 @@ class AgentLoop:
         initial_messages = self.context.build_messages(
             history=history,
             current_message=msg.content,
-            media=msg.media if msg.media else None,
+            #media=msg.media if msg.media else None,
             channel=msg.channel, chat_id=msg.chat_id,
         )
 

@@ -255,3 +255,73 @@ class ListDirTool(Tool):
             return f"Error: {e}"
         except Exception as e:
             return f"Error listing directory: {str(e)}"
+
+
+class ReadImageTool(Tool):
+    """Tool to read image file."""
+
+    def __init__(self, workspace: Path | None = None, allowed_dir: Path | None = None):
+        # Initialize workspace
+        self._workspace = workspace
+        # Initialize allowed_dir
+        self._allowed_dir = allowed_dir
+
+    @property
+    def name(self) -> str:
+        # Return tool name
+        return "read_image"
+
+    @property
+    def description(self) -> str:
+        # Return tool description
+        return "Read an image file and return its base64 encoded representation."
+
+    @property
+    def parameters(self) -> dict[str, Any]:
+        # Return tool parameters schema
+        return {
+            "type": "object",
+            "properties": {"path": {"type": "string", "description": "The image file path to read"}},
+            "required": ["path"],
+        }
+
+    async def execute(self, path: str, **kwargs: Any) -> str:
+        # Execute tool
+        try:
+            import base64
+            import mimetypes
+            from nanobot.utils.helpers import detect_image_mime
+
+            # Resolve file path
+            file_path = _resolve_path(path, self._workspace, self._allowed_dir)
+            
+            # Check if file exists
+            if not file_path.exists():
+                return f"Error: File not found: {path}"
+                
+            # Check if it is a file
+            if not file_path.is_file():
+                return f"Error: Not a file: {path}"
+
+            # Read file bytes
+            raw = file_path.read_bytes()
+            
+            # Detect real MIME type from magic bytes; fallback to filename guess
+            mime = detect_image_mime(raw) or mimetypes.guess_type(path)[0]
+            
+            # Verify if it is an image
+            if not mime or not mime.startswith("image/"):
+                return f"Error: Not a valid image file: {path}"
+
+            # Encode bytes to base64
+            b64 = base64.b64encode(raw).decode()
+            
+            # Return base64 encoded image
+            return f"data:{mime};base64,{b64}"
+            
+        except PermissionError as e:
+            # Handle permission error
+            return f"Error: {e}"
+        except Exception as e:
+            # Handle other errors
+            return f"Error reading image: {str(e)}"

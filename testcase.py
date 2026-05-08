@@ -1,24 +1,39 @@
-from dotenv import load_dotenv
-from scrapegraphai.graphs import SmartScraperGraph # 假设你使用 SmartScraperGraph
+# 导入requests库用于发起HTTP网络请求
+import requests
 
-load_dotenv() # 确保在创建图之前加载环境变量
+# 定义发送微信消息的测试函数
+def test_send_message():
+    # 定义目标接口的URL地址，根据要求访问/wx/send
+    url = "http://127.0.0.1:8200/wx/send"
+    
+    # 构造请求体参数，对应SendMessageRequest模型
+    payload = {
+        # 传入必填字段text，指定要发送的文本内容
+        "text": "这是一条来自测试用例的消息",
+        # 传入选填字段user_id，指定接收消息的用户（选填）
+        "user_id": "filehelper"
+    }
+    
+    # 打印提示信息，表示开始发送请求
+    print(f"正在向 {url} 发送请求...")
+    
+    # 使用try-except代码块捕获可能发生的网络异常
+    try:
+        # 调用requests的post方法发送JSON格式请求
+        response = requests.post(url, json=payload)
+        
+        # 打印接口返回的HTTP状态码
+        print(f"响应状态码: {response.status_code}")
+        
+        # 打印接口返回的JSON响应内容
+        print(f"响应结果: {response.json()}")
+        
+    # 捕获所有的Exception异常并赋值给变量e
+    except Exception as e:
+        # 打印异常报错的详细信息
+        print(f"请求失败，错误信息: {e}")
 
-graph_config = {
-    "llm": {
-        "model": "dashscope/qwen3.6-plus",  # 指定 DashScope 模型
-        "api_key": "sk-50141226087d472b8c6d13739154ada2", # 不推荐直接在这里硬编码
-    },
-    "verbose": True,
-    "headless": False,
-    # ... 其他配置
-}
-
-# 假设你有一个 SmartScraperGraph 实例
-smart_scraper_graph = SmartScraperGraph(
-    prompt="找到输入框的元素，想想阿斯莫去LLEFD【、。x、",
-    source="https://www.baidu.com",
-    config=graph_config,
-)
-
-result = smart_scraper_graph.run()
-print(result)
+# 判断当前脚本是否作为主程序运行
+if __name__ == "__main__":
+    # 执行测试发送消息的函数
+    test_send_message()

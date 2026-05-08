@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>高级生图(GPT) - 任务管理版</title>
+    <style>
+        /* 基本样式重置 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f5f7;
+            color: #172b4d;
+            height: 100%;
+            font-size: 12px;
+        }
+        /* 主容器使用Flexbox布局 */
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+        /* 通用面板样式 */
+        .panel {
+            box-sizing: border-box;
+            overflow-y: auto; /* 内容过多时显示滚动条 */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* === 布局比例设定 === */
+        /* 任务栏 10% */
+        .task-panel {
+            flex: 0 0 10%;
+            width: 10%;
+            border-right: 1px solid #dfe1e6;
+            background-color: #ebecf0;
+            padding: 10px;
+        }
+        /* 输出栏 50% */
+        .output-panel {
+            flex: 0 0 50%;
+            width: 50%;
+            border-right: 1px solid #dfe1e6;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+        /* 输入栏 40% */
+        .input-panel {
+            flex: 0 0 40%;
+            width: 40%;
+            background-color: #f4f5f7;
+            padding: 20px;
+        }
+
+        /* 标题样式 */
+        h2 {
+            border-bottom: 2px solid #0052cc;
+            padding-bottom: 10px;
+            color: #0052cc;
+            margin-top: 0;
+            flex-shrink: 0;
+        }
+        
+        /* === 任务栏样式 === */
+        .task-controls {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .task-item {
+            padding: 8px 10px;
+            margin-bottom: 5px;
+            background: white;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        .task-item:hover {
+            background-color: #dfe1e6;
+        }
+        .task-item.active {
+            background-color: #deebff;
+            border-color: #0052cc;
+            color: #0052cc;
+            font-weight: bold;
+        }
+        .delete-btn {
+            background: transparent;
+            color: #999;
+            border: none;
+            padding: 2px 6px;
+            font-size: 12px;
+            margin: 0;
+            margin-left: 5px;
+            border-radius: 50%;
+        }
+        .delete-btn:hover {
+            background: #ffbdad;
+            color: #bf2600;
+        }
+
+        /* === 表单样式 === */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 50px;
+        }
+        /* 按钮样式 */
+        button {
+            background-color: #0052cc;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #0065ff;
+        }
+        button.small-btn {
+            padding: 5px 10px;
+            font-size: 12px;
+            width: 100%;
+        }
+
+        /* === 输出区域样式 === */
+        #response-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            position: relative;
+        }
+        pre {
+            background-color: #f4f5f7;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0;
+        }
+
+        /* === 模态框样式 === */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+            top: 5px;
+        }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #json-modal-content {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+    /* 毛玻璃按钮通用样式 */
+    .glass-btn {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: white;
+        cursor: pointer;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 4px;
+        transition: background 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        text-shadow: 0 0 2px rgba(0,0,0,0.5);
+    }
+    .glass-btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
+    .glass-btn.delete:hover {
+        background: rgba(255, 77, 79, 0.6);
+    }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. 任务栏 (10%) -->
+    <div class="panel task-panel">
+        <h2>任务</h2>
+        <div class="task-controls">
+            <button id="add-task-btn" class="small-btn">+ 新增任务</button>
+        </div>
+        <ul id="task-list" class="task-list">
+            <!-- 任务列表由 JS 生成 -->
+        </ul>
+    </div>
+
+    <!-- 2. 输出栏 (50%) -->
+    <div class="panel output-panel">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0052cc; margin-bottom: 10px; padding-bottom: 10px;">
+            <h2 style="border: none; padding: 0; margin: 0;">输出结果</h2>
+        </div>
+        <div id="response-container">
+            <pre id="response-output">这里将显示API的返回结果...</pre>
+        </div>
+    </div>
+
+    <!-- 3. 输入栏 (40%) -->
+    <div class="panel input-panel">
+        <h2>输入参数</h2>
+        <form id="api-form">
+            <div class="form-group">
+                <label for="user_prompt">用户提示词 (user_prompt)</label>
+                <div style="margin-bottom: 5px;">
+                    <select id="function-select" style="width: 100%; padding: 5px; margin-bottom: 5px;">
+                        <option value="" selected>不使用 (none)</option>
+                        <option value="storyboard">分镜脚本 (storyboard)</option>
+                        <option value="structure">垂直透视 (structure)</option>
+                        <option value="perspective">水平透视 (perspective)</option> 
+                        <option value="expanding">扩图 (expanding)</option>
+                        <option value="remove_characters">去人物 (remove_characters)</option>                          
+                        <option value="roleview">人物三视图 (roleview)</option> 
+                        <option value="redraw">重绘 (redraw)</option>                    
+                    </select>
+                </div>
+                <textarea id="user_prompt" name="user_prompt" rows="10"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <div style="margin-bottom: 10px;">
+                    <button type="button" onclick="document.getElementById('image-upload').click()" class="small-btn" style="width: auto;">选择图片</button>
+                    <input type="file" id="image-upload" multiple accept="image/*" style="display: none;">
+                </div>
+                <div id="image-preview-container" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="ratio">尺寸 (size)</label>
+                <select id="ratio" name="ratio">
+                    <option value="1024x1024" selected>1024x1024</option>
+                    <option value="1024x1536">1024x1536</option>
+                    <option value="1536x1024">1536x1024</option>
+                    <option value="2048x2048">2048x2048</option>
+                    <option value="2048x1152">2048x1152</option>
+                    <option value="3840x2160">3840x2160</option>
+                    <option value="2160x3840">2160x3840</option>
+                </select>
+            </div>
+            <button type="submit" style="width: 100%;">发送请求</button>
+        </form>
+    </div>
+</div>
+
+<!-- 图片配置模态框 -->
+<div id="config-modal" class="modal">
+    <div class="modal-content" style="width: 400px; max-width: 90%;">
+        <span class="close-btn" onclick="window.closeConfigModal()">&times;</span>
+        <h3 style="margin-top: 0; color: #0052cc;">图片配置</h3>
+        
+        <!-- 1、文字输入框+导出按钮 -->
+        <div style="margin-bottom: 20px;">
+            <label style="display:block; margin-bottom:5px; font-weight:bold;">导出文件名</label>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="config-filename" placeholder="请输入文件名" style="flex: 1;">
+                <button onclick="window.configExport()" style="width: auto;">导出</button>
+            </div>
+        </div>
+        
+        <!-- 2、超分图片 删除图片 两个按钮 -->
+        <div style="display: flex; gap: 10px; border-top: 1px solid #eee; padding-top: 20px;">
+            <button onclick="window.configUpscale()" style="flex: 1; background-color: #52c41a; color: white;">转高清</button>
+            <button onclick="window.configReference()" style="flex: 1;">引用图片</button>
+            <button onclick="window.configDelete()" style="flex: 1; background-color: #ff4d4f; color: white;">删除图片</button>
+        </div>
+    </div>
+</div>
+
+<!-- 模态框结构 -->
+<div id="json-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>完整 JSON 响应</h2>
+        <pre id="json-modal-content"></pre>
+    </div>
+</div>
+
+<script>
+    // 状态管理
+    // const prompts = { ... } removed
+    
+    // 应用提示词模板 removed applyPromptTemplate
+
+
+    // 打开图片文件的函数 (绑定给图片点击使用)
+    window.openImageFile = function(url) {
+        window.open(url, '_blank');
+    };
+
+    const state = {
+        tasks: [],
+        currentTaskId: null,
+        nextId: 1
+    };
+
+    let currentSelectedImages = [];
+
+    // 定义静态变量存储 banana prompt
+    const bananaPrompts = {
+        "storyboard": "+storyboard artist. Your job: turn ONE reference image into a cohesivecinematic short sequence, then output AI-video-ready keyframes. </role><input> User provides: one reference image (image). </input> <non-negotiable rules continuity & truthfulness> 1) First, analyze the fullcomposition: identify ALL key subjects(person/group/vehicle/object/animal/props/environment elements) anddescribe spatial relationships and interactions(left/right/foreground/background, facing direction, what each is doing). 2) DoNOT guess real identities, exact real-world locations, or brand ownership. Stickto visible facts. Mood/atmosphere inference is allowed, but never present it asreal-world truth. 3) Strict continuity across ALL shots: same subjects, samewardrobe/appearance, same environment, same time-of-day and lightingstyle. Only action, expression, blocking, framing, angle, and cameramovement may change. 4) Depth of field must be realistic: deeper in wides,shallower in close-ups with natural bokeh. Keep ONE consistent cinematiccolor grade across the entire sequence. 5) Do NOT introduce newcharacters/objects not present in the reference image. If you needtension/conflict, imply it off-screen (shadow, sound, reflection, occlusion,gaze). </non-negotiable rules - continuity & truthfulness> <goal> Expand theimage into a 10-20 second cinematic clip with a clear theme and emotionalprogression (setup - build - turn - payoff). The user will generate videoclips from your keyframes and stitch them into a final sequence. </goal><step 1 scene breakdown> Output (with clear subheadings): Subjects: listeach key subject (A/B/C...), describe visible traits (wardrobe/material/form),relative positions, facing direction, action/state, and any interaction. -Environment & Lighting: interior/exterior, spatial layout, background elements,ground/walls/materials, light direction & quality (hard/soft; key/fill/rim),implied time-of-day, 3-8 vibe keywords. - Visual Anchors: list 3-6 visual traits that MUST remain constant. <step 2 keyframe generation> Create 4-6 sequential keyframes. For each, write an image generation prompt. </step 2 keyframe generation>",
+        "structure": "生成这个场景2X2不同视角的沙盘模型图， 保留原画风与原空间结构1、鸟瞰/顶视 (Bird's-eye View / Aerial View)2、正面无人机高空视角3、左侧人机高空视角4、背面人机高空视角",
+        "expanding": "保持图片不变,将透明区域进行填充",
+        "remove_characters": "将画面中的人物全部去掉",
+        "perspective": "生成2X2组团，保留原画风与原空间结构，该组图由两组互为对位拍摄（Counter-shot）的视角组成，共同构建了图片完整空间结构。第一组（上排）沿房间中轴线进行前后对拍，展示纵深空间的透视关系；第二组（下排）沿房间侧轴线进行左右对拍，四个机位分别贴合四面墙体，开形成闭环的全方位空间展示。",
+        "roleview": "生成人物全身三视图与正面人脸证件图，背景为纯白色",
+        "redraw": "Seamless blending, matching environment lighting, realistic shadows, unified color tone, cinematic atmosphere, high detail, masterpiece ,contact shadows ,global illumination ,seamless integration "
+    };
+
+
+    // DOM 元素引用
+    const els = {
+        taskList: document.getElementById('task-list'),
+        addTaskBtn: document.getElementById('add-task-btn'),
+        form: document.getElementById('api-form'),
+        responseOutput: document.getElementById('response-output'),
+        responseContainer: document.getElementById('response-container'),
+        imageUpload: document.getElementById('image-upload'),
+        imagePreviewContainer: document.getElementById('image-preview-container'),
+        inputs: {
+            user_prompt: document.getElementById('user_prompt'),
+            ratio: document.getElementById('ratio'),
+            function_select: document.getElementById('function-select')
+        }
+    };
+
+    // --- 核心逻辑 ---
+
+    // 初始化
+    function init() {
+        // 加载本地存储
+        const storedState = localStorage.getItem('GPT生图');
+        if (storedState) {
+            try {
+                const parsed = JSON.parse(storedState);
+                state.tasks = parsed.tasks;
+                state.currentTaskId = parsed.currentTaskId;
+                state.nextId = parsed.nextId || (state.tasks.length > 0 ? Math.max(...state.tasks.map(t => parseInt(t.id.replace('task-', '')))) + 1 : 1);
+            } catch (e) {
+                console.error('Failed to parse state', e);
+                createDefaultTask();
+            }
+        } else {
+            createDefaultTask();
+        }
+
+        // 确保至少有一个任务
+        if (state.tasks.length === 0) {
+            createDefaultTask();
+        }
+
+        // 如果没有选中的任务，默认选中第一个
+        if (!state.currentTaskId || !state.tasks.find(t => t.id === state.currentTaskId)) {
+            state.currentTaskId = state.tasks[0].id;
+        }
+
+        renderTaskList();
+        loadTaskToView(state.currentTaskId);
+        setupEventListeners();
+    }
+
+    function createDefaultTask() {
+        const task = {
+            id: 'task-001',
+            name: '任务001',
+            input: {
+                user_prompt: '',
+                ratio: '',
+                function: '',
+            },
+            output: '这里将显示API的返回结果...'
+        };
+        state.tasks.push(task);
+        state.currentTaskId = task.id;
+        state.nextId = 2;
+        saveState();
+    }
+
+    function saveState() {
+        localStorage.setItem('GPT生图', JSON.stringify(state));
+    }
+
+    function createNewTask() {
+        const idNum = state.nextId++;
+        const idStr = String(idNum).padStart(3, '0');
+        const taskId = `task-${idStr}`;
+        const newTask = {
+            id: taskId,
+            name: `任务${idStr}`,
+            input: {
+                user_prompt: '',
+                size: '1024x1024',
+                function: '',
+            },
+            output: '这里将显示API的返回结果...'
+        };
+        state.tasks.push(newTask);
+        state.currentTaskId = taskId;
+        saveState();
+        renderTaskList();
+        loadTaskToView(taskId);
+    }
+
+    function deleteTask(e, taskId) {
+        e.stopPropagation(); // 阻止触发选择事件
+        if (!confirm('确定要删除这个任务吗？')) return;
+
+        const index = state.tasks.findIndex(t => t.id === taskId);
+        if (index === -1) return;
+
+        state.tasks.splice(index, 1);
+        
+        // 如果删除的是当前任务，或者删完后没有任务了
+        if (state.tasks.length === 0) {
+            createDefaultTask(); 
+        } else if (taskId === state.currentTaskId) {
+            // 切换到前一个或第一个
+            const newIndex = Math.max(0, index - 1);
+            state.currentTaskId = state.tasks[newIndex].id;
+        }
+
+        saveState();
+        renderTaskList();
+        loadTaskToView(state.currentTaskId);
+    }
+
+    function selectTask(taskId) {
+        if (state.currentTaskId === taskId) return;
+        // 切换前先保存当前视图的数据
+        saveViewToTask(state.currentTaskId);
+        
+        state.currentTaskId = taskId;
+        saveState();
+        renderTaskList(); // 更新高亮
+        loadTaskToView(taskId);
+    }
+
+    // 将当前视图（表单+输出）保存到任务对象
+    function saveViewToTask(taskId) {
+        const task = state.tasks.find(t => t.id === taskId);
+        if (task) {
+            task.input.user_prompt = els.inputs.user_prompt.value;
+            task.input.size = els.inputs.ratio.value;
+            task.input.function = els.inputs.function_select.value;
+            task.images = [...currentSelectedImages];
+            // 不自动保存 output，由提交事件单独处理
+            saveState();
+        }
+    }
+
+    // 将任务数据加载到视图
+    function loadTaskToView(taskId) {
+        const task = state.tasks.find(t => t.id === taskId);
+        if (!task) return;
+
+        // 恢复表单值
+        els.inputs.user_prompt.value = task.input.user_prompt || '';
+        els.inputs.ratio.value = task.input.size || '1024x1024';
+        els.inputs.function_select.value = task.input.function || '';
+
+        // 恢复输出结果
+        els.responseOutput.innerHTML = task.output || '这里将显示API的返回结果...';
+    }
+
+    function renderTaskList() {
+        els.taskList.innerHTML = '';
+        state.tasks.forEach(task => {
+            const li = document.createElement('li');
+            li.className = `task-item ${task.id === state.currentTaskId ? 'active' : ''}`;
+            li.onclick = () => selectTask(task.id);
+            
+            const span = document.createElement('span');
+            span.textContent = task.name;
+            li.appendChild(span);
+
+            const delBtn = document.createElement('button');
+            delBtn.className = 'delete-btn';
+            delBtn.innerHTML = '&times;';
+            delBtn.onclick = (e) => deleteTask(e, task.id);
+            li.appendChild(delBtn);
+
+            els.taskList.appendChild(li);
+        });
+    }
+
+    // 渲染预览图片
+    function renderImagePreviews() {
+        els.imagePreviewContainer.innerHTML = '';
+        currentSelectedImages.forEach((base64, index) => {
+            const wrapper = document.createElement('div');
+            wrapper.style.position = 'relative';
+            wrapper.style.width = '120px';
+            wrapper.style.height = '120px';
+            
+            const img = document.createElement('img');
+            img.src = base64;
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'cover';
+            img.style.borderRadius = '4px';
+            img.style.border = '1px solid #ccc';
+            
+            // 按钮容器
+            const btnContainer = document.createElement('div');
+            btnContainer.style.position = 'absolute';
+            btnContainer.style.bottom = '2px';
+            btnContainer.style.left = '0';
+            btnContainer.style.width = '100%';
+            btnContainer.style.display = 'flex';
+            btnContainer.style.justifyContent = 'space-around';
+            btnContainer.style.padding = '0 2px';
+            btnContainer.style.boxSizing = 'border-box';
+
+            // 前移按钮
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'glass-btn';
+            prevBtn.textContent = '<';
+            prevBtn.onclick = (e) => { e.preventDefault(); moveImage(index, -1); };
+            if (index === 0) prevBtn.style.visibility = 'hidden';
+
+            // 删除按钮
+            const delBtn = document.createElement('button');
+            delBtn.className = 'glass-btn delete';
+            delBtn.textContent = 'X';
+            delBtn.onclick = (e) => { e.preventDefault(); removeImage(index); };
+
+            // 后移按钮
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'glass-btn';
+            nextBtn.textContent = '>';
+            nextBtn.onclick = (e) => { e.preventDefault(); moveImage(index, 1); };
+            if (index === currentSelectedImages.length - 1) nextBtn.style.visibility = 'hidden';
+
+            btnContainer.appendChild(prevBtn);
+            btnContainer.appendChild(delBtn);
+            btnContainer.appendChild(nextBtn);
+
+            wrapper.appendChild(img);
+            wrapper.appendChild(btnContainer);
+            els.imagePreviewContainer.appendChild(wrapper);
+        });
+    }
+
+    // 移动图片
+    function moveImage(index, direction) {
+        const newIndex = index + direction;
+        if (newIndex < 0 || newIndex >= currentSelectedImages.length) return;
+        
+        const temp = currentSelectedImages[index];
+        currentSelectedImages[index] = currentSelectedImages[newIndex];
+        currentSelectedImages[newIndex] = temp;
+        
+        renderImagePreviews();
+    }
+
+    // 删除图片
+    function removeImage(index) {
+        currentSelectedImages.splice(index, 1);
+        renderImagePreviews();
+        
+        // 如果没有图片了，清空 input file 的值，以便下次能重新选择同样的文件
+        if (currentSelectedImages.length === 0) {
+            els.imageUpload.value = '';
+        }
+    }
+
+    function setupEventListeners() {
+        // 新增任务
+        els.addTaskBtn.addEventListener('click', createNewTask);
+
+        // 图片上传监听
+        els.imageUpload.addEventListener('change', async (e) => {
+            const files = Array.from(e.target.files);
+            if (files.length === 0) return;
+
+            const promises = files.map(file => {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => resolve(e.target.result);
+                    reader.onerror = reject;
+                    reader.readAsDataURL(file);
+                });
+            });
+
+            try {
+                // 将新选的图片追加到现有列表
+                const newImages = await Promise.all(promises);
+                currentSelectedImages = currentSelectedImages.concat(newImages);
+                renderImagePreviews();
+            } catch (err) {
+                console.error("读取图片失败", err);
+                alert("读取图片失败");
+            }
+            // 清空input以允许重复选择
+            e.target.value = '';
+        });
+
+        // 表单输入监听：实时保存到当前任务
+        ['user_prompt', 'ratio', 'function_select'].forEach(field => {
+            els.inputs[field].addEventListener('input', () => {
+                saveViewToTask(state.currentTaskId);
+            });
+            els.inputs[field].addEventListener('change', () => {
+                saveViewToTask(state.currentTaskId);
+            });
+        });
+
+        // 表单提交
+        els.form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const currentTask = state.tasks.find(t => t.id === state.currentTaskId);
+            if (!currentTask) return;
+
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.id = 'loading-indicator';
+            loadingIndicator.style.padding = '20px';
+            loadingIndicator.style.textAlign = 'center';
+            loadingIndicator.textContent = '正在生成图片，请稍候...';
+            
+            if (els.responseOutput.innerHTML.trim() === '这里将显示API的返回结果...') {
+                 els.responseOutput.innerHTML = '';
+            }
+            els.responseOutput.appendChild(loadingIndicator);
+            
+            // 检查是否有图片，决定使用哪个接口
+            const hasImages = currentSelectedImages.length > 0;
+            
+            // 获取下拉框选择的功能
+            const selectedFunction = els.inputs.function_select.value;
+            // 构造最终的提示词：用户输入的提示词 + 静态变量中的提示词（如果选择了功能）
+            let finalPrompt = els.inputs.user_prompt.value;
+            if (selectedFunction && bananaPrompts[selectedFunction]) {
+                finalPrompt += " " + bananaPrompts[selectedFunction];
+            }
+
+            let endpoint = '/gpt/sync/create'; // 调用新增的同步生成接口
+            let data = {
+                prompt: finalPrompt, // 传入拼接后的提示词
+                html_path: "", // 同步接口不再强制要求写入HTML，传空字符串绕过
+                size: els.inputs.ratio.value, // 传入用户选择的尺寸
+                prefix: "" // 使用默认前缀
+            };
+
+            if (hasImages) {
+                try {
+                    let uploadedPaths = []; // 用于存储所有上传后的图片绝对路径
+                    
+                    // 遍历所有选中的图片并逐个上传
+                    for (let i = 0; i < currentSelectedImages.length; i++) {
+                        const base64 = currentSelectedImages[i];
+                        const res = await fetch(base64);
+                        const blob = await res.blob();
+                        
+                        const formData = new FormData();
+                        const ext = base64.substring(base64.indexOf('/') + 1, base64.indexOf(';'));
+                        const timestamp = Date.now() + i; // 加上索引防止时间戳重复
+                        formData.append('file', blob, `gpt_img_${timestamp}.${ext}`);
+
+                        const uploadRes = await fetch('/up', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        
+                        if (!uploadRes.ok) throw new Error(`第 ${i + 1} 张图片上传请求失败`);
+                        
+                        // 解析上传接口返回的 JSON 对象
+                        const uploadResult = await uploadRes.json();
+                        // 根据后端的返回结构检查是否上传成功
+                        if (uploadResult.success && uploadResult.path) {
+                            uploadedPaths.push(uploadResult.path); // 将成功上传的绝对路径加入数组
+                        } else {
+                            // 如果后端返回 success 为 false，则抛出错误信息
+                            throw new Error(uploadResult.message || `第 ${i + 1} 张图片上传失败`);
+                        }
+                    }
+                    
+                    // 判断是否需要合并图片
+                    if (uploadedPaths.length > 1) {
+                        // 多张图片，调用合并接口
+                        const mergeRes = await fetch('/gpt/sync/merge', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ image_paths: uploadedPaths }) // 传入包含所有绝对路径的数组
+                        });
+                        
+                        if (!mergeRes.ok) throw new Error('合并图片请求失败');
+                        
+                        const mergeResult = await mergeRes.json();
+                        if (mergeResult.status === 'success' && mergeResult.image_path) {
+                            data.image = mergeResult.image_path; // 使用合并后的图片路径作为生图参数
+                        } else {
+                            throw new Error(mergeResult.message || '合并图片失败');
+                        }
+                    } else {
+                        // 只有一张图片，直接使用其路径
+                        data.image = uploadedPaths[0]; 
+                    }
+                } catch (processError) {
+                    if (loadingIndicator.parentNode) loadingIndicator.remove();
+                    alert('图片处理失败: ' + processError.message);
+                    return;
+                }
+            }
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                let result = await response.json();
+                
+                // Remove loading indicator
+                if (loadingIndicator.parentNode) loadingIndicator.remove();
+
+                // 适配同步接口返回的数据结构
+                if (result.status === 'success' && result.image_paths) {
+                    // 将绝对路径转换为可访问的相对 web 路径
+                    result = result.image_paths.map(path => {
+                        let p = path.replace(/\\/g, '/');
+                        let idx = p.indexOf('/static/');
+                        if (idx !== -1) {
+                            return p.substring(idx + 7); // 提取 /static/ 后面的部分作为 web 路径
+                        }
+                        return p;
+                    });
+                } else if (result.status === 'error') {
+                    throw new Error(result.message || '生成失败');
+                }
+
+                let newContent = '';
+                
+                // 处理 /api/banana/create 返回的字符串结果
+                if (typeof result === 'string') {
+                    // 如果是字符串路径，将其包装为数组以复用渲染逻辑
+                    result = [result];
+                }
+
+                if (Array.isArray(result) && result.length > 0) {
+                    // 尝试查找最后一个元素，看它是否是 grid 容器
+                    let gridContainer = null;
+                    const lastEl = els.responseOutput.lastElementChild;
+                    
+                    // 检查是否是我们的 grid 容器（有 class 或者有对应的 style）
+                    if (lastEl && (lastEl.classList.contains('image-grid-container') || lastEl.style.display === 'grid')) {
+                        gridContainer = lastEl;
+                        // 确保添加 class 以便未来识别
+                        if (!gridContainer.classList.contains('image-grid-container')) {
+                            gridContainer.classList.add('image-grid-container');
+                        }
+                    }
+
+                    let imagesHtml = '';
+                    result.forEach(path => {
+                        // 确保 path 是以 / 开头的 Web 路径
+                        const imgUrl = path.startsWith('/') ? path : '/' + path;
+                        imagesHtml += `
+                            <div style="position: relative; display: flex;" title="点击打开图片">
+                                <div style="position: absolute; top: 5px; right: 5px; z-index: 10;">
+                                    <button onclick="event.stopPropagation(); window.openConfigModal('${imgUrl}', this)" style="position: absolute; top: 10px; right: 10px; z-index: 20; background: rgba(0,0,0,0.5); color: white;padding: 5px; cursor: pointer; font-size: 12px; border-radius: 5px;">⚙️</button>
+                                </div>
+                                <img src="${imgUrl}" onclick="window.openImageFile('${imgUrl}')" style="width: 100%; height: auto; display: block; cursor: pointer;"/>
+                            </div>
+                        `;
+                    });
+
+                    if (gridContainer) {
+                         gridContainer.insertAdjacentHTML('beforeend', imagesHtml);
+                    } else {
+                        // 使用 CSS Grid 实现四宫格布局，移除 gap，添加 class 以便后续复用
+                        const newGrid = `<div class="image-grid-container" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; width: 100%; margin-bottom: 0;">${imagesHtml}</div>`;
+                        els.responseOutput.insertAdjacentHTML('beforeend', newGrid);
+                    }
+                } else {
+                    newContent = `<pre>${JSON.stringify(result, null, 2)}</pre>`;
+                    els.responseOutput.insertAdjacentHTML('beforeend', newContent);
+                }
+                
+                // 更新数据并保存 (保存完整的 innerHTML)
+                currentTask.output = els.responseOutput.innerHTML;
+                saveState();
+
+            } catch (error) {
+                // Remove loading indicator if exists
+                if (loadingIndicator.parentNode) loadingIndicator.remove();
+                
+                const errorMsg = `<div style="color:red; padding:10px;">请求失败: ${error.message}</div>`;
+                els.responseOutput.insertAdjacentHTML('beforeend', errorMsg);
+                currentTask.output = els.responseOutput.innerHTML;
+                saveState();
+            }
+        });
+    }
+
+    // === 图片配置功能 ===
+    let currentConfigImgUrl = '';
+    let currentConfigBtn = null;
+
+    window.openConfigModal = function(imgUrl, btn) {
+        currentConfigImgUrl = imgUrl;
+        currentConfigBtn = btn;
+        const modal = document.getElementById('config-modal');
+        if (modal) {
+            modal.style.display = 'block';
+            document.getElementById('config-filename').value = ''; 
+        }
+    };
+
+    window.closeConfigModal = function() {
+        const modal = document.getElementById('config-modal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    window.configExport = async function() {
+        const filename = document.getElementById('config-filename').value;
+        if (!filename) {
+            alert('请输入文件名');
+            return;
+        }
+        
+        let sourcePath = currentConfigImgUrl;
+        if (sourcePath.startsWith('/')) {
+            sourcePath = sourcePath.substring(1);
+        }
+
+        try {
+            const response = await fetch('/api/file', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    source_path: sourcePath,
+                    name: filename
+                })
+            });
+            const result = await response.json();
+            
+            if (result.error) {
+                alert('导出失败: ' + result.error);
+            } else {
+                alert('导出成功！文件保存至: ' + result.file_path);
+                window.closeConfigModal();
+            }
+        } catch (e) {
+            alert('请求出错: ' + e.message);
+        }
+    };
+
+    window.configReference = async function() {
+        if (!currentConfigImgUrl) return;
+
+        try {
+            const response = await fetch(currentConfigImgUrl);
+            const blob = await response.blob();
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                const base64data = reader.result;
+                currentSelectedImages.push(base64data);
+                renderImagePreviews();
+                window.closeConfigModal();
+            };
+            reader.readAsDataURL(blob);
+        } catch (e) {
+            console.error('引用图片失败', e);
+            alert('引用图片失败: ' + e.message);
+        }
+    };
+
+    window.configUpscale = async function() {
+        if (!currentConfigImgUrl) {
+            alert('未找到图片路径！');
+            return;
+        }
+
+        if (!confirm('确定要将此图片转为高清吗？可能需要几十秒。')) {
+            return;
+        }
+
+        // Show loading state
+        const loadingIndicator = document.createElement('div');
+        loadingIndicator.id = 'upscale-loading';
+        loadingIndicator.style.position = 'fixed';
+        loadingIndicator.style.top = '50%';
+        loadingIndicator.style.left = '50%';
+        loadingIndicator.style.transform = 'translate(-50%, -50%)';
+        loadingIndicator.style.backgroundColor = 'rgba(0,0,0,0.7)';
+        loadingIndicator.style.color = 'white';
+        loadingIndicator.style.padding = '20px';
+        loadingIndicator.style.borderRadius = '5px';
+        loadingIndicator.style.zIndex = '2000';
+        loadingIndicator.textContent = '正在处理高清图片，请稍候...';
+        document.body.appendChild(loadingIndicator);
+
+        try {
+            const response = await fetch('/api/running/dh', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ video_path: currentConfigImgUrl })
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            
+            if (result.error) {
+                alert('超分失败: ' + result.error);
+                return;
+            }
+            
+            // API returns relative path like "static/temp/..."
+            const rawFinalPath = result.startsWith('/') ? result : '/' + result;
+            
+            // Normalize paths to ensure they use forward slashes (fix for Windows paths in JS strings)
+            const normalizePath = (p) => p.replace(/\\/g, '/');
+            const finalPath = normalizePath(rawFinalPath);
+            const originalUrl = normalizePath(currentConfigImgUrl);
+
+            // Find the image element
+            let img = null;
+            let container = null;
+            
+            if (currentConfigBtn) {
+                container = currentConfigBtn.closest('div[title="点击打开图片"]');
+                if (container) img = container.querySelector('img');
+            }
+            
+            // Fallback: try to find by src if button reference is lost
+            if (!img && originalUrl) {
+                 const allImgs = document.querySelectorAll('div[title="点击打开图片"] img');
+                 for (let i of allImgs) {
+                     const src = normalizePath(i.getAttribute('src') || i.src);
+                     if (src.includes(originalUrl) || originalUrl.includes(src)) {
+                         img = i;
+                         container = i.closest('div[title="点击打开图片"]');
+                         break;
+                     }
+                 }
+            }
+
+            // Update UI
+            if (img && container) {
+                img.src = finalPath;
+                
+                // Update the config button's onclick attribute
+                const configBtn = container.querySelector('button');
+                if (configBtn) {
+                    configBtn.setAttribute('onclick', `event.stopPropagation(); window.openConfigModal('${finalPath}', this)`);
+                }
+                
+                // Update current tracking variable
+                currentConfigImgUrl = finalPath;
+                
+                // Update saved state
+                const currentTask = state.tasks.find(t => t.id === state.currentTaskId);
+                if (currentTask) {
+                    currentTask.output = els.responseOutput.innerHTML;
+                    saveState();
+                }
+            } else {
+                console.warn('Could not find image element to update');
+            }
+            
+            alert('超分成功！');
+
+        } catch (error) {
+            console.error('Upscale failed:', error);
+            alert('超分请求失败，请检查控制台。');
+        } finally {
+            if (loadingIndicator) loadingIndicator.remove();
+            window.closeConfigModal();
+        }
+    };
+
+    window.configDelete = function() {
+        if (!confirm('确定要删除这张图片吗？')) return;
+
+        // 尝试通过按钮找到容器
+        let container = null;
+        if (currentConfigBtn) {
+            container = currentConfigBtn.closest('div[title="点击打开图片"]');
+        } 
+        
+        // 如果按钮未传递或找不到，尝试通过图片URL查找
+        if (!container) {
+             const img = document.querySelector(`img[src="${currentConfigImgUrl}"]`);
+             if (img) {
+                 container = img.closest('div[title="点击打开图片"]');
+             }
+        }
+
+        if (container) {
+            container.remove();
+            
+            // 更新保存的状态
+            const currentTask = state.tasks.find(t => t.id === state.currentTaskId);
+            if (currentTask) {
+                currentTask.output = els.responseOutput.innerHTML;
+                saveState();
+            }
+            
+            window.closeConfigModal();
+        } else {
+            alert('删除失败：找不到对应的图片元素');
+        }
+    };
+
+    // 点击模态框外部关闭 (通用)
+    window.addEventListener('click', function(event) {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+
+    // 启动
+    document.addEventListener('DOMContentLoaded', init);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+    <style>
+        body { display: flex; flex-direction: column; align-items: center; background-color: #f0f0f0; padding: 20px; font-family: Arial, sans-serif; }
+        .image-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1800px; }
+        .image-container {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+            width: 600px; /* 加宽以适应左右布局 */
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .image-container > a {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+        .image-container img {
+            max-width: 250px;
+            max-height: 250px;
+            height: auto;
+            border-radius: 4px;
+            object-fit: contain;
+        }
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+            flex: 1;
+            overflow: hidden; /* 防止内容撑破容器 */
+        }
+        .text-container .image-path {
+            font-size: 8px;
+            color: #888;
+            margin: 0 0 5px 0;
+            word-break: break-all;
+            cursor: pointer;
+        }
+        .text-container .description {
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            flex: 1; /* 占据剩余高度 */
+            overflow: hidden; /* 裁切长于图片的部分 */
+            white-space: pre-wrap; /* 保留空白符和换行符 */
+            cursor: pointer;
+        }
+        .loading { font-size: 24px; color: #555; }
+    </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('已复制到剪贴板:\n' + text);
+            }, function(err) {
+                console.error('无法复制文本: ', err);
+            });
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="image-gallery">
+        <!-- 图片将追加到这里 -->
+        <div class="image-container">
+            <a href="/../../../static/temp/gpt-1778089632237_0.png" target="_blank">
+                <img src="/../../../static/temp/gpt-1778089632237_0.png" alt="A lifestyle flat lay composition showing summer clothing items made from linen and Tencel fabrics arranged artfully on a light natural stone surface. A flowing linen shirt in warm sand color, a silky Tencel dress in soft eucalyptus green, natural dried botanical elements like pampas grass and eucalyptus leaves scattered around. Soft morning light creating gentle shadows, warm and inviting atmosphere. Professional lifestyle photography, overhead composition, 50mm lens, f/4, natural window light, Scandinavian minimalist aesthetic. The scene evokes a sense of summer comfort and effortless style. Subtle text overlay area for '如何选择'. Muted earthy tones, organic and refined mood." title="A lifestyle flat lay composition showing summer clothing items made from linen and Tencel fabrics arranged artfully on a light natural stone surface. A flowing linen shirt in warm sand color, a silky Tencel dress in soft eucalyptus green, natural dried botanical elements like pampas grass and eucalyptus leaves scattered around. Soft morning light creating gentle shadows, warm and inviting atmosphere. Professional lifestyle photography, overhead composition, 50mm lens, f/4, natural window light, Scandinavian minimalist aesthetic. The scene evokes a sense of summer comfort and effortless style. Subtle text overlay area for '如何选择'. Muted earthy tones, organic and refined mood.">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:\develop\nanobot\static\temp\gpt-1778089632237_0.png" onclick="copyToClipboard(this.innerText)">C:\develop\nanobot\static\temp\gpt-1778089632237_0.png</p>
+                <p class="description" title="💡 如何选择？\n\n选麻：追求极致透气、喜欢自然肌理感、偏爱慵懒随性风格、能接受天然褶皱的随性美\n\n选天丝：追求丝滑亲肤、需要良好垂坠感、喜欢优雅高级感、希望面料稳定好打理\n\n最佳方案：天丝麻混纺！兼具两者优点，透气又丝滑 🌿✨" onclick="copyToClipboard(this.innerText)">💡 如何选择？\n\n选麻：追求极致透气、喜欢自然肌理感、偏爱慵懒随性风格、能接受天然褶皱的随性美\n\n选天丝：追求丝滑亲肤、需要良好垂坠感、喜欢优雅高级感、希望面料稳定好打理\n\n最佳方案：天丝麻混纺！兼具两者优点，透气又丝滑 🌿✨</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <a href="/../../../static/temp/gpt-1778089599041_0.png" target="_blank">
+                <img src="/../../../static/temp/gpt-1778089599041_0.png" alt="A luxurious close-up of Tencel lyocell fabric flowing like liquid silk, draped in elegant cascading folds. Soft pastel sage green color with a subtle pearlescent sheen. The fabric catches gentle light creating a luminous, almost ethereal glow. Background is a soft gradient of muted greens and whites. Professional fashion textile photography, medium format camera, 85mm lens, f/2.8, soft diffused studio lighting, high-end editorial style. The fabric appears incredibly smooth and fluid, emphasizing its silky drape and luxurious hand feel. Subtle text overlay area for '天丝 · 柔滑之魂'. Clean, modern, sophisticated aesthetic with a sense of movement and fluidity." title="A luxurious close-up of Tencel lyocell fabric flowing like liquid silk, draped in elegant cascading folds. Soft pastel sage green color with a subtle pearlescent sheen. The fabric catches gentle light creating a luminous, almost ethereal glow. Background is a soft gradient of muted greens and whites. Professional fashion textile photography, medium format camera, 85mm lens, f/2.8, soft diffused studio lighting, high-end editorial style. The fabric appears incredibly smooth and fluid, emphasizing its silky drape and luxurious hand feel. Subtle text overlay area for '天丝 · 柔滑之魂'. Clean, modern, sophisticated aesthetic with a sense of movement and fluidity.">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:\develop\nanobot\static\temp\gpt-1778089599041_0.png" onclick="copyToClipboard(this.innerText)">C:\develop\nanobot\static\temp\gpt-1778089599041_0.png</p>
+                <p class="description" title="✨ 天丝 · 柔滑之魂\n\n集棉的柔软、涤纶的高强力、羊毛的保暖于一身\n吸湿性极佳，悬垂性优秀，亲肤丝滑\n环保再生纤维，生产过程绿色无污染\n性质稳定，不易变形，使用寿命长\n\n缺点：湿冷条件下易变硬" onclick="copyToClipboard(this.innerText)">✨ 天丝 · 柔滑之魂\n\n集棉的柔软、涤纶的高强力、羊毛的保暖于一身\n吸湿性极佳，悬垂性优秀，亲肤丝滑\n环保再生纤维，生产过程绿色无污染\n性质稳定，不易变形，使用寿命长\n\n缺点：湿冷条件下易变硬</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <a href="/../../../static/temp/gpt-1778089520851_0.png" target="_blank">
+                <img src="/../../../static/temp/gpt-1778089520851_0.png" alt="A minimalist fashion editorial cover image showing two elegant fabric swatches side by side: on the left, natural linen fabric with visible textured weave in warm beige tones, on the right, smooth Tencel lyocell fabric with silky sheen in soft sage green. Clean white marble background, soft natural window lighting from the side creating gentle shadows. Professional product photography style, overhead flat lay composition, high-end fashion magazine aesthetic. Elegant Chinese typography space at top for title text '麻与天丝'. Shot on medium format camera, 85mm lens, f/4, diffused daylight, editorial style, muted earthy color palette, sophisticated and refined mood." title="A minimalist fashion editorial cover image showing two elegant fabric swatches side by side: on the left, natural linen fabric with visible textured weave in warm beige tones, on the right, smooth Tencel lyocell fabric with silky sheen in soft sage green. Clean white marble background, soft natural window lighting from the side creating gentle shadows. Professional product photography style, overhead flat lay composition, high-end fashion magazine aesthetic. Elegant Chinese typography space at top for title text '麻与天丝'. Shot on medium format camera, 85mm lens, f/4, diffused daylight, editorial style, muted earthy color palette, sophisticated and refined mood.">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:\develop\nanobot\static\temp\gpt-1778089520851_0.png" onclick="copyToClipboard(this.innerText)">C:\develop\nanobot\static\temp\gpt-1778089520851_0.png</p>
+                <p class="description" title="麻与天丝，夏日面料的双生花 🌿✨ 一个天然粗犷，一个丝滑柔顺，你更偏爱哪一种？" onclick="copyToClipboard(this.innerText)">麻与天丝，夏日面料的双生花 🌿✨ 一个天然粗犷，一个丝滑柔顺，你更偏爱哪一种？</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

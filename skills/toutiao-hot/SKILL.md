@@ -16,7 +16,7 @@ description: "当用户需要了解最新热点、榜单或新闻时调用。"
 分析用户需要了解的新闻数量，默认值为 10。
 调用工具获取当前的头条榜单数据：
 ```bash
-python {homespace}\\tool-room\\toutiao-cli\\tool.py toutiao -r {新闻数量}
+python {homespace}\\tools\\toutiaocli\\cli.py toutiao -r {新闻数量}
 ```
 返回 JSON 格式的头条榜单数据（包含新闻关键词、热度、增量等信息）
 
@@ -29,7 +29,7 @@ python {homespace}\\tool-room\\toutiao-cli\\tool.py toutiao -r {新闻数量}
 针对筛选出的重点新闻词条，**必须逐个处理，总结一个发一个**：
 1. **查询内容**：调用 `search` 命令查询该关键词的具体新闻内容（注意：对应的实际命令是 `search`）：
 ```bash
-python {homespace}\\tool-room\\toutiao-cli\\tool.py search -k "新闻关键词"
+python {homespace}\\tools\\toutiaocli\\cli.py search -k "新闻关键词"
 ```
 2. **总结信息**：阅读搜索返回的数据（包括头条新闻、相关新闻、热门点评等），提炼出事件的核心内容、起因和大众观点。
 3. **发送消息**：将该条新闻的总结通过 message 工具发送给用户。

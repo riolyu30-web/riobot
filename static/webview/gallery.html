@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+    <style>
+        body { display: flex; flex-direction: column; align-items: center; background-color: #f0f0f0; padding: 20px; font-family: Arial, sans-serif; margin: 0; }
+        .image-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 100%; padding: 0 20px; box-sizing: border-box; }
+        .image-container {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+            width: 600px; /* 加宽以适应左右布局 */
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .image-container > a {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+        .image-container img {
+            max-width: 250px;
+            max-height: 250px;
+            height: auto;
+            border-radius: 4px;
+            object-fit: contain;
+        }
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+            flex: 1;
+            overflow: hidden; /* 防止内容撑破容器 */
+        }
+        .text-container .image-path {
+            font-size: 9px;
+            color: #888;
+            margin: 0 0 5px 0;
+            word-break: break-all;
+            cursor: pointer;
+        }
+        .text-container .description {
+            font-size: 12px;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            flex: 1; /* 占据剩余高度 */
+            overflow: hidden; /* 裁切长于图片的部分 */
+            white-space: pre-wrap; /* 保留空白符和换行符 */
+            cursor: pointer;
+        }
+        .loading { font-size: 24px; color: #555; }
+    </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('已复制到剪贴板:\n' + text);
+            }, function(err) {
+                console.error('无法复制文本: ', err);
+            });
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="image-gallery">
+        <div class="image-container">
+            <a href="file:///C:/develop/nanobot/static/temp/gpt-1778135335419_0.png" target="_blank">
+                <img src="file:///C:/develop/nanobot/static/temp/gpt-1778135335419_0.png" alt="A person sitting elegantly at a wooden table in a modern tea room with large floor-to-ceiling windows, red brick wall, warm ambient lighting, drinking tea from a delicate cup, wearing casual elegant clothing, natural relaxed posture, shot from a slight distance showing the cozy interior with plants and wooden furniture, smartphone photography style, natural and authentic feel, face not visible, afternoon tea atmosphere" title="A person sitting elegantly at a wooden table in a modern tea room with large floor-to-ceiling windows, red brick wall, warm ambient lighting, drinking tea from a delicate cup, wearing casual elegant clothing, natural relaxed posture, shot from a slight distance showing the cozy interior with plants and wooden furniture, smartphone photography style, natural and authentic feel, face not visible, afternoon tea atmosphere">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:/develop/nanobot/static/temp/gpt-1778135335419_0.png" onclick="copyToClipboard(this.innerText)">C:/develop/nanobot/static/temp/gpt-1778135335419_0.png</p>
+                <p class="description" title="偷得浮生半日闲 🍵" onclick="copyToClipboard(this.innerText)">偷得浮生半日闲 🍵</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <a href="file:///C:/develop/nanobot/static/temp/gpt-1778138949789_0.png" target="_blank">
+                <img src="file:///C:/develop/nanobot/static/temp/gpt-1778138949789_0.png" alt="一个优雅的人坐在木质露台的户外咖啡座，手持咖啡杯，背景是山CHILL咖啡店的建筑，有木质桌椅和远处的山景，氛围轻松惬意，自然光线柔和，以参考图右侧人物作为主体，把人物放进参考图左侧场景中，换上合适服装，人物的动作要自然符合场景，切记不要正脸。模仿手机拍摄的场景，保持人物的自然感和真实感。" title="一个优雅的人坐在木质露台的户外咖啡座，手持咖啡杯，背景是山CHILL咖啡店的建筑，有木质桌椅和远处的山景，氛围轻松惬意，自然光线柔和，以参考图右侧人物作为主体，把人物放进参考图左侧场景中，换上合适服装，人物的动作要自然符合场景，切记不要正脸。模仿手机拍摄的场景，保持人物的自然感和真实感。">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:/develop/nanobot/static/temp/gpt-1778138949789_0.png" onclick="copyToClipboard(this.innerText)">C:/develop/nanobot/static/temp/gpt-1778138949789_0.png</p>
+                <p class="description" title="山CHILL · 偷得半日闲 ☕️" onclick="copyToClipboard(this.innerText)">山CHILL · 偷得半日闲 ☕️</p>
+            </div>
+        </div>
+        <!-- 图片将追加到这里 -->
+    </div>
+</body>
+</html>

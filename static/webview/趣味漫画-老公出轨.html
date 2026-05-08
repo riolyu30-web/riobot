@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+    <style>
+        body { display: flex; flex-direction: column; align-items: center; background-color: #f0f0f0; padding: 20px; font-family: Arial, sans-serif; margin: 0; }
+        .image-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 100%; padding: 0 20px; box-sizing: border-box; }
+        .image-container {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+            width: 600px; /* 加宽以适应左右布局 */
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .image-container > a {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+        .image-container img {
+            max-width: 250px;
+            max-height: 250px;
+            height: auto;
+            border-radius: 4px;
+            object-fit: contain;
+        }
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+            flex: 1;
+            overflow: hidden; /* 防止内容撑破容器 */
+        }
+        .text-container .image-path {
+            font-size: 9px;
+            color: #888;
+            margin: 0 0 5px 0;
+            word-break: break-all;
+            cursor: pointer;
+        }
+        .text-container .description {
+            font-size: 12px;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            flex: 1; /* 占据剩余高度 */
+            overflow: hidden; /* 裁切长于图片的部分 */
+            white-space: pre-wrap; /* 保留空白符和换行符 */
+            cursor: pointer;
+        }
+        .loading { font-size: 24px; color: #555; }
+    </style>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('已复制到剪贴板:\n' + text);
+            }, function(err) {
+                console.error('无法复制文本: ', err);
+            });
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="image-gallery">
+        <div class="image-container">
+            <a href="file:///C:/develop/nanobot/static/temp/gpt-1778125020528_0.png" target="_blank">
+                <img src="file:///C:/develop/nanobot/static/temp/gpt-1778125020528_0.png" alt="A humorous comic-style illustration, flat cartoon art style. Scene 3: The wife has finished eating the cake, there's an empty plate with just a few crumbs and a fork. The wife looks satisfied with a slight smile, licking her lips. The master is looking at her with a knowing smile, asking a question with a raised eyebrow. Warm tea room setting, soft ambient lighting, comic speech bubble style, clean line art, pastel color palette, 2D vector illustration style, humorous and lighthearted mood" title="A humorous comic-style illustration, flat cartoon art style. Scene 3: The wife has finished eating the cake, there's an empty plate with just a few crumbs and a fork. The wife looks satisfied with a slight smile, licking her lips. The master is looking at her with a knowing smile, asking a question with a raised eyebrow. Warm tea room setting, soft ambient lighting, comic speech bubble style, clean line art, pastel color palette, 2D vector illustration style, humorous and lighthearted mood">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:/develop/nanobot/static/temp/gpt-1778125020528_0.png" onclick="copyToClipboard(this.innerText)">C:/develop/nanobot/static/temp/gpt-1778125020528_0.png</p>
+                <p class="description" title="老婆吃完了，大师问：好吃吗？还想吃吗？" onclick="copyToClipboard(this.innerText)">老婆吃完了，大师问：好吃吗？还想吃吗？</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <a href="file:///C:/develop/nanobot/static/temp/gpt-1778125026083_0.png" target="_blank">
+                <img src="file:///C:/develop/nanobot/static/temp/gpt-1778125026083_0.png" alt="A humorous comic-style illustration, flat cartoon art style. Scene 2: The same wise master gently pushing a beautiful slice of chocolate cake on a delicate plate towards the worried wife. The cake looks delicious with rich chocolate frosting and a cherry on top. The wife looks confused but curious. Warm tea room setting, soft ambient lighting, comic speech bubble style, clean line art, pastel color palette, 2D vector illustration style, humorous and lighthearted mood" title="A humorous comic-style illustration, flat cartoon art style. Scene 2: The same wise master gently pushing a beautiful slice of chocolate cake on a delicate plate towards the worried wife. The cake looks delicious with rich chocolate frosting and a cherry on top. The wife looks confused but curious. Warm tea room setting, soft ambient lighting, comic speech bubble style, clean line art, pastel color palette, 2D vector illustration style, humorous and lighthearted mood">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:/develop/nanobot/static/temp/gpt-1778125026083_0.png" onclick="copyToClipboard(this.innerText)">C:/develop/nanobot/static/temp/gpt-1778125026083_0.png</p>
+                <p class="description" title="大师：你先吃块蛋糕。" onclick="copyToClipboard(this.innerText)">大师：你先吃块蛋糕。</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <a href="file:///C:/develop/nanobot/static/temp/gpt-1778125039689_0.png" target="_blank">
+                <img src="file:///C:/develop/nanobot/static/temp/gpt-1778125039689_0.png" alt="A humorous comic-style illustration, flat cartoon art style. Scene 1: A worried middle-aged Chinese wife sitting across from a wise-looking master (old man with long beard, wearing traditional Chinese robe) in a cozy tea room. The wife looks distressed and is asking a question, gesturing with her hands. The master sits calmly behind a small wooden table with a teapot. Warm indoor lighting, soft colors, comic speech bubble style, clean line art, pastel color palette, 2D vector illustration style, humorous and lighthearted mood" title="A humorous comic-style illustration, flat cartoon art style. Scene 1: A worried middle-aged Chinese wife sitting across from a wise-looking master (old man with long beard, wearing traditional Chinese robe) in a cozy tea room. The wife looks distressed and is asking a question, gesturing with her hands. The master sits calmly behind a small wooden table with a teapot. Warm indoor lighting, soft colors, comic speech bubble style, clean line art, pastel color palette, 2D vector illustration style, humorous and lighthearted mood">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:/develop/nanobot/static/temp/gpt-1778125039689_0.png" onclick="copyToClipboard(this.innerText)">C:/develop/nanobot/static/temp/gpt-1778125039689_0.png</p>
+                <p class="description" title="老婆找到大师：为什么我老公出轨？" onclick="copyToClipboard(this.innerText)">老婆找到大师：为什么我老公出轨？</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <a href="file:///C:/develop/nanobot/static/temp/gpt-1778125047321_0.png" target="_blank">
+                <img src="file:///C:/develop/nanobot/static/temp/gpt-1778125047321_0.png" alt="A humorous comic-style illustration, flat cartoon art style. Scene 4: The master pointing at the empty cake plate with a wise, knowing smile, delivering the punchline. The wife has a sudden realization expression - eyes wide open, mouth slightly open in an 'aha' moment. A thought bubble above the wife shows a metaphorical image: a man looking tempted by something attractive. Warm tea room setting, soft ambient lighting, comic speech bubble style, clean line art, pastel color palette, 2D vector illustration style, humorous and lighthearted mood, punchline moment" title="A humorous comic-style illustration, flat cartoon art style. Scene 4: The master pointing at the empty cake plate with a wise, knowing smile, delivering the punchline. The wife has a sudden realization expression - eyes wide open, mouth slightly open in an 'aha' moment. A thought bubble above the wife shows a metaphorical image: a man looking tempted by something attractive. Warm tea room setting, soft ambient lighting, comic speech bubble style, clean line art, pastel color palette, 2D vector illustration style, humorous and lighthearted mood, punchline moment">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:/develop/nanobot/static/temp/gpt-1778125047321_0.png" onclick="copyToClipboard(this.innerText)">C:/develop/nanobot/static/temp/gpt-1778125047321_0.png</p>
+                <p class="description" title="这下你知道为什么了吧！😂 人性如此，面对诱惑很难说不～" onclick="copyToClipboard(this.innerText)">这下你知道为什么了吧！😂 人性如此，面对诱惑很难说不～</p>
+            </div>
+        </div>
+        <!-- 图片将追加到这里 -->
+        <div class="image-container">
+            <a href="file:///C:/develop/nanobot/static/temp/gpt-1778122907664_0.png" target="_blank">
+                <img src="file:///C:/develop/nanobot/static/temp/gpt-1778122907664_0.png" alt="Comic style illustration, the woman has finished eating the cake, licking her fingers with a satisfied and happy expression, crumbs on the plate. The empty plate shows only a few crumbs remaining. The master is looking at her with a knowing, mysterious smile, leaning forward slightly. The woman's expression has changed from worried to pleased. Traditional Chinese tea room background. Humorous comic art style with bold outlines, vibrant colors, speech bubble from master saying '好吃吗？还想吃吗？'. Digital illustration, clean composition, 2D cartoon rendering, expressive facial expressions." title="Comic style illustration, the woman has finished eating the cake, licking her fingers with a satisfied and happy expression, crumbs on the plate. The empty plate shows only a few crumbs remaining. The master is looking at her with a knowing, mysterious smile, leaning forward slightly. The woman's expression has changed from worried to pleased. Traditional Chinese tea room background. Humorous comic art style with bold outlines, vibrant colors, speech bubble from master saying '好吃吗？还想吃吗？'. Digital illustration, clean composition, 2D cartoon rendering, expressive facial expressions.">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:/develop/nanobot/static/temp/gpt-1778122907664_0.png" onclick="copyToClipboard(this.innerText)">C:/develop/nanobot/static/temp/gpt-1778122907664_0.png</p>
+                <p class="description" title="老婆吃完后一脸满足。大师问：'好吃吗？还想吃吗？'" onclick="copyToClipboard(this.innerText)">老婆吃完后一脸满足。大师问：'好吃吗？还想吃吗？'</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <a href="file:///C:/develop/nanobot/static/temp/gpt-1778122890146_0.png" target="_blank">
+                <img src="file:///C:/develop/nanobot/static/temp/gpt-1778122890146_0.png" alt="Comic style illustration, split panel composition. Left side: the woman suddenly has an enlightened expression, eyes wide open, hand on her chin in realization, a lightbulb appearing above her head. Right side: a tempting display of various delicious desserts - chocolate cakes, pastries, ice cream - beautifully arranged, representing temptation. The master sits calmly in the background with a wise smile. The visual metaphor is clear: just like delicious cake makes you want more, temptation works the same way. Humorous comic art style with bold outlines, vibrant colors, large text overlay saying '这下你知道为什么了吧'. Digital illustration, clean composition, 2D cartoon rendering, dramatic revelation moment." title="Comic style illustration, split panel composition. Left side: the woman suddenly has an enlightened expression, eyes wide open, hand on her chin in realization, a lightbulb appearing above her head. Right side: a tempting display of various delicious desserts - chocolate cakes, pastries, ice cream - beautifully arranged, representing temptation. The master sits calmly in the background with a wise smile. The visual metaphor is clear: just like delicious cake makes you want more, temptation works the same way. Humorous comic art style with bold outlines, vibrant colors, large text overlay saying '这下你知道为什么了吧'. Digital illustration, clean composition, 2D cartoon rendering, dramatic revelation moment.">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:/develop/nanobot/static/temp/gpt-1778122890146_0.png" onclick="copyToClipboard(this.innerText)">C:/develop/nanobot/static/temp/gpt-1778122890146_0.png</p>
+                <p class="description" title="老婆恍然大悟！——好吃的东西，谁都还想再吃。这下你知道为什么了吧！😂" onclick="copyToClipboard(this.innerText)">老婆恍然大悟！——好吃的东西，谁都还想再吃。这下你知道为什么了吧！😂</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <a href="file:///C:/develop/nanobot/static/temp/gpt-1778122847822_0.png" target="_blank">
+                <img src="file:///C:/develop/nanobot/static/temp/gpt-1778122847822_0.png" alt="Comic style illustration, the wise old master gently pushing a beautiful slice of chocolate cake on a delicate porcelain plate towards the worried woman. The cake looks absolutely delicious with rich chocolate frosting, fresh strawberries on top, and a glossy finish. The master has a knowing smile, gesturing towards the cake. The woman looks confused but reaches for the cake. Traditional Chinese tea room background with warm lighting. Humorous comic art style with bold outlines, vibrant colors, speech bubble from master saying '你先吃块蛋糕'. Digital illustration, clean composition, 2D cartoon rendering, appetizing food illustration." title="Comic style illustration, the wise old master gently pushing a beautiful slice of chocolate cake on a delicate porcelain plate towards the worried woman. The cake looks absolutely delicious with rich chocolate frosting, fresh strawberries on top, and a glossy finish. The master has a knowing smile, gesturing towards the cake. The woman looks confused but reaches for the cake. Traditional Chinese tea room background with warm lighting. Humorous comic art style with bold outlines, vibrant colors, speech bubble from master saying '你先吃块蛋糕'. Digital illustration, clean composition, 2D cartoon rendering, appetizing food illustration.">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:/develop/nanobot/static/temp/gpt-1778122847822_0.png" onclick="copyToClipboard(this.innerText)">C:/develop/nanobot/static/temp/gpt-1778122847822_0.png</p>
+                <p class="description" title="大师微微一笑，递上一块精致的蛋糕：'你先吃块蛋糕。'" onclick="copyToClipboard(this.innerText)">大师微微一笑，递上一块精致的蛋糕：'你先吃块蛋糕。'</p>
+            </div>
+        </div>
+        <div class="image-container">
+            <a href="file:///C:/develop/nanobot/static/temp/gpt-1778122848581_0.png" target="_blank">
+                <img src="file:///C:/develop/nanobot/static/temp/gpt-1778122848581_0.png" alt="Comic style illustration, a worried middle-aged Chinese woman sitting across from a wise old master in a traditional Chinese tea room. The woman has a troubled expression, hands clasped together, asking a question. The master is an elderly man with a long white beard, wearing traditional robes, sitting calmly with a mysterious smile. Warm ambient lighting from paper lanterns, wooden furniture, incense smoke curling in the air. Humorous comic art style with bold outlines, vibrant colors, speech bubble from woman saying '为什么我老公出轨？'. Digital illustration, clean composition, 2D cartoon rendering." title="Comic style illustration, a worried middle-aged Chinese woman sitting across from a wise old master in a traditional Chinese tea room. The woman has a troubled expression, hands clasped together, asking a question. The master is an elderly man with a long white beard, wearing traditional robes, sitting calmly with a mysterious smile. Warm ambient lighting from paper lanterns, wooden furniture, incense smoke curling in the air. Humorous comic art style with bold outlines, vibrant colors, speech bubble from woman saying '为什么我老公出轨？'. Digital illustration, clean composition, 2D cartoon rendering.">
+            </a>
+            <div class="text-container">
+                <p class="image-path" title="C:/develop/nanobot/static/temp/gpt-1778122848581_0.png" onclick="copyToClipboard(this.innerText)">C:/develop/nanobot/static/temp/gpt-1778122848581_0.png</p>
+                <p class="description" title="老婆满脸愁容地找到大师：'大师，为什么我老公会出轨？'" onclick="copyToClipboard(this.innerText)">老婆满脸愁容地找到大师：'大师，为什么我老公会出轨？'</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

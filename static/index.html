@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- 声明文档类型为标准 HTML5 -->
+<html lang="zh-CN">
+<!-- 定义 HTML 文档的根元素，并设置语言为中文 -->
+<head>
+<!-- 定义文档的头部，包含元数据和页面配置 -->
+    <meta charset="UTF-8">
+    <!-- 设置文档字符编码为 UTF-8，确保中文字符不乱码 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 设置视口，使页面能够自适应移动端设备的屏幕宽度 -->
+    <title>Webview 索引页</title>
+    <!-- 设置浏览器标签页上的网页标题文字 -->
+    <style>
+    /* 开启内联 CSS 样式编写区域，美化页面 */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #f0f2f5; margin: 0; height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; }
+        /* 设置全局字体、页面内边距以及浅灰色的背景颜色，取消默认外边距，占满全屏高度，使用 flex 列布局 */
+        h1 { color: #333; text-align: center; margin-bottom: 20px; flex-shrink: 0; }
+        /* 设置页面主标题的颜色为深灰，文字居中，增加底部外边距，且不允许压缩 */
+        #columns-container { display: flex; flex: 1; overflow-x: auto; gap: 20px; padding-bottom: 20px; align-items: flex-start; }
+        /* 设置列容器使用 flex 布局，占据剩余空间，支持水平滚动，设置列间距和底部内边距，顶部对齐 */
+        .column { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); min-width: 350px; max-width: 400px; max-height: 100%; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; }
+        /* 设置每列的样式：纯白背景、圆角、轻微阴影、限制最小最大宽度、支持垂直滚动、内边距，以及 flex 列布局 */
+        ul { list-style-type: none; padding: 0; margin: 0; }
+        /* 去除无序列表默认的圆点符号，清空内边距和外边距 */
+        li { background: #ffffff; margin-bottom: 8px; padding: 12px; border-radius: 6px; border: 1px solid #eee; transition: all 0.2s; display: flex; justify-content: space-between; align-items: center; }
+        /* 设置列表项背景、下边距、内边距、圆角、淡灰色边框、悬停过渡效果，使用 Flexbox 使内容两端对齐并垂直居中 */
+        li:hover { transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-color: #d2e3fc; }
+        /* 设置鼠标悬停在列表项上时，轻微上移、加深阴影效果并改变边框颜色 */
+        li.active { background-color: #e8f0fe; border-color: #1a73e8; }
+        /* 设置选中状态的列表项背景为淡蓝色，边框为深蓝色 */
+        .item-info { flex: 1; margin-right: 10px; overflow: hidden; display: flex; align-items: center; cursor: pointer; }
+        /* 设置列表项左侧信息区域占据剩余空间，右侧留距，隐藏溢出内容，垂直居中，并设置鼠标为手型 */
+        .item-icon { margin-right: 8px; font-size: 18px; }
+        /* 设置图标的右边距和字体大小 */
+        .item-name { font-size: 15px; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        /* 设置文件或目录名称字体大小、颜色，强制不换行，超出部分隐藏并显示省略号 */
+        .html-link { text-decoration: none; color: #1a73e8; }
+        /* 设置超链接去掉下划线，颜色为蓝色 */
+        .html-link:hover { text-decoration: underline; }
+        /* 设置鼠标悬停在超链接上时显示下划线 */
+        .button-group { display: flex; gap: 6px; flex-shrink: 0; }
+        /* 设置按钮组容器使用 flex 布局，按钮间有间距，且不允许压缩 */
+        button { padding: 4px 8px; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; transition: background-color 0.2s; }
+        /* 设置按钮的基本内边距、去边框、圆角、手型光标、较小的字体，以及背景色渐变过渡效果 */
+        .btn-copy { background-color: #e8f0fe; color: #1a73e8; }
+        /* 设置复制按钮的淡蓝色背景和深蓝色文字 */
+        .btn-copy:hover { background-color: #d2e3fc; }
+        /* 设置复制按钮悬停时的背景颜色加深 */
+        .btn-delete { background-color: #fce8e6; color: #d93025; }
+        /* 设置删除按钮的淡红色背景和深红色文字 */
+        .btn-delete:hover { background-color: #fad2cf; }
+        /* 设置删除按钮悬停时的背景颜色加深 */
+        .empty-tip { text-align: center; color: #999; padding: 20px; font-size: 14px; }
+        /* 设置空目录提示文字居中、颜色为灰、内边距和字体大小 */
+    </style>
+    <!-- 结束内联 CSS 样式编写区域 -->
+</head>
+<!-- 结束文档的头部定义 -->
+<body>
+<!-- 开始文档的主体部分，包含所有在页面上可见的元素 -->
+    <h1>Web目录索引</h1>
+    <!-- 显示页面的主标题 -->
+    <div id="columns-container">
+    <!-- 开启用于存放所有目录列的水平滚动容器 -->
+    </div>
+    <!-- 结束列容器 -->
+
+    <script>
+    /* 开启 JavaScript 脚本区域，用于动态获取并渲染层级文件列表 */
+        // 获取用于包裹所有层级列的容器元素
+        const container = document.getElementById('columns-container');
+
+        // 定义加载指定目录内容并创建新列的函数
+        function loadDirectory(directory, columnIndex) {
+            // 使用 fetch API 向后端发送 GET 请求获取目录和 HTML 文件列表，并对目录路径进行 URL 编码
+            fetch(`/list/dir?directory=${encodeURIComponent(directory)}`)
+                // 将后端的响应结果解析为 JSON 对象
+                .then(response => response.json())
+                // 处理解析成功后的 JSON 数据
+                .then(data => {
+                    // 当用户点击较前层级的目录时，移除当前列之后的所有列
+                    while (container.children.length > columnIndex) {
+                        // 循环移除容器中的最后一个子元素
+                        container.removeChild(container.lastChild);
+                    }
+
+                    // 动态创建一个新的列容器 div
+                    const colDiv = document.createElement('div');
+                    // 为新的列容器添加特定的 CSS 类名
+                    colDiv.className = 'column';
+                    // 在元素的数据集上记录该列的层级索引
+                    colDiv.dataset.index = columnIndex;
+
+                    // 判断如果后端返回的目录和文件都为空
+                    if (data.dirs.length === 0 && data.files.length === 0) {
+                        // 创建一个用于显示空提示的 div 元素
+                        const emptyTip = document.createElement('div');
+                        // 设置空提示元素的类名
+                        emptyTip.className = 'empty-tip';
+                        // 设置空提示元素的文本内容
+                        emptyTip.textContent = '空目录';
+                        // 将空提示元素追加到当前列中
+                        colDiv.appendChild(emptyTip);
+                        // 将当前列追加到总容器中
+                        container.appendChild(colDiv);
+                        // 结束当前函数的执行
+                        return;
+                    }
+
+                    // 动态创建一个无序列表元素 ul，用于存放文件和目录项
+                    const ul = document.createElement('ul');
+
+                    // 遍历后端返回的子目录数组
+                    data.dirs.forEach(dir => {
+                        // 调用 createListItem 函数创建一个目录列表项
+                        const li = createListItem(dir, true, columnIndex);
+                        // 将目录列表项追加到无序列表中
+                        ul.appendChild(li);
+                    });
+
+                    // 遍历后端返回的 HTML 文件数组
+                    data.files.forEach(file => {
+                        // 调用 createListItem 函数创建一个文件列表项
+                        const li = createListItem(file, false, columnIndex);
+                        // 将文件列表项追加到无序列表中
+                        ul.appendChild(li);
+                    });
+
+                    // 将包含所有项的无序列表追加到当前列容器中
+                    colDiv.appendChild(ul);
+                    // 将当前列容器追加到页面上的总列容器中
+                    container.appendChild(colDiv);
+
+                    // 自动将总容器滚动到最右侧，确保新展开的列完全可见
+                    container.scrollLeft = container.scrollWidth;
+                })
+                // 捕获并处理请求目录数据过程中可能发生的网络错误
+                .catch(error => console.error('获取目录失败:', error));
+        }
+
+        // 定义用于创建单个列表项元素的函数
+        function createListItem(item, isDir, columnIndex) {
+            // 动态创建一个新的列表项元素 li
+            const li = document.createElement('li');
+
+            // 动态创建一个用于存放左侧图标和名称的容器 div
+            const infoDiv = document.createElement('div');
+            // 为该容器添加特定的 CSS 类名
+            infoDiv.className = 'item-info';
+
+            // 动态创建一个用于存放图标的 span 元素
+            const iconSpan = document.createElement('span');
+            // 为图标元素添加特定的 CSS 类名
+            iconSpan.className = 'item-icon';
+            // 根据是否是目录，设置不同的 Emoji 图标（文件夹或文档）
+            iconSpan.textContent = isDir ? '📁' : '📄';
+
+            // 动态创建一个用于存放名称的 span 元素
+            const nameSpan = document.createElement('span');
+            // 为名称元素添加特定的 CSS 类名
+            nameSpan.className = 'item-name';
+
+            // 判断当前项是否为目录
+            if (isDir) {
+                // 如果是目录，直接将目录名作为文本显示
+                nameSpan.textContent = item.name;
+                // 为左侧信息区域绑定点击事件
+                infoDiv.onclick = () => {
+                    // 获取当前列表项所在的所有同级元素并转为数组，遍历它们
+                    Array.from(li.parentElement.children).forEach(sibling => {
+                        // 移除所有同级元素的 active 类名（取消之前选中的高亮状态）
+                        sibling.classList.remove('active');
+                    });
+                    // 为当前点击的列表项添加 active 类名（设置为高亮状态）
+                    li.classList.add('active');
+                    // 调用 loadDirectory 函数加载该子目录的内容，列索引加一
+                    loadDirectory(item.relative_path, columnIndex + 1);
+                };
+            } else {
+                // 如果当前项是普通 HTML 文件，创建一个超链接元素 a
+                const a = document.createElement('a');
+                // 设置超链接的 href 属性为根路径加上该文件的相对路径，以在新标签页或当前页打开
+                a.href = '/' + item.relative_path;
+                // 设置超链接的文本为文件名
+                a.textContent = item.name;
+                // 为超链接元素添加特定的 CSS 类名
+                a.className = 'html-link';
+                // 设置超链接在新标签页中打开
+                a.target = '_blank';
+                // 阻止点击事件向上冒泡，防止触发外层容器的点击逻辑
+                a.onclick = (e) => e.stopPropagation();
+                // 将超链接追加到名称 span 元素中
+                nameSpan.appendChild(a);
+            }
+
+            // 将图标元素追加到左侧信息容器中
+            infoDiv.appendChild(iconSpan);
+            // 将名称元素追加到左侧信息容器中
+            infoDiv.appendChild(nameSpan);
+            // 将拼装好的左侧信息容器追加到当前列表项元素中
+            li.appendChild(infoDiv);
+
+            // 动态创建一个用于存放操作按钮的容器 div
+            const btnGroup = document.createElement('div');
+            // 为按钮容器添加特定的 CSS 类名
+            btnGroup.className = 'button-group';
+
+            // 动态创建一个“复制路径”按钮元素
+            const copyBtn = document.createElement('button');
+            // 设置复制按钮显示的文本内容
+            copyBtn.textContent = '复制路径';
+            // 为复制按钮添加特定的 CSS 类名
+            copyBtn.className = 'btn-copy';
+            // 为复制按钮绑定点击事件
+            copyBtn.onclick = (e) => {
+                // 阻止点击事件向上冒泡
+                e.stopPropagation();
+                // 使用 Clipboard API 将文件的绝对路径写入系统剪贴板
+                navigator.clipboard.writeText(item.absolute_path)
+                    // 复制成功后弹出提示框
+                    .then(() => alert('绝对路径已复制到剪贴板！'))
+                    // 复制失败后在控制台输出错误并弹出提示框
+                    .catch(err => { console.error('复制失败:', err); alert('复制失败，请重试！'); });
+            };
+            // 将复制按钮追加到按钮组容器中
+            btnGroup.appendChild(copyBtn);
+
+            // 判断如果当前项不是目录（即文件），才添加删除按钮
+            if (!isDir) {
+                // 动态创建一个“删除”按钮元素
+                const deleteBtn = document.createElement('button');
+                // 设置删除按钮显示的文本内容
+                deleteBtn.textContent = '删除';
+                // 为删除按钮添加特定的 CSS 类名
+                deleteBtn.className = 'btn-delete';
+                // 为删除按钮绑定点击事件
+                deleteBtn.onclick = (e) => {
+                    // 阻止点击事件向上冒泡
+                    e.stopPropagation();
+                    // 弹出确认框，要求用户确认是否真的要删除该文件
+                    if (confirm(`确定要删除文件 ${item.name} 吗？此操作不可恢复！`)) {
+                        // 发送 DELETE 请求到后端接口，要求删除该文件
+                        fetch('/del/file', {
+                            // 设置请求方法为 DELETE
+                            method: 'DELETE',
+                            // 设置请求头，表明发送的数据格式为 JSON
+                            headers: { 'Content-Type': 'application/json' },
+                            // 将包含文件绝对路径的 JavaScript 对象转换为 JSON 字符串作为请求体
+                            body: JSON.stringify({ file_path: item.absolute_path })
+                        })
+                        // 将后端的响应结果解析为 JSON 对象
+                        .then(response => response.json())
+                        // 处理解析成功后的 JSON 数据
+                        .then(res => {
+                            // 如果后端返回成功标识
+                            if (res.success) {
+                                // 弹出删除成功的提示框
+                                alert('删除成功！');
+                                // 将对应的列表项从页面 DOM 中移除，实现无刷新更新列表
+                                li.remove();
+                            } else {
+                                // 如果后端返回失败标识，弹出后端返回的错误信息
+                                alert(res.message || '删除失败！');
+                            }
+                        })
+                        // 捕获并处理请求过程中可能发生的网络错误
+                        .catch(err => { console.error('删除请求失败:', err); alert('请求异常，删除失败！'); });
+                    }
+                };
+                // 将删除按钮追加到按钮组容器中
+                btnGroup.appendChild(deleteBtn);
+            }
+
+            // 将拼装好的按钮组容器追加到当前列表项元素中
+            li.appendChild(btnGroup);
+
+            // 返回构建好的完整列表项 DOM 节点
+            return li;
+        }
+
+        // 在页面加载完成后，调用函数初始加载根目录（即 static 目录），层级索引为 0
+        loadDirectory('', 0);
+
+    </script>
+    <!-- 结束 JavaScript 脚本区域 -->
+</body>
+<!-- 结束文档的主体部分 -->
+</html>
+<!-- 结束整个 HTML 文档的书写 -->
