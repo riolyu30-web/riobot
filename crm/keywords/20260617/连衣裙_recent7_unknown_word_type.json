@@ -1,0 +1,1229 @@
+{
+    "code": 0,
+    "data": {
+        "data": [
+            {
+                "supplyAndDemandIndex": {
+                    "value": 191633.5640887903
+                },
+                "seMaxRescnt": {
+                    "value": 26318.886672788543
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 5831
+                },
+                "seKeyword": {
+                    "value": "连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 23138.896174100308
+                },
+                "payRate": {
+                    "value": 0.05963455149501661
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.1360276552092409
+                },
+                "searchWord": "连衣裙",
+                "clkRate": {
+                    "value": 0.5874890211769298
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 195005.94277068102
+                },
+                "seMaxRescnt": {
+                    "value": 17501.641131714423
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 1059
+                },
+                "seKeyword": {
+                    "value": "连衣裙女夏长裙"
+                },
+                "seSpvIndex": {
+                    "value": 11841.50570547542
+                },
+                "payRate": {
+                    "value": 0.06201550387596899
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C5%AE%CF%C4%B3%A4%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.13407920440419108
+                },
+                "searchWord": "连衣裙女夏长裙",
+                "clkRate": {
+                    "value": 0.5820344544708778
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 186656.76106676
+                },
+                "seMaxRescnt": {
+                    "value": 14947.478139747227
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 774
+                },
+                "seKeyword": {
+                    "value": "连衣裙女夏"
+                },
+                "seSpvIndex": {
+                    "value": 8824.534830970362
+                },
+                "payRate": {
+                    "value": 0.0653138871274572
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C5%AE%CF%C4"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.12535793827553293
+                },
+                "searchWord": "连衣裙女夏",
+                "clkRate": {
+                    "value": 0.5736631502364496
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 193912.35020080794
+                },
+                "seMaxRescnt": {
+                    "value": 11333.477278604407
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 600
+                },
+                "seKeyword": {
+                    "value": "连衣裙女夏高级感"
+                },
+                "seSpvIndex": {
+                    "value": 6629.825643653971
+                },
+                "payRate": {
+                    "value": 0.0362453531598513
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C5%AE%CF%C4%B8%DF%BC%B6%B8%D0"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.11619560340960072
+                },
+                "searchWord": "连衣裙女夏高级感",
+                "clkRate": {
+                    "value": 0.5461928934010152
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 205431.15744712972
+                },
+                "seMaxRescnt": {
+                    "value": 4691.991726806749
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙女夏通勤"
+                },
+                "seSpvIndex": {
+                    "value": 2769.686571797191
+                },
+                "payRate": {
+                    "value": 0.06188118811881188
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C5%AE%CF%C4%CD%A8%C7%DA"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.22432701894317048
+                },
+                "searchWord": "连衣裙女夏通勤",
+                "clkRate": {
+                    "value": 0.519280205655527
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 196766.17188215014
+                },
+                "seMaxRescnt": {
+                    "value": 4542.487428996963
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "胖mm连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 2426.960753724003
+                },
+                "payRate": {
+                    "value": 0.07418397626112759
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C5%D6mm%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.025848142164781908
+                },
+                "searchWord": "胖mm连衣裙",
+                "clkRate": {
+                    "value": 0.5588723051409619
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 204869.427876782
+                },
+                "seMaxRescnt": {
+                    "value": 2946.120431750991
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "国风连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 1680.2672049501277
+                },
+                "payRate": {
+                    "value": 0.048507462686567165
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B9%FA%B7%E7%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.2273972602739726
+                },
+                "searchWord": "国风连衣裙",
+                "clkRate": {
+                    "value": 0.5982142857142857
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 204585.65044268745
+                },
+                "seMaxRescnt": {
+                    "value": 2804.147242478728
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "方领连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 1593.7320676283475
+                },
+                "payRate": {
+                    "value": 0.027450980392156862
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%BD%C1%EC%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.17125984251968504
+                },
+                "searchWord": "方领连衣裙",
+                "clkRate": {
+                    "value": 0.6057007125890737
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 211149.99495371265
+                },
+                "seMaxRescnt": {
+                    "value": 2252.089471125622
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "十三行连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 1379.8195885220834
+                },
+                "payRate": {
+                    "value": 0.01639344262295082
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CA%AE%C8%FD%D0%D0%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.27611940298507465
+                },
+                "searchWord": "十三行连衣裙",
+                "clkRate": {
+                    "value": 0.47164948453608246
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 198783.30270453836
+                },
+                "seMaxRescnt": {
+                    "value": 2071.5015339492757
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "大童连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 1092.3221582954457
+                },
+                "payRate": {
+                    "value": 0.08333333333333333
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B4%F3%CD%AF%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.30238726790450926
+                },
+                "searchWord": "大童连衣裙",
+                "clkRate": {
+                    "value": 0.6387832699619772
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 203430.48176571715
+                },
+                "seMaxRescnt": {
+                    "value": 1931.1314360469735
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "重工连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 1061.595353783446
+                },
+                "payRate": {
+                    "value": 0.022598870056497175
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D6%D8%B9%A4%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.11020408163265306
+                },
+                "searchWord": "重工连衣裙",
+                "clkRate": {
+                    "value": 0.6507352941176471
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 202542.2321205601
+                },
+                "seMaxRescnt": {
+                    "value": 1744.7734131653763
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "微胖连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 983.8172071301241
+                },
+                "payRate": {
+                    "value": 0.02142857142857143
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CE%A2%C5%D6%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.07722007722007722
+                },
+                "searchWord": "微胖连衣裙",
+                "clkRate": {
+                    "value": 0.5857740585774058
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 199110.0497319451
+                },
+                "seMaxRescnt": {
+                    "value": 1494.3674638323728
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "荷叶边连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 778.3744405537791
+                },
+                "payRate": {
+                    "value": 0.021505376344086023
+                },
+                "exposeKeywordGbk": {
+                    "value": "%BA%C9%D2%B6%B1%DF%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.1382488479262673
+                },
+                "searchWord": "荷叶边连衣裙",
+                "clkRate": {
+                    "value": 0.49732620320855614
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 196420.11986157208
+                },
+                "seMaxRescnt": {
+                    "value": 1360.8484513030317
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "女宝连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 685.0890709996471
+                },
+                "payRate": {
+                    "value": 0.14049586776859505
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C5%AE%B1%A6%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.44947735191637633
+                },
+                "searchWord": "女宝连衣裙",
+                "clkRate": {
+                    "value": 0.7658227848101266
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 195005.94277068102
+                },
+                "seMaxRescnt": {
+                    "value": 1239.9830411382509
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "三宅褶皱连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 619.1661940035447
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C8%FD%D5%AC%F1%DE%D6%E5%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.08609271523178808
+                },
+                "searchWord": "三宅褶皱连衣裙",
+                "clkRate": {
+                    "value": 0.6231884057971014
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 201634.31193828498
+                },
+                "seMaxRescnt": {
+                    "value": 968.1240381619002
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "性夜店感连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 514.0429333770178
+                },
+                "payRate": {
+                    "value": 0.08333333333333333
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D0%D4%D2%B9%B5%EA%B8%D0%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.16
+                },
+                "searchWord": "性夜店感连衣裙",
+                "clkRate": {
+                    "value": 0.47619047619047616
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 204585.65044268745
+                },
+                "seMaxRescnt": {
+                    "value": 898.6439223798926
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "女人味连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 489.9477198624348
+                },
+                "payRate": {
+                    "value": 0.04477611940298507
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C5%AE%C8%CB%CE%B6%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.05303030303030303
+                },
+                "searchWord": "女人味连衣裙",
+                "clkRate": {
+                    "value": 0.536
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 223067.3064910251
+                },
+                "seMaxRescnt": {
+                    "value": 676.1456700010987
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "zara连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 487.64655000482946
+                },
+                "payRate": {
+                    "value": 0.01639344262295082
+                },
+                "exposeKeywordGbk": {
+                    "value": "zara%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.020833333333333332
+                },
+                "searchWord": "zara连衣裙",
+                "clkRate": {
+                    "value": 0.41496598639455784
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 193541.2397742664
+                },
+                "seMaxRescnt": {
+                    "value": 786.2045793100724
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙儿童女"
+                },
+                "seSpvIndex": {
+                    "value": 375.2995879227536
+                },
+                "payRate": {
+                    "value": 0.13793103448275862
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%B6%F9%CD%AF%C5%AE"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.46794871794871795
+                },
+                "searchWord": "连衣裙儿童女",
+                "clkRate": {
+                    "value": 0.6987951807228916
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 210906.64191259674
+                },
+                "seMaxRescnt": {
+                    "value": 405.6131913441032
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "美拉德连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 257.2737767575844
+                },
+                "payRate": {
+                    "value": 0.13793103448275862
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C3%C0%C0%AD%B5%C2%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.625
+                },
+                "searchWord": "美拉德连衣裙",
+                "clkRate": {
+                    "value": 0.4461538461538462
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 204299.8951738869
+                },
+                "seMaxRescnt": {
+                    "value": 455.9747246260636
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙仙气飘飘"
+                },
+                "seSpvIndex": {
+                    "value": 248.10935106192187
+                },
+                "payRate": {
+                    "value": 0.16666666666666666
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%CF%C9%C6%F8%C6%AE%C6%AE"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.07462686567164178
+                },
+                "searchWord": "连衣裙仙气飘飘",
+                "clkRate": {
+                    "value": 0.4838709677419355
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 205985.2948186733
+                },
+                "seMaxRescnt": {
+                    "value": 438.4564384428906
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙宽松慵懒风"
+                },
+                "seSpvIndex": {
+                    "value": 244.91199193449813
+                },
+                "payRate": {
+                    "value": 0.02564102564102564
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%BF%ED%CB%C9%E3%BC%C0%C1%B7%E7"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.27058823529411763
+                },
+                "searchWord": "连衣裙宽松慵懒风",
+                "clkRate": {
+                    "value": 0.6290322580645161
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 213735.6750778379
+                },
+                "seMaxRescnt": {
+                    "value": 263.6898681233977
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "千金连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 162.61120410681508
+                },
+                "payRate": {
+                    "value": 0.03571428571428571
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C7%A7%BD%F0%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.19642857142857142
+                },
+                "searchWord": "千金连衣裙",
+                "clkRate": {
+                    "value": 0.6222222222222222
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 192022.26627964928
+                },
+                "seMaxRescnt": {
+                    "value": 299.9818169674753
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "名媛风连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 141.80561066075302
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C3%FB%E6%C2%B7%E7%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.4444444444444444
+                },
+                "searchWord": "名媛风连衣裙",
+                "clkRate": {
+                    "value": 0.4666666666666667
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 220830.18466112888
+                },
+                "seMaxRescnt": {
+                    "value": 198.12177555118376
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "小香风名媛连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 134.45134874841926
+                },
+                "payRate": {
+                    "value": 0.1111111111111111
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D0%A1%CF%E3%B7%E7%C3%FB%E6%C2%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.05263157894736842
+                },
+                "searchWord": "小香风名媛连衣裙",
+                "clkRate": {
+                    "value": 0.45
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 211391.9121058897
+                },
+                "seMaxRescnt": {
+                    "value": 200.20811393355314
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "赫本连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 118.31514708038605
+                },
+                "payRate": {
+                    "value": 0.043478260869565216
+                },
+                "exposeKeywordGbk": {
+                    "value": "%BA%D5%B1%BE%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.3191489361702128
+                },
+                "searchWord": "赫本连衣裙",
+                "clkRate": {
+                    "value": 0.71875
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 172592.41829781784
+                },
+                "seMaxRescnt": {
+                    "value": 276.03989981186703
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙女夏薄款"
+                },
+                "seSpvIndex": {
+                    "value": 105.18566992334695
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C5%AE%CF%C4%B1%A1%BF%EE"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.5454545454545454
+                },
+                "searchWord": "连衣裙女夏薄款",
+                "clkRate": {
+                    "value": 0.5882352941176471
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 184853.87664049372
+                },
+                "seMaxRescnt": {
+                    "value": 143.97520230091368
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙女高级感"
+                },
+                "seSpvIndex": {
+                    "value": 62.89666408171877
+                },
+                "payRate": {
+                    "value": 0.14285714285714285
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C5%AE%B8%DF%BC%B6%B8%D0"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.5
+                },
+                "searchWord": "连衣裙女高级感",
+                "clkRate": {
+                    "value": 0.5833333333333334
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 224842.6292825427
+                },
+                "seMaxRescnt": {
+                    "value": 59.19356162941506
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "黑丝绒连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 42.992193144817975
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%BA%DA%CB%BF%C8%DE%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": 2.25
+                },
+                "searchWord": "黑丝绒连衣裙",
+                "clkRate": {
+                    "value": 0.46153846153846156
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 208906.0011042477
+                },
+                "seMaxRescnt": {
+                    "value": 40.52855057863269
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙女夏宽松"
+                },
+                "seSpvIndex": {
+                    "value": 24.668170387070063
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C5%AE%CF%C4%BF%ED%CB%C9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.14285714285714285
+                },
+                "searchWord": "连衣裙女夏宽松",
+                "clkRate": {
+                    "value": 1.0
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 190844.92657933783
+                },
+                "seMaxRescnt": {
+                    "value": 52.658401653568944
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙女度假"
+                },
+                "seSpvIndex": {
+                    "value": 24.086856504752177
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C5%AE%B6%C8%BC%D9"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.5833333333333334
+                },
+                "searchWord": "连衣裙女度假",
+                "clkRate": {
+                    "value": 0.4
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 211391.9121058897
+                },
+                "seMaxRescnt": {
+                    "value": 31.978527148678722
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "孕妇针织连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 18.948483078545678
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D4%D0%B8%BE%D5%EB%D6%AF%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": 1.5
+                },
+                "searchWord": "孕妇针织连衣裙",
+                "clkRate": {
+                    "value": 0.4
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 217850.37700360978
+                },
+                "seMaxRescnt": {
+                    "value": 27.331854432751356
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙女夏显瘦"
+                },
+                "seSpvIndex": {
+                    "value": 17.805962519206332
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C5%AE%CF%C4%CF%D4%CA%DD"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.8837209302325582
+                },
+                "searchWord": "连衣裙女夏显瘦",
+                "clkRate": {
+                    "value": 0.4
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 231705.74388122765
+                },
+                "seMaxRescnt": {
+                    "value": 15.919766137892793
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙盲盒"
+                },
+                "seSpvIndex": {
+                    "value": 13.095702098959578
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C3%A4%BA%D0"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.0
+                },
+                "searchWord": "连衣裙盲盒",
+                "clkRate": {
+                    "value": 0.5
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 243391.07426473984
+                },
+                "seMaxRescnt": {
+                    "value": 12.113644969333109
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "连衣裙女春秋"
+                },
+                "seSpvIndex": {
+                    "value": 12.160239100102672
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C1%AC%D2%C2%C8%B9%C5%AE%B4%BA%C7%EF"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.9047619047619048
+                },
+                "searchWord": "连衣裙女春秋",
+                "clkRate": {
+                    "value": 0.5
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 218260.4214254533
+                },
+                "seMaxRescnt": {
+                    "value": 5.979359227976147
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "春节连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 4.103722129880566
+                },
+                "payRate": {
+                    "value": 0.0
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B4%BA%BD%DA%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.0
+                },
+                "searchWord": "春节连衣裙",
+                "clkRate": {
+                    "value": 1.0
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 0.6889999817019543
+                },
+                "seMaxRescnt": {
+                    "value": null
+                },
+                "statDate": {
+                    "value": 1781193600000
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "年会连衣裙"
+                },
+                "seSpvIndex": {
+                    "value": 0.6889999817019543
+                },
+                "payRate": {},
+                "exposeKeywordGbk": {
+                    "value": "%C4%EA%BB%E1%C1%AC%D2%C2%C8%B9"
+                },
+                "seSpvChangeRate": {
+                    "value": -1.0
+                },
+                "searchWord": "年会连衣裙",
+                "clkRate": {
+                    "value": null
+                }
+            }
+        ],
+        "recordCount": 37
+    },
+    "message": "操作成功",
+    "traceId": "213e018117816342614181106efb18"
+}

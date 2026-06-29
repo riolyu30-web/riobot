@@ -1,0 +1,893 @@
+{
+    "code": 0,
+    "data": {
+        "data": [
+            {
+                "cateScoreXy": {
+                    "value": 4.381102166081025
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.177355779922586
+                },
+                "ipvUvIndex": {
+                    "value": 41974.06751752528
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-12 23:47:02",
+                    "minPrice": 0.4,
+                    "offerImageUrl": "img/ibank/O1CN011ybUar1Y18QIgm3AM_!!2217550432998-0-cib.jpg",
+                    "offerId": 861038143413,
+                    "detailUrl": "https://detail.1688.com/offer/861038143413.html",
+                    "maxPrice": 0.4,
+                    "offerExpireTime": "2036-06-02 08:59:48",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1042128,
+                    "basePrice": "0.4",
+                    "offerTitle": "ins韩系郁金香蝴蝶花苞布艺花朵diy服饰配件发饰包包饰品辅料",
+                    "memberId": "b2b-2217550432998ade70"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "identity": "svip",
+                    "shopName": "通州区川姜镇章杰花边经营部",
+                    "realBusiness": true,
+                    "shopUrl": "https://shop904o46r4z9056.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2217550432998ade70"
+                },
+                "seUvIndex": {
+                    "value": 96840.53877701295
+                },
+                "payOrdAmtIndex": {
+                    "value": 6581.00183103056
+                },
+                "repeatRate": {
+                    "value": 0.3436
+                },
+                "payOrdAmtRank": {
+                    "value": 165
+                },
+                "cateScoreHm": {
+                    "value": 4.822103366988124
+                },
+                "itemId": {
+                    "value": 861038143413
+                },
+                "activeInquiryUserIndex": {
+                    "value": 423.11670079545
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 1
+                },
+                "rank": {
+                    "value": 1
+                },
+                "scorefh": {
+                    "value": 4.6
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 0.011904761904761904
+                },
+                "scorehm": {
+                    "value": 4.98
+                },
+                "activeInquiryUserRank": {
+                    "value": 551.0
+                },
+                "scorexy": {
+                    "value": 4.3
+                },
+                "memberId": {
+                    "value": "b2b-2217550432998ade70"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 4.381102166081025
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.177355779922586
+                },
+                "ipvUvIndex": {
+                    "value": 31854.299501248475
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-14 00:30:53",
+                    "minPrice": 10.8,
+                    "offerImageUrl": "img/ibank/O1CN01W2QwmT2Hpew9qx1Nk_!!4004499200-0-cib.jpg",
+                    "offerId": 1040829672363,
+                    "detailUrl": "https://detail.1688.com/offer/1040829672363.html",
+                    "maxPrice": 15.0,
+                    "offerExpireTime": "2036-04-11 15:19:33",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 10131,
+                    "basePrice": "10.8",
+                    "offerTitle": "全棉40支印花布料ins可爱彩虹晕染猫猫头服装发饰包包发圈diy面料",
+                    "memberId": "b2b-400449920072d7b"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAAAA",
+                    "shopName": "广州展盛纺织有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop13j22w90w5763.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-400449920072d7b"
+                },
+                "seUvIndex": {
+                    "value": 133061.72557613548
+                },
+                "payOrdAmtIndex": {
+                    "value": 2553.0499655823514
+                },
+                "repeatRate": {
+                    "value": 0.2032
+                },
+                "payOrdAmtRank": {
+                    "value": 967
+                },
+                "cateScoreHm": {
+                    "value": 4.822103366988124
+                },
+                "itemId": {
+                    "value": 1040829672363
+                },
+                "activeInquiryUserIndex": {
+                    "value": 673.1121279872896
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 2
+                },
+                "rank": {
+                    "value": 2
+                },
+                "scorefh": {
+                    "value": 3.91
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 0.018955042527339004
+                },
+                "scorehm": {
+                    "value": 4.91
+                },
+                "activeInquiryUserRank": {
+                    "value": 173.0
+                },
+                "scorexy": {
+                    "value": 4.89
+                },
+                "memberId": {
+                    "value": "b2b-400449920072d7b"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 4.381102166081025
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.177355779922586
+                },
+                "ipvUvIndex": {
+                    "value": 21518.386606066662
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 15:15:48",
+                    "minPrice": 8.4,
+                    "offerImageUrl": "img/ibank/O1CN01GQCLIH1Riumumqoky_!!2641642146.jpg",
+                    "offerId": 961759664666,
+                    "detailUrl": "https://detail.1688.com/offer/961759664666.html",
+                    "maxPrice": 9.54,
+                    "offerExpireTime": "2036-06-10 15:15:48",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031765,
+                    "basePrice": "8.4",
+                    "offerTitle": "手工夏布 苎麻布 苎麻布料 漆艺胎麻布面料 DIY隔断装饰",
+                    "memberId": "b2b-2220051207730bc5e9"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AA",
+                    "shopName": "莆田市荔城区沃酷任纺织品厂（个体工商户）",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop0376013894767.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2220051207730bc5e9"
+                },
+                "seUvIndex": {
+                    "value": 112436.35020467015
+                },
+                "payOrdAmtIndex": {
+                    "value": 907.0603400825639
+                },
+                "repeatRate": {
+                    "value": 0.1597
+                },
+                "payOrdAmtRank": {
+                    "value": 5407
+                },
+                "cateScoreHm": {
+                    "value": 4.822103366988124
+                },
+                "itemId": {
+                    "value": 961759664666
+                },
+                "activeInquiryUserIndex": {
+                    "value": 206.81875669857254
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 3
+                },
+                "rank": {
+                    "value": 3
+                },
+                "scorefh": {
+                    "value": 4.54
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 0.7737983034872762
+                },
+                "scorehm": {
+                    "value": 4.84
+                },
+                "activeInquiryUserRank": {
+                    "value": 2439.0
+                },
+                "scorexy": {
+                    "value": 3.64
+                },
+                "memberId": {
+                    "value": "b2b-2220051207730bc5e9"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 4.381102166081025
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.177355779922586
+                },
+                "ipvUvIndex": {
+                    "value": 20077.785325743724
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 13:05:43",
+                    "minPrice": 10.5,
+                    "offerImageUrl": "img/ibank/O1CN01P5GF3p2HpetjFQiYC_!!4004499200-0-cib.jpg",
+                    "offerId": 981638056485,
+                    "detailUrl": "https://detail.1688.com/offer/981638056485.html",
+                    "maxPrice": 14.0,
+                    "offerExpireTime": "2036-05-13 14:51:48",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 10131,
+                    "basePrice": "10.5",
+                    "offerTitle": "全棉40支数码印花面料 韩版ins风花布 女装童装亲子装家居服DIY布",
+                    "memberId": "b2b-400449920072d7b"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAAAA",
+                    "shopName": "广州展盛纺织有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop13j22w90w5763.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-400449920072d7b"
+                },
+                "seUvIndex": {
+                    "value": 142488.90389653266
+                },
+                "payOrdAmtIndex": {
+                    "value": 6170.630054566136
+                },
+                "repeatRate": {
+                    "value": 0.2032
+                },
+                "payOrdAmtRank": {
+                    "value": 186
+                },
+                "cateScoreHm": {
+                    "value": 4.822103366988124
+                },
+                "itemId": {
+                    "value": 981638056485
+                },
+                "activeInquiryUserIndex": {
+                    "value": 2133.727247503324
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 4
+                },
+                "rank": {
+                    "value": 4
+                },
+                "scorefh": {
+                    "value": 3.91
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 0.029670068834559696
+                },
+                "scorehm": {
+                    "value": 4.91
+                },
+                "activeInquiryUserRank": {
+                    "value": 20.0
+                },
+                "scorexy": {
+                    "value": 4.89
+                },
+                "memberId": {
+                    "value": "b2b-400449920072d7b"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 4.381102166081025
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.177355779922586
+                },
+                "ipvUvIndex": {
+                    "value": 19701.431477185804
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 14:14:21",
+                    "minPrice": 9.35,
+                    "offerImageUrl": "img/ibank/O1CN011Qydfl1aEzifrYQU4_!!11083299.jpg",
+                    "offerId": 1014973268340,
+                    "detailUrl": "https://detail.1688.com/offer/1014973268340.html",
+                    "maxPrice": 12.0,
+                    "offerExpireTime": "2036-01-15 23:30:44",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 10131,
+                    "basePrice": "9.35",
+                    "offerTitle": "PopoHouse绿影森林田园碎花棉布料童装娃衣裙子睡衣服装面料diy",
+                    "memberId": "b2b-2221458025348e2d79"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "identity": "svip",
+                    "shopName": "义乌市稚卯贸易有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop41v3146244ka3.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2221458025348e2d79"
+                },
+                "seUvIndex": {
+                    "value": 135230.7015408038
+                },
+                "payOrdAmtIndex": {
+                    "value": 660.7145108073018
+                },
+                "repeatRate": {
+                    "value": 0.1273
+                },
+                "payOrdAmtRank": {
+                    "value": 8407
+                },
+                "cateScoreHm": {
+                    "value": 4.822103366988124
+                },
+                "itemId": {
+                    "value": 1014973268340
+                },
+                "activeInquiryUserIndex": {
+                    "value": 255.04760749114212
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 5
+                },
+                "rank": {
+                    "value": 5
+                },
+                "scorefh": {
+                    "value": 4.56
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 0.03950713866614512
+                },
+                "scorehm": {
+                    "value": 4.86
+                },
+                "activeInquiryUserRank": {
+                    "value": 1584.0
+                },
+                "scorexy": {
+                    "value": 3.12
+                },
+                "memberId": {
+                    "value": "b2b-2221458025348e2d79"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 4.381102166081025
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.177355779922586
+                },
+                "ipvUvIndex": {
+                    "value": 19226.994864940963
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 19:39:21",
+                    "minPrice": 10.99,
+                    "offerImageUrl": "img/ibank/O1CN01mZN9dp1J9dfBw6nWe_!!2261560986-0-cib.jpg",
+                    "offerId": 1017241977922,
+                    "detailUrl": "https://detail.1688.com/offer/1017241977922.html",
+                    "maxPrice": 14.99,
+                    "offerExpireTime": "2036-06-09 20:26:56",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031716,
+                    "basePrice": "10.99",
+                    "offerTitle": "细粉彩虹美人鱼镜子白格利特闪粉小卷PU拼豆烫布",
+                    "memberId": "b2b-2261560986"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAAA",
+                    "shopName": "广州沙伦皮革有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://sharonleather.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2261560986"
+                },
+                "seUvIndex": {
+                    "value": 130970.10355391612
+                },
+                "payOrdAmtIndex": {
+                    "value": 26930.194863734112
+                },
+                "repeatRate": {
+                    "value": 0.2303
+                },
+                "payOrdAmtRank": {
+                    "value": 3
+                },
+                "cateScoreHm": {
+                    "value": 4.822103366988124
+                },
+                "itemId": {
+                    "value": 1017241977922
+                },
+                "activeInquiryUserIndex": {
+                    "value": 7900.490415710403
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 6
+                },
+                "rank": {
+                    "value": 6
+                },
+                "scorefh": {
+                    "value": 4.49
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.22838204278397106
+                },
+                "scorehm": {
+                    "value": 5.0
+                },
+                "activeInquiryUserRank": {
+                    "value": 1.0
+                },
+                "scorexy": {
+                    "value": 4.83
+                },
+                "memberId": {
+                    "value": "b2b-2261560986"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 4.381102166081025
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.177355779922586
+                },
+                "ipvUvIndex": {
+                    "value": 17019.40526177734
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 07:55:35",
+                    "minPrice": 9.9,
+                    "offerImageUrl": "img/ibank/O1CN01Kblhf61lKSEIjmPus_!!2212766294800-0-cib.jpg",
+                    "offerId": 1006675314035,
+                    "detailUrl": "https://detail.1688.com/offer/1006675314035.html",
+                    "maxPrice": 9.9,
+                    "offerExpireTime": "2036-06-03 14:00:18",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 10131,
+                    "basePrice": "9.9",
+                    "offerTitle": "福利款 纯棉40支数码印花布 韩系ins风娃衣diy包包饰品发圈家居服",
+                    "memberId": "b2b-2212766294800837f5"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAAA",
+                    "identity": "svip",
+                    "shopName": "湖州巨荣纺织有限公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://shop76633241brs16.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2212766294800837f5"
+                },
+                "seUvIndex": {
+                    "value": 143552.06215161175
+                },
+                "payOrdAmtIndex": {
+                    "value": 4216.472855049535
+                },
+                "repeatRate": {
+                    "value": 0.2042
+                },
+                "payOrdAmtRank": {
+                    "value": 394
+                },
+                "cateScoreHm": {
+                    "value": 4.822103366988124
+                },
+                "itemId": {
+                    "value": 1006675314035
+                },
+                "activeInquiryUserIndex": {
+                    "value": 1304.6626131607627
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 7
+                },
+                "rank": {
+                    "value": 7
+                },
+                "scorefh": {
+                    "value": 3.1
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 0.014561423783658847
+                },
+                "scorehm": {
+                    "value": 4.85
+                },
+                "activeInquiryUserRank": {
+                    "value": 41.0
+                },
+                "scorexy": {
+                    "value": 4.17
+                },
+                "memberId": {
+                    "value": "b2b-2212766294800837f5"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 4.381102166081025
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.177355779922586
+                },
+                "ipvUvIndex": {
+                    "value": 16876.744816889608
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 08:02:45",
+                    "minPrice": 0.1,
+                    "offerImageUrl": "img/ibank/O1CN01DZNnba1aQRaLjvsCL_!!2215438553324-0-cib.jpg",
+                    "offerId": 936567601514,
+                    "detailUrl": "https://detail.1688.com/offer/936567601514.html",
+                    "maxPrice": 0.1,
+                    "offerExpireTime": "2035-06-06 20:11:08",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031770,
+                    "basePrice": "0.1",
+                    "offerTitle": "新款网红毛毡包手提卡通学生可爱手提包伴手礼礼盒量毛毡布手提包",
+                    "memberId": "b2b-2215438553324652ff"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "shopName": "南宫市鹏泽商贸有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop82b5687949927.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2215438553324652ff"
+                },
+                "seUvIndex": {
+                    "value": 79569.29309661145
+                },
+                "payOrdAmtIndex": {
+                    "value": 738.7029928530974
+                },
+                "repeatRate": {
+                    "value": 0.1505
+                },
+                "payOrdAmtRank": {
+                    "value": 7233
+                },
+                "cateScoreHm": {
+                    "value": 4.822103366988124
+                },
+                "itemId": {
+                    "value": 936567601514
+                },
+                "activeInquiryUserIndex": {
+                    "value": 230.94485915481346
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 8
+                },
+                "rank": {
+                    "value": 8
+                },
+                "scorefh": {
+                    "value": 4.51
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.10648148148148148
+                },
+                "scorehm": {
+                    "value": 4.91
+                },
+                "activeInquiryUserRank": {
+                    "value": 2032.0
+                },
+                "scorexy": {
+                    "value": 4.19
+                },
+                "memberId": {
+                    "value": "b2b-2215438553324652ff"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 4.381102166081025
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.177355779922586
+                },
+                "ipvUvIndex": {
+                    "value": 16557.128444407892
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 16:09:24",
+                    "minPrice": 10.9,
+                    "offerImageUrl": "img/ibank/O1CN01h21oZl1L5B109xu5K_!!2220624651247-0-cib.jpg",
+                    "offerId": 973007647432,
+                    "detailUrl": "https://detail.1688.com/offer/973007647432.html",
+                    "maxPrice": 35.4,
+                    "offerExpireTime": "2036-04-18 02:14:20",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 10160,
+                    "basePrice": "10.9",
+                    "offerTitle": "纽扣盲盒奶油色ins风可爱清新diy饰品手作装饰配件缝纫辅料小扣子",
+                    "memberId": "b2b-22206246512479cf78"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "identity": "svip",
+                    "shopName": "泉州市丰泽区繁漪电子商务商行(个体工商户)",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop58v59424110f2.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-22206246512479cf78"
+                },
+                "seUvIndex": {
+                    "value": 125160.355615661
+                },
+                "payOrdAmtIndex": {
+                    "value": 1663.5000489339
+                },
+                "repeatRate": {
+                    "value": 0.111
+                },
+                "payOrdAmtRank": {
+                    "value": 2120
+                },
+                "cateScoreHm": {
+                    "value": 4.822103366988124
+                },
+                "itemId": {
+                    "value": 973007647432
+                },
+                "activeInquiryUserIndex": {
+                    "value": 242.99914976744913
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 9
+                },
+                "rank": {
+                    "value": 9
+                },
+                "scorefh": {
+                    "value": 4.58
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.1885286783042394
+                },
+                "scorehm": {
+                    "value": 4.96
+                },
+                "activeInquiryUserRank": {
+                    "value": 1723.0
+                },
+                "scorexy": {
+                    "value": 3.89
+                },
+                "memberId": {
+                    "value": "b2b-22206246512479cf78"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 4.381102166081025
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.177355779922586
+                },
+                "ipvUvIndex": {
+                    "value": 15771.28031615296
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 04:02:19",
+                    "minPrice": 0.28,
+                    "offerImageUrl": "img/ibank/O1CN014h32yp1vW2OD9pCHq_!!2834956179-0-cib.jpg",
+                    "offerId": 959755669985,
+                    "detailUrl": "https://detail.1688.com/offer/959755669985.html",
+                    "maxPrice": 0.55,
+                    "offerExpireTime": "2036-03-06 10:05:30",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031864,
+                    "basePrice": "0.28",
+                    "offerTitle": "新款洛丽塔弹力蕾丝花边服装服饰裙边辅料鞋帽连衣裙丝带现货批发",
+                    "memberId": "b2b-2834956179fefc8"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "identity": "svip",
+                    "shopName": "中山星彩纺织有限公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://xingcaifangzhi.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2834956179fefc8"
+                },
+                "seUvIndex": {
+                    "value": 145211.60716739303
+                },
+                "payOrdAmtIndex": {
+                    "value": 4236.452910725988
+                },
+                "repeatRate": {
+                    "value": 0.1827
+                },
+                "payOrdAmtRank": {
+                    "value": 387
+                },
+                "cateScoreHm": {
+                    "value": 4.822103366988124
+                },
+                "itemId": {
+                    "value": 959755669985
+                },
+                "activeInquiryUserIndex": {
+                    "value": 932.3473533925426
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 10
+                },
+                "rank": {
+                    "value": 10
+                },
+                "scorefh": {
+                    "value": 4.44
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 0.08044301952783445
+                },
+                "scorehm": {
+                    "value": 5.0
+                },
+                "activeInquiryUserRank": {
+                    "value": 82.0
+                },
+                "scorexy": {
+                    "value": 4.98
+                },
+                "memberId": {
+                    "value": "b2b-2834956179fefc8"
+                }
+            }
+        ],
+        "recordCount": 200
+    },
+    "message": "操作成功",
+    "traceId": "215041ca17813796288601703ef316"
+}

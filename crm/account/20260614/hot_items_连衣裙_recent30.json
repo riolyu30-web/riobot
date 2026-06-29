@@ -1,0 +1,774 @@
+{
+    "code": 0,
+    "data": {
+        "data": {
+            "highestPrice": "299.0",
+            "lowestPrice": "29.38",
+            "data": [
+                {
+                    "clkPopularity": {
+                        "value": 5690.547814272439
+                    },
+                    "sellCnt30": {
+                        "value": 373
+                    },
+                    "itemId": "1053298419927",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 22:52:13",
+                        "offerImageUrl": "img/ibank/O1CN01OhHzOM1InCFz1XC29_!!4012130937-0-cib.jpg",
+                        "minPrice": 131.0,
+                        "offerId": 1053298419927,
+                        "detailUrl": "https://detail.1688.com/offer/1053298419927.html",
+                        "maxPrice": 135.0,
+                        "offerExpireTime": "2036-05-26 17:10:58",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "鹿西 木耳边V领无袖背心裙女26夏季新款抽绳通勤直筒连衣裙5222",
+                        "basePrice": "131.0",
+                        "memberId": "b2b-4012130937ce61b"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAAAA",
+                        "identity": "svip",
+                        "shopName": "杭州优西服装设计有限公司",
+                        "realBusiness": true,
+                        "shopUrl": "https://luxiaunt.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-4012130937ce61b"
+                    },
+                    "rank": {
+                        "value": "1"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 4949.185582536508
+                    },
+                    "sellCnt30": {
+                        "value": 79
+                    },
+                    "itemId": "673667780036",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 22:44:00",
+                        "offerImageUrl": "img/ibank/O1CN01A3CuF51zREMA3jRTH_!!3969126710-0-cib.jpg",
+                        "minPrice": 299.0,
+                        "offerId": 673667780036,
+                        "detailUrl": "https://detail.1688.com/offer/673667780036.html",
+                        "maxPrice": 339.0,
+                        "offerExpireTime": "2036-06-08 16:10:52",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "The*y专柜三醋酸连衣裙夏季新款气质时尚高级感无袖鱼尾裙裙子",
+                        "basePrice": "299.0",
+                        "memberId": "b2b-3969126710b8507"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAA",
+                        "identity": "svip",
+                        "shopName": "上海恩迪服饰有限公司",
+                        "realBusiness": true,
+                        "shopUrl": "https://endish.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-3969126710b8507"
+                    },
+                    "rank": {
+                        "value": "2"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 4457.53306553831
+                    },
+                    "sellCnt30": {
+                        "value": 138
+                    },
+                    "itemId": "951349423590",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 20:37:34",
+                        "offerImageUrl": "img/ibank/O1CN01c3oP9W20MUBOPQ9cg_!!2219564946835-0-cib.jpg",
+                        "minPrice": 98.8,
+                        "offerId": 951349423590,
+                        "detailUrl": "https://detail.1688.com/offer/951349423590.html",
+                        "maxPrice": 98.8,
+                        "offerExpireTime": "2035-07-12 17:03:41",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "花栗鼠小姐 月下绮梦 法式重工V领连衣裙女夏精致收腰气质感长裙",
+                        "basePrice": "98.8",
+                        "memberId": "b2b-2219564946835b4903"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAA",
+                        "shopName": "广州郑达不溜服装有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://shop70891n4578eu4.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2219564946835b4903"
+                    },
+                    "rank": {
+                        "value": "3"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 4120.3291097455985
+                    },
+                    "sellCnt30": {
+                        "value": 139
+                    },
+                    "itemId": "921332046544",
+                    "item": {
+                        "offerUpdateTime": "2026-06-14 00:42:59",
+                        "offerImageUrl": "img/ibank/O1CN010dWoZF1jENgeUoEqT_!!2214077954516-0-cib.jpg",
+                        "minPrice": 149.0,
+                        "offerId": 921332046544,
+                        "detailUrl": "https://detail.1688.com/offer/921332046544.html",
+                        "maxPrice": 149.0,
+                        "offerExpireTime": "2036-05-07 14:27:12",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "江左 法式露背刺绣蕾丝V领连衣裙女天丝麻高腰衬衫长裙子夏季1525",
+                        "basePrice": "149.0",
+                        "memberId": "b2b-2214077954516fa644"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAAAA",
+                        "identity": "svip",
+                        "shopName": "杭州江左服装设计有限公司",
+                        "realBusiness": true,
+                        "shopUrl": "https://shop389p729820285.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2214077954516fa644"
+                    },
+                    "rank": {
+                        "value": "4"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 3857.793030012565
+                    },
+                    "sellCnt30": {
+                        "value": 6101
+                    },
+                    "itemId": "945710355361",
+                    "item": {
+                        "offerUpdateTime": "2026-06-14 00:36:15",
+                        "offerImageUrl": "img/ibank/O1CN01O7lDAX1jENhbt08bk_!!2214077954516-0-cib.jpg",
+                        "minPrice": 155.0,
+                        "offerId": 945710355361,
+                        "detailUrl": "https://detail.1688.com/offer/945710355361.html",
+                        "maxPrice": 155.0,
+                        "offerExpireTime": "2036-04-22 15:59:24",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "江左 老钱风裙子亚麻女装夏高级感短袖连衣裙女夏长裙配皮带1606",
+                        "basePrice": "155.0",
+                        "memberId": "b2b-2214077954516fa644"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAAAA",
+                        "identity": "svip",
+                        "shopName": "杭州江左服装设计有限公司",
+                        "realBusiness": true,
+                        "shopUrl": "https://shop389p729820285.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2214077954516fa644"
+                    },
+                    "rank": {
+                        "value": "5"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 3626.506394486499
+                    },
+                    "sellCnt30": {
+                        "value": 264
+                    },
+                    "itemId": "911849071063",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 04:59:23",
+                        "offerImageUrl": "img/ibank/O1CN01QaUdgx1Gh7gDpv9T1_!!2218519400653-0-cib.jpg",
+                        "minPrice": 78.0,
+                        "offerId": 911849071063,
+                        "detailUrl": "https://detail.1688.com/offer/911849071063.html",
+                        "maxPrice": 78.0,
+                        "offerExpireTime": "2036-05-24 14:38:11",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "法式桔梗泡泡袖紫色连衣裙女2026夏季新款荷叶边气质显瘦绝美长裙",
+                        "basePrice": "78.0",
+                        "memberId": "b2b-2218519400653952aa"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAAA",
+                        "shopName": "广州森曼迪服饰有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://shop14599506v3ii3.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2218519400653952aa"
+                    },
+                    "rank": {
+                        "value": "6"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 3599.2223712659475
+                    },
+                    "sellCnt30": {
+                        "value": 123
+                    },
+                    "itemId": "906852642080",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 10:56:44",
+                        "offerImageUrl": "img/ibank/O1CN01IpQb1A1UxysOxbqNv_!!2212866592585-0-cib.jpg",
+                        "minPrice": 139.0,
+                        "offerId": 906852642080,
+                        "detailUrl": "https://detail.1688.com/offer/906852642080.html",
+                        "maxPrice": 139.0,
+                        "offerExpireTime": "2036-06-05 13:29:11",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "棉质 双股线盘带重工刺绣工艺/法式v领连衣裙短袖A字裙",
+                        "basePrice": "139.0",
+                        "memberId": "b2b-2212866592585e060f"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AA",
+                        "identity": "svip",
+                        "shopName": "广州乐其服装批发有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://shop57256qr487997.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2212866592585e060f"
+                    },
+                    "rank": {
+                        "value": "7"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 3345.0071553901103
+                    },
+                    "sellCnt30": {
+                        "value": 214
+                    },
+                    "itemId": "954299063427",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 19:41:50",
+                        "offerImageUrl": "img/ibank/O1CN01YfHRiZ1PtnCjiMuek_!!2215575401899-0-cib.jpg",
+                        "minPrice": 91.0,
+                        "offerId": 954299063427,
+                        "detailUrl": "https://detail.1688.com/offer/954299063427.html",
+                        "maxPrice": 103.0,
+                        "offerExpireTime": "2036-06-09 10:03:53",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "EGGKA法式刺绣重工短袖白色连衣裙少女风气质显瘦收腰显高a字长裙",
+                        "basePrice": "91.0",
+                        "memberId": "b2b-221557540189957f90"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AA",
+                        "identity": "svip",
+                        "shopName": "广州丰迎服装有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://blueying169169.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-221557540189957f90"
+                    },
+                    "rank": {
+                        "value": "8"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 3305.260269702788
+                    },
+                    "sellCnt30": {
+                        "value": 103
+                    },
+                    "itemId": "942737410698",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 18:30:55",
+                        "offerImageUrl": "img/ibank/O1CN01gOWthm1Eby0TKdKIN_!!2211493960371-0-cib.jpg",
+                        "minPrice": 75.0,
+                        "offerId": 942737410698,
+                        "detailUrl": "https://detail.1688.com/offer/942737410698.html",
+                        "maxPrice": 80.0,
+                        "offerExpireTime": "2036-02-03 06:37:43",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "清雅艺术生气质知性设计感小众简约短袖连衣裙女夏季长短款裙子",
+                        "basePrice": "75.0",
+                        "memberId": "b2b-221149396037112b74"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AA",
+                        "shopName": "广州易祥服饰有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://shop86244g7h47925.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-221149396037112b74"
+                    },
+                    "rank": {
+                        "value": "9"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 3200.69876338667
+                    },
+                    "sellCnt30": {
+                        "value": 130
+                    },
+                    "itemId": "893673269028",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 13:05:42",
+                        "offerImageUrl": "img/ibank/O1CN01YSeLjx1Gh7fSpr7VM_!!2218519400653-0-cib.jpg",
+                        "minPrice": 76.0,
+                        "offerId": 893673269028,
+                        "detailUrl": "https://detail.1688.com/offer/893673269028.html",
+                        "maxPrice": 78.0,
+                        "offerExpireTime": "2036-05-29 09:24:37",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "海岛假日2026夏季新款休闲复古感绣花蕾丝拼接连衣裙女",
+                        "basePrice": "76.0",
+                        "memberId": "b2b-2218519400653952aa"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAAA",
+                        "shopName": "广州森曼迪服饰有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://shop14599506v3ii3.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2218519400653952aa"
+                    },
+                    "rank": {
+                        "value": "10"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 2991.887864003267
+                    },
+                    "sellCnt30": {
+                        "value": 130
+                    },
+                    "itemId": "1032309503432",
+                    "item": {
+                        "offerUpdateTime": "2026-06-14 00:59:58",
+                        "offerImageUrl": "img/ibank/O1CN01Y1K0Ju1sILjb0op1p_!!2218843845743-0-cib.jpg",
+                        "minPrice": 87.0,
+                        "offerId": 1032309503432,
+                        "detailUrl": "https://detail.1688.com/offer/1032309503432.html",
+                        "maxPrice": 89.0,
+                        "offerExpireTime": "2036-04-09 22:48:58",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "素泊 2026年夏季新肌理感面料亲肤透气花苞型分割收腰无袖连衣裙",
+                        "basePrice": "87.0",
+                        "memberId": "b2b-22188438457439f05a"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAA",
+                        "identity": "svip",
+                        "shopName": "广州浅月电子商务有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://shop4170380855118.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-22188438457439f05a"
+                    },
+                    "rank": {
+                        "value": "11"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 2891.592285149315
+                    },
+                    "sellCnt30": {
+                        "value": 235
+                    },
+                    "itemId": "910001683041",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 07:25:30",
+                        "offerImageUrl": "img/ibank/O1CN01Kf3Pma21ayIgrekAV_!!2211360847002-0-cib.jpg",
+                        "minPrice": 96.0,
+                        "offerId": 910001683041,
+                        "detailUrl": "https://detail.1688.com/offer/910001683041.html",
+                        "maxPrice": 99.0,
+                        "offerExpireTime": "2036-05-05 15:45:25",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "3th Morning 月光玫瑰 设计感提花刺绣宽松无袖连衣裙ZY2978",
+                        "basePrice": "96.0",
+                        "memberId": "b2b-2211360847002ba0d6"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAAAA",
+                        "identity": "svip",
+                        "shopName": "苏州智允服饰设计有限公司",
+                        "realBusiness": true,
+                        "shopUrl": "https://shop9683923r11z46.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2211360847002ba0d6"
+                    },
+                    "rank": {
+                        "value": "12"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 2706.391440979074
+                    },
+                    "sellCnt30": {
+                        "value": 94
+                    },
+                    "itemId": "1043057423911",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 04:52:08",
+                        "offerImageUrl": "img/ibank/O1CN01VteAN31x8nYlgkyN9_!!2218962296399-0-cib.jpg",
+                        "minPrice": 185.0,
+                        "offerId": 1043057423911,
+                        "detailUrl": "https://detail.1688.com/offer/1043057423911.html",
+                        "maxPrice": 185.0,
+                        "offerExpireTime": "2036-04-25 20:37:22",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "solighter 法式莱赛尔v领系带连衣裙夏季显瘦收腰长裙",
+                        "basePrice": "185.0",
+                        "memberId": "b2b-2218962296399ba2e4"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAAA",
+                        "identity": "svip",
+                        "shopName": "深圳市悦苒服装有限公司",
+                        "realBusiness": true,
+                        "shopUrl": "https://shop31303f1678p89.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2218962296399ba2e4"
+                    },
+                    "rank": {
+                        "value": "13"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 2675.02601151918
+                    },
+                    "sellCnt30": {
+                        "value": 268
+                    },
+                    "itemId": "945402758201",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 18:02:39",
+                        "offerImageUrl": "img/ibank/O1CN01TI2wLI1k7LEIdk2sO_!!2219400424636-0-cib.jpg",
+                        "minPrice": 56.65,
+                        "offerId": 945402758201,
+                        "detailUrl": "https://detail.1688.com/offer/945402758201.html",
+                        "maxPrice": 59.98,
+                        "offerExpireTime": "2036-06-04 19:34:43",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "法式减龄绿色显白收腰气质印花波浪长款连衣裙2025夏季新款裙子",
+                        "basePrice": "56.65",
+                        "memberId": "b2b-2219400424636f390f"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AA",
+                        "shopName": "广州玲美研服装有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://shop619329ho480h2.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2219400424636f390f"
+                    },
+                    "rank": {
+                        "value": "14"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 2672.9260164492057
+                    },
+                    "sellCnt30": {
+                        "value": 886
+                    },
+                    "itemId": "1036621632708",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 09:45:30",
+                        "offerImageUrl": "img/ibank/O1CN01cDUmcE1wMFZg2EMTV_!!2209020656293-0-cib.jpg",
+                        "minPrice": 186.0,
+                        "offerId": 1036621632708,
+                        "detailUrl": "https://detail.1688.com/offer/1036621632708.html",
+                        "maxPrice": 186.0,
+                        "offerExpireTime": "2036-06-03 21:33:05",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "NEIHE内赫法式度假风收腰气质连衣裙海边氛围感大口袋长裙252377",
+                        "basePrice": "186.0",
+                        "memberId": "b2b-2209020656293dc038"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAAA",
+                        "identity": "svip",
+                        "shopName": "广州米源服饰有限公司",
+                        "realBusiness": true,
+                        "shopUrl": "https://neihefushi.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2209020656293dc038"
+                    },
+                    "rank": {
+                        "value": "15"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 2666.619229043486
+                    },
+                    "sellCnt30": {
+                        "value": 783
+                    },
+                    "itemId": "920754348481",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 16:08:05",
+                        "offerImageUrl": "img/ibank/O1CN016vDnaU1nOEfgNqQht_!!2208085305079-0-cib.jpg",
+                        "minPrice": 29.38,
+                        "offerId": 920754348481,
+                        "detailUrl": "https://detail.1688.com/offer/920754348481.html",
+                        "maxPrice": 32.98,
+                        "offerExpireTime": "2036-06-07 10:28:20",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "2026新款夏季法式黄色气质吊带连衣裙女夏日绝美小个子少女长裙潮",
+                        "basePrice": "29.38",
+                        "memberId": "b2b-220808530507963cc3"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAA",
+                        "identity": "svip",
+                        "shopName": "广州优品汇服装有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://shop3z19267662z35.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-220808530507963cc3"
+                    },
+                    "rank": {
+                        "value": "16"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 2538.2533691435074
+                    },
+                    "sellCnt30": {
+                        "value": 86
+                    },
+                    "itemId": "919170221913",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 09:44:07",
+                        "offerImageUrl": "img/ibank/O1CN01WrooL21sILervflxW_!!2218843845743-0-cib.jpg",
+                        "minPrice": 116.0,
+                        "offerId": 919170221913,
+                        "detailUrl": "https://detail.1688.com/offer/919170221913.html",
+                        "maxPrice": 119.0,
+                        "offerExpireTime": "2036-06-08 18:17:18",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "One ment VI 淡绿进口匹马棉法式木耳边前后两穿无袖背心连衣裙女",
+                        "basePrice": "116.0",
+                        "memberId": "b2b-22188438457439f05a"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAA",
+                        "identity": "svip",
+                        "shopName": "广州浅月电子商务有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://shop4170380855118.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-22188438457439f05a"
+                    },
+                    "rank": {
+                        "value": "17"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 2382.6349955215564
+                    },
+                    "sellCnt30": {
+                        "value": 193
+                    },
+                    "itemId": "957067440899",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 12:52:14",
+                        "offerImageUrl": "img/ibank/O1CN014Q8Olh1YmlfkbKC3s_!!2217556223102-0-cib.jpg",
+                        "minPrice": 94.0,
+                        "offerId": 957067440899,
+                        "detailUrl": "https://detail.1688.com/offer/957067440899.html",
+                        "maxPrice": 95.0,
+                        "offerExpireTime": "2035-07-22 02:59:52",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "1313克莱因蓝显白~吸晴重工无袖背心裙蓝色女夏季度假天丝连衣裙",
+                        "basePrice": "94.0",
+                        "memberId": "b2b-22175562231025e4b3"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AA",
+                        "identity": "svip",
+                        "shopName": "广州市龙宁服饰有限公司",
+                        "realBusiness": false,
+                        "shopUrl": "https://shop60439p78e89b0.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-22175562231025e4b3"
+                    },
+                    "rank": {
+                        "value": "18"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 2373.5339328511827
+                    },
+                    "sellCnt30": {
+                        "value": 431
+                    },
+                    "itemId": "794246948066",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 09:41:53",
+                        "offerImageUrl": "img/ibank/O1CN01WnHd781LTRqF3lkzx_!!1011221300-0-cib.jpg",
+                        "minPrice": 69.0,
+                        "offerId": 794246948066,
+                        "detailUrl": "https://detail.1688.com/offer/794246948066.html",
+                        "maxPrice": 69.0,
+                        "offerExpireTime": "2036-06-01 11:28:17",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "滔川 舒适天花板！高级肌理感条纹连衣裙女宽松无袖背心长裙2537",
+                        "basePrice": "69.0",
+                        "memberId": "zhicongxi"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAAA",
+                        "identity": "svip",
+                        "shopName": "杭州滔川设计有限公司",
+                        "realBusiness": true,
+                        "shopUrl": "https://zhicongxi.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "zhicongxi"
+                    },
+                    "rank": {
+                        "value": "19"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                },
+                {
+                    "clkPopularity": {
+                        "value": 2362.1240697942503
+                    },
+                    "sellCnt30": {
+                        "value": 336
+                    },
+                    "itemId": "1025538682213",
+                    "item": {
+                        "offerUpdateTime": "2026-06-13 22:41:43",
+                        "offerImageUrl": "img/ibank/O1CN01uwMuuo21ayNTxRTA7_!!2211360847002-0-cib.jpg",
+                        "minPrice": 128.0,
+                        "offerId": 1025538682213,
+                        "detailUrl": "https://detail.1688.com/offer/1025538682213.html",
+                        "maxPrice": 128.0,
+                        "offerExpireTime": "2036-05-05 16:33:38",
+                        "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                        "categoryID": 1031910,
+                        "offerTitle": "3th Morning 植物系穿搭 韩系碎花圆领宽松背心连衣裙ZY3122",
+                        "basePrice": "128.0",
+                        "memberId": "b2b-2211360847002ba0d6"
+                    },
+                    "shop": {
+                        "tradeMedalGrade": "AAAAA",
+                        "identity": "svip",
+                        "shopName": "苏州智允服饰设计有限公司",
+                        "realBusiness": true,
+                        "shopUrl": "https://shop9683923r11z46.1688.com",
+                        "tp": true,
+                        "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                        "memberId": "b2b-2211360847002ba0d6"
+                    },
+                    "rank": {
+                        "value": "20"
+                    },
+                    "class": "com.alibaba.b2bopen.bo.HotItem",
+                    "monitored": false
+                }
+            ],
+            "recordCount": 20,
+            "class": "com.alibaba.b2bopen.bo.HotItems",
+            "sellerCnt": "16"
+        },
+        "success": true,
+        "recordCount": 0,
+        "class": "com.alibaba.b2bopen.model.ResultModel"
+    },
+    "message": "操作成功",
+    "traceId": "213e054217813758910487556e4226"
+}

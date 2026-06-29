@@ -1,0 +1,3277 @@
+{
+    "code": 0,
+    "data": {
+        "data": [
+            {
+                "supplyAndDemandIndex": {
+                    "value": 206532.04248617063
+                },
+                "seMaxRescnt": {
+                    "value": 1776.714177143676
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "牛仔布面料布"
+                },
+                "seSpvIndex": {
+                    "value": 1063.9678789020118
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C5%A3%D7%D0%B2%BC%C3%E6%C1%CF%B2%BC"
+                },
+                "rank": {
+                    "value": 1
+                },
+                "seSpvChangeRate": {
+                    "value": 8.962962962962964
+                },
+                "searchWord": "牛仔布面料布",
+                "clkRate": {
+                    "value": 0.6728624535315985
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 221964.0019582878
+                },
+                "seMaxRescnt": {
+                    "value": 1859.727886344177
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "灯芯绒布料面料布"
+                },
+                "seSpvIndex": {
+                    "value": 1333.4916815022755
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B5%C6%D0%BE%C8%DE%B2%BC%C1%CF%C3%E6%C1%CF%B2%BC"
+                },
+                "rank": {
+                    "value": 3
+                },
+                "seSpvChangeRate": {
+                    "value": 3.5384615384615383
+                },
+                "searchWord": "灯芯绒布料面料布",
+                "clkRate": {
+                    "value": 0.6852300242130751
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 178914.3715620796
+                },
+                "seMaxRescnt": {
+                    "value": 678.4624049177628
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "帆布印花面料"
+                },
+                "seSpvIndex": {
+                    "value": 290.68025184935345
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%AB%B2%BC%D3%A1%BB%A8%C3%E6%C1%CF"
+                },
+                "rank": {
+                    "value": 4
+                },
+                "seSpvChangeRate": {
+                    "value": 2.8461538461538463
+                },
+                "searchWord": "帆布印花面料",
+                "clkRate": {
+                    "value": 0.3
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 219068.40894954008
+                },
+                "seMaxRescnt": {
+                    "value": 782.7069315170387
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "老粗布布头"
+                },
+                "seSpvIndex": {
+                    "value": 530.5574262555992
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C0%CF%B4%D6%B2%BC%B2%BC%CD%B7"
+                },
+                "rank": {
+                    "value": 5
+                },
+                "seSpvChangeRate": {
+                    "value": 1.4603174603174602
+                },
+                "searchWord": "老粗布布头",
+                "clkRate": {
+                    "value": 0.7225806451612903
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 204585.65044268745
+                },
+                "seMaxRescnt": {
+                    "value": 514.8187249365374
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "12安全棉帆布"
+                },
+                "seSpvIndex": {
+                    "value": 304.31610572787736
+                },
+                "exposeKeywordGbk": {
+                    "value": "12%B0%B2%C8%AB%C3%DE%B7%AB%B2%BC"
+                },
+                "rank": {
+                    "value": 6
+                },
+                "seSpvChangeRate": {
+                    "value": 1.1515151515151516
+                },
+                "searchWord": "12安全棉帆布",
+                "clkRate": {
+                    "value": 0.5915492957746479
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 231262.46437225977
+                },
+                "seMaxRescnt": {
+                    "value": 496.5593195944994
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "纱布双层棉面料"
+                },
+                "seSpvIndex": {
+                    "value": 409.57849011204894
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C9%B4%B2%BC%CB%AB%B2%E3%C3%DE%C3%E6%C1%CF"
+                },
+                "rank": {
+                    "value": 7
+                },
+                "seSpvChangeRate": {
+                    "value": 1.046875
+                },
+                "searchWord": "纱布双层棉面料",
+                "clkRate": {
+                    "value": 0.5038167938931297
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 217643.80663515814
+                },
+                "seMaxRescnt": {
+                    "value": 398.5210101631828
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "双层纱布料布匹a类"
+                },
+                "seSpvIndex": {
+                    "value": 267.7766504053162
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AB%B2%E3%C9%B4%B2%BC%C1%CF%B2%BC%C6%A5a%C0%E0"
+                },
+                "rank": {
+                    "value": 8
+                },
+                "seSpvChangeRate": {
+                    "value": 0.875
+                },
+                "searchWord": "双层纱布料布匹a类",
+                "clkRate": {
+                    "value": 0.8
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 208648.91473394365
+                },
+                "seMaxRescnt": {
+                    "value": 441.22397844189027
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "手工土布"
+                },
+                "seSpvIndex": {
+                    "value": 251.3897500250141
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CA%D6%B9%A4%CD%C1%B2%BC"
+                },
+                "rank": {
+                    "value": 9
+                },
+                "seSpvChangeRate": {
+                    "value": 0.6341463414634146
+                },
+                "searchWord": "手工土布",
+                "clkRate": {
+                    "value": 0.6567164179104478
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 203722.33949017493
+                },
+                "seMaxRescnt": {
+                    "value": 497.47797463047556
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "全棉布面料布"
+                },
+                "seSpvIndex": {
+                    "value": 270.7822988182829
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C8%AB%C3%DE%B2%BC%C3%E6%C1%CF%B2%BC"
+                },
+                "rank": {
+                    "value": 10
+                },
+                "seSpvChangeRate": {
+                    "value": 0.5952380952380952
+                },
+                "searchWord": "全棉布面料布",
+                "clkRate": {
+                    "value": 0.6268656716417911
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 229284.19733000972
+                },
+                "seMaxRescnt": {
+                    "value": 387.10412524327666
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "双层纱绉布"
+                },
+                "seSpvIndex": {
+                    "value": 309.3470550694733
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AB%B2%E3%C9%B4%E7%A7%B2%BC"
+                },
+                "rank": {
+                    "value": 11
+                },
+                "seSpvChangeRate": {
+                    "value": 0.5396825396825397
+                },
+                "searchWord": "双层纱绉布",
+                "clkRate": {
+                    "value": 0.6288659793814433
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 235224.43830050091
+                },
+                "seMaxRescnt": {
+                    "value": 294.80312507601786
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "8条灯芯绒"
+                },
+                "seSpvIndex": {
+                    "value": 258.5933315044249
+                },
+                "exposeKeywordGbk": {
+                    "value": "8%CC%F5%B5%C6%D0%BE%C8%DE"
+                },
+                "rank": {
+                    "value": 12
+                },
+                "seSpvChangeRate": {
+                    "value": 0.4406779661016949
+                },
+                "searchWord": "8条灯芯绒",
+                "clkRate": {
+                    "value": 0.8352941176470589
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 224141.69760320295
+                },
+                "seMaxRescnt": {
+                    "value": 1190.2415138921958
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "60支纯棉布匹"
+                },
+                "seSpvIndex": {
+                    "value": 877.835816122558
+                },
+                "exposeKeywordGbk": {
+                    "value": "60%D6%A7%B4%BF%C3%DE%B2%BC%C6%A5"
+                },
+                "rank": {
+                    "value": 13
+                },
+                "seSpvChangeRate": {
+                    "value": 0.3284313725490196
+                },
+                "searchWord": "60支纯棉布匹",
+                "clkRate": {
+                    "value": 0.6863468634686347
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 216382.03919735103
+                },
+                "seMaxRescnt": {
+                    "value": 660.7242581805388
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "老布土布"
+                },
+                "seSpvIndex": {
+                    "value": 426.6138808696226
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C0%CF%B2%BC%CD%C1%B2%BC"
+                },
+                "rank": {
+                    "value": 14
+                },
+                "seSpvChangeRate": {
+                    "value": 0.3118279569892473
+                },
+                "searchWord": "老布土布",
+                "clkRate": {
+                    "value": 0.5573770491803278
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 230056.40638527894
+                },
+                "seMaxRescnt": {
+                    "value": 865.6065519124057
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "竹棉布料"
+                },
+                "seSpvIndex": {
+                    "value": 698.6519342247922
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D6%F1%C3%DE%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 15
+                },
+                "seSpvChangeRate": {
+                    "value": 0.3081395348837209
+                },
+                "searchWord": "竹棉布料",
+                "clkRate": {
+                    "value": 0.6711111111111111
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 219860.78069784454
+                },
+                "seMaxRescnt": {
+                    "value": 491.5566668378802
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "布料diy"
+                },
+                "seSpvIndex": {
+                    "value": 334.23199467258956
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B2%BC%C1%CFdiy"
+                },
+                "rank": {
+                    "value": 16
+                },
+                "seSpvChangeRate": {
+                    "value": 0.2894736842105263
+                },
+                "searchWord": "布料diy",
+                "clkRate": {
+                    "value": 0.6224489795918368
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 228178.07197353346
+                },
+                "seMaxRescnt": {
+                    "value": 421.12093609087754
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "布片小裁片"
+                },
+                "seSpvIndex": {
+                    "value": 322.11402780995235
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B2%BC%C6%AC%D0%A1%B2%C3%C6%AC"
+                },
+                "rank": {
+                    "value": 17
+                },
+                "seSpvChangeRate": {
+                    "value": 0.2716049382716049
+                },
+                "searchWord": "布片小裁片",
+                "clkRate": {
+                    "value": 0.5048543689320388
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 216167.9171314043
+                },
+                "seMaxRescnt": {
+                    "value": 3431.5742594730937
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 646
+                },
+                "seKeyword": {
+                    "value": "水洗棉布料布匹"
+                },
+                "seSpvIndex": {
+                    "value": 2324.438363638642
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AE%CF%B4%C3%DE%B2%BC%C1%CF%B2%BC%C6%A5"
+                },
+                "rank": {
+                    "value": 18
+                },
+                "seSpvChangeRate": {
+                    "value": 0.2643884892086331
+                },
+                "searchWord": "水洗棉布料布匹",
+                "clkRate": {
+                    "value": 0.7027027027027027
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 216167.9171314043
+                },
+                "seMaxRescnt": {
+                    "value": 653.057422509891
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "12安帆布"
+                },
+                "seSpvIndex": {
+                    "value": 417.36460109087733
+                },
+                "exposeKeywordGbk": {
+                    "value": "12%B0%B2%B7%AB%B2%BC"
+                },
+                "rank": {
+                    "value": 19
+                },
+                "seSpvChangeRate": {
+                    "value": 0.25
+                },
+                "searchWord": "12安帆布",
+                "clkRate": {
+                    "value": 0.6166666666666667
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 219068.40894954008
+                },
+                "seMaxRescnt": {
+                    "value": 1416.0576085183743
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "棉布布头"
+                },
+                "seSpvIndex": {
+                    "value": 966.6650996578358
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C3%DE%B2%BC%B2%BC%CD%B7"
+                },
+                "rank": {
+                    "value": 20
+                },
+                "seSpvChangeRate": {
+                    "value": 0.24675324675324675
+                },
+                "searchWord": "棉布布头",
+                "clkRate": {
+                    "value": 0.6180555555555556
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 227694.7278029952
+                },
+                "seMaxRescnt": {
+                    "value": 3562.968443900598
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "布料纯棉a料"
+                },
+                "seSpvIndex": {
+                    "value": 2799.861895177489
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B2%BC%C1%CF%B4%BF%C3%DEa%C1%CF"
+                },
+                "rank": {
+                    "value": 21
+                },
+                "seSpvChangeRate": {
+                    "value": 0.2244640605296343
+                },
+                "searchWord": "布料纯棉a料",
+                "clkRate": {
+                    "value": 0.4850669412976313
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 228178.07197353346
+                },
+                "seMaxRescnt": {
+                    "value": 1225.8730191939953
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "贡缎布布料"
+                },
+                "seSpvIndex": {
+                    "value": 968.5232410141525
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B9%B1%B6%D0%B2%BC%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 22
+                },
+                "seSpvChangeRate": {
+                    "value": 0.22134387351778656
+                },
+                "searchWord": "贡缎布布料",
+                "clkRate": {
+                    "value": 0.6181229773462783
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 221211.61824298918
+                },
+                "seMaxRescnt": {
+                    "value": 635.3870269499935
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "竹节棉布料"
+                },
+                "seSpvIndex": {
+                    "value": 440.7495919471147
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D6%F1%BD%DA%C3%DE%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 23
+                },
+                "seSpvChangeRate": {
+                    "value": 0.2
+                },
+                "searchWord": "竹节棉布料",
+                "clkRate": {
+                    "value": 0.7727272727272727
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 209918.5232358893
+                },
+                "seMaxRescnt": {
+                    "value": 1165.0094930501878
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "老土布"
+                },
+                "seSpvIndex": {
+                    "value": 699.0429911346342
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C0%CF%CD%C1%B2%BC"
+                },
+                "rank": {
+                    "value": 24
+                },
+                "seSpvChangeRate": {
+                    "value": 0.1987179487179487
+                },
+                "searchWord": "老土布",
+                "clkRate": {
+                    "value": 0.732620320855615
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 214188.76842807033
+                },
+                "seMaxRescnt": {
+                    "value": 2317.3605763130545
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "纯棉布料面料布"
+                },
+                "seSpvIndex": {
+                    "value": 1506.5377203293278
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B4%BF%C3%DE%B2%BC%C1%CF%C3%E6%C1%CF%B2%BC"
+                },
+                "rank": {
+                    "value": 25
+                },
+                "seSpvChangeRate": {
+                    "value": 0.19667590027700832
+                },
+                "searchWord": "纯棉布料面料布",
+                "clkRate": {
+                    "value": 0.6550925925925926
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 223428.57413815393
+                },
+                "seMaxRescnt": {
+                    "value": 845.6257713383166
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "帆布包布料"
+                },
+                "seSpvIndex": {
+                    "value": 603.1208807015876
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%AB%B2%BC%B0%FC%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 26
+                },
+                "seSpvChangeRate": {
+                    "value": 0.1910828025477707
+                },
+                "searchWord": "帆布包布料",
+                "clkRate": {
+                    "value": 0.5561497326203209
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 223608.0212033223
+                },
+                "seMaxRescnt": {
+                    "value": 626.8970552550325
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "帆布布料做包"
+                },
+                "seSpvIndex": {
+                    "value": 453.6108291870235
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%AB%B2%BC%B2%BC%C1%CF%D7%F6%B0%FC"
+                },
+                "rank": {
+                    "value": 27
+                },
+                "seSpvChangeRate": {
+                    "value": 0.1896551724137931
+                },
+                "searchWord": "帆布布料做包",
+                "clkRate": {
+                    "value": 0.6376811594202898
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 234544.44394237612
+                },
+                "seMaxRescnt": {
+                    "value": 347.6374267376488
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "手工布料碎布"
+                },
+                "seSpvIndex": {
+                    "value": 296.10141647752073
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CA%D6%B9%A4%B2%BC%C1%CF%CB%E9%B2%BC"
+                },
+                "rank": {
+                    "value": 28
+                },
+                "seSpvChangeRate": {
+                    "value": 0.17857142857142858
+                },
+                "searchWord": "手工布料碎布",
+                "clkRate": {
+                    "value": 0.5353535353535354
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 244589.09829981532
+                },
+                "seMaxRescnt": {
+                    "value": 357.2311896751905
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "9088里料"
+                },
+                "seSpvIndex": {
+                    "value": 374.2153370076578
+                },
+                "exposeKeywordGbk": {
+                    "value": "9088%C0%EF%C1%CF"
+                },
+                "rank": {
+                    "value": 29
+                },
+                "seSpvChangeRate": {
+                    "value": 0.17117117117117117
+                },
+                "searchWord": "9088里料",
+                "clkRate": {
+                    "value": 0.8153846153846154
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 236811.83573823282
+                },
+                "seMaxRescnt": {
+                    "value": 669.0922995346044
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "12安帆布料"
+                },
+                "seSpvIndex": {
+                    "value": 602.0470587525208
+                },
+                "exposeKeywordGbk": {
+                    "value": "12%B0%B2%B7%AB%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 30
+                },
+                "seSpvChangeRate": {
+                    "value": 0.1657142857142857
+                },
+                "searchWord": "12安帆布料",
+                "clkRate": {
+                    "value": 0.6813725490196079
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 231262.46437225977
+                },
+                "seMaxRescnt": {
+                    "value": 567.0135220387745
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "布料纯色"
+                },
+                "seSpvIndex": {
+                    "value": 462.2713821866512
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B2%BC%C1%CF%B4%BF%C9%AB"
+                },
+                "rank": {
+                    "value": 31
+                },
+                "seSpvChangeRate": {
+                    "value": 0.16279069767441862
+                },
+                "searchWord": "布料纯色",
+                "clkRate": {
+                    "value": 0.7
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 219860.78069784454
+                },
+                "seMaxRescnt": {
+                    "value": 504.4169231338024
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "青年布"
+                },
+                "seSpvIndex": {
+                    "value": 354.7913111074436
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C7%E0%C4%EA%B2%BC"
+                },
+                "rank": {
+                    "value": 32
+                },
+                "seSpvChangeRate": {
+                    "value": 0.16091954022988506
+                },
+                "searchWord": "青年布",
+                "clkRate": {
+                    "value": 0.594059405940594
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 226710.6018292767
+                },
+                "seMaxRescnt": {
+                    "value": 357.33431189969394
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "仿牛仔"
+                },
+                "seSpvIndex": {
+                    "value": 271.4746278601132
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%C2%C5%A3%D7%D0"
+                },
+                "rank": {
+                    "value": 33
+                },
+                "seSpvChangeRate": {
+                    "value": 0.1506849315068493
+                },
+                "searchWord": "仿牛仔",
+                "clkRate": {
+                    "value": 0.5357142857142857
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 222702.82724833646
+                },
+                "seMaxRescnt": {
+                    "value": 2264.5987190133415
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 1154
+                },
+                "seKeyword": {
+                    "value": "帆布料"
+                },
+                "seSpvIndex": {
+                    "value": 1652.24413925205
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%AB%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 34
+                },
+                "seSpvChangeRate": {
+                    "value": 0.14317180616740088
+                },
+                "searchWord": "帆布料",
+                "clkRate": {
+                    "value": 0.651252408477842
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 213046.50600540737
+                },
+                "seMaxRescnt": {
+                    "value": 713.768713813007
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "双层纱布料2米5"
+                },
+                "seSpvIndex": {
+                    "value": 453.2357240382946
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AB%B2%E3%C9%B4%B2%BC%C1%CF2%C3%D75"
+                },
+                "rank": {
+                    "value": 35
+                },
+                "seSpvChangeRate": {
+                    "value": 0.11926605504587157
+                },
+                "searchWord": "双层纱布料2米5",
+                "clkRate": {
+                    "value": 0.7786885245901639
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 212580.53894880286
+                },
+                "seMaxRescnt": {
+                    "value": 1151.6949209888937
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "8安帆布"
+                },
+                "seSpvIndex": {
+                    "value": 730.2639532148144
+                },
+                "exposeKeywordGbk": {
+                    "value": "8%B0%B2%B7%AB%B2%BC"
+                },
+                "rank": {
+                    "value": 36
+                },
+                "seSpvChangeRate": {
+                    "value": 0.11864406779661017
+                },
+                "searchWord": "8安帆布",
+                "clkRate": {
+                    "value": 0.6919191919191919
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 214859.15615617068
+                },
+                "seMaxRescnt": {
+                    "value": 1097.424729611389
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "竹纤维布料"
+                },
+                "seSpvIndex": {
+                    "value": 744.368918195784
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D6%F1%CF%CB%CE%AC%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 37
+                },
+                "seSpvChangeRate": {
+                    "value": 0.09944751381215469
+                },
+                "searchWord": "竹纤维布料",
+                "clkRate": {
+                    "value": 0.6633165829145728
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 221964.0019582878
+                },
+                "seMaxRescnt": {
+                    "value": 961.4190238705786
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "布匹纯棉"
+                },
+                "seSpvIndex": {
+                    "value": 688.0041265410217
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B2%BC%C6%A5%B4%BF%C3%DE"
+                },
+                "rank": {
+                    "value": 38
+                },
+                "seSpvChangeRate": {
+                    "value": 0.09574468085106383
+                },
+                "searchWord": "布匹纯棉",
+                "clkRate": {
+                    "value": 0.587378640776699
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 211871.50583029276
+                },
+                "seMaxRescnt": {
+                    "value": 498.29450490744125
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "适合做睡衣的布料"
+                },
+                "seSpvIndex": {
+                    "value": 308.69455538330374
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CA%CA%BA%CF%D7%F6%CB%AF%D2%C2%B5%C4%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 39
+                },
+                "seSpvChangeRate": {
+                    "value": 0.09333333333333334
+                },
+                "searchWord": "适合做睡衣的布料",
+                "clkRate": {
+                    "value": 0.7926829268292683
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 224842.6292825427
+                },
+                "seMaxRescnt": {
+                    "value": 1078.9596707197486
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "布料布匹纯棉"
+                },
+                "seSpvIndex": {
+                    "value": 793.4651334432862
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B2%BC%C1%CF%B2%BC%C6%A5%B4%BF%C3%DE"
+                },
+                "rank": {
+                    "value": 40
+                },
+                "seSpvChangeRate": {
+                    "value": 0.09210526315789473
+                },
+                "searchWord": "布料布匹纯棉",
+                "clkRate": {
+                    "value": 0.5461847389558233
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 216167.9171314043
+                },
+                "seMaxRescnt": {
+                    "value": 2912.559588093831
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 774
+                },
+                "seKeyword": {
+                    "value": "帆布面料布"
+                },
+                "seSpvIndex": {
+                    "value": 1964.3807110955136
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%AB%B2%BC%C3%E6%C1%CF%B2%BC"
+                },
+                "rank": {
+                    "value": 41
+                },
+                "seSpvChangeRate": {
+                    "value": 0.0856610800744879
+                },
+                "searchWord": "帆布面料布",
+                "clkRate": {
+                    "value": 0.7084048027444254
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 190444.8453407074
+                },
+                "seMaxRescnt": {
+                    "value": 532.5446624672389
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "盐缩泡泡面面料"
+                },
+                "seSpvIndex": {
+                    "value": 252.52617574927297
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D1%CE%CB%F5%C5%DD%C5%DD%C3%E6%C3%E6%C1%CF"
+                },
+                "rank": {
+                    "value": 42
+                },
+                "seSpvChangeRate": {
+                    "value": 0.08333333333333333
+                },
+                "searchWord": "盐缩泡泡面面料",
+                "clkRate": {
+                    "value": 0.6923076923076923
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 236025.8189500251
+                },
+                "seMaxRescnt": {
+                    "value": 782.1072437691116
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "双层棉纱"
+                },
+                "seSpvIndex": {
+                    "value": 689.8979344886895
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AB%B2%E3%C3%DE%C9%B4"
+                },
+                "rank": {
+                    "value": 43
+                },
+                "seSpvChangeRate": {
+                    "value": 0.0779816513761468
+                },
+                "searchWord": "双层棉纱",
+                "clkRate": {
+                    "value": 0.5276595744680851
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 213046.50600540737
+                },
+                "seMaxRescnt": {
+                    "value": 937.3322522084865
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "手工布料"
+                },
+                "seSpvIndex": {
+                    "value": 578.6144758757094
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CA%D6%B9%A4%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 44
+                },
+                "seSpvChangeRate": {
+                    "value": 0.07333333333333333
+                },
+                "searchWord": "手工布料",
+                "clkRate": {
+                    "value": 0.639751552795031
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 211391.9121058897
+                },
+                "seMaxRescnt": {
+                    "value": 1166.660739360953
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "裤子布料"
+                },
+                "seSpvIndex": {
+                    "value": 710.6744623247469
+                },
+                "exposeKeywordGbk": {
+                    "value": "%BF%E3%D7%D3%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 45
+                },
+                "seSpvChangeRate": {
+                    "value": 0.0718232044198895
+                },
+                "searchWord": "裤子布料",
+                "clkRate": {
+                    "value": 0.5618556701030928
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 218867.89994271725
+                },
+                "seMaxRescnt": {
+                    "value": 1412.6256963282792
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "纱布布料"
+                },
+                "seSpvIndex": {
+                    "value": 961.0033027317509
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C9%B4%B2%BC%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 46
+                },
+                "seSpvChangeRate": {
+                    "value": 0.06343283582089553
+                },
+                "searchWord": "纱布布料",
+                "clkRate": {
+                    "value": 0.6526315789473685
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 222335.07879667717
+                },
+                "seMaxRescnt": {
+                    "value": 724.2121829763234
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "老布"
+                },
+                "seSpvIndex": {
+                    "value": 509.5888583976098
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C0%CF%B2%BC"
+                },
+                "rank": {
+                    "value": 47
+                },
+                "seSpvChangeRate": {
+                    "value": 0.06164383561643835
+                },
+                "searchWord": "老布",
+                "clkRate": {
+                    "value": 0.5612903225806452
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 236025.8189500251
+                },
+                "seMaxRescnt": {
+                    "value": 590.8566986314854
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "纯棉里布"
+                },
+                "seSpvIndex": {
+                    "value": 523.3652359164867
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B4%BF%C3%DE%C0%EF%B2%BC"
+                },
+                "rank": {
+                    "value": 48
+                },
+                "seSpvChangeRate": {
+                    "value": 0.060240963855421686
+                },
+                "searchWord": "纯棉里布",
+                "clkRate": {
+                    "value": 0.8125
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 200074.95149687148
+                },
+                "seMaxRescnt": {
+                    "value": 581.8316491747722
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "60支府绸"
+                },
+                "seSpvIndex": {
+                    "value": 308.03010502588677
+                },
+                "exposeKeywordGbk": {
+                    "value": "60%D6%A7%B8%AE%B3%F1"
+                },
+                "rank": {
+                    "value": 49
+                },
+                "seSpvChangeRate": {
+                    "value": 0.058823529411764705
+                },
+                "searchWord": "60支府绸",
+                "clkRate": {
+                    "value": 0.8472222222222222
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 217227.51714151457
+                },
+                "seMaxRescnt": {
+                    "value": 6471.045491342899
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "土布"
+                },
+                "seSpvIndex": {
+                    "value": 4554.402627111824
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CD%C1%B2%BC"
+                },
+                "rank": {
+                    "value": 50
+                },
+                "seSpvChangeRate": {
+                    "value": 0.05809979494190021
+                },
+                "searchWord": "土布",
+                "clkRate": {
+                    "value": 0.6253229974160207
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 209161.4854802891
+                },
+                "seMaxRescnt": {
+                    "value": 1444.622272218182
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "老土布布料"
+                },
+                "seSpvIndex": {
+                    "value": 849.0612114054553
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C0%CF%CD%C1%B2%BC%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 51
+                },
+                "seSpvChangeRate": {
+                    "value": 0.0547945205479452
+                },
+                "searchWord": "老土布布料",
+                "clkRate": {
+                    "value": 0.7272727272727273
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 238214.85928483793
+                },
+                "seMaxRescnt": {
+                    "value": 871.7638004748542
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "高支精梳棉布料"
+                },
+                "seSpvIndex": {
+                    "value": 806.7451723642741
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B8%DF%D6%A7%BE%AB%CA%E1%C3%DE%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 52
+                },
+                "seSpvChangeRate": {
+                    "value": 0.053231939163498096
+                },
+                "searchWord": "高支精梳棉布料",
+                "clkRate": {
+                    "value": 0.5595667870036101
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 221964.0019582878
+                },
+                "seMaxRescnt": {
+                    "value": 1635.175360973878
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "布头边角料"
+                },
+                "seSpvIndex": {
+                    "value": 1160.048306552316
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B2%BC%CD%B7%B1%DF%BD%C7%C1%CF"
+                },
+                "rank": {
+                    "value": 53
+                },
+                "seSpvChangeRate": {
+                    "value": 0.05278592375366569
+                },
+                "searchWord": "布头边角料",
+                "clkRate": {
+                    "value": 0.6629526462395543
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 223248.3382227927
+                },
+                "seMaxRescnt": {
+                    "value": 384.3256035633597
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "帆布料面料"
+                },
+                "seSpvIndex": {
+                    "value": 279.2886238460743
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%AB%B2%BC%C1%CF%C3%E6%C1%CF"
+                },
+                "rank": {
+                    "value": 54
+                },
+                "seSpvChangeRate": {
+                    "value": 0.05063291139240506
+                },
+                "searchWord": "帆布料面料",
+                "clkRate": {
+                    "value": 0.6385542168674698
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 224318.05713183686
+                },
+                "seMaxRescnt": {
+                    "value": 764.1042182089005
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "全棉帆布"
+                },
+                "seSpvIndex": {
+                    "value": 571.6295492885021
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C8%AB%C3%DE%B7%AB%B2%BC"
+                },
+                "rank": {
+                    "value": 55
+                },
+                "seSpvChangeRate": {
+                    "value": 0.04878048780487805
+                },
+                "searchWord": "全棉帆布",
+                "clkRate": {
+                    "value": 0.5872093023255814
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 206259.58002680296
+                },
+                "seMaxRescnt": {
+                    "value": 483.48729774692254
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "帆布印花"
+                },
+                "seSpvIndex": {
+                    "value": 271.37426031528514
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%AB%B2%BC%D3%A1%BB%A8"
+                },
+                "rank": {
+                    "value": 56
+                },
+                "seSpvChangeRate": {
+                    "value": 0.045454545454545456
+                },
+                "searchWord": "帆布印花",
+                "clkRate": {
+                    "value": 0.5797101449275363
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 228813.7929041748
+                },
+                "seMaxRescnt": {
+                    "value": 585.38154098371
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "纯色棉布"
+                },
+                "seSpvIndex": {
+                    "value": 463.66485386610196
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B4%BF%C9%AB%C3%DE%B2%BC"
+                },
+                "rank": {
+                    "value": 57
+                },
+                "seSpvChangeRate": {
+                    "value": 0.04285714285714286
+                },
+                "searchWord": "纯色棉布",
+                "clkRate": {
+                    "value": 0.7808219178082192
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 209918.5232358893
+                },
+                "seMaxRescnt": {
+                    "value": 1239.5966645583355
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 661
+                },
+                "seKeyword": {
+                    "value": "全棉面料"
+                },
+                "seSpvIndex": {
+                    "value": 740.941287523712
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C8%AB%C3%DE%C3%E6%C1%CF"
+                },
+                "rank": {
+                    "value": 58
+                },
+                "seSpvChangeRate": {
+                    "value": 0.03626943005181347
+                },
+                "searchWord": "全棉面料",
+                "clkRate": {
+                    "value": 0.575
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 225360.57452328593
+                },
+                "seMaxRescnt": {
+                    "value": 377.7372230573445
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "布料边角料布料按斤"
+                },
+                "seSpvIndex": {
+                    "value": 279.0842264962424
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B2%BC%C1%CF%B1%DF%BD%C7%C1%CF%B2%BC%C1%CF%B0%B4%BD%EF"
+                },
+                "rank": {
+                    "value": 59
+                },
+                "seSpvChangeRate": {
+                    "value": 0.03614457831325301
+                },
+                "searchWord": "布料边角料布料按斤",
+                "clkRate": {
+                    "value": 0.686046511627907
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 230663.8699014133
+                },
+                "seMaxRescnt": {
+                    "value": 348.3597718686537
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "府绸60支布匹"
+                },
+                "seSpvIndex": {
+                    "value": 284.60787581079774
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B8%AE%B3%F160%D6%A7%B2%BC%C6%A5"
+                },
+                "rank": {
+                    "value": 60
+                },
+                "seSpvChangeRate": {
+                    "value": 0.034482758620689655
+                },
+                "searchWord": "府绸60支布匹",
+                "clkRate": {
+                    "value": 0.6222222222222222
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 223786.68629344125
+                },
+                "seMaxRescnt": {
+                    "value": 553.0941411813474
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "拼布小布片"
+                },
+                "seSpvIndex": {
+                    "value": 395.85612820700106
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C6%B4%B2%BC%D0%A1%B2%BC%C6%AC"
+                },
+                "rank": {
+                    "value": 61
+                },
+                "seSpvChangeRate": {
+                    "value": 0.03389830508474576
+                },
+                "searchWord": "拼布小布片",
+                "clkRate": {
+                    "value": 0.6721311475409836
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 207338.73167784605
+                },
+                "seMaxRescnt": {
+                    "value": 660.8251087051967
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "高端裤子布料面料"
+                },
+                "seSpvIndex": {
+                    "value": 389.710484708081
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B8%DF%B6%CB%BF%E3%D7%D3%B2%BC%C1%CF%C3%E6%C1%CF"
+                },
+                "rank": {
+                    "value": 62
+                },
+                "seSpvChangeRate": {
+                    "value": 0.031578947368421054
+                },
+                "searchWord": "高端裤子布料面料",
+                "clkRate": {
+                    "value": 0.5816326530612245
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 236420.71092013604
+                },
+                "seMaxRescnt": {
+                    "value": 490.33124747969765
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "9088"
+                },
+                "seSpvIndex": {
+                    "value": 446.7567533892595
+                },
+                "exposeKeywordGbk": {
+                    "value": "9088"
+                },
+                "rank": {
+                    "value": 63
+                },
+                "seSpvChangeRate": {
+                    "value": 0.027972027972027972
+                },
+                "searchWord": "9088",
+                "clkRate": {
+                    "value": 0.7891156462585034
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 221021.34502234164
+                },
+                "seMaxRescnt": {
+                    "value": 2010.2538962920175
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "府绸"
+                },
+                "seSpvIndex": {
+                    "value": 1429.269571509615
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B8%AE%B3%F1"
+                },
+                "rank": {
+                    "value": 64
+                },
+                "seSpvChangeRate": {
+                    "value": 0.023310023310023312
+                },
+                "searchWord": "府绸",
+                "clkRate": {
+                    "value": 0.6947608200455581
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 229903.12371833104
+                },
+                "seMaxRescnt": {
+                    "value": 599.6731480545754
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "皱皱纱布料布匹"
+                },
+                "seSpvIndex": {
+                    "value": 489.3701177455092
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D6%E5%D6%E5%C9%B4%B2%BC%C1%CF%B2%BC%C6%A5"
+                },
+                "rank": {
+                    "value": 65
+                },
+                "seSpvChangeRate": {
+                    "value": 0.019867549668874173
+                },
+                "searchWord": "皱皱纱布料布匹",
+                "clkRate": {
+                    "value": 0.6103896103896104
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 208129.85475664536
+                },
+                "seMaxRescnt": {
+                    "value": 468.56170843796593
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "三层纱布料布匹"
+                },
+                "seSpvIndex": {
+                    "value": 278.1357551402614
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C8%FD%B2%E3%C9%B4%B2%BC%C1%CF%B2%BC%C6%A5"
+                },
+                "rank": {
+                    "value": 66
+                },
+                "seSpvChangeRate": {
+                    "value": 0.014492753623188406
+                },
+                "searchWord": "三层纱布料布匹",
+                "clkRate": {
+                    "value": 0.8
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 199110.0497319451
+                },
+                "seMaxRescnt": {
+                    "value": 621.5375534499374
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "天丝牛仔面料"
+                },
+                "seSpvIndex": {
+                    "value": 348.7286501829532
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CC%EC%CB%BF%C5%A3%D7%D0%C3%E6%C1%CF"
+                },
+                "rank": {
+                    "value": 67
+                },
+                "seSpvChangeRate": {
+                    "value": 0.013513513513513514
+                },
+                "searchWord": "天丝牛仔面料",
+                "clkRate": {
+                    "value": 0.76
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 246168.3219649617
+                },
+                "seMaxRescnt": {
+                    "value": 228.55094982215132
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "纯棉红布"
+                },
+                "seSpvIndex": {
+                    "value": 244.9294521655071
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B4%BF%C3%DE%BA%EC%B2%BC"
+                },
+                "rank": {
+                    "value": 68
+                },
+                "seSpvChangeRate": {
+                    "value": 0.011764705882352941
+                },
+                "searchWord": "纯棉红布",
+                "clkRate": {
+                    "value": 0.7325581395348837
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 227205.6175011451
+                },
+                "seMaxRescnt": {
+                    "value": 443.2736464963229
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "工装面料"
+                },
+                "seSpvIndex": {
+                    "value": 339.9187177808495
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B9%A4%D7%B0%C3%E6%C1%CF"
+                },
+                "rank": {
+                    "value": 69
+                },
+                "seSpvChangeRate": {
+                    "value": 0.009523809523809525
+                },
+                "searchWord": "工装面料",
+                "clkRate": {
+                    "value": 0.6886792452830188
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 201017.6662341663
+                },
+                "seMaxRescnt": {
+                    "value": 861.6326388007354
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "条纹帆布"
+                },
+                "seSpvIndex": {
+                    "value": 457.7524444937482
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CC%F5%CE%C6%B7%AB%B2%BC"
+                },
+                "rank": {
+                    "value": 70
+                },
+                "seSpvChangeRate": {
+                    "value": 0.009174311926605505
+                },
+                "searchWord": "条纹帆布",
+                "clkRate": {
+                    "value": 0.5818181818181818
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 217436.1902304038
+                },
+                "seMaxRescnt": {
+                    "value": 582.3388333449886
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "细帆布料8安"
+                },
+                "seSpvIndex": {
+                    "value": 390.0442650577892
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CF%B8%B7%AB%B2%BC%C1%CF8%B0%B2"
+                },
+                "rank": {
+                    "value": 71
+                },
+                "seSpvChangeRate": {
+                    "value": 0.009174311926605505
+                },
+                "searchWord": "细帆布料8安",
+                "clkRate": {
+                    "value": 0.8545454545454545
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 229439.80705073316
+                },
+                "seMaxRescnt": {
+                    "value": 1325.0978021801552
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 748
+                },
+                "seKeyword": {
+                    "value": "灯芯绒布"
+                },
+                "seSpvIndex": {
+                    "value": 1067.4841217156772
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B5%C6%D0%BE%C8%DE%B2%BC"
+                },
+                "rank": {
+                    "value": 72
+                },
+                "seSpvChangeRate": {
+                    "value": 0.008746355685131196
+                },
+                "searchWord": "灯芯绒布",
+                "clkRate": {
+                    "value": 0.6763005780346821
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 221211.61824298918
+                },
+                "seMaxRescnt": {
+                    "value": 2978.0721489473976
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 707
+                },
+                "seKeyword": {
+                    "value": "府绸面料布"
+                },
+                "seSpvIndex": {
+                    "value": 2139.203191800981
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B8%AE%B3%F1%C3%E6%C1%CF%B2%BC"
+                },
+                "rank": {
+                    "value": 73
+                },
+                "seSpvChangeRate": {
+                    "value": 0.0044444444444444444
+                },
+                "searchWord": "府绸面料布",
+                "clkRate": {
+                    "value": 0.7138643067846607
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 205151.25466696292
+                },
+                "seMaxRescnt": {
+                    "value": 475.00420586957944
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "棉布面料"
+                },
+                "seSpvIndex": {
+                    "value": 265.08149291930397
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C3%DE%B2%BC%C3%E6%C1%CF"
+                },
+                "rank": {
+                    "value": 74
+                },
+                "seSpvChangeRate": {
+                    "value": 0.0
+                },
+                "searchWord": "棉布面料",
+                "clkRate": {
+                    "value": 0.5454545454545454
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 221021.34502234164
+                },
+                "seMaxRescnt": {
+                    "value": 366.3029733598601
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "平纹棉布"
+                },
+                "seSpvIndex": {
+                    "value": 254.33039747565283
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C6%BD%CE%C6%C3%DE%B2%BC"
+                },
+                "rank": {
+                    "value": 75
+                },
+                "seSpvChangeRate": {
+                    "value": -0.013157894736842105
+                },
+                "searchWord": "平纹棉布",
+                "clkRate": {
+                    "value": 0.6666666666666666
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 227205.6175011451
+                },
+                "seMaxRescnt": {
+                    "value": 567.8258925541496
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "泡泡棉布料绉布"
+                },
+                "seSpvIndex": {
+                    "value": 434.0582922249985
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C5%DD%C5%DD%C3%DE%B2%BC%C1%CF%E7%A7%B2%BC"
+                },
+                "rank": {
+                    "value": 76
+                },
+                "seSpvChangeRate": {
+                    "value": -0.014492753623188406
+                },
+                "searchWord": "泡泡棉布料绉布",
+                "clkRate": {
+                    "value": 0.5955882352941176
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 208906.0011042477
+                },
+                "seMaxRescnt": {
+                    "value": 407.46272064646666
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "纱卡"
+                },
+                "seSpvIndex": {
+                    "value": 246.38402860683186
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C9%B4%BF%A8"
+                },
+                "rank": {
+                    "value": 77
+                },
+                "seSpvChangeRate": {
+                    "value": -0.015873015873015872
+                },
+                "searchWord": "纱卡",
+                "clkRate": {
+                    "value": 0.41935483870967744
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 225872.0582026466
+                },
+                "seMaxRescnt": {
+                    "value": 514.1051295503494
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "水洗棉布"
+                },
+                "seSpvIndex": {
+                    "value": 392.62585754719106
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AE%CF%B4%C3%DE%B2%BC"
+                },
+                "rank": {
+                    "value": 78
+                },
+                "seSpvChangeRate": {
+                    "value": -0.01652892561983471
+                },
+                "searchWord": "水洗棉布",
+                "clkRate": {
+                    "value": 0.7142857142857143
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 221021.34502234164
+                },
+                "seMaxRescnt": {
+                    "value": 1485.9315880511135
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "纯色布料"
+                },
+                "seSpvIndex": {
+                    "value": 1045.1282527398398
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B4%BF%C9%AB%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 79
+                },
+                "seSpvChangeRate": {
+                    "value": -0.04229607250755287
+                },
+                "searchWord": "纯色布料",
+                "clkRate": {
+                    "value": 0.7318611987381703
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 216595.04882028175
+                },
+                "seMaxRescnt": {
+                    "value": 1908.7509040028765
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "双层纱布"
+                },
+                "seSpvIndex": {
+                    "value": 1272.7087391753348
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AB%B2%E3%C9%B4%B2%BC"
+                },
+                "rank": {
+                    "value": 80
+                },
+                "seSpvChangeRate": {
+                    "value": -0.04381443298969072
+                },
+                "searchWord": "双层纱布",
+                "clkRate": {
+                    "value": 0.6684636118598383
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 229127.99476374962
+                },
+                "seMaxRescnt": {
+                    "value": 3005.647272321767
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 749
+                },
+                "seKeyword": {
+                    "value": "棉纱布"
+                },
+                "seSpvIndex": {
+                    "value": 2421.947640023275
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C3%DE%C9%B4%B2%BC"
+                },
+                "rank": {
+                    "value": 81
+                },
+                "seSpvChangeRate": {
+                    "value": -0.046964490263459335
+                },
+                "searchWord": "棉纱布",
+                "clkRate": {
+                    "value": 0.5769230769230769
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 214188.76842807033
+                },
+                "seMaxRescnt": {
+                    "value": 573.2066217207262
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "双层纱面料布"
+                },
+                "seSpvIndex": {
+                    "value": 370.1334878278662
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AB%B2%E3%C9%B4%C3%E6%C1%CF%B2%BC"
+                },
+                "rank": {
+                    "value": 82
+                },
+                "seSpvChangeRate": {
+                    "value": -0.047619047619047616
+                },
+                "searchWord": "双层纱面料布",
+                "clkRate": {
+                    "value": 0.73
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 244048.87756135935
+                },
+                "seMaxRescnt": {
+                    "value": 254.65382020672212
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "帆布衬"
+                },
+                "seSpvIndex": {
+                    "value": 259.29560647205176
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%AB%B2%BC%B3%C4"
+                },
+                "rank": {
+                    "value": 83
+                },
+                "seSpvChangeRate": {
+                    "value": -0.052083333333333336
+                },
+                "searchWord": "帆布衬",
+                "clkRate": {
+                    "value": 0.7692307692307693
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 219068.40894954008
+                },
+                "seMaxRescnt": {
+                    "value": 614.8604973141805
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "全棉布匹"
+                },
+                "seSpvIndex": {
+                    "value": 410.5930474447566
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C8%AB%C3%DE%B2%BC%C6%A5"
+                },
+                "rank": {
+                    "value": 84
+                },
+                "seSpvChangeRate": {
+                    "value": -0.0546875
+                },
+                "searchWord": "全棉布匹",
+                "clkRate": {
+                    "value": 0.6528925619834711
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 223608.0212033223
+                },
+                "seMaxRescnt": {
+                    "value": 456.4866170803144
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "水洗棉面料布"
+                },
+                "seSpvIndex": {
+                    "value": 330.22598217120674
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AE%CF%B4%C3%DE%C3%E6%C1%CF%B2%BC"
+                },
+                "rank": {
+                    "value": 85
+                },
+                "seSpvChangeRate": {
+                    "value": -0.05660377358490566
+                },
+                "searchWord": "水洗棉面料布",
+                "clkRate": {
+                    "value": 0.59
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 230056.40638527894
+                },
+                "seMaxRescnt": {
+                    "value": 643.6697355305339
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "纯色布"
+                },
+                "seSpvIndex": {
+                    "value": 513.7951171082811
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B4%BF%C9%AB%B2%BC"
+                },
+                "rank": {
+                    "value": 86
+                },
+                "seSpvChangeRate": {
+                    "value": -0.056818181818181816
+                },
+                "searchWord": "纯色布",
+                "clkRate": {
+                    "value": 0.6746987951807228
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 221964.0019582878
+                },
+                "seMaxRescnt": {
+                    "value": 544.9594443198209
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "斜纹棉面料布"
+                },
+                "seSpvIndex": {
+                    "value": 386.4249778388345
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D0%B1%CE%C6%C3%DE%C3%E6%C1%CF%B2%BC"
+                },
+                "rank": {
+                    "value": 87
+                },
+                "seSpvChangeRate": {
+                    "value": -0.05737704918032787
+                },
+                "searchWord": "斜纹棉面料布",
+                "clkRate": {
+                    "value": 0.6260869565217392
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 219466.5089798411
+                },
+                "seMaxRescnt": {
+                    "value": 480.93270487617315
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "洗水棉"
+                },
+                "seSpvIndex": {
+                    "value": 321.450527570607
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CF%B4%CB%AE%C3%DE"
+                },
+                "rank": {
+                    "value": 88
+                },
+                "seSpvChangeRate": {
+                    "value": -0.0594059405940594
+                },
+                "searchWord": "洗水棉",
+                "clkRate": {
+                    "value": 0.3473684210526316
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 242384.14742890975
+                },
+                "seMaxRescnt": {
+                    "value": 4256.40627544008
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 613
+                },
+                "seKeyword": {
+                    "value": "双层纱"
+                },
+                "seSpvIndex": {
+                    "value": 4194.470368032306
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AB%B2%E3%C9%B4"
+                },
+                "rank": {
+                    "value": 89
+                },
+                "seSpvChangeRate": {
+                    "value": -0.06140350877192982
+                },
+                "searchWord": "双层纱",
+                "clkRate": {
+                    "value": 0.4485981308411215
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 213046.50600540737
+                },
+                "seMaxRescnt": {
+                    "value": 4352.056753637463
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 822
+                },
+                "seKeyword": {
+                    "value": "牛仔布料"
+                },
+                "seSpvIndex": {
+                    "value": 2850.7019647849957
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C5%A3%D7%D0%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 90
+                },
+                "seSpvChangeRate": {
+                    "value": -0.062159214830970554
+                },
+                "searchWord": "牛仔布料",
+                "clkRate": {
+                    "value": 0.6360465116279069
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 210906.64191259674
+                },
+                "seMaxRescnt": {
+                    "value": 4787.028222485862
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 602
+                },
+                "seKeyword": {
+                    "value": "双层纱布料"
+                },
+                "seSpvIndex": {
+                    "value": 3085.3744305847526
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%AB%B2%E3%C9%B4%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 91
+                },
+                "seSpvChangeRate": {
+                    "value": -0.06269270298047276
+                },
+                "searchWord": "双层纱布料",
+                "clkRate": {
+                    "value": 0.7850877192982456
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 227532.3384905818
+                },
+                "seMaxRescnt": {
+                    "value": 3061.454303002375
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 1131
+                },
+                "seKeyword": {
+                    "value": "碎布"
+                },
+                "seSpvIndex": {
+                    "value": 2433.2289433917913
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%E9%B2%BC"
+                },
+                "rank": {
+                    "value": 92
+                },
+                "seSpvChangeRate": {
+                    "value": -0.06521739130434782
+                },
+                "searchWord": "碎布",
+                "clkRate": {
+                    "value": 0.6658506731946144
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 218666.40553284757
+                },
+                "seMaxRescnt": {
+                    "value": 576.3528539489312
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "手工布"
+                },
+                "seSpvIndex": {
+                    "value": 383.1099103016942
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CA%D6%B9%A4%B2%BC"
+                },
+                "rank": {
+                    "value": 93
+                },
+                "seSpvChangeRate": {
+                    "value": -0.06666666666666667
+                },
+                "searchWord": "手工布",
+                "clkRate": {
+                    "value": 0.5446428571428571
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 228971.19481739812
+                },
+                "seMaxRescnt": {
+                    "value": 3488.3360467163793
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 896
+                },
+                "seKeyword": {
+                    "value": "碎布边角料"
+                },
+                "seSpvIndex": {
+                    "value": 2808.251963218058
+                },
+                "exposeKeywordGbk": {
+                    "value": "%CB%E9%B2%BC%B1%DF%BD%C7%C1%CF"
+                },
+                "rank": {
+                    "value": 94
+                },
+                "seSpvChangeRate": {
+                    "value": -0.06679389312977099
+                },
+                "searchWord": "碎布边角料",
+                "clkRate": {
+                    "value": 0.7014314928425358
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 224668.51656971648
+                },
+                "seMaxRescnt": {
+                    "value": 494.5176422595512
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "斜纹棉"
+                },
+                "seSpvIndex": {
+                    "value": 360.1262135396769
+                },
+                "exposeKeywordGbk": {
+                    "value": "%D0%B1%CE%C6%C3%DE"
+                },
+                "rank": {
+                    "value": 95
+                },
+                "seSpvChangeRate": {
+                    "value": -0.06722689075630252
+                },
+                "searchWord": "斜纹棉",
+                "clkRate": {
+                    "value": 0.5855855855855856
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 210906.64191259674
+                },
+                "seMaxRescnt": {
+                    "value": 886.3511937030523
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "a类布料"
+                },
+                "seSpvIndex": {
+                    "value": 539.2299465995924
+                },
+                "exposeKeywordGbk": {
+                    "value": "a%C0%E0%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 96
+                },
+                "seSpvChangeRate": {
+                    "value": -0.07096774193548387
+                },
+                "searchWord": "a类布料",
+                "clkRate": {
+                    "value": 0.7777777777777778
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 210415.5592659824
+                },
+                "seMaxRescnt": {
+                    "value": 4435.4895713337
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 811
+                },
+                "seKeyword": {
+                    "value": "帆布布料"
+                },
+                "seSpvIndex": {
+                    "value": 2825.3485398042353
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B7%AB%B2%BC%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 97
+                },
+                "seSpvChangeRate": {
+                    "value": -0.0711864406779661
+                },
+                "searchWord": "帆布布料",
+                "clkRate": {
+                    "value": 0.7116788321167883
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 220830.18466112888
+                },
+                "seMaxRescnt": {
+                    "value": 11140.085917051341
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 2050
+                },
+                "seKeyword": {
+                    "value": "棉布"
+                },
+                "seSpvIndex": {
+                    "value": 8703.602683620935
+                },
+                "exposeKeywordGbk": {
+                    "value": "%C3%DE%B2%BC"
+                },
+                "rank": {
+                    "value": 98
+                },
+                "seSpvChangeRate": {
+                    "value": -0.07142857142857142
+                },
+                "searchWord": "棉布",
+                "clkRate": {
+                    "value": 0.5470985155195681
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 224668.51656971648
+                },
+                "seMaxRescnt": {
+                    "value": 398.00694101477774
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "长绒棉布料"
+                },
+                "seSpvIndex": {
+                    "value": 296.2017401165415
+                },
+                "exposeKeywordGbk": {
+                    "value": "%B3%A4%C8%DE%C3%DE%B2%BC%C1%CF"
+                },
+                "rank": {
+                    "value": 99
+                },
+                "seSpvChangeRate": {
+                    "value": -0.07291666666666667
+                },
+                "searchWord": "长绒棉布料",
+                "clkRate": {
+                    "value": 0.6404494382022472
+                }
+            },
+            {
+                "supplyAndDemandIndex": {
+                    "value": 224493.66130639767
+                },
+                "seMaxRescnt": {
+                    "value": 465.5950914815846
+                },
+                "statDate": {
+                    "value": "2026-05-24"
+                },
+                "referencePrice": {
+                    "value": 596
+                },
+                "seKeyword": {
+                    "value": "8安细帆面料"
+                },
+                "seSpvIndex": {
+                    "value": 345.0428318101753
+                },
+                "exposeKeywordGbk": {
+                    "value": "8%B0%B2%CF%B8%B7%AB%C3%E6%C1%CF"
+                },
+                "rank": {
+                    "value": 100
+                },
+                "seSpvChangeRate": {
+                    "value": -0.07964601769911504
+                },
+                "searchWord": "8安细帆面料",
+                "clkRate": {
+                    "value": 0.75
+                }
+            }
+        ],
+        "recordCount": 100
+    },
+    "message": "操作成功",
+    "traceId": "2150421c17798756011402979ea2e3"
+}

@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图片编辑 - 任务管理版</title>
+    <style>
+        /* 基本样式重置 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f5f7;
+            color: #172b4d;
+            height: 100%;
+            font-size: 12px;
+        }
+        /* 主容器使用Flexbox布局 */
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+        /* 通用面板样式 */
+        .panel {
+            box-sizing: border-box;
+            overflow-y: auto; /* 内容过多时显示滚动条 */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* === 布局比例设定 === */
+        /* 任务栏 20% */
+        .task-panel {
+            flex: 0 0 10%;
+            width: 10%;
+            border-right: 1px solid #dfe1e6;
+            background-color: #ebecf0;
+            padding: 10px;
+        }
+        /* 输出栏 60% */
+        .output-panel {
+            flex: 0 0 60%;
+            width: 60%;
+            border-right: 1px solid #dfe1e6;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+        /* 输入栏 20% */
+        .input-panel {
+            flex: 0 0 30%;
+            width: 30%;
+            background-color: #f4f5f7;
+            padding: 20px;
+        }
+
+        /* 标题样式 */
+        h2 {
+            border-bottom: 2px solid #0052cc;
+            padding-bottom: 10px;
+            color: #0052cc;
+            margin-top: 0;
+            flex-shrink: 0;
+        }
+        
+        /* === 任务栏样式 === */
+        .task-controls {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .task-item {
+            padding: 8px 10px;
+            margin-bottom: 5px;
+            background: white;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        .task-item:hover {
+            background-color: #dfe1e6;
+        }
+        .task-item.active {
+            background-color: #deebff;
+            border-color: #0052cc;
+            color: #0052cc;
+            font-weight: bold;
+        }
+        .task-delete-btn {
+            background: transparent;
+            color: #999;
+            border: none;
+            padding: 2px 6px;
+            font-size: 12px;
+            margin: 0;
+            margin-left: 5px;
+            border-radius: 50%;
+        }
+        .task-delete-btn:hover {
+            background: #ffbdad;
+            color: #bf2600;
+        }
+
+        /* === 表单样式 === */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        /* 按钮样式 */
+        button {
+            background-color: #0052cc;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #0065ff;
+        }
+        button.small-btn {
+            padding: 5px 10px;
+            font-size: 12px;
+            width: 100%;
+        }
+
+        /* === 输出区域样式 === */
+        #response-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            position: relative;
+        }
+        pre {
+            background-color: #f4f5f7;
+            padding: 15px;
+            border-radius: 3px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 0;
+            min-height: 100px;
+        }
+
+        /* === 模态框样式 === */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+            top: 5px;
+        }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #json-modal-content {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        #image-preview-container {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .preview-image-wrapper {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        .preview-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .delete-btn {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .delete-btn:hover {
+            background-color: rgba(255,0,0,0.7);
+        }
+
+        /* 上下文菜单样式 */
+        .context-menu {
+            position: absolute;
+            display: none;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            z-index: 1000;
+            padding: 5px 0;
+        }
+        .context-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .context-menu li {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        .context-menu li:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* 棋盘格透明背景 */
+        .checkerboard-bg {
+            background-color: #ffffff;
+            background-image: linear-gradient(45deg, #e0e0e0 25%, transparent 25%, transparent 75%, #e0e0e0 75%, #e0e0e0),
+                              linear-gradient(45deg, #e0e0e0 25%, transparent 25%, transparent 75%, #e0e0e0 75%, #e0e0e0);
+            background-position: 0 0, 10px 10px;
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 1. 任务栏 (10%) -->
+    <div class="panel task-panel">
+        <h2>任务</h2>
+        <div class="task-controls">
+            <button id="add-task-btn" class="small-btn">+ 新增任务</button>
+        </div>
+        <ul id="task-list" class="task-list">
+            <!-- 任务列表由 JS 生成 -->
+        </ul>
+    </div>
+
+    <!-- 2. 输出栏 (60%) -->
+    <div class="panel output-panel">
+        <!-- 输出栏头部容器 -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0052cc; margin-bottom: 10px; padding-bottom: 10px;">
+            <!-- 左侧区域：标题与信息 -->
+            <div style="display: flex; align-items: center;">
+                <!-- 标题：画布 -->
+                <h2 style="border: none; padding: 0; margin: 0; margin-right: 15px;">画布</h2>
+                <!-- 画布信息 -->
+                <div id="canvas-info" style="font-size: 12px; color: #666;"></div>
+            </div>
+            <!-- 右侧区域：操作按钮 -->
+            <div style="display: flex; gap: 10px;">
+                <!-- 按钮：排版 -->
+                <button id="auto-layout-btn" class="small-btn">排版</button>
+                <!-- 按钮：导出 -->
+                <button id="export-btn" class="small-btn">导出</button>
+            </div>
+        </div>
+        <div id="canvas-container" style="flex-grow: 1; display: flex; justify-content: center; align-items: center; background-color: #eee; overflow: hidden; position: relative;">
+            <canvas id="main-canvas" class="checkerboard-bg" style="max-width: 100%; max-height: 100%; object-fit: contain;"></canvas>
+        </div>
+    </div>
+
+    <!-- 3. 输入栏 (20%) -->
+    <div class="panel input-panel">
+        <h2>输入参数</h2>
+        <form id="api-form">
+            <div class="form-group">
+                <label>画布设置</label>
+                <div style="display: flex; gap: 10px;">
+                    <div style="flex: 1;">
+                        <label for="resolution" style="font-size: 11px; margin-bottom: 2px;">分辨率</label>
+                        <select id="resolution" name="resolution">
+                            <option value="4k">4K</option>
+                            <option value="2k">2K</option>
+                            <option value="1k">1K</option>
+                            <option value="hd">HD</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="ratio" style="font-size: 11px; margin-bottom: 2px;">比例</label>
+                        <select id="ratio" name="ratio">
+                            <option value="1:1">1:1</option>
+                            <option value="16:9">16:9</option>
+                            <option value="9:16">9:16</option>
+                            <option value="4:3">4:3</option>
+                            <option value="3:4">3:4</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="bg-color" style="font-size: 11px; margin-bottom: 2px;">背景</label>
+                        <select id="bg-color" name="bg-color">
+                            <option value="transparent">透明</option>
+                            <option value="black">纯黑</option>
+                            <option value="white">纯白</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="image_upload">上传图片</label>
+                <input type="file" id="image_upload" accept="image/*" multiple>
+                <div id="image-preview-container" style="margin-top: 10px; border: 1px dashed #ccc; padding: 5px; min-height: 50px; display: flex; align-items: left; justify-content: left;">
+                    <span style="color: #999;">图片预览区域</span>
+                </div>
+            </div>
+  
+
+        </form>
+    </div>
+</div>
+
+<!-- 图片上下文菜单 -->
+<div id="image-context-menu" class="context-menu">
+    <ul>
+        <li data-action="to-canvas">放进画布</li>
+        <li style="padding: 5px 10px; cursor: default;" onmouseover="this.style.backgroundColor='transparent'">
+            <div style="display: flex; gap: 5px; justify-content: space-between;">
+                <button data-action="grid-slice-4" style="flex: 1; padding: 4px 0; font-size: 12px; background: #f4f5f7; border: 1px solid #dfe1e6; color: #172b4d; border-radius: 3px; cursor: pointer;">4</button>
+                <button data-action="grid-slice-6" style="flex: 1; padding: 4px 0; font-size: 12px; background: #f4f5f7; border: 1px solid #dfe1e6; color: #172b4d; border-radius: 3px; cursor: pointer;">6</button>
+                <button data-action="grid-slice-9" style="flex: 1; padding: 4px 0; font-size: 12px; background: #f4f5f7; border: 1px solid #dfe1e6; color: #172b4d; border-radius: 3px; cursor: pointer;">9</button>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!-- 画布对象上下文菜单 -->
+<div id="canvas-object-menu" class="context-menu">
+    <ul>
+        <li data-action="remove">去除</li>
+        <li data-action="crop">裁切</li>
+        <li data-action="scale">缩放</li>
+        <li style="padding: 5px 10px; cursor: default;" onmouseover="this.style.backgroundColor='transparent'">
+            <div style="display: flex; gap: 5px; justify-content: space-between;">
+                <button data-action="grid-slice-4" style="flex: 1; padding: 4px 0; font-size: 12px; background: #f4f5f7; border: 1px solid #dfe1e6; color: #172b4d; border-radius: 3px; cursor: pointer;">4</button>
+                <button data-action="grid-slice-6" style="flex: 1; padding: 4px 0; font-size: 12px; background: #f4f5f7; border: 1px solid #dfe1e6; color: #172b4d; border-radius: 3px; cursor: pointer;">6</button>
+                <button data-action="grid-slice-9" style="flex: 1; padding: 4px 0; font-size: 12px; background: #f4f5f7; border: 1px solid #dfe1e6; color: #172b4d; border-radius: 3px; cursor: pointer;">9</button>
+            </div>
+        </li>
+        <li data-action="delete">删除</li>
+    </ul>
+</div>
+
+<!-- 裁切操作浮窗 -->
+<div id="crop-toolbar" style="display: none; position: absolute; z-index: 1001; background: white; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); gap: 10px;">
+    <button id="crop-confirm-btn" style="background: #0052cc; color: white; border: none; padding: 5px 15px; border-radius: 3px; cursor: pointer;">确认</button>
+    <button id="crop-cancel-btn" style="background: #dc3545; color: white; border: none; padding: 5px 15px; border-radius: 3px; cursor: pointer;">取消</button>
+</div>
+
+<!-- 去除操作浮窗 -->
+<div id="remove-toolbar" style="display: none; position: absolute; z-index: 1001; background: white; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); gap: 10px;">
+    <button id="remove-confirm-btn" style="background: #dc3545; color: white; border: none; padding: 5px 15px; border-radius: 3px; cursor: pointer;">确认去除</button>
+    <button id="remove-cancel-btn" style="background: #6c757d; color: white; border: none; padding: 5px 15px; border-radius: 3px; cursor: pointer;">取消</button>
+</div>
+
+<!-- 模态框结构 -->
+<div id="json-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>完整 JSON 响应</h2>
+        <pre id="json-modal-content"></pre>
+    </div>
+</div>
+
+<!-- 导出模态框 -->
+<div id="export-modal" class="modal">
+    <div class="modal-content" style="width: 400px;">
+        <span class="close-btn" onclick="document.getElementById('export-modal').style.display='none'">&times;</span>
+        <h2>导出图片</h2>
+        <div class="form-group">
+            <label for="export-filename">文件名</label>
+            <input type="text" id="export-filename" placeholder="请输入文件名（无需后缀）">
+        </div>
+        <div style="text-align: right; margin-top: 20px;">
+            <button id="export-confirm-btn">确定</button>
+            <button onclick="document.getElementById('export-modal').style.display='none'" style="background-color: #ccc;">取消</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let hideMenuTimer;
+    // === 静态配置 ===
+    const CONFIG = {
+        resolutions: {
+            '4k': 3840,
+            '2k': 2560,
+            '1k': 1024,
+            'hd': 1280
+        }
+    };
+
+    // 状态管理
+    const state = {
+        tasks: [],
+        currentTaskId: null,
+        nextId: 1,
+        canvasObjects: [], // 存储画布上的对象 {img, x, y, width, height}
+        isDragging: false,
+        dragTarget: null,
+        lastMouseX: 0,
+        lastMouseY: 0,
+        contextMenuTargetIndex: -1, // 记录触发菜单的对象索引
+        
+        // 裁切相关状态
+        isCropping: false,
+        cropTargetIndex: -1,
+        cropRect: { x: 0, y: 0, w: 0, h: 0 }, // 相对于 Canvas 的坐标
+        cropHandle: null, // 'top', 'bottom', 'left', 'right', 'move', 'confirm', 'cancel'
+        
+        // 缩放相关状态
+        isScaling: false,
+        scaleTargetIndex: -1,
+        scaleHandle: null, // 'bottom-right'
+        aspectRatio: 1, // 宽高比
+        originalScaleState: null, // 用于取消时恢复 {width, height, x, y}
+        
+        // 去除相关状态
+        isRemoving: false,
+        removeTargetIndex: -1,
+        removeRect: { x: 0, y: 0, w: 0, h: 0 },
+        removeHandle: null
+    };
+
+    // DOM 元素引用
+    const els = {
+        taskList: document.getElementById('task-list'),
+        addTaskBtn: document.getElementById('add-task-btn'),
+        // exportJsonBtn: document.getElementById('export-json-btn'), // 已移除
+        form: document.getElementById('api-form'),
+        // responseOutput: document.getElementById('response-output'), // 已移除
+        // responseContainer: document.getElementById('response-container'), // 已移除
+        canvas: document.getElementById('main-canvas'),
+        canvasInfo: document.getElementById('canvas-info'),
+        imagePreview: document.getElementById('image-preview-container'),
+        inputs: {
+            image_upload: document.getElementById('image_upload'),
+            resolution: document.getElementById('resolution'),
+            ratio: document.getElementById('ratio'),
+            bgColor: document.getElementById('bg-color'),
+        }
+    };
+
+    // --- 核心逻辑 ---
+
+    // 初始化背景设置
+    function initBgSetting() {
+        const bgSelect = els.inputs.bgColor;
+        if (!bgSelect) return;
+
+        // 默认设置为透明
+        updateCanvasBg(bgSelect.value);
+
+        bgSelect.addEventListener('change', (e) => {
+            updateCanvasBg(e.target.value);
+        });
+    }
+
+    // 更新画布背景
+    function updateCanvasBg(colorType) {
+        // 先移除所有背景类
+        els.canvas.classList.remove('checkerboard-bg');
+        els.canvas.style.backgroundColor = '';
+
+        if (colorType === 'transparent') {
+            els.canvas.classList.add('checkerboard-bg');
+        } else if (colorType === 'black') {
+            els.canvas.style.backgroundColor = '#000000';
+        } else if (colorType === 'white') {
+            els.canvas.style.backgroundColor = '#ffffff';
+        }
+    }
+
+    // 更新画布大小
+    function updateCanvasSize() {
+        const resKey = els.inputs.resolution.value;
+        const ratioKey = els.inputs.ratio.value;
+        
+        if (!resKey || !ratioKey) return;
+
+        const longSide = CONFIG.resolutions[resKey];
+        const [wRatio, hRatio] = ratioKey.split(':').map(Number);
+        
+        let width, height;
+        // 假设 longSide 始终对应长边
+        if (wRatio >= hRatio) {
+            width = longSide;
+            height = Math.round(longSide * (hRatio / wRatio));
+        } else {
+            height = longSide;
+            width = Math.round(longSide * (wRatio / hRatio));
+        }
+        
+        els.canvas.width = width;
+        els.canvas.height = height;
+        
+        // 更新信息显示
+        els.canvasInfo.textContent = `尺寸: ${width} x ${height} px (${ratioKey})`;
+        
+        // 分辨率改变后重新绘制
+        renderCanvas();
+    }
+
+    // 渲染画布
+    function renderCanvas() {
+        const ctx = els.canvas.getContext('2d');
+        ctx.clearRect(0, 0, els.canvas.width, els.canvas.height);
+        
+        // 1. 绘制所有对象
+        state.canvasObjects.forEach((obj, index) => {
+            // 如果正在裁切且是目标对象，可以特殊处理（例如降低不透明度），这里暂不处理
+            ctx.drawImage(obj.img, obj.x, obj.y, obj.width, obj.height);
+        });
+
+        // 2. 如果处于裁切状态，绘制裁切 UI
+        if (state.isCropping && state.cropTargetIndex !== -1) {
+            renderCropUI(ctx);
+        } 
+        // 3. 如果处于缩放状态，绘制缩放 UI
+        else if (state.isScaling && state.scaleTargetIndex !== -1) {
+            renderScaleUI(ctx);
+        }
+        else if (state.isRemoving && state.removeTargetIndex !== -1) {
+            renderRemoveUI(ctx);
+        }
+        else {
+            const toolbar = document.getElementById('crop-toolbar');
+            if (toolbar) toolbar.style.display = 'none';
+            const removeToolbar = document.getElementById('remove-toolbar');
+            if (removeToolbar) removeToolbar.style.display = 'none';
+        }
+    }
+
+    // 绘制缩放 UI
+    function renderScaleUI(ctx) {
+        const obj = state.canvasObjects[state.scaleTargetIndex];
+        
+        // 绘制高亮边框
+        ctx.strokeStyle = '#0052cc';
+        ctx.lineWidth = 2;
+        ctx.setLineDash([5, 5]);
+        ctx.strokeRect(obj.x, obj.y, obj.width, obj.height);
+        ctx.setLineDash([]);
+        
+        // 绘制四个角点
+        const size = 10;
+        ctx.fillStyle = '#fff';
+        ctx.strokeStyle = '#0052cc';
+        
+        const corners = [
+            {x: obj.x, y: obj.y},
+            {x: obj.x + obj.width, y: obj.y},
+            {x: obj.x, y: obj.y + obj.height},
+            {x: obj.x + obj.width, y: obj.y + obj.height}
+        ];
+        
+        corners.forEach(p => {
+            ctx.fillRect(p.x - size/2, p.y - size/2, size, size);
+            ctx.strokeRect(p.x - size/2, p.y - size/2, size, size);
+        });
+
+        // 更新浮窗位置 (复用裁切浮窗逻辑)
+        updateCropToolbarPosition();
+    }
+
+    // 绘制裁切 UI
+    function renderCropUI(ctx) {
+        const r = state.cropRect;
+        
+        // 绘制半透明遮罩 (覆盖非裁切区域)
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        // 上
+        ctx.fillRect(0, 0, els.canvas.width, r.y);
+        // 下
+        ctx.fillRect(0, r.y + r.h, els.canvas.width, els.canvas.height - (r.y + r.h));
+        // 左
+        ctx.fillRect(0, r.y, r.x, r.h);
+        // 右
+        ctx.fillRect(r.x + r.w, r.y, els.canvas.width - (r.x + r.w), r.h);
+
+        // 绘制裁切框边界
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.setLineDash([5, 5]);
+        ctx.strokeRect(r.x, r.y, r.w, r.h);
+        ctx.setLineDash([]);
+
+        // 更新浮窗位置
+        updateCropToolbarPosition();
+    }
+
+    // 更新裁切浮窗位置
+    function updateCropToolbarPosition() {
+        const toolbar = document.getElementById('crop-toolbar');
+        // 必须处于裁切或缩放模式
+        if ((!state.isCropping && !state.isScaling) || !toolbar) {
+            if (toolbar) toolbar.style.display = 'none';
+            return;
+        }
+
+        let r;
+        if (state.isCropping) {
+            r = state.cropRect;
+        } else {
+            // 缩放模式下使用对象坐标
+            const obj = state.canvasObjects[state.scaleTargetIndex];
+            r = { x: obj.x, y: obj.y, w: obj.width, h: obj.height };
+        }
+
+        const canvasRect = els.canvas.getBoundingClientRect();
+        const containerRect = document.getElementById('canvas-container').getBoundingClientRect();
+        
+        // 计算在页面上的绝对坐标
+        const scaleX = canvasRect.width / els.canvas.width;
+        const scaleY = canvasRect.height / els.canvas.height;
+        
+        const screenX = canvasRect.left + window.scrollX + r.x * scaleX + (r.w * scaleX) / 2;
+        let screenY = canvasRect.top + window.scrollY + (r.y + r.h) * scaleY + 10;
+        
+        // 确保浮窗不超出容器底部
+        const toolbarHeight = 50; // 估算高度
+        const containerBottom = containerRect.bottom + window.scrollY;
+        
+        if (screenY + toolbarHeight > containerBottom) {
+            screenY = containerBottom - toolbarHeight - 10;
+        }
+        
+        toolbar.style.display = 'flex';
+        toolbar.style.left = `${screenX}px`;
+        toolbar.style.top = `${screenY}px`;
+        toolbar.style.transform = 'translateX(-50%)'; // 居中
+    }
+
+    // 绘制去除 UI
+    function renderRemoveUI(ctx) {
+        const r = state.removeRect;
+        
+        // 绘制去除框边界 (红色)
+        ctx.strokeStyle = '#dc3545';
+        ctx.lineWidth = 2;
+        ctx.setLineDash([5, 5]);
+        ctx.strokeRect(r.x, r.y, r.w, r.h);
+        ctx.fillStyle = 'rgba(220, 53, 69, 0.2)';
+        ctx.fillRect(r.x, r.y, r.w, r.h);
+        ctx.setLineDash([]);
+
+        // 更新浮窗位置
+        updateRemoveToolbarPosition();
+    }
+
+    // 更新去除浮窗位置
+    function updateRemoveToolbarPosition() {
+        const toolbar = document.getElementById('remove-toolbar');
+        if (!state.isRemoving || !toolbar) {
+            if (toolbar) toolbar.style.display = 'none';
+            return;
+        }
+
+        const r = state.removeRect;
+        const canvasRect = els.canvas.getBoundingClientRect();
+        const containerRect = document.getElementById('canvas-container').getBoundingClientRect();
+        
+        // 计算在页面上的绝对坐标
+        const scaleX = canvasRect.width / els.canvas.width;
+        const scaleY = canvasRect.height / els.canvas.height;
+        
+        const screenX = canvasRect.left + window.scrollX + r.x * scaleX + (r.w * scaleX) / 2;
+        let screenY = canvasRect.top + window.scrollY + (r.y + r.h) * scaleY + 10;
+        
+        // 确保浮窗不超出容器底部
+        const toolbarHeight = 50; 
+        const containerBottom = containerRect.bottom + window.scrollY;
+        
+        if (screenY + toolbarHeight > containerBottom) {
+            screenY = containerBottom - toolbarHeight - 10;
+        }
+        
+        toolbar.style.display = 'flex';
+        toolbar.style.left = `${screenX}px`;
+        toolbar.style.top = `${screenY}px`;
+        toolbar.style.transform = 'translateX(-50%)'; 
+    }
+
+    // 获取鼠标在 Canvas 中的坐标
+    function getCanvasCoordinates(e) {
+        const rect = els.canvas.getBoundingClientRect();
+        const scaleX = els.canvas.width / rect.width;
+        const scaleY = els.canvas.height / rect.height;
+        return {
+            x: (e.clientX - rect.left) * scaleX,
+            y: (e.clientY - rect.top) * scaleY
+        };
+    }
+
+    // 初始化 Canvas 交互
+    function initCanvasInteraction() {
+        const canvas = els.canvas;
+
+        // 右键菜单
+        canvas.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            const pos = getCanvasCoordinates(e);
+            let found = false;
+            
+            // 从后往前查找点击的对象
+            for (let i = state.canvasObjects.length - 1; i >= 0; i--) {
+                const obj = state.canvasObjects[i];
+                if (pos.x >= obj.x && pos.x <= obj.x + obj.width &&
+                    pos.y >= obj.y && pos.y <= obj.y + obj.height) {
+                    
+                    state.contextMenuTargetIndex = i;
+                    found = true;
+                    
+                    const menu = document.getElementById('canvas-object-menu');
+                    menu.style.display = 'block';
+                    menu.style.left = `${e.pageX}px`;
+                    menu.style.top = `${e.pageY}px`;
+                    break;
+                }
+            }
+            
+            if (!found) {
+                // 如果没点到对象，隐藏菜单（如果之前显示的话）
+                document.getElementById('canvas-object-menu').style.display = 'none';
+            }
+        });
+
+        // 画布菜单交互
+        const canvasMenu = document.getElementById('canvas-object-menu');
+        canvasMenu.addEventListener('click', (e) => {
+            const action = e.target.getAttribute('data-action');
+            if (action && state.contextMenuTargetIndex !== -1) {
+                if (action === 'delete') {
+                    state.canvasObjects.splice(state.contextMenuTargetIndex, 1);
+                    renderCanvas();
+                } else if (action === 'crop') {
+                    // 初始化裁切
+                    const obj = state.canvasObjects[state.contextMenuTargetIndex];
+                    state.isCropping = true;
+                    state.cropTargetIndex = state.contextMenuTargetIndex;
+                    state.cropRect = {
+                        x: obj.x,
+                        y: obj.y,
+                        w: obj.width,
+                        h: obj.height
+                    };
+                    renderCanvas();
+                } else if (action === 'remove') {
+                    // 初始化去除
+                    const obj = state.canvasObjects[state.contextMenuTargetIndex];
+                    state.isRemoving = true;
+                    state.removeTargetIndex = state.contextMenuTargetIndex;
+                    // 默认显示一个小方块，例如 100x100，位于图片中心
+                    const size = 100;
+                    state.removeRect = {
+                        x: obj.x + (obj.width - size) / 2,
+                        y: obj.y + (obj.height - size) / 2,
+                        w: size,
+                        h: size
+                    };
+                    renderCanvas();
+                } else if (action === 'scale') {
+                    // 初始化缩放
+                    const obj = state.canvasObjects[state.contextMenuTargetIndex];
+                    state.isScaling = true;
+                    state.scaleTargetIndex = state.contextMenuTargetIndex;
+                    state.originalScaleState = {
+                        width: obj.width,
+                        height: obj.height,
+                        x: obj.x,
+                        y: obj.y
+                    };
+                    renderCanvas();
+                } else if (action && action.startsWith('grid-slice-')) {
+                    const type = action.split('-')[2];
+                    let rows = 3, cols = 3;
+                    if (type === '4') { rows = 2; cols = 2; }
+                    else if (type === '6') { rows = 2; cols = 3; }
+                    else if (type === '9') { rows = 3; cols = 3; }
+                    
+                    performGridSlice(state.contextMenuTargetIndex, rows, cols);
+                }
+            }
+            canvasMenu.style.display = 'none';
+            state.contextMenuTargetIndex = -1;
+        });
+
+        // 点击其他地方隐藏菜单
+        window.addEventListener('click', () => {
+            canvasMenu.style.display = 'none';
+        });
+
+        // 滚轮缩放已移除
+
+
+        canvas.addEventListener('mousedown', (e) => {
+            if (e.button !== 0) return; // 只响应左键
+
+            const pos = getCanvasCoordinates(e);
+
+            // === 缩放模式下的交互 ===
+            if (state.isScaling && state.scaleTargetIndex !== -1) {
+                const obj = state.canvasObjects[state.scaleTargetIndex];
+                const handleSize = 10; 
+                const margin = handleSize; 
+
+                // 只检测右下角
+                const br = { x: obj.x + obj.width, y: obj.y + obj.height };
+                
+                if (Math.abs(pos.x - br.x) < margin && Math.abs(pos.y - br.y) < margin) {
+                    state.scaleHandle = 'bottom-right';
+                    state.lastMouseX = pos.x;
+                    state.lastMouseY = pos.y;
+                    // 记录初始宽高比
+                    state.aspectRatio = obj.width / obj.height;
+                    return;
+                }
+
+                // 检测是否点击在对象内部（移动）
+                if (pos.x >= obj.x && pos.x <= obj.x + obj.width &&
+                    pos.y >= obj.y && pos.y <= obj.y + obj.height) {
+                    state.scaleHandle = 'move';
+                    state.lastMouseX = pos.x;
+                    state.lastMouseY = pos.y;
+                    return;
+                }
+            }
+
+            // === 裁切模式下的交互 ===
+            if (state.isCropping) {
+                const r = state.cropRect;
+                const margin = 10; // 响应范围
+                
+                // 1. 检查边框拖动
+                if (Math.abs(pos.x - r.x) < margin) state.cropHandle = 'left';
+                else if (Math.abs(pos.x - (r.x + r.w)) < margin) state.cropHandle = 'right';
+                else if (Math.abs(pos.y - r.y) < margin) state.cropHandle = 'top';
+                else if (Math.abs(pos.y - (r.y + r.h)) < margin) state.cropHandle = 'bottom';
+                // 3. 检查内部移动 (已禁用)
+                // else if (pos.x > r.x && pos.x < r.x + r.w && pos.y > r.y && pos.y < r.y + r.h) {
+                //     state.cropHandle = 'move';
+                // } 
+                else {
+                    state.cropHandle = null;
+                }
+
+                if (state.cropHandle) {
+                    state.lastMouseX = pos.x;
+                    state.lastMouseY = pos.y;
+                }
+                return;
+            }
+
+            // === 去除模式下的交互 ===
+            if (state.isRemoving) {
+                const r = state.removeRect;
+                const margin = 10; 
+                
+                // 1. 检查边框拖动
+                if (Math.abs(pos.x - r.x) < margin) state.removeHandle = 'left';
+                else if (Math.abs(pos.x - (r.x + r.w)) < margin) state.removeHandle = 'right';
+                else if (Math.abs(pos.y - r.y) < margin) state.removeHandle = 'top';
+                else if (Math.abs(pos.y - (r.y + r.h)) < margin) state.removeHandle = 'bottom';
+                // 2. 检查内部移动 (允许)
+                else if (pos.x > r.x && pos.x < r.x + r.w && pos.y > r.y && pos.y < r.y + r.h) {
+                    state.removeHandle = 'move';
+                } 
+                else {
+                    state.removeHandle = null;
+                }
+
+                if (state.removeHandle) {
+                    state.lastMouseX = pos.x;
+                    state.lastMouseY = pos.y;
+                }
+                return;
+            }
+
+            // === 普通模式下的交互 (拖拽对象) ===
+            // 从后往前遍历（优先选中最上面的图片）
+            for (let i = state.canvasObjects.length - 1; i >= 0; i--) {
+                const obj = state.canvasObjects[i];
+                if (pos.x >= obj.x && pos.x <= obj.x + obj.width &&
+                    pos.y >= obj.y && pos.y <= obj.y + obj.height) {
+                    
+                    state.isDragging = true;
+                    state.dragTarget = obj;
+                    state.lastMouseX = pos.x;
+                    state.lastMouseY = pos.y;
+                    
+                    break;
+                }
+            }
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            const pos = getCanvasCoordinates(e);
+
+            // === 缩放模式下的移动 ===
+            if (state.isScaling && state.scaleTargetIndex !== -1) {
+                const obj = state.canvasObjects[state.scaleTargetIndex];
+                const handleSize = 10;
+                const margin = handleSize;
+                
+                // 如果没有拖拽，只更新光标 (仅当鼠标在 canvas 内时)
+                if (!state.scaleHandle) {
+                    // 判断鼠标是否在 canvas 内
+                    const canvasRect = els.canvas.getBoundingClientRect();
+                    if (e.clientX >= canvasRect.left && e.clientX <= canvasRect.right &&
+                        e.clientY >= canvasRect.top && e.clientY <= canvasRect.bottom) {
+                            
+                        const br = { x: obj.x + obj.width, y: obj.y + obj.height };
+                        if (Math.abs(pos.x - br.x) < margin && Math.abs(pos.y - br.y) < margin) {
+                            els.canvas.style.cursor = 'se-resize';
+                        } else if (pos.x >= obj.x && pos.x <= obj.x + obj.width &&
+                                   pos.y >= obj.y && pos.y <= obj.y + obj.height) {
+                            els.canvas.style.cursor = 'move';
+                        } else {
+                            els.canvas.style.cursor = 'default';
+                        }
+                    }
+                    return;
+                }
+
+                // 正在拖拽 (无论是否在 canvas 内都响应)
+                if (state.scaleHandle === 'move') {
+                    const dx = pos.x - state.lastMouseX;
+                    const dy = pos.y - state.lastMouseY;
+                    
+                    obj.x += dx;
+                    obj.y += dy;
+                    
+                    state.lastMouseX = pos.x;
+                    state.lastMouseY = pos.y;
+                    
+                    renderCanvas();
+                    return;
+                }
+
+                if (state.scaleHandle === 'bottom-right') {
+                   // 计算新的宽度：鼠标当前 x - 对象左边缘 x
+                   let newWidth = pos.x - obj.x;
+                   if (newWidth < 20) newWidth = 20; // 最小限制
+                   
+                   // 等比计算高度
+                   let newHeight = newWidth / state.aspectRatio;
+                   
+                   obj.width = newWidth;
+                   obj.height = newHeight;
+                   
+                   renderCanvas();
+                   return;
+                }
+            }
+
+            // === 裁切模式下的移动 ===
+            if (state.isCropping) {
+                if (!state.cropHandle) {
+                    // 仅当鼠标在 canvas 内时更新光标
+                    const canvasRect = els.canvas.getBoundingClientRect();
+                    if (e.clientX >= canvasRect.left && e.clientX <= canvasRect.right &&
+                        e.clientY >= canvasRect.top && e.clientY <= canvasRect.bottom) {
+                            
+                        // 更新鼠标样式
+                        const r = state.cropRect;
+                        const margin = 10;
+                        if (Math.abs(pos.x - r.x) < margin) els.canvas.style.cursor = 'w-resize';
+                        else if (Math.abs(pos.x - (r.x + r.w)) < margin) els.canvas.style.cursor = 'e-resize';
+                        else if (Math.abs(pos.y - r.y) < margin) els.canvas.style.cursor = 'n-resize';
+                        else if (Math.abs(pos.y - (r.y + r.h)) < margin) els.canvas.style.cursor = 's-resize';
+                        else if (pos.x > r.x && pos.x < r.x + r.w && pos.y > r.y && pos.y < r.y + r.h) els.canvas.style.cursor = 'move';
+                        else els.canvas.style.cursor = 'default';
+                    }
+                    return;
+                }
+
+                const dx = pos.x - state.lastMouseX;
+                const dy = pos.y - state.lastMouseY;
+                const r = state.cropRect;
+
+                if (state.cropHandle === 'move') {
+                    r.x += dx;
+                    r.y += dy;
+                } else if (state.cropHandle === 'left') {
+                    r.x += dx;
+                    r.w -= dx;
+                } else if (state.cropHandle === 'right') {
+                    r.w += dx;
+                } else if (state.cropHandle === 'top') {
+                    r.y += dy;
+                    r.h -= dy;
+                } else if (state.cropHandle === 'bottom') {
+                    r.h += dy;
+                }
+
+                // 简单的最小尺寸限制
+                if (r.w < 10) r.w = 10;
+                if (r.h < 10) r.h = 10;
+
+                state.lastMouseX = pos.x;
+                state.lastMouseY = pos.y;
+                renderCanvas();
+                return;
+            }
+
+            // === 去除模式下的移动 ===
+            if (state.isRemoving) {
+                if (!state.removeHandle) {
+                    const canvasRect = els.canvas.getBoundingClientRect();
+                    if (e.clientX >= canvasRect.left && e.clientX <= canvasRect.right &&
+                        e.clientY >= canvasRect.top && e.clientY <= canvasRect.bottom) {
+                            
+                        const r = state.removeRect;
+                        const margin = 10;
+                        if (Math.abs(pos.x - r.x) < margin) els.canvas.style.cursor = 'w-resize';
+                        else if (Math.abs(pos.x - (r.x + r.w)) < margin) els.canvas.style.cursor = 'e-resize';
+                        else if (Math.abs(pos.y - r.y) < margin) els.canvas.style.cursor = 'n-resize';
+                        else if (Math.abs(pos.y - (r.y + r.h)) < margin) els.canvas.style.cursor = 's-resize';
+                        else if (pos.x > r.x && pos.x < r.x + r.w && pos.y > r.y && pos.y < r.y + r.h) els.canvas.style.cursor = 'move';
+                        else els.canvas.style.cursor = 'default';
+                    }
+                    return;
+                }
+
+                const dx = pos.x - state.lastMouseX;
+                const dy = pos.y - state.lastMouseY;
+                const r = state.removeRect;
+
+                if (state.removeHandle === 'move') {
+                    r.x += dx;
+                    r.y += dy;
+                } else if (state.removeHandle === 'left') {
+                    r.x += dx;
+                    r.w -= dx;
+                } else if (state.removeHandle === 'right') {
+                    r.w += dx;
+                } else if (state.removeHandle === 'top') {
+                    r.y += dy;
+                    r.h -= dy;
+                } else if (state.removeHandle === 'bottom') {
+                    r.h += dy;
+                }
+
+                if (r.w < 10) r.w = 10;
+                if (r.h < 10) r.h = 10;
+
+                state.lastMouseX = pos.x;
+                state.lastMouseY = pos.y;
+                renderCanvas();
+                return;
+            }
+
+            // === 普通模式下的移动 ===
+            if (!state.isDragging || !state.dragTarget) {
+                // 如果在 canvas 内，恢复默认光标
+                const canvasRect = els.canvas.getBoundingClientRect();
+                if (e.clientX >= canvasRect.left && e.clientX <= canvasRect.right &&
+                    e.clientY >= canvasRect.top && e.clientY <= canvasRect.bottom) {
+                    els.canvas.style.cursor = 'default';
+                }
+                return;
+            }
+            
+            const dx = pos.x - state.lastMouseX;
+            const dy = pos.y - state.lastMouseY;
+            
+            state.dragTarget.x += dx;
+            state.dragTarget.y += dy;
+            
+            state.lastMouseX = pos.x;
+            state.lastMouseY = pos.y;
+            
+            renderCanvas();
+        });
+
+        window.addEventListener('mouseup', () => {
+            state.isDragging = false;
+            state.dragTarget = null;
+            if (state.isCropping) {
+                state.cropHandle = null;
+            }
+            if (state.isScaling) {
+                state.scaleHandle = null;
+            }
+            if (state.isRemoving) {
+                state.removeHandle = null;
+            }
+        });
+
+        // 移除了 canvas.mouseleave 事件，因为现在由 window 处理全局释放
+
+    }
+
+    // 执行网格切割
+    function performGridSlice(index, rows, cols) {
+        const obj = state.canvasObjects[index];
+        if (!obj) return;
+        
+        // 移除原对象
+        state.canvasObjects.splice(index, 1);
+        
+        const sliceW = obj.width / cols;
+        const sliceH = obj.height / rows;
+        
+        // 计算相对原图的比例
+        const scaleX = obj.img.naturalWidth / obj.width;
+        const scaleY = obj.img.naturalHeight / obj.height;
+        
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+                // 源坐标 (原图尺寸)
+                const sx = (c * sliceW) * scaleX;
+                const sy = (r * sliceH) * scaleY;
+                const sw = sliceW * scaleX;
+                const sh = sliceH * scaleY;
+                
+                // 目标坐标 (画布尺寸)
+                const dx = obj.x + c * sliceW;
+                const dy = obj.y + r * sliceH;
+                
+                // 临时 Canvas 尺寸 (使用显示尺寸以保持一致性)
+                const canvasW = Math.ceil(sliceW);
+                const canvasH = Math.ceil(sliceH);
+                
+                const tempCanvas = document.createElement('canvas');
+                tempCanvas.width = canvasW;
+                tempCanvas.height = canvasH;
+                const tCtx = tempCanvas.getContext('2d');
+                tCtx.imageSmoothingEnabled = true;
+                tCtx.imageSmoothingQuality = 'high';
+                
+                // 绘制切片
+                tCtx.drawImage(obj.img, sx, sy, sw, sh, 0, 0, canvasW, canvasH);
+                
+                const newImg = new Image();
+                newImg.onload = () => renderCanvas();
+                newImg.src = tempCanvas.toDataURL();
+                
+                state.canvasObjects.push({
+                    img: newImg,
+                    x: dx,
+                    y: dy,
+                    width: sliceW,
+                    height: sliceH
+                });
+            }
+        }
+        renderCanvas();
+    }
+
+    // 添加预览图片到 UI
+    function addPreviewImage(src) {
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('preview-image-wrapper');
+
+        const img = document.createElement('img');
+        img.src = src;
+        img.classList.add('preview-image');
+        
+        const deleteBtn = document.createElement('button');
+        deleteBtn.innerHTML = '&times;';
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.onclick = () => {
+            wrapper.remove();
+            if (els.imagePreview.children.length === 0) {
+                els.imagePreview.innerHTML = '<span style="color: #999;">图片预览区域</span>';
+            }
+        };
+
+        // 点击图片直接添加到画布
+        img.onclick = () => {
+            addToCanvas(src);
+        };
+
+        wrapper.appendChild(img);
+        wrapper.appendChild(deleteBtn);
+        els.imagePreview.appendChild(wrapper);
+
+        // 鼠标悬停显示菜单
+        wrapper.addEventListener('mouseenter', (e) => {
+            clearTimeout(hideMenuTimer);
+            const menu = document.getElementById('image-context-menu');
+            menu.style.display = 'block';
+            const rect = wrapper.getBoundingClientRect();
+            menu.style.left = `${rect.left + window.scrollX}px`;
+            menu.style.top = `${rect.bottom + window.scrollY}px`;
+
+            menu.currentImage = img.src;
+        });
+
+        // 鼠标离开隐藏菜单（带延迟）
+        wrapper.addEventListener('mouseleave', () => {
+            hideMenuTimer = setTimeout(() => {
+                document.getElementById('image-context-menu').style.display = 'none';
+            }, 300);
+        });
+    }
+
+    // 将图片添加到画布的公共函数
+    function addToCanvas(src) {
+        const img = new Image();
+        img.onload = () => {
+            // 计算居中位置
+            const x = (els.canvas.width - img.width) / 2;
+            const y = (els.canvas.height - img.height) / 2;
+            
+            // 添加到对象列表
+            state.canvasObjects.push({
+                img: img,
+                x: x,
+                y: y,
+                width: img.width,
+                height: img.height
+            });
+            
+            // 重新渲染
+            renderCanvas();
+        };
+        img.src = src;
+    }
+
+    // 执行裁切
+    function performCrop() {
+        const obj = state.canvasObjects[state.cropTargetIndex];
+        const r = state.cropRect;
+
+        // 1. 计算裁切框在原图上的相对位置
+        // 裁切框坐标 r 是相对于 Canvas 的
+        // 图片坐标 obj 是相对于 Canvas 的
+        // 相对坐标 = r - obj
+        const relativeX = r.x - obj.x;
+        const relativeY = r.y - obj.y;
+
+        // 2. 考虑到图片可能被缩放（目前代码没做缩放，但为了健壮性，这里按 1:1 处理）
+        // 如果 obj.width != obj.img.naturalWidth，需要换算比例
+        const scaleX = obj.img.naturalWidth / obj.width;
+        const scaleY = obj.img.naturalHeight / obj.height;
+
+        const sx = relativeX * scaleX;
+        const sy = relativeY * scaleY;
+        const sw = r.w * scaleX;
+        const sh = r.h * scaleY;
+
+        // 3. 创建临时 Canvas 进行裁切
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = sw;
+        tempCanvas.height = sh;
+        const tCtx = tempCanvas.getContext('2d');
+
+        // drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+        tCtx.drawImage(obj.img, sx, sy, sw, sh, 0, 0, sw, sh);
+
+        // 4. 生成新图片并添加到预览区 (不修改原对象)
+        const dataUrl = tempCanvas.toDataURL();
+        addPreviewImage(dataUrl);
+
+        // 退出裁切模式
+        state.isCropping = false;
+        state.cropTargetIndex = -1;
+        document.getElementById('crop-toolbar').style.display = 'none';
+        renderCanvas();
+    }
+
+    // 执行去除确认
+    function performRemoveConfirm() {
+        const obj = state.canvasObjects[state.removeTargetIndex];
+        const r = state.removeRect;
+        
+        // 1. 计算去除区域相对于 Canvas 的坐标 (r 已经是 Canvas 坐标)
+        // 2. 转换到图片内部坐标
+        // 计算图片显示比例
+        const scaleX = obj.img.naturalWidth / obj.width;
+        const scaleY = obj.img.naturalHeight / obj.height;
+        
+        // 计算相对坐标
+        const relativeX = r.x - obj.x;
+        const relativeY = r.y - obj.y;
+        
+        // 转换为原图坐标
+        const sx = relativeX * scaleX;
+        const sy = relativeY * scaleY;
+        const sw = r.w * scaleX;
+        const sh = r.h * scaleY;
+        
+        // 3. 在原图上清除区域
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = obj.img.naturalWidth;
+        tempCanvas.height = obj.img.naturalHeight;
+        const ctx = tempCanvas.getContext('2d');
+        
+        // 绘制原图
+        ctx.drawImage(obj.img, 0, 0);
+        
+        // 清除区域 (变为透明)
+        ctx.clearRect(sx, sy, sw, sh);
+        
+        // 4. 更新图片对象
+        const newImg = new Image();
+        newImg.onload = () => {
+            obj.img = newImg;
+            // 尺寸位置不变，只是内容变了
+            
+            // 退出去除模式
+            state.isRemoving = false;
+            state.removeTargetIndex = -1;
+            document.getElementById('remove-toolbar').style.display = 'none';
+            renderCanvas();
+        };
+        newImg.src = tempCanvas.toDataURL();
+    }
+
+    // 执行缩放确认（并裁切超出部分）
+    function performScaleConfirm() {
+        const obj = state.canvasObjects[state.scaleTargetIndex];
+        const canvasW = els.canvas.width;
+        const canvasH = els.canvas.height;
+
+        // 计算在画布内的交集区域
+        const ix = Math.max(0, obj.x);
+        const iy = Math.max(0, obj.y);
+        const iRight = Math.min(canvasW, obj.x + obj.width);
+        const iBottom = Math.min(canvasH, obj.y + obj.height);
+        
+        const iw = iRight - ix;
+        const ih = iBottom - iy;
+
+        // 如果完全在画布外，或者无效尺寸
+        if (iw <= 0 || ih <= 0) {
+            // 可以选择删除对象或者不处理，这里简单处理为不做任何改变并退出
+            state.isScaling = false;
+            state.scaleTargetIndex = -1;
+            state.originalScaleState = null;
+            document.getElementById('crop-toolbar').style.display = 'none';
+            renderCanvas();
+            return;
+        }
+
+        // 检查是否需要裁切（即是否有一部分在画布外）
+        const needsCrop = obj.x < 0 || obj.y < 0 || (obj.x + obj.width) > canvasW || (obj.y + obj.height) > canvasH;
+
+        if (!needsCrop) {
+            // 不需要裁切，直接退出
+            state.isScaling = false;
+            state.scaleTargetIndex = -1;
+            state.originalScaleState = null;
+            document.getElementById('crop-toolbar').style.display = 'none';
+            renderCanvas();
+            return;
+        }
+
+        // 执行裁切
+        // 相对于对象左上角的偏移
+        const offsetX = ix - obj.x;
+        const offsetY = iy - obj.y;
+
+        // 原图上的对应区域
+        const scaleX = obj.img.naturalWidth / obj.width;
+        const scaleY = obj.img.naturalHeight / obj.height;
+
+        const sx = offsetX * scaleX;
+        const sy = offsetY * scaleY;
+        const sw = iw * scaleX;
+        const sh = ih * scaleY;
+
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = iw; // 注意这里用的是显示尺寸，如果希望保持原图分辨率，应该用 sw
+        // 用户意图是“放大”，所以裁切后的图片像素应该更多？
+        // 如果用 iw (屏幕像素)，则图片质量会下降到画布分辨率。
+        // 如果用 sw (原图像素)，则保持了原图分辨率，但 obj.width 依然是 iw。
+        // 为了保持清晰度，我们应该尽可能保留像素。
+        // 但是，如果 obj.width 很大（放大很多倍），scaleX 会很小，sw 也会很小。
+        // 等等，放大意味着 obj.width > naturalWidth。
+        // 这种情况下，我们应该用 iw 还是 sw？
+        // 如果放大，说明用户想要“插值”后的像素。
+        // 通常裁切操作是“所见即所得”，即保留画布上的像素。
+        // 但为了后续可能的再次缩放不失真，最好生成高分辨率图？
+        // 简单起见，我们按照“所见即所得”生成图片，即使用 iw, ih 作为新图尺寸，
+        // 但为了清晰度，我们可以尝试使用更高的分辨率。
+        // 
+        // 方案 A: 使用 iw, ih。简单，直接。
+        // 方案 B: 使用 sw, sh。这会“还原”到原图分辨率。如果放大了，sw < iw。
+        // 这样会导致图片变小（像素数），再次显示时 obj.width = iw，会模糊。
+        // 
+        // 正确的做法应该是：创建一个新的 Canvas，大小为 iw, ih。
+        // 将原图的对应部分画上去。这样就“固化”了当前的缩放效果。
+        
+        tempCanvas.width = iw;
+        tempCanvas.height = ih;
+        const tCtx = tempCanvas.getContext('2d');
+        
+        // 使用高质量平滑
+        tCtx.imageSmoothingEnabled = true;
+        tCtx.imageSmoothingQuality = 'high';
+
+        tCtx.drawImage(obj.img, sx, sy, sw, sh, 0, 0, iw, ih);
+
+        const newImg = new Image();
+        newImg.onload = () => {
+            obj.img = newImg;
+            obj.width = iw;
+            obj.height = ih;
+            obj.x = ix;
+            obj.y = iy;
+
+            state.isScaling = false;
+            state.scaleTargetIndex = -1;
+            state.originalScaleState = null;
+            document.getElementById('crop-toolbar').style.display = 'none';
+            renderCanvas();
+        };
+        newImg.src = tempCanvas.toDataURL();
+    }
+
+    // 初始化下拉菜单
+    function initSelects() {
+        // 分辨率和比例的初始化可以保留，如果它们是静态的
+    }
+
+    // 导出 JSON (已移除功能，保留空函数防止报错或直接删除引用)
+    async function handleExport() {
+        // ... removed
+    }
+
+    // 初始化
+    function init() {
+        initSelects();
+
+        // 加载本地存储
+        const storedState = localStorage.getItem('图片编辑');
+        if (storedState) {
+            try {
+                const parsed = JSON.parse(storedState);
+                state.tasks = parsed.tasks;
+                state.currentTaskId = parsed.currentTaskId;
+                state.nextId = parsed.nextId || (state.tasks.length > 0 ? Math.max(...state.tasks.map(t => parseInt(t.id.replace('task-', '')))) + 1 : 1);
+            } catch (e) {
+                console.error('Failed to parse state', e);
+                createDefaultTask();
+            }
+        } else {
+            createDefaultTask();
+        }
+
+        // 确保至少有一个任务
+        if (state.tasks.length === 0) {
+            createDefaultTask();
+        }
+
+        // 如果没有选中的任务，默认选中第一个
+        if (!state.currentTaskId || !state.tasks.find(t => t.id === state.currentTaskId)) {
+            state.currentTaskId = state.tasks[0].id;
+        }
+
+        renderTaskList();
+        loadTaskToView(state.currentTaskId);
+        setupEventListeners();
+        initCanvasInteraction();
+        initBgSetting(); // 初始化背景设置
+        
+        // 初始化画布大小
+        updateCanvasSize();
+    }
+
+    function createDefaultTask() {
+        const task = {
+            id: 'task-001',
+            name: '任务001',
+            input: {
+                      resolution: '1k',
+                      ratio: '1:1'
+                  },
+            output: null
+        };
+        state.tasks.push(task);
+        state.currentTaskId = task.id;
+        state.nextId = 2;
+        saveState();
+    }
+
+    function saveState() {
+        localStorage.setItem('图片编辑', JSON.stringify(state));
+    }
+
+    function createNewTask() {
+        const idNum = state.nextId++;
+        const idStr = String(idNum).padStart(3, '0');
+        const taskId = `task-${idStr}`;
+        const newTask = {
+            id: taskId,
+            name: `任务${idStr}`,
+            input: {
+                resolution: '1k',
+                ratio: '1:1'
+            },
+            output: null
+        };
+        state.tasks.push(newTask);
+        state.currentTaskId = taskId;
+        saveState();
+        renderTaskList();
+        loadTaskToView(taskId);
+    }
+
+    function deleteTask(e, taskId) {
+        e.stopPropagation(); // 阻止触发选择事件
+        if (!confirm('确定要删除这个任务吗？')) return;
+
+        const index = state.tasks.findIndex(t => t.id === taskId);
+        if (index === -1) return;
+
+        state.tasks.splice(index, 1);
+        
+        // 如果删除的是当前任务，或者删完后没有任务了
+        if (state.tasks.length === 0) {
+            createDefaultTask(); // 会重置 nextId 逻辑，如果需要连续 ID 可以在 createDefaultTask 里调整，这里简化
+        } else if (taskId === state.currentTaskId) {
+            // 切换到前一个或第一个
+            const newIndex = Math.max(0, index - 1);
+            state.currentTaskId = state.tasks[newIndex].id;
+        }
+
+        saveState();
+        renderTaskList();
+        loadTaskToView(state.currentTaskId);
+    }
+
+    function selectTask(taskId) {
+        if (state.currentTaskId === taskId) return;
+        // 切换前先保存当前视图的数据（虽然 input 事件已经保存了，但防止意外）
+        saveViewToTask(state.currentTaskId);
+        
+        state.currentTaskId = taskId;
+        saveState();
+        renderTaskList(); // 更新高亮
+        loadTaskToView(taskId);
+    }
+
+    // 将当前视图（表单+输出）保存到任务对象
+    function saveViewToTask(taskId) {
+        const task = state.tasks.find(t => t.id === taskId);
+        if (!task) return;
+
+        task.input = {
+            resolution: els.inputs.resolution.value,
+            ratio: els.inputs.ratio.value
+        };
+        // 注意：图片数据不保存到 localStorage，切换任务会丢失图片选择
+        saveState();
+    }
+
+    // 将任务数据加载到视图
+    function loadTaskToView(taskId) {
+        const task = state.tasks.find(t => t.id === taskId);
+        if (!task) return;
+
+        // 恢复表单值
+        els.inputs.resolution.value = task.input.resolution || '1k';
+        els.inputs.ratio.value = task.input.ratio || '1:1';
+
+        // 清空图片选择和预览
+        els.inputs.image_upload.value = '';
+        els.imagePreview.innerHTML = '<span style="color: #999;">图片预览区域</span>';
+
+        // 恢复输出结果 (现在主要是画布状态，暂不恢复画布内容，只恢复尺寸)
+        updateCanvasSize();
+        
+        // 清理可能存在的“显示详情”按钮
+        // const btns = els.responseContainer.querySelectorAll('button');
+        // btns.forEach(b => b.remove());
+    }
+
+    function renderTaskList() {
+        els.taskList.innerHTML = '';
+        state.tasks.forEach(task => {
+            const li = document.createElement('li');
+            li.className = `task-item ${task.id === state.currentTaskId ? 'active' : ''}`;
+            li.onclick = () => selectTask(task.id);
+            
+            const span = document.createElement('span');
+            span.textContent = task.name;
+            li.appendChild(span);
+
+            const delBtn = document.createElement('button');
+            delBtn.className = 'task-delete-btn';
+            delBtn.innerHTML = '&times;';
+            delBtn.onclick = (e) => deleteTask(e, task.id);
+            li.appendChild(delBtn);
+
+            els.taskList.appendChild(li);
+        });
+    }
+
+    function setupEventListeners() {
+        // 新增任务
+        els.addTaskBtn.addEventListener('click', createNewTask);
+
+        // 导出 JSON
+        if (els.exportJsonBtn) {
+            els.exportJsonBtn.addEventListener('click', handleExport);
+        }
+
+        // 表单输入监听：实时保存到当前任务
+        ['resolution', 'ratio'].forEach(field => {
+            els.inputs[field].addEventListener('input', () => {
+                saveViewToTask(state.currentTaskId);
+                if (field === 'resolution' || field === 'ratio') {
+                    updateCanvasSize();
+                }
+            });
+            els.inputs[field].addEventListener('change', () => {
+                saveViewToTask(state.currentTaskId);
+                if (field === 'resolution' || field === 'ratio') {
+                    updateCanvasSize();
+                }
+            });
+        });
+
+        // 裁切/缩放 浮窗按钮事件
+         document.getElementById('crop-confirm-btn').addEventListener('click', () => {
+             if (state.isCropping) {
+                 performCrop();
+             } else if (state.isScaling) {
+                 performScaleConfirm();
+             }
+         });
+        
+        document.getElementById('crop-cancel-btn').addEventListener('click', () => {
+            if (state.isCropping) {
+                state.isCropping = false;
+                state.cropTargetIndex = -1;
+            } else if (state.isScaling) {
+                // 恢复原状
+                const obj = state.canvasObjects[state.scaleTargetIndex];
+                const original = state.originalScaleState;
+                if (obj && original) {
+                    obj.width = original.width;
+                    obj.height = original.height;
+                    obj.x = original.x;
+                    obj.y = original.y;
+                }
+                state.isScaling = false;
+                state.scaleTargetIndex = -1;
+                state.originalScaleState = null;
+            }
+            
+            document.getElementById('crop-toolbar').style.display = 'none';
+            renderCanvas();
+        });
+
+        // 去除浮窗按钮事件
+        const removeConfirmBtn = document.getElementById('remove-confirm-btn');
+        if (removeConfirmBtn) {
+            removeConfirmBtn.addEventListener('click', performRemoveConfirm);
+        }
+
+        const removeCancelBtn = document.getElementById('remove-cancel-btn');
+        if (removeCancelBtn) {
+            removeCancelBtn.addEventListener('click', () => {
+                state.isRemoving = false;
+                state.removeTargetIndex = -1;
+                document.getElementById('remove-toolbar').style.display = 'none';
+                renderCanvas();
+            });
+        }
+
+        // 图片预览
+        els.inputs.image_upload.addEventListener('change', (event) => {
+            const files = event.target.files;
+            if (files.length > 0) {
+                // 首次选择图片时，清空“图片预览区域”的文字
+                if (els.imagePreview.querySelector('span')) {
+                    els.imagePreview.innerHTML = '';
+                }
+            }
+
+            for (const file of files) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    addPreviewImage(e.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+            event.target.value = '';
+        });
+
+        // addPreviewImage 和 addToCanvas 已移动到全局作用域
+
+        // 菜单本身的交互
+        const menu = document.getElementById('image-context-menu');
+        menu.addEventListener('mouseenter', () => {
+            clearTimeout(hideMenuTimer);
+        });
+        menu.addEventListener('mouseleave', () => {
+            menu.style.display = 'none';
+        });
+        menu.addEventListener('click', (event) => {
+            const action = event.target.getAttribute('data-action');
+            if (action) {
+                console.log(`Action: ${action} on image ${menu.currentImage.substring(0, 30)}...`);
+                
+                if (action === 'to-canvas') {
+                    addToCanvas(menu.currentImage);
+                } else if (action.startsWith('grid-slice-')) {
+                    // 解析宫格类型
+                    let rows = 3, cols = 3;
+                    if (action === 'grid-slice-4') {
+                        rows = 2; cols = 2;
+                    } else if (action === 'grid-slice-6') {
+                        rows = 2; cols = 3; // 2行3列
+                    } else if (action === 'grid-slice-9') {
+                        rows = 3; cols = 3;
+                    }
+
+                    // 宫格切割预览图片
+                    const img = new Image();
+                    img.onload = () => {
+                        const sliceW = img.width / cols;
+                        const sliceH = img.height / rows;
+
+                        for (let r = 0; r < rows; r++) {
+                            for (let c = 0; c < cols; c++) {
+                                const tempCanvas = document.createElement('canvas');
+                                tempCanvas.width = sliceW;
+                                tempCanvas.height = sliceH;
+                                const tCtx = tempCanvas.getContext('2d');
+                                tCtx.drawImage(img, c * sliceW, r * sliceH, sliceW, sliceH, 0, 0, sliceW, sliceH);
+                                
+                                addPreviewImage(tempCanvas.toDataURL());
+                            }
+                        }
+                    };
+                    // 跨域问题处理（如果是本地文件或同源则不需要，但加上更保险）
+                    img.crossOrigin = 'Anonymous';
+                    img.src = menu.currentImage;
+                }
+            }
+            menu.style.display = 'none';
+        });
+    }
+
+    // --- 自动排版功能 ---
+    function initAutoLayout() {
+        const btn = document.getElementById('auto-layout-btn');
+        if (btn) {
+            btn.addEventListener('click', performAutoLayout);
+        }
+    }
+
+    async function performAutoLayout() {
+        const count = state.canvasObjects.length;
+        if (count === 0) {
+            alert('画布中没有图片');
+            return;
+        }
+        if (count > 9) {
+            alert('图片数量超过 9 张，无法排版');
+            return;
+        }
+
+        let rows, cols;
+        if (count === 1) {
+            rows = 1; cols = 1;
+        } else if (count <= 4) {
+            rows = 2; cols = 2;
+        } else if (count <= 6) {
+            rows = 2; cols = 3;
+        } else {
+            rows = 3; cols = 3;
+        }
+
+        // 排序：先按 y (误差50内)，再按 x
+        const sortedObjects = [...state.canvasObjects].sort((a, b) => {
+            const yDiff = a.y - b.y;
+            if (Math.abs(yDiff) < 50) {
+                return a.x - b.x;
+            }
+            return yDiff;
+        });
+
+        // 准备工作
+        const canvasW = els.canvas.width;
+        const canvasH = els.canvas.height;
+        const cellW = canvasW / cols;
+        const cellH = canvasH / rows;
+        const newObjects = [];
+
+        // 显示加载
+        const originalText = els.canvasInfo.textContent;
+        els.canvasInfo.textContent = '正在排版...';
+
+        try {
+            // 处理每一张图
+            const promises = sortedObjects.map(async (obj, i) => {
+                const r = Math.floor(i / cols);
+                const c = i % cols;
+                
+                // 目标位置
+                const targetX = c * cellW;
+                const targetY = r * cellH;
+
+                // 计算 Cover 裁切
+                // 1. 计算缩放比例：填满 cellW 和 cellH
+                // 使用原图尺寸 naturalWidth/Height
+                const scale = Math.max(cellW / obj.img.naturalWidth, cellH / obj.img.naturalHeight);
+                const drawW = obj.img.naturalWidth * scale;
+                const drawH = obj.img.naturalHeight * scale;
+
+                // 2. 计算裁切偏移 (居中)
+                const offsetX = (drawW - cellW) / 2;
+                const offsetY = (drawH - cellH) / 2;
+
+                // 3. 绘制到临时 Canvas 并生成新图片
+                const tempCanvas = document.createElement('canvas');
+                tempCanvas.width = cellW;
+                tempCanvas.height = cellH;
+                const tCtx = tempCanvas.getContext('2d');
+                
+                tCtx.imageSmoothingEnabled = true;
+                tCtx.imageSmoothingQuality = 'high';
+                
+                // 绘制图片：将放大的图片画在负坐标上，实现裁切
+                tCtx.drawImage(obj.img, -offsetX, -offsetY, drawW, drawH);
+
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => resolve({
+                        img: img,
+                        x: targetX,
+                        y: targetY,
+                        width: cellW,
+                        height: cellH
+                    });
+                    img.onerror = reject;
+                    img.src = tempCanvas.toDataURL();
+                });
+            });
+
+            const results = await Promise.all(promises);
+            state.canvasObjects = results;
+            renderCanvas();
+            els.canvasInfo.textContent = originalText;
+
+        } catch (err) {
+            console.error(err);
+            alert('排版失败: ' + err.message);
+            els.canvasInfo.textContent = originalText;
+        }
+    }
+
+    // 导出功能初始化
+    function initExport() {
+        const exportBtn = document.getElementById('export-btn');
+        const exportModal = document.getElementById('export-modal');
+        const exportConfirmBtn = document.getElementById('export-confirm-btn');
+        const exportFilenameInput = document.getElementById('export-filename');
+
+        if (exportBtn) {
+            exportBtn.addEventListener('click', () => {
+                if (state.canvasObjects.length === 0) {
+                    alert('画布为空，无法导出');
+                    return;
+                }
+                exportModal.style.display = 'block';
+                exportFilenameInput.value = '';
+                exportFilenameInput.focus();
+            });
+        }
+
+        if (exportConfirmBtn) {
+            exportConfirmBtn.addEventListener('click', async () => {
+                const name = exportFilenameInput.value.trim();
+                if (!name) {
+                    alert('请输入文件名');
+                    return;
+                }
+
+                const btnOriginalText = exportConfirmBtn.textContent;
+                exportConfirmBtn.textContent = '处理中...';
+                exportConfirmBtn.disabled = true;
+
+                try {
+                    // 1. 将 Canvas 转换为 Blob
+                    const blob = await new Promise(resolve => els.canvas.toBlob(resolve, 'image/png'));
+                    // 如果转换失败则抛出错误
+                    if (!blob) throw new Error('生成图片失败');
+
+                    // 2. 将图片上传至 /up 接口
+                    const formData = new FormData();
+                    // 使用用户输入的文件名，并添加 .png 后缀
+                    formData.append('file', blob, `${name}.png`);
+
+                    // 发送 POST 请求到 /up
+                    const upRes = await fetch('/up', {
+                        // 设置请求方法为 POST
+                        method: 'POST',
+                        // 设置请求体为 formData
+                        body: formData
+                    });
+
+                    // 检查响应状态是否为 ok
+                    if (!upRes.ok) throw new Error('上传失败: ' + upRes.statusText);
+                    
+                    // 解析响应 JSON 数据
+                    const fileData = await upRes.json();
+                    
+                    // 检查后端返回的成功状态
+                    if (!fileData.success) {
+                        // 如果后端返回失败则抛出错误
+                        throw new Error(fileData.message || '导出失败');
+                    }
+
+                    // 弹出成功提示并显示保存路径
+                    alert('导出成功！\n保存路径: ' + fileData.path);
+                    // 隐藏导出模态框
+                    exportModal.style.display = 'none';
+
+                } catch (e) {
+                    console.error(e);
+                    alert('导出失败: ' + e.message);
+                } finally {
+                    exportConfirmBtn.textContent = btnOriginalText;
+                    exportConfirmBtn.disabled = false;
+                }
+            });
+        }
+    }
+
+    // 启动
+    document.addEventListener('DOMContentLoaded', () => {
+        init();
+        if (typeof initAutoLayout === 'function') initAutoLayout();
+        initExport();
+    });
+
+</script>
+
+</body>
+</html>

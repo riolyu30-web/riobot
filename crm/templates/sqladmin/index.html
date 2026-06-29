@@ -1,0 +1,353 @@
+{% extends "sqladmin/layout.html" %}
+
+{% block content %}
+    <!-- 使用容器包含内容 -->
+    <div class="container mt-4">
+
+        
+        <!-- 数据采集组 -->
+        <div class="mb-5">
+            <h4 class="mb-3 text-secondary border-bottom pb-2">数据采集</h4>
+            <!-- 定义弹性盒子，按钮间距适当 -->
+            <div class="d-flex gap-3 mt-3">
+                <!-- 监听搜索词开关 -->
+                <div>
+                    <input type="checkbox" class="btn-check" id="switch-keyword" autocomplete="off" onchange="toggleAction(this, '/system/listen_keyword_bank', '/system/stop_listen_keyword_bank', '监听搜索词', 'icon-keyword')">
+                    <label class="btn btn-outline-primary btn-lg" for="switch-keyword">
+                        <i id="icon-keyword" class="fa-regular fa-circle me-2"></i>捕获搜索词
+                    </label>
+                </div>
+                
+                <!-- 监听公司开关 -->
+                <div>
+                    <input type="checkbox" class="btn-check" id="switch-company" autocomplete="off" onchange="toggleAction(this, '/system/listen_company', '/system/stop_listen_company', '监听公司', 'icon-company')">
+                    <label class="btn btn-outline-primary btn-lg" for="switch-company">
+                        <i id="icon-company" class="fa-regular fa-circle me-2"></i>捕获公司名
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 数据导入组 -->
+        <div class="mb-5">
+            <h4 class="mb-3 text-secondary border-bottom pb-2">数据导入</h4>
+            <!-- 定义弹性盒子，按钮间距适当 -->
+            <div class="d-flex gap-3 mt-3">
+                <!-- 定义隐藏的文件上传输入框，支持多选图片，改变时调用 uploadNamecards 函数 -->
+                <input type="file" id="importNamecards" multiple accept="image/*" style="display: none;" onchange="uploadNamecards(this)">
+                <!-- 定义导入名片图片按钮，点击时触发文件输入框 -->
+                <button class="btn btn-primary btn-lg" onclick="document.getElementById('importNamecards').click()">
+                    <!-- 添加 FontAwesome 的相机图标 -->
+                    <i class="fa-solid fa-camera me-2"></i>导入名片
+                </button>
+                
+                <!-- 定义隐藏的文件上传输入框，支持多选JSON，改变时调用 uploadJson 函数 -->
+                <input type="file" id="importJson" multiple accept=".json" style="display: none;" onchange="uploadJson(this)">
+                <!-- 定义导入JSON按钮，点击时触发文件输入框 -->
+                <button class="btn btn-primary btn-lg text-white" onclick="document.getElementById('importJson').click()">
+                    <!-- 添加 FontAwesome 的文件图标 -->
+                    <i class="fa-solid fa-file-code me-2"></i>导入JSON
+                </button>
+                
+                <!-- 备份数据库按钮 -->
+                <button class="btn btn-success btn-lg text-white" onclick="triggerAction('/system/backup_db', '备份数据库')">
+                    <!-- 添加 FontAwesome 的数据库图标 -->
+                    <i class="fa-solid fa-database me-2"></i>备份
+                </button>
+            </div>
+        </div>        
+
+        <!-- 系统功能组 -->
+        <div class="mb-5">
+            <h4 class="mb-3 text-secondary border-bottom pb-2">寻客宝</h4>
+            <!-- 定义弹性盒子，按钮间距适当 -->
+            <div class="d-flex gap-3 mt-3">
+                <!-- 登录寻客宝按钮 -->
+                <button class="btn btn-primary btn-lg text-white" onclick="triggerAction('/system/login_xunkebao', '登录寻客宝')">
+                    <!-- 添加图标 -->
+                    <i class="fa-solid fa-right-to-bracket me-2"></i>登录
+                </button>
+                
+                <!-- 定义挖掘按钮，点击时调用 mineCompanies 函数 -->
+                <button class="btn btn-primary btn-lg" onclick="mineCompanies(this)">
+                    <!-- 添加 FontAwesome 的放大镜图标 -->
+                    <i class="fa-solid fa-magnifying-glass me-2"></i>挖掘
+                </button>
+            </div>
+        </div>
+
+        <!-- 系统功能组 -->
+        <div class="mb-5">
+            <h4 class="mb-3 text-secondary border-bottom pb-2">微信</h4>
+            <!-- 定义弹性盒子，按钮间距适当 -->
+            <div class="d-flex gap-3 mt-3">
+                <!-- 开启讲述人按钮 -->
+                <button class="btn btn-primary btn-lg text-white" onclick="triggerAction('/system/trigger_narrator', '开启讲述人')">
+                    <!-- 添加图标 -->
+                    <i class="fa-solid fa-right-to-bracket me-2"></i>开启讲述人
+                </button>
+
+                <!-- 注册机器人按钮 -->
+                <button class="btn btn-primary btn-lg text-white" onclick="triggerAction('/system/start_config_service', '注册机器人')">
+                    <!-- 添加图标 -->
+                    <i class="fa-solid fa-robot me-2"></i>注册机器人
+                </button>
+
+                 <!-- 开启/关闭文件上传服务开关 -->
+                <div>
+                    <input type="checkbox" class="btn-check" id="switch-file-service" autocomplete="off" onchange="toggleAction(this, '/system/start_file_service', '/system/stop_file_service', '文件上传服务', 'icon-file-service')">
+                    <label class="btn btn-outline-primary btn-lg" for="switch-file-service">
+                        <i id="icon-file-service" class="fa-regular fa-circle me-2"></i>文件上传服务
+                    </label>
+                </div>               
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 脚本区域，处理按钮点击逻辑 -->
+    <script>
+        // 定义通用触发函数，传入请求 URL 和任务名称（用于无状态按钮，如登录寻客宝）
+        function triggerAction(url, actionName) {
+            // 发起 POST 请求
+            fetch(url, {
+                // 指定请求方法为 POST
+                method: 'POST',
+                // 设置请求头
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            // 处理响应结果，转换为 JSON
+            .then(response => response.json())
+            // 获取数据并提示
+            .then(data => {
+                // 如果后端返回 message，则弹窗显示
+                if (data.message) {
+                    alert(data.message);
+                } else if (data.detail) {
+                    // 如果有错误信息，则弹窗显示错误
+                    alert("操作失败：" + data.detail);
+                } else {
+                    // 默认成功提示
+                    alert(actionName + " 已启动");
+                }
+            })
+            // 捕获请求异常
+            .catch(error => {
+                // 打印错误日志
+                console.error('Error:', error);
+                // 弹窗提示网络或系统异常
+                alert(actionName + " 启动失败，请检查网络或后台服务");
+            });
+        }
+
+        // 定义带状态的开关函数
+        function toggleAction(checkbox, startUrl, stopUrl, actionName, iconId) {
+            const isChecked = checkbox.checked;
+            const url = isChecked ? startUrl : stopUrl;
+            const actionState = isChecked ? '启动' : '关闭';
+            
+            // 获取对应的图标元素
+            const iconElement = document.getElementById(iconId);
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert(data.message);
+                    // 成功后根据状态切换图标：启动时实心圆，关闭时空心圆
+                    if (isChecked) {
+                        iconElement.classList.remove('fa-regular', 'fa-circle');
+                        iconElement.classList.add('fa-solid', 'fa-circle');
+                    } else {
+                        iconElement.classList.remove('fa-solid', 'fa-circle');
+                        iconElement.classList.add('fa-regular', 'fa-circle');
+                    }
+                } else if (data.detail) {
+                    alert("操作失败：" + data.detail);
+                    // 请求失败，恢复开关原始状态
+                    checkbox.checked = !isChecked;
+                } else {
+                    alert(actionName + " 已" + actionState);
+                    // 成功后根据状态切换图标：启动时实心圆，关闭时空心圆
+                    if (isChecked) {
+                        iconElement.classList.remove('fa-regular', 'fa-circle');
+                        iconElement.classList.add('fa-solid', 'fa-circle');
+                    } else {
+                        iconElement.classList.remove('fa-solid', 'fa-circle');
+                        iconElement.classList.add('fa-regular', 'fa-circle');
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert(actionName + " " + actionState + "失败，请检查网络或后台服务");
+                // 请求异常，恢复开关原始状态
+                checkbox.checked = !isChecked;
+            });
+        }
+
+        // 定义上传名片图片的函数，接收触发事件的 input 元素
+        function uploadNamecards(input) {
+            // 如果没有选择任何文件，直接返回
+            if (!input.files || input.files.length === 0) return;
+            
+            // 创建一个 FormData 对象用于构造多部分表单数据
+            const formData = new FormData();
+            // 遍历所有选中的文件
+            for (let i = 0; i < input.files.length; i++) {
+                // 将文件追加到 FormData 对象中，键名为 files
+                formData.append("files", input.files[i]);
+            }
+            
+            // 获取触发该 input 的按钮元素（即它的下一个兄弟元素）
+            const btn = input.nextElementSibling;
+            // 保存按钮原来的 HTML 内容
+            const originalText = btn.innerHTML;
+            // 更改按钮内容为加载中状态，显示旋转图标
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在识别导入中，请稍候...';
+            // 禁用按钮以防止重复点击
+            btn.disabled = true;
+            
+            // 发送 POST 请求到后端的 /company/add_namecards 接口上传文件
+            fetch('/company/add_namecards', {
+                // 指定请求方法为 POST
+                method: 'POST',
+                // 将 FormData 作为请求体发送
+                body: formData
+            })
+            // 将响应转换为 JSON
+            .then(response => response.json())
+            // 处理成功的数据
+            .then(data => {
+                // 弹出导入完成的消息
+                alert(data.message || '导入完成');
+                // 恢复按钮的原始内容
+                btn.innerHTML = originalText;
+                // 重新启用按钮
+                btn.disabled = false;
+            })
+            // 捕获请求异常
+            .catch(error => {
+                // 弹出请求失败的错误信息
+                alert('导入请求失败: ' + error);
+                // 恢复按钮的原始内容
+                btn.innerHTML = originalText;
+                // 重新启用按钮
+                btn.disabled = false;
+            });
+            
+            // 清空 input 的值，以便下次选择相同文件也能触发 change 事件
+            input.value = '';
+        }
+
+        // 定义上传JSON文件的函数，接收触发事件的 input 元素
+        function uploadJson(input) {
+            // 如果没有选择任何文件，直接返回
+            if (!input.files || input.files.length === 0) return;
+            
+            // 创建一个 FormData 对象用于构造多部分表单数据
+            const formData = new FormData();
+            // 遍历所有选中的文件
+            for (let i = 0; i < input.files.length; i++) {
+                // 将文件追加到 FormData 对象中，键名为 files
+                formData.append("files", input.files[i]);
+            }
+            
+            // 获取触发该 input 的按钮元素（即它的下一个兄弟元素）
+            const btn = input.nextElementSibling;
+            // 保存按钮原来的 HTML 内容
+            const originalText = btn.innerHTML;
+            // 更改按钮内容为加载中状态，显示旋转图标
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在导入JSON，请稍候...';
+            // 禁用按钮以防止重复点击
+            btn.disabled = true;
+            
+            // 发送 POST 请求到后端的 /company/import_json 接口上传文件
+            fetch('/company/import_json', {
+                // 指定请求方法为 POST
+                method: 'POST',
+                // 将 FormData 作为请求体发送
+                body: formData
+            })
+            // 将响应转换为 JSON
+            .then(response => response.json())
+            // 处理成功的数据
+            .then(data => {
+                // 如果后端返回 message，则弹窗显示
+                if (data.message) {
+                    alert(data.message);
+                } else if (data.detail) {
+                    // 如果有错误信息，则弹窗显示错误
+                    alert("导入失败：" + data.detail);
+                } else {
+                    // 默认成功提示
+                    alert('导入完成');
+                }
+                // 恢复按钮的原始内容
+                btn.innerHTML = originalText;
+                // 重新启用按钮
+                btn.disabled = false;
+            })
+            // 捕获请求异常
+            .catch(error => {
+                // 弹出请求失败的错误信息
+                alert('导入请求失败: ' + error);
+                // 恢复按钮的原始内容
+                btn.innerHTML = originalText;
+                // 重新启用按钮
+                btn.disabled = false;
+            });
+            
+            // 清空 input 的值，以便下次选择相同文件也能触发 change 事件
+            input.value = '';
+        }
+
+        // 定义挖掘公司的函数，接收触发的按钮元素
+        function mineCompanies(btn) {
+            // 保存按钮原来的 HTML 内容
+            const originalText = btn.innerHTML;
+            // 更改按钮内容为挖掘中状态，显示旋转图标
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在挖掘中，请稍候...';
+            // 禁用按钮以防止重复点击
+            btn.disabled = true;
+            
+            // 发送 POST 请求到后端的 /company/mine 接口
+            fetch('/company/mine', {
+                // 指定请求方法为 POST
+                method: 'POST'
+            })
+            // 将响应解析为 JSON
+            .then(response => response.json())
+            // 处理服务器返回的数据
+            .then(data => {
+                // 如果返回数据中有错误详情
+                if (data.detail) {
+                    // 弹出挖掘失败的提示
+                    alert('挖掘失败: ' + data.detail);
+                } else {
+                    // 弹出挖掘完成的消息
+                    alert(data.message || '挖掘完成');
+                }
+            })
+            // 捕获请求异常
+            .catch(error => {
+                // 弹出请求失败的提示
+                alert('请求失败: ' + error);
+            })
+            // 无论成功还是失败都会执行的清理代码
+            .finally(() => {
+                // 恢复按钮的原始内容
+                btn.innerHTML = originalText;
+                // 重新启用按钮
+                btn.disabled = false;
+            });
+        }
+    </script>
+{% endblock %}

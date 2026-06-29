@@ -1,0 +1,1008 @@
+{
+    "code": 0,
+    "data": {
+        "data": [
+            {
+                "shop": {
+                    "tradeMedalGrade": "AAAA",
+                    "identity": "svip",
+                    "shopName": "湖北省本季风服饰贸易有限责任公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://shop597f706276a15.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2219461280918557ad"
+                },
+                "byrCntIndex": {
+                    "value": 903678.4690441359
+                },
+                "repeatRate": {
+                    "value": 0.2125
+                },
+                "newItmCnt": {
+                    "value": 0
+                },
+                "supplyAndDemandIndex": {
+                    "value": 0.9527275047730654
+                },
+                "seImpsPvRatioRank": {
+                    "value": 4434
+                },
+                "ipvUvRate": {
+                    "value": -0.3511456497356193
+                },
+                "ipvUvRank": {
+                    "value": 6
+                },
+                "isCjgcSlr": {},
+                "rank": {
+                    "value": 1
+                },
+                "addressLevel": {
+                    "value": "0"
+                },
+                "memberId": {
+                    "value": "b2b-2219461280918557ad"
+                },
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 200338.67889153888
+                },
+                "seUvIndex": {
+                    "value": 482869.05369095696
+                },
+                "payOrdAmtIndex": {
+                    "value": 140550.9518479345
+                },
+                "payOrdAmtRank": {
+                    "value": 2
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "activeInquiryUserIndex": {
+                    "value": 23439.075374593027
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {},
+                "scorefh": {
+                    "value": 4.58
+                },
+                "addressName": {
+                    "value": "全国"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.21013551628688
+                },
+                "scorehm": {
+                    "value": 4.95
+                },
+                "activeInquiryUserRank": {
+                    "value": 7.0
+                },
+                "payOrdAmtRate": {
+                    "value": 1.5260438540069134
+                },
+                "seImpsPvRank": {
+                    "value": 1
+                },
+                "scorexy": {
+                    "value": 4.5
+                }
+            },
+            {
+                "shop": {
+                    "tradeMedalGrade": "AAAAA",
+                    "identity": "svip",
+                    "shopName": "义乌市娥状纺织有限公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://ezhuangfushi.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2207957433784cbc27"
+                },
+                "byrCntIndex": {
+                    "value": 832642.5658250498
+                },
+                "repeatRate": {
+                    "value": 0.29
+                },
+                "newItmCnt": {
+                    "value": 0
+                },
+                "supplyAndDemandIndex": {
+                    "value": 0.9527275047730654
+                },
+                "seImpsPvRatioRank": {
+                    "value": 2432
+                },
+                "ipvUvRate": {
+                    "value": -0.11280315848843768
+                },
+                "ipvUvRank": {
+                    "value": 30
+                },
+                "isCjgcSlr": {
+                    "value": "Y"
+                },
+                "rank": {
+                    "value": 2
+                },
+                "addressLevel": {
+                    "value": "0"
+                },
+                "memberId": {
+                    "value": "b2b-2207957433784cbc27"
+                },
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 142411.54573397804
+                },
+                "seUvIndex": {
+                    "value": 472314.32246692263
+                },
+                "payOrdAmtIndex": {
+                    "value": 79628.28679754725
+                },
+                "payOrdAmtRank": {
+                    "value": 11
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "activeInquiryUserIndex": {
+                    "value": 12486.991551945626
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "scorefh": {
+                    "value": 4.93
+                },
+                "addressName": {
+                    "value": "全国"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.10719489981785063
+                },
+                "scorehm": {
+                    "value": 5.0
+                },
+                "activeInquiryUserRank": {
+                    "value": 32.0
+                },
+                "payOrdAmtRate": {
+                    "value": -0.0180945748043731
+                },
+                "seImpsPvRank": {
+                    "value": 2
+                },
+                "scorexy": {
+                    "value": 4.65
+                }
+            },
+            {
+                "shop": {
+                    "tradeMedalGrade": "AAAAA",
+                    "identity": "svip",
+                    "shopName": "义乌市丰色科技有限公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://yiwudadi.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "zhangjian10050528"
+                },
+                "byrCntIndex": {
+                    "value": 757246.681398781
+                },
+                "repeatRate": {
+                    "value": 0.1815
+                },
+                "newItmCnt": {
+                    "value": 0
+                },
+                "supplyAndDemandIndex": {
+                    "value": 0.9527275047730654
+                },
+                "seImpsPvRatioRank": {
+                    "value": 3531
+                },
+                "ipvUvRate": {
+                    "value": -0.08451906659077973
+                },
+                "ipvUvRank": {
+                    "value": 28
+                },
+                "isCjgcSlr": {
+                    "value": "Y"
+                },
+                "rank": {
+                    "value": 3
+                },
+                "addressLevel": {
+                    "value": "0"
+                },
+                "memberId": {
+                    "value": "zhangjian10050528"
+                },
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 142870.3704905106
+                },
+                "seUvIndex": {
+                    "value": 464476.3750385
+                },
+                "payOrdAmtIndex": {
+                    "value": 68495.48577736464
+                },
+                "payOrdAmtRank": {
+                    "value": 17
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "activeInquiryUserIndex": {
+                    "value": 17451.52966842614
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "scorefh": {
+                    "value": 4.53
+                },
+                "addressName": {
+                    "value": "全国"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.04218362282878412
+                },
+                "scorehm": {
+                    "value": 5.0
+                },
+                "activeInquiryUserRank": {
+                    "value": 17.0
+                },
+                "payOrdAmtRate": {
+                    "value": -0.11938016773862294
+                },
+                "seImpsPvRank": {
+                    "value": 3
+                },
+                "scorexy": {
+                    "value": 4.65
+                }
+            },
+            {
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "identity": "svip",
+                    "shopName": "青岛之颜服饰有限公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://shop3480sh7j50512.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2217703371302c9df0"
+                },
+                "byrCntIndex": {
+                    "value": 867259.8009961946
+                },
+                "repeatRate": {
+                    "value": 0.1164
+                },
+                "newItmCnt": {
+                    "value": 2
+                },
+                "supplyAndDemandIndex": {
+                    "value": 0.9527275047730654
+                },
+                "seImpsPvRatioRank": {
+                    "value": 2664
+                },
+                "ipvUvRate": {
+                    "value": -0.09153713298791019
+                },
+                "ipvUvRank": {
+                    "value": 56
+                },
+                "isCjgcSlr": {},
+                "rank": {
+                    "value": 4
+                },
+                "addressLevel": {
+                    "value": "0"
+                },
+                "memberId": {
+                    "value": "b2b-2217703371302c9df0"
+                },
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 119637.07004772202
+                },
+                "seUvIndex": {
+                    "value": 456373.36353535514
+                },
+                "payOrdAmtIndex": {
+                    "value": 34447.79248109058
+                },
+                "payOrdAmtRank": {
+                    "value": 80
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "activeInquiryUserIndex": {
+                    "value": 6732.470346920658
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "scorefh": {
+                    "value": 4.43
+                },
+                "addressName": {
+                    "value": "全国"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.052884384456506076
+                },
+                "scorehm": {
+                    "value": 4.98
+                },
+                "activeInquiryUserRank": {
+                    "value": 97.0
+                },
+                "payOrdAmtRate": {
+                    "value": -0.3754804822767677
+                },
+                "seImpsPvRank": {
+                    "value": 4
+                },
+                "scorexy": {
+                    "value": 4.65
+                }
+            },
+            {
+                "shop": {
+                    "tradeMedalGrade": "AAAA",
+                    "identity": "svip",
+                    "shopName": "青岛宜佳可盈服饰有限公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://shop1426783307485.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2453352081"
+                },
+                "byrCntIndex": {
+                    "value": 813696.6843258545
+                },
+                "repeatRate": {
+                    "value": 0.2821
+                },
+                "newItmCnt": {
+                    "value": 0
+                },
+                "supplyAndDemandIndex": {
+                    "value": 0.9527275047730654
+                },
+                "seImpsPvRatioRank": {
+                    "value": 3523
+                },
+                "ipvUvRate": {
+                    "value": -0.027961362480935434
+                },
+                "ipvUvRank": {
+                    "value": 65
+                },
+                "isCjgcSlr": {},
+                "rank": {
+                    "value": 5
+                },
+                "addressLevel": {
+                    "value": "0"
+                },
+                "memberId": {
+                    "value": "b2b-2453352081"
+                },
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 114807.904509051
+                },
+                "seUvIndex": {
+                    "value": 453296.93996106705
+                },
+                "payOrdAmtIndex": {
+                    "value": 38881.04716714466
+                },
+                "payOrdAmtRank": {
+                    "value": 66
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "activeInquiryUserIndex": {
+                    "value": 11772.013414879795
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "scorefh": {
+                    "value": 5.0
+                },
+                "addressName": {
+                    "value": "全国"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.040760463843129445
+                },
+                "scorehm": {
+                    "value": 4.98
+                },
+                "activeInquiryUserRank": {
+                    "value": 38.0
+                },
+                "payOrdAmtRate": {
+                    "value": 0.20484856893301515
+                },
+                "seImpsPvRank": {
+                    "value": 5
+                },
+                "scorexy": {
+                    "value": 4.69
+                }
+            },
+            {
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "identity": "svip",
+                    "shopName": "胶州市爱信服装厂（个体工商户）",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop070ua17542778.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2220648078357181dd"
+                },
+                "byrCntIndex": {
+                    "value": 815470.7772398547
+                },
+                "repeatRate": {
+                    "value": 0.0682
+                },
+                "newItmCnt": {
+                    "value": 1
+                },
+                "supplyAndDemandIndex": {
+                    "value": 0.9527275047730654
+                },
+                "seImpsPvRatioRank": {
+                    "value": 959
+                },
+                "ipvUvRate": {
+                    "value": 0.26691407365115616
+                },
+                "ipvUvRank": {
+                    "value": 12
+                },
+                "isCjgcSlr": {},
+                "rank": {
+                    "value": 6
+                },
+                "addressLevel": {
+                    "value": "0"
+                },
+                "memberId": {
+                    "value": "b2b-2220648078357181dd"
+                },
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 162888.2281321906
+                },
+                "seUvIndex": {
+                    "value": 451473.8333480091
+                },
+                "payOrdAmtIndex": {
+                    "value": 50637.930148929765
+                },
+                "payOrdAmtRank": {
+                    "value": 36
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "activeInquiryUserIndex": {
+                    "value": 10684.838243403705
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "scorefh": {
+                    "value": 4.43
+                },
+                "addressName": {
+                    "value": "全国"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.8384920634920635
+                },
+                "scorehm": {
+                    "value": 4.92
+                },
+                "activeInquiryUserRank": {
+                    "value": 45.0
+                },
+                "payOrdAmtRate": {
+                    "value": 0.23393251947402605
+                },
+                "seImpsPvRank": {
+                    "value": 6
+                },
+                "scorexy": {
+                    "value": 4.65
+                }
+            },
+            {
+                "shop": {
+                    "tradeMedalGrade": "AAAA",
+                    "identity": "svip",
+                    "shopName": "湖州一丝芊服饰有限公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://ysqsilk.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2178394685"
+                },
+                "byrCntIndex": {
+                    "value": 855864.4809722966
+                },
+                "repeatRate": {
+                    "value": 0.213
+                },
+                "newItmCnt": {
+                    "value": 0
+                },
+                "supplyAndDemandIndex": {
+                    "value": 0.9527275047730654
+                },
+                "seImpsPvRatioRank": {
+                    "value": 4049
+                },
+                "ipvUvRate": {
+                    "value": -0.18033763654419066
+                },
+                "ipvUvRank": {
+                    "value": 13
+                },
+                "isCjgcSlr": {},
+                "rank": {
+                    "value": 7
+                },
+                "addressLevel": {
+                    "value": "0"
+                },
+                "memberId": {
+                    "value": "b2b-2178394685"
+                },
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 161068.42599583586
+                },
+                "seUvIndex": {
+                    "value": 451344.807063499
+                },
+                "payOrdAmtIndex": {
+                    "value": 58977.22361630318
+                },
+                "payOrdAmtRank": {
+                    "value": 24
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "activeInquiryUserIndex": {
+                    "value": 26959.1074100727
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "scorefh": {
+                    "value": 3.98
+                },
+                "addressName": {
+                    "value": "全国"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.14174321187039468
+                },
+                "scorehm": {
+                    "value": 5.0
+                },
+                "activeInquiryUserRank": {
+                    "value": 4.0
+                },
+                "payOrdAmtRate": {
+                    "value": 0.40774682656378575
+                },
+                "seImpsPvRank": {
+                    "value": 7
+                },
+                "scorexy": {
+                    "value": 4.65
+                }
+            },
+            {
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "identity": "svip",
+                    "shopName": "胶州市优线服装厂（个体工商户）",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop2w338134i4786.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-222063337526179fa5"
+                },
+                "byrCntIndex": {
+                    "value": 804943.1025465752
+                },
+                "repeatRate": {
+                    "value": 0.0729
+                },
+                "newItmCnt": {
+                    "value": 2
+                },
+                "supplyAndDemandIndex": {
+                    "value": 0.9527275047730654
+                },
+                "seImpsPvRatioRank": {
+                    "value": 1464
+                },
+                "ipvUvRate": {
+                    "value": 0.078125
+                },
+                "ipvUvRank": {
+                    "value": 96
+                },
+                "isCjgcSlr": {},
+                "rank": {
+                    "value": 8
+                },
+                "addressLevel": {
+                    "value": "0"
+                },
+                "memberId": {
+                    "value": "b2b-222063337526179fa5"
+                },
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 99480.03172569303
+                },
+                "seUvIndex": {
+                    "value": 450135.17880098964
+                },
+                "payOrdAmtIndex": {
+                    "value": 30126.881258713373
+                },
+                "payOrdAmtRank": {
+                    "value": 109
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "activeInquiryUserIndex": {
+                    "value": 3145.9058183240704
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "scorefh": {
+                    "value": 4.39
+                },
+                "addressName": {
+                    "value": "全国"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.45369406867845996
+                },
+                "scorehm": {
+                    "value": 4.94
+                },
+                "activeInquiryUserRank": {
+                    "value": 244.0
+                },
+                "payOrdAmtRate": {
+                    "value": -0.008008256519892083
+                },
+                "seImpsPvRank": {
+                    "value": 8
+                },
+                "scorexy": {
+                    "value": 4.67
+                }
+            },
+            {
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "shopName": "揭阳市韩菲菲贸易有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop3427679p98r66.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-221813079931996404"
+                },
+                "byrCntIndex": {
+                    "value": 799468.5904658537
+                },
+                "repeatRate": {
+                    "value": 0.1668
+                },
+                "newItmCnt": {
+                    "value": 0
+                },
+                "supplyAndDemandIndex": {
+                    "value": 0.9527275047730654
+                },
+                "seImpsPvRatioRank": {
+                    "value": 3651
+                },
+                "ipvUvRate": {
+                    "value": 0.17366476318441385
+                },
+                "ipvUvRank": {
+                    "value": 23
+                },
+                "isCjgcSlr": {},
+                "rank": {
+                    "value": 9
+                },
+                "addressLevel": {
+                    "value": "0"
+                },
+                "memberId": {
+                    "value": "b2b-221813079931996404"
+                },
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 148172.42874364211
+                },
+                "seUvIndex": {
+                    "value": 448709.8109055099
+                },
+                "payOrdAmtIndex": {
+                    "value": 46591.22561377322
+                },
+                "payOrdAmtRank": {
+                    "value": 42
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "activeInquiryUserIndex": {
+                    "value": 3145.9058183240704
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "scorefh": {
+                    "value": 4.97
+                },
+                "addressName": {
+                    "value": "全国"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.06516443361753958
+                },
+                "scorehm": {
+                    "value": 4.88
+                },
+                "activeInquiryUserRank": {
+                    "value": 241.0
+                },
+                "payOrdAmtRate": {
+                    "value": 0.2633225916965735
+                },
+                "seImpsPvRank": {
+                    "value": 9
+                },
+                "scorexy": {
+                    "value": 4.28
+                }
+            },
+            {
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "shopName": "普宁市池尾侨芙朵服饰店(个体工商户)",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop1809d848s2633.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2217146679487c768f"
+                },
+                "byrCntIndex": {
+                    "value": 872990.6501290437
+                },
+                "repeatRate": {
+                    "value": 0.1412
+                },
+                "newItmCnt": {
+                    "value": 0
+                },
+                "supplyAndDemandIndex": {
+                    "value": 0.9527275047730654
+                },
+                "seImpsPvRatioRank": {
+                    "value": 4347
+                },
+                "ipvUvRate": {
+                    "value": -0.0926860025220681
+                },
+                "ipvUvRank": {
+                    "value": 36
+                },
+                "isCjgcSlr": {},
+                "rank": {
+                    "value": 10
+                },
+                "addressLevel": {
+                    "value": "0"
+                },
+                "memberId": {
+                    "value": "b2b-2217146679487c768f"
+                },
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 137737.18854238046
+                },
+                "seUvIndex": {
+                    "value": 448093.71959400614
+                },
+                "payOrdAmtIndex": {
+                    "value": 83850.5563288111
+                },
+                "payOrdAmtRank": {
+                    "value": 8
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "activeInquiryUserIndex": {
+                    "value": 10501.891752070514
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "scorefh": {
+                    "value": 4.58
+                },
+                "addressName": {
+                    "value": "全国"
+                },
+                "seSpvChangeRate": {
+                    "value": -0.19738153483736523
+                },
+                "scorehm": {
+                    "value": 4.91
+                },
+                "activeInquiryUserRank": {
+                    "value": 48.0
+                },
+                "payOrdAmtRate": {
+                    "value": 0.19328926405363553
+                },
+                "seImpsPvRank": {
+                    "value": 10
+                },
+                "scorexy": {
+                    "value": 4.29
+                }
+            }
+        ],
+        "recordCount": 200
+    },
+    "message": "操作成功",
+    "traceId": "2150473317813797674101152e5f9e"
+}

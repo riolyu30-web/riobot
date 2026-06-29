@@ -9,6 +9,10 @@ from nanobot.bus.events import OutboundMessage
 from nanobot.bus.queue import MessageBus
 from nanobot.channels.base import BaseChannel
 from nanobot.config.schema import WechatConfig
+# 导入 os 模块用于路径检查
+import os
+# 导入 json 模块用于读取 JSON 文件
+import json
 
 try:
     from wechatbot.client import WeChatBot
@@ -42,25 +46,77 @@ class WeChatChannel(BaseChannel):
 
     async def start(self) -> None:
         """Start the WeChat bot."""
+        # 如果微信模块不可用，记录错误日志并返回
         if not WECHAT_AVAILABLE:
+            # 记录 wechatbot 模块不可用的错误信息
             logger.error("wechatbot module not available. Please ensure it is in the Python path.")
+            # 结束启动过程
             return
 
-        if not self.config.token or not self.config.account_id:
-            logger.error("WeChat token and account_id not configured")
+        # 检查是否配置了凭据文件路径
+        if not self.config.cred_path:
+            # 记录未配置凭据文件路径的错误信息
+            logger.error("WeChat cred_path not configured")
+            # 结束启动过程
             return
 
+        # 检查凭据文件是否存在
+        if not os.path.exists(self.config.cred_path):
+            # 记录凭据文件不存在的错误信息
+            logger.error(f"WeChat credentials file not found: {self.config.cred_path}")
+            # 结束启动过程
+            return
+
+        # 尝试读取 JSON 格式的凭据文件
+        try:
+            # 以只读模式打开凭据文件
+            with open(self.config.cred_path, "r", encoding="utf-8") as f:
+                # 解析 JSON 数据到字典
+                creds = json.load(f)
+        # 捕获 JSON 解析或其他读取错误
+        except Exception as e:
+            # 记录读取凭据文件失败的错误信息
+            logger.error(f"Failed to read WeChat credentials file: {e}")
+            # 结束启动过程
+            return
+
+        # 提取 token 参数，如果不存在则使用空字符串
+        token = creds.get("token", "")
+        # 提取 base_url 参数，如果不存在则使用空字符串
+        base_url = creds.get("baseUrl", "")
+        # 提取 account_id 参数，如果不存在则使用空字符串
+        account_id = creds.get("accountId", "")
+        # 提取 user_id 参数，如果不存在则使用空字符串
+        user_id = creds.get("userId", "")
+        # 提取 saved_at 参数，如果不存在则使用空字符串
+        saved_at = creds.get("saved_at", "")
+
+        # 检查 token 和 account_id 是否存在
+        if not token or not account_id:
+            # 记录 token 和 account_id 缺失的错误信息
+            logger.error("WeChat token and account_id not found in credentials file")
+            # 结束启动过程
+            return
+
+        # 设置运行状态标志为 True
         self._running = True
+        # 初始化 WeChatBot 实例
         self._bot = WeChatBot()
 
-        # Load credentials from config
+        # 尝试使用凭据登录微信
         try:
+            # 调用 checkin 方法登录
             await self._bot.checkin(
-                token=self.config.token,
-                base_url=self.config.base_url,
-                account_id=self.config.account_id,
-                user_id=self.config.user_id,
-                saved_at=self.config.saved_at,
+                # 传入 token 参数
+                token=token,
+                # 传入 base_url 参数
+                base_url=base_url,
+                # 传入 account_id 参数
+                account_id=account_id,
+                # 传入 user_id 参数
+                user_id=user_id,
+                # 传入 saved_at 参数
+                saved_at=saved_at,
             )
         except Exception as e:
             logger.error(f"Failed to checkin wechatbot: {e}")

@@ -8,6 +8,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from tools.imagecli.api import router as image_cli_router # 导入 imagecli 的路由
 from tools.weixin.api import router as weixin_router # 导入 weixin 的路由
+from tools.videocli.api import router as video_cli_router # 导入 video-cli  的路由
 
 # 导入 glob 模块用于查找匹配特定规则的文件路径
 import glob
@@ -39,6 +40,9 @@ app.add_middleware(
 
 app.include_router(image_cli_router, prefix="/gpt") # 包含 image-cli 的路由，并设置前缀
 app.include_router(weixin_router, prefix="/wx") # 包含 weixin 的路由，并设置前缀
+app.include_router(video_cli_router, prefix="/vi") # 包含 video-cli 的路由，并设置前缀
+
+
 
 # 定义一个 GET 接口，用于根据传入的目录名获取其下所有的 HTML 文件
 @app.get("/list/html")
@@ -89,17 +93,33 @@ def get_dir_contents(directory: str = ""):
     dirs = []
     files = []
     
+    # 定义支持的媒体和文件扩展名（图片、视频、普通文件、语音）
+    SUPPORTED_EXTS = (
+        # IMAGE
+        ".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp",
+        # VIDEO
+        ".mp4", ".mov", ".avi", ".mkv", ".webm",
+        # FILE
+        ".html", ".txt", ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".zip", ".rar", ".7z", ".json", ".xml", ".csv", ".md",
+        # VOICE
+        ".mp3", ".wav", ".m4a", ".ogg", ".silk", ".flac"
+    )
+
     for item in os.listdir(target_dir):
         item_path = os.path.join(target_dir, item)
         rel_path = os.path.relpath(item_path, base_dir).replace("\\", "/")
         
+        # 如果是目录，则添加到子目录列表中
         if os.path.isdir(item_path):
+            # 将目录的名称、相对路径和绝对路径作为字典追加到 dirs 列表中
             dirs.append({
                 "name": item,
                 "relative_path": rel_path,
                 "absolute_path": item_path
             })
-        elif os.path.isfile(item_path) and item.endswith(".html"):
+        # 如果是文件，并且扩展名在支持的列表中（忽略大小写），则添加到文件列表中
+        elif os.path.isfile(item_path) and item.lower().endswith(SUPPORTED_EXTS):
+            # 将文件的名称、相对路径和绝对路径作为字典追加到 files 列表中
             files.append({
                 "name": item,
                 "relative_path": rel_path,
@@ -177,4 +197,4 @@ if __name__ == "__main__":
     Timer(1.5, open_browser).start()
 
     # 启动服务，监听所有IP，端口8200，开启热更新(reload=True)
-    uvicorn.run("main_api:app", host="0.0.0.0", port=8200, reload=True)
+    uvicorn.run("main_api:app", host="0.0.0.0", port=8200)

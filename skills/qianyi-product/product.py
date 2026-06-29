@@ -76,6 +76,8 @@ def search_products(product_nos):
                         '彩色单价': product.get('colorPrice'),
                         # 将 samplePrice 映射为中文属性 '版布价'
                         '版布价': product.get('samplePrice'),
+                        # 将 fullPrice 映射为中文属性 '足米价'
+                        '足米价': product.get('fullPrice'),
                         # 将 content 映射为中文属性 '成分'
                         '成分': product.get('content'),
                         # 将 width 映射为中文属性 '门幅'
@@ -83,7 +85,11 @@ def search_products(product_nos):
                         # 将 weight 映射为中文属性 '克重'
                         '克重': product.get('weight'),
                         # 将 hc 映射为中文属性 '空差'
-                        '空差': product.get('hc')
+                        '空差': product.get('hc'),
+                        # 将 colors 映射为中文属性 '颜色数'
+                        '颜色数': product.get('colors'),
+                        # 将 category 映射为中文属性 '类目'
+                        '类目': product.get('category')
                     }
                     
                     # 将经过过滤并重命名属性的字典追加到匹配结果列表中

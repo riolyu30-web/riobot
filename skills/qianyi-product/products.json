@@ -1,1905 +1,3761 @@
 [
-  {
-    "id": "prod-801",
-    "productNo": "801#",
-    "name": "涤天丝（曲天丝）",
-    "slug": "di-tian-si-qu-tian-si",
-    "description": "涤天丝混纺面料，柔软舒适，垂感极佳",
-    "whitePrice": 4.5,
-    "colorPrice": 4.8,
-    "samplePrice": 7,
-    "price": 4.5,
-    "images": [
-      "/images/products/801_1.jpg",
-      "/images/products/801_2.jpg",
-      "/images/products/801_3.jpg",
-      "/images/products/801_4.jpg",
-      "/images/products/801_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 90
-      },
-      {
-        "name": "涤纶",
-        "percentage": 10
-      }
-    ],
-    "tags": [
-      "New"
-    ],
-    "inStock": true,
-    "width": 150,
-    "weight": 55,
-    "hc": 91,
-    "createdAt": "2024-11-01",
-    "featured": true
-  },
-  {
-    "id": "prod-802",
-    "productNo": "802#",
-    "name": "天丝仙女条",
-    "slug": "tian-si-xian-nv-tiao",
-    "description": "天丝锦纶混纺条纹面料，轻盈飘逸",
-    "whitePrice": 4.2,
-    "colorPrice": 4.5,
-    "samplePrice": 6,
-    "price": 4.2,
-    "images": [
-      "/images/products/802_1.jpg",
-      "/images/products/802_2.jpg",
-      "/images/products/802_3.jpg",
-      "/images/products/802_4.jpg",
-      "/images/products/802_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 75
-      },
-      {
-        "name": "锦纶",
-        "percentage": 25
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 65,
-    "hc": 91,
-    "createdAt": "2024-11-01",
-    "featured": false
-  },
-  {
-    "id": "prod-803",
-    "productNo": "803#",
-    "name": "天丝彩虹条（曲丝缎）",
-    "slug": "tian-si-cai-hong-tiao",
-    "description": "天丝聚酯纤维混纺，彩虹色条纹设计",
-    "whitePrice": 7.1,
-    "colorPrice": 7.3,
-    "samplePrice": 10,
-    "price": 7.1,
-    "images": [
-      "/images/products/803_1.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 80
-      },
-      {
-        "name": "聚酯纤维",
-        "percentage": 20
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 58,
-    "hc": 93,
-    "createdAt": "2024-11-02",
-    "featured": true
-  },
-  {
-    "id": "prod-804",
-    "productNo": "804#",
-    "name": "天丝千鸟格",
-    "slug": "tian-si-qian-niao-ge",
-    "description": "经典千鸟格纹理，天丝混纺面料",
-    "whitePrice": 7.6,
-    "colorPrice": 8,
-    "samplePrice": 10,
-    "price": 7.6,
-    "images": [
-      "/images/products/804_1.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 80
-      },
-      {
-        "name": "聚酯纤维",
-        "percentage": 20
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 58,
-    "hc": 93,
-    "createdAt": "2024-11-02",
-    "featured": false
-  },
-  {
-    "id": "prod-805",
-    "productNo": "805#",
-    "name": "加密花丝缎",
-    "slug": "jia-mi-hua-si-duan",
-    "description": "高密度织造，丝滑细腻",
-    "whitePrice": 2.2,
-    "colorPrice": 2.4,
-    "samplePrice": 5,
-    "price": 2.2,
-    "images": [
-      "/images/products/805_1.jpg",
-      "/images/products/805_2.jpg",
-      "/images/products/805_3.jpg",
-      "/images/products/805_4.jpg",
-      "/images/products/805_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Satin",
-    "content": [
-      {
-        "name": "涤纶",
-        "percentage": 80
-      },
-      {
-        "name": "棉",
-        "percentage": 20
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 65,
-    "hc": 93,
-    "createdAt": "2024-11-03",
-    "featured": false
-  },
-  {
-    "id": "prod-806",
-    "productNo": "806#",
-    "name": "洛施棉（彩珠纱）",
-    "slug": "luo-shi-mian-cai-zhu-sha",
-    "description": "人棉锦纶混纺，珠光效果",
-    "whitePrice": 3.8,
-    "colorPrice": 4,
-    "samplePrice": 6,
-    "price": 3.8,
-    "images": [
-      "/images/products/806_1.jpg",
-      "/images/products/806_2.jpg",
-      "/images/products/806_3.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Rayon Blend",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 68
-      },
-      {
-        "name": "锦纶",
-        "percentage": 32
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 60,
-    "hc": 91,
-    "createdAt": "2024-11-03",
-    "featured": false
-  },
-  {
-    "id": "prod-807",
-    "productNo": "807#",
-    "name": "莺之麻（单丝提朵）",
-    "slug": "ying-zhi-ma-dan-si-ti-duo",
-    "description": "轻薄透气，适合夏季服装",
-    "whitePrice": 5.8,
-    "colorPrice": 6,
-    "samplePrice": 9,
-    "price": 5.8,
-    "images": [
-      "/images/products/807_1.jpg",
-      "/images/products/807_2.jpg",
-      "/images/products/807_3.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Rayon Blend",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 85
-      },
-      {
-        "name": "锦纶",
-        "percentage": 15
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 80,
-    "hc": 91,
-    "createdAt": "2024-11-04",
-    "featured": false
-  },
-  {
-    "id": "prod-808",
-    "productNo": "808#",
-    "name": "天丝缎（仙丝缎）",
-    "slug": "tian-si-duan-xian-si-duan",
-    "description": "天丝缎面，丝滑光泽感强",
-    "whitePrice": 4.1,
-    "colorPrice": 4.2,
-    "samplePrice": 6,
-    "price": 4.1,
-    "images": [
-      "/images/products/808_1.jpg",
-      "/images/products/808_2.jpg",
-      "/images/products/808_3.jpg",
-      "/images/products/808_4.jpg",
-      "/images/products/808_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Satin",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 65
-      },
-      {
-        "name": "锦纶",
-        "percentage": 35
-      }
-    ],
-    "tags": [
-      "Featured"
-    ],
-    "inStock": true,
-    "width": 150,
-    "weight": 65,
-    "hc": 91,
-    "createdAt": "2024-11-04",
-    "featured": true
-  },
-  {
-    "id": "prod-809",
-    "productNo": "809#",
-    "name": "闪光天丝",
-    "slug": "shan-guang-tian-si",
-    "description": "闪光效果，时尚华丽",
-    "whitePrice": 5,
-    "colorPrice": 5.2,
-    "samplePrice": 7,
-    "price": 5,
-    "images": [
-      "/images/products/809_1.jpg",
-      "/images/products/809_2.jpg",
-      "/images/products/809_3.jpg",
-      "/images/products/809_4.jpg",
-      "/images/products/809_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 75
-      },
-      {
-        "name": "锦纶",
-        "percentage": 25
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 60,
-    "hc": 91,
-    "createdAt": "2024-11-05",
-    "featured": false
-  },
-  {
-    "id": "prod-810",
-    "productNo": "810#",
-    "name": "亮丝麻",
-    "slug": "liang-si-ma",
-    "description": "亮丝效果，麻质感",
-    "whitePrice": 5.2,
-    "colorPrice": 5.4,
-    "samplePrice": 7,
-    "price": 5.2,
-    "images": [
-      "/images/products/810_1.jpg",
-      "/images/products/810_2.jpg",
-      "/images/products/810_3.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Polyester",
-    "content": [
-      {
-        "name": "涤纶",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 50,
-    "hc": 91,
-    "createdAt": "2024-11-05",
-    "featured": false
-  },
-  {
-    "id": "prod-811",
-    "productNo": "811#",
-    "name": "天丝蜂蜜缎（天丝网纹缎）",
-    "slug": "tian-si-feng-mi-duan",
-    "description": "复合材质，蜂蜜色泽网纹肌理",
-    "whitePrice": 5.1,
-    "colorPrice": 5.2,
-    "samplePrice": 7,
-    "price": 5.1,
-    "images": [
-      "/images/products/811_1.jpg",
-      "/images/products/811_2.jpg",
-      "/images/products/811_3.jpg",
-      "/images/products/811_4.jpg",
-      "/images/products/811_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 36
-      },
-      {
-        "name": "锦纶",
-        "percentage": 25
-      },
-      {
-        "name": "人棉",
-        "percentage": 13
-      },
-      {
-        "name": "聚酯纤维",
-        "percentage": 26
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 65,
-    "hc": 91,
-    "createdAt": "2024-11-06",
-    "featured": false
-  },
-  {
-    "id": "prod-812",
-    "productNo": "812#",
-    "name": "天丝竖皱条",
-    "slug": "tian-si-shu-zhou-tiao",
-    "description": "竖向皱纹肌理，立体感强",
-    "whitePrice": 6.7,
-    "colorPrice": 6.9,
-    "samplePrice": 8,
-    "price": 6.7,
-    "images": [
-      "/images/products/812_1.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 80
-      },
-      {
-        "name": "锦纶",
-        "percentage": 20
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 65,
-    "hc": 93,
-    "createdAt": "2024-11-06",
-    "featured": false
-  },
-  {
-    "id": "prod-813",
-    "productNo": "813#",
-    "name": "天丝大竖条（天丝小辫麻）",
-    "slug": "tian-si-da-shu-tiao",
-    "description": "大竖条纹理，小辫麻质感",
-    "whitePrice": 4.5,
-    "colorPrice": 6.7,
-    "samplePrice": 6,
-    "price": 4.5,
-    "images": [
-      "/images/products/813_1.jpg",
-      "/images/products/813_2.jpg",
-      "/images/products/813_3.jpg",
-      "/images/products/813_4.jpg",
-      "/images/products/813_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 85
-      },
-      {
-        "name": "锦纶",
-        "percentage": 15
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 85,
-    "hc": 91,
-    "createdAt": "2024-11-07",
-    "featured": false
-  },
-  {
-    "id": "prod-814",
-    "productNo": "814#",
-    "name": "天丝闪光缎",
-    "slug": "tian-si-shan-guang-duan",
-    "description": "天丝缎面带闪光效果",
-    "whitePrice": 6.1,
-    "colorPrice": 6.2,
-    "samplePrice": 8,
-    "price": 6.1,
-    "images": [
-      "/images/products/814_1.jpg",
-      "/images/products/814_2.jpg",
-      "/images/products/814_3.jpg",
-      "/images/products/814_4.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Satin",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 75
-      },
-      {
-        "name": "尼龙",
-        "percentage": 25
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 148,
-    "weight": 68,
-    "hc": 91,
-    "createdAt": "2024-11-07",
-    "featured": false
-  },
-  {
-    "id": "prod-815",
-    "productNo": "815#",
-    "name": "桑丝宇母条（奢桑丝）",
-    "slug": "sang-si-yu-mu-tiao",
-    "description": "奢华桑丝质感，柔软亲肤",
-    "whitePrice": 4.1,
-    "colorPrice": 4.2,
-    "samplePrice": 6,
-    "price": 4.1,
-    "images": [
-      "/images/products/815_1.jpg",
-      "/images/products/815_2.jpg",
-      "/images/products/815_3.jpg",
-      "/images/products/815_4.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Rayon Blend",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 80
-      },
-      {
-        "name": "锦纶",
-        "percentage": 20
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 80,
-    "hc": 91,
-    "createdAt": "2024-11-08",
-    "featured": false
-  },
-  {
-    "id": "prod-816",
-    "productNo": "816#",
-    "name": "高密天丝666",
-    "slug": "gao-mi-tian-si-666",
-    "description": "高密度织造，品质卓越",
-    "whitePrice": 5,
-    "colorPrice": 5.2,
-    "samplePrice": 7,
-    "price": 5,
-    "images": [
-      "/images/products/816_1.jpg",
-      "/images/products/816_2.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Rayon Blend",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 65
-      },
-      {
-        "name": "聚酯纤维",
-        "percentage": 35
-      }
-    ],
-    "tags": [
-      "Featured"
-    ],
-    "inStock": true,
-    "width": 150,
-    "weight": 120,
-    "hc": 91,
-    "createdAt": "2024-11-08",
-    "featured": true
-  },
-  {
-    "id": "prod-817",
-    "productNo": "817#",
-    "name": "天丝竹节（加密高品质）",
-    "slug": "tian-si-zhu-jie-jia-mi",
-    "description": "竹节肌理，加密高品质织造",
-    "whitePrice": 3.7,
-    "colorPrice": 4.3,
-    "samplePrice": 6,
-    "price": 3.7,
-    "images": [
-      "/images/products/817_1.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Rayon Blend",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 65
-      },
-      {
-        "name": "涤纶",
-        "percentage": 35
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 85,
-    "hc": 91,
-    "createdAt": "2024-11-09",
-    "featured": false
-  },
-  {
-    "id": "prod-818",
-    "productNo": "818#",
-    "name": "天丝亚运条",
-    "slug": "tian-si-ya-yun-tiao",
-    "description": "亚运主题条纹面料",
-    "whitePrice": 4.3,
-    "colorPrice": 4.5,
-    "samplePrice": 7,
-    "price": 4.3,
-    "images": [
-      "/images/products/818_1.jpg",
-      "/images/products/818_2.jpg",
-      "/images/products/818_3.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 78
-      },
-      {
-        "name": "锦纶",
-        "percentage": 22
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 80,
-    "hc": 91,
-    "createdAt": "2024-11-09",
-    "featured": false
-  },
-  {
-    "id": "prod-822",
-    "productNo": "822#",
-    "name": "加厚鼎盛天丝",
-    "slug": "jia-hou-ding-sheng-tian-si",
-    "description": "加厚版天丝，保暖舒适",
-    "whitePrice": 7.4,
-    "colorPrice": 7.6,
-    "samplePrice": 10,
-    "price": 7.4,
-    "images": [
-      "/images/products/822_1.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 80
-      },
-      {
-        "name": "涤纶",
-        "percentage": 12
-      },
-      {
-        "name": "醋酯",
-        "percentage": 8
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 73,
-    "hc": 91,
-    "createdAt": "2024-11-10",
-    "featured": false
-  },
-  {
-    "id": "prod-823",
-    "productNo": "823#",
-    "name": "天丝亚麻",
-    "slug": "tian-si-ya-ma",
-    "description": "天丝与亚麻混纺，清爽透气",
-    "whitePrice": 5.5,
-    "colorPrice": 5.7,
-    "samplePrice": 10,
-    "price": 5.5,
-    "images": [
-      "/images/products/823_1.jpg",
-      "/images/products/823_2.jpg",
-      "/images/products/823_3.jpg",
-      "/images/products/823_4.jpg",
-      "/images/products/823_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Linen Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 55
-      },
-      {
-        "name": "锦纶",
-        "percentage": 35
-      },
-      {
-        "name": "亚麻",
-        "percentage": 10
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 155,
-    "weight": 85,
-    "hc": 91,
-    "createdAt": "2024-11-10",
-    "featured": false
-  },
-  {
-    "id": "prod-825",
-    "productNo": "825#",
-    "name": "加厚曲天丝",
-    "slug": "jia-hou-qu-tian-si",
-    "description": "加厚版曲天丝，垂感好",
-    "whitePrice": 7.3,
-    "colorPrice": 7.5,
-    "samplePrice": 10,
-    "price": 7.3,
-    "images": [
-      "/images/products/825_1.jpg",
-      "/images/products/825_2.jpg",
-      "/images/products/825_3.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      {
-        "name": "天丝",
-        "percentage": 85
-      },
-      {
-        "name": "锦纶",
-        "percentage": 15
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 80,
-    "hc": 91,
-    "createdAt": "2024-11-11",
-    "featured": false
-  },
-  {
-    "id": "prod-826",
-    "productNo": "826#",
-    "name": "冷面平纹",
-    "slug": "leng-mian-ping-wen",
-    "description": "冷感面料，夏季首选",
-    "whitePrice": 5.7,
-    "colorPrice": 6.3,
-    "samplePrice": 7,
-    "price": 5.7,
-    "images": [
-      "/images/products/826_1.jpg",
-      "/images/products/826_2.jpg",
-      "/images/products/826_3.jpg",
-      "/images/products/826_4.jpg",
-      "/images/products/826_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Cotton Blend",
-    "content": [
-      {
-        "name": "全棉",
-        "percentage": 65
-      },
-      {
-        "name": "人棉",
-        "percentage": 25
-      },
-      {
-        "name": "锦纶",
-        "percentage": 10
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 140,
-    "hc": 91,
-    "createdAt": "2024-11-11",
-    "featured": false
-  },
-  {
-    "id": "prod-827",
-    "productNo": "827#",
-    "name": "香格麻",
-    "slug": "xiang-ge-ma",
-    "description": "香格里拉风格麻质面料",
-    "whitePrice": 5.5,
-    "colorPrice": 5.7,
-    "samplePrice": 7,
-    "price": 5.5,
-    "images": [
-      "/images/products/827_1.jpg",
-      "/images/products/827_2.jpg",
-      "/images/products/827_3.jpg",
-      "/images/products/827_4.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Rayon Blend",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 5
-      },
-      {
-        "name": "聚酯纤维",
-        "percentage": 44
-      },
-      {
-        "name": "其他",
-        "percentage": 51
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 160,
-    "hc": 91,
-    "createdAt": "2024-11-12",
-    "featured": false
-  },
-  {
-    "id": "prod-828",
-    "productNo": "828#",
-    "name": "韩国棉",
-    "slug": "han-guo-mian",
-    "description": "韩式风格棉质面料",
-    "whitePrice": 5.4,
-    "colorPrice": 5.6,
-    "samplePrice": 7,
-    "price": 5.4,
-    "images": [
-      "/images/products/828_1.jpg",
-      "/images/products/828_2.jpg",
-      "/images/products/828_3.jpg",
-      "/images/products/828_4.jpg",
-      "/images/products/828_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Rayon Blend",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 85
-      },
-      {
-        "name": "锦纶",
-        "percentage": 15
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 120,
-    "hc": 91,
-    "createdAt": "2024-11-12",
-    "featured": false
-  },
-  {
-    "id": "prod-829",
-    "productNo": "829#",
-    "name": "复古棉",
-    "slug": "fu-gu-mian",
-    "description": "复古风格棉质面料",
-    "whitePrice": 6.4,
-    "colorPrice": 6.6,
-    "samplePrice": 9,
-    "price": 6.4,
-    "images": [
-      "/images/products/829_1.jpg",
-      "/images/products/829_2.jpg",
-      "/images/products/829_3.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Rayon Blend",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 85
-      },
-      {
-        "name": "锦纶",
-        "percentage": 15
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 145,
-    "hc": 91,
-    "createdAt": "2024-11-13",
-    "featured": false
-  },
-  {
-    "id": "prod-830",
-    "productNo": "830#",
-    "name": "干纹麻（亚麻平纹）",
-    "slug": "gan-wen-ma-ya-ma-ping-wen",
-    "description": "干纹肌理亚麻平纹布",
-    "whitePrice": 6.1,
-    "colorPrice": 6.3,
-    "samplePrice": 8,
-    "price": 6.1,
-    "images": [
-      "/images/products/830_3.jpg",
-      "/images/products/830_1.jpg",
-      "/images/products/830_2.jpg",
-      "/images/products/830_4.jpg",
-      "/images/products/830_5.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Linen Blend",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 70
-      },
-      {
-        "name": "锦纶",
-        "percentage": 18
-      },
-      {
-        "name": "亚麻",
-        "percentage": 12
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 110,
-    "hc": 91,
-    "createdAt": "2024-11-13",
-    "featured": false
-  },
-  {
-    "id": "prod-831",
-    "productNo": "831#",
-    "name": "乱麻格（单丝乱朵）",
-    "slug": "luan-ma-ge-dan-si-luan-duo",
-    "description": "乱麻格纹，独特质感",
-    "whitePrice": 4.5,
-    "colorPrice": 4.7,
-    "samplePrice": 7,
-    "price": 4.5,
-    "images": [
-      "/images/products/831_1.jpg",
-      "/images/products/831_2.jpg",
-      "/images/products/831_3.jpg",
-      "/images/products/831_4.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Rayon Blend",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 80
-      },
-      {
-        "name": "锦纶",
-        "percentage": 20
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 120,
-    "hc": 91,
-    "createdAt": "2024-11-13",
-    "featured": false
-  },
-  {
-    "id": "prod-832",
-    "productNo": "832#",
-    "name": "双股树皮缎",
-    "slug": "shuang-gu-shu-pi-duan",
-    "description": "双股织造，树皮质感缎面",
-    "whitePrice": 4.5,
-    "colorPrice": 4.7,
-    "samplePrice": 7,
-    "price": 4.5,
-    "images": [
-      "/images/products/832_1.jpg",
-      "/images/products/832_2.jpg",
-      "/images/products/832_3.jpg"
-    ],
-    "category": "tencel",
-    "fabricType": "Rayon Satin",
-    "content": [
-      {
-        "name": "人棉",
-        "percentage": 85
-      },
-      {
-        "name": "锦纶",
-        "percentage": 15
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 130,
-    "hc": 91,
-    "createdAt": "2024-11-13",
-    "featured": false
-  },
-  {
-    "id": "prod-601",
-    "productNo": "601#",
-    "name": "75D珍珠雪纺",
-    "slug": "75d-zhen-zhu-xue-fang",
-    "description": "轻薄珍珠雪纺，适合印花刺绣",
-    "whitePrice": 3.1,
-    "colorPrice": 3.9,
-    "samplePrice": 5,
-    "price": 3.1,
-    "images": [
-      "/images/products/601_1.jpg",
-      "/images/products/601_2.jpg"
-    ],
-    "category": "embroidery",
-    "fabricType": "Chiffon",
-    "content": [
-      {
-        "name": "涤纶",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 85,
-    "createdAt": "2024-10-15",
-    "featured": false
-  },
-  {
-    "id": "prod-602",
-    "productNo": "602#",
-    "name": "75D雪纺缎",
-    "slug": "75d-xue-fang-duan",
-    "description": "雪纺缎面，光滑细腻",
-    "whitePrice": 3.1,
-    "colorPrice": 3.7,
-    "samplePrice": 5,
-    "price": 3.1,
-    "images": [
-      "/images/products/602_1.jpg",
-      "/images/products/602_2.jpg",
-      "/images/products/602_3.jpg"
-    ],
-    "category": "embroidery",
-    "fabricType": "Chiffon Satin",
-    "content": [
-      {
-        "name": "涤纶",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 85,
-    "createdAt": "2024-10-15",
-    "featured": false
-  },
-  {
-    "id": "prod-603",
-    "productNo": "603#",
-    "name": "30D单丝缎",
-    "slug": "30d-dan-si-duan",
-    "description": "超薄单丝缎，透气轻盈",
-    "whitePrice": 3.65,
-    "colorPrice": 3.85,
-    "samplePrice": 5,
-    "price": 3.65,
-    "images": [
-      "/images/products/603_1.jpg",
-      "/images/products/603_2.jpg",
-      "/images/products/603_3.jpg"
-    ],
-    "category": "embroidery",
-    "fabricType": "Monofilament Satin",
-    "content": [
-      {
-        "name": "涤纶",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 160,
-    "weight": 35,
-    "createdAt": "2024-10-16",
-    "featured": false
-  },
-  {
-    "id": "prod-604",
-    "productNo": "604#",
-    "name": "全涤闪光天丝（可数码印花）",
-    "slug": "quan-di-shan-guang-tian-si",
-    "description": "全涤闪光天丝，可数码印花",
-    "whitePrice": 6.2,
-    "colorPrice": 6.2,
-    "samplePrice": 7,
-    "price": 6.2,
-    "images": [
-      "/images/products/604_1.jpg",
-      "/images/products/604_2.jpg",
-      "/images/products/604_3.jpg"
-    ],
-    "category": "embroidery",
-    "fabricType": "Polyester Tencel-Like",
-    "content": [
-      {
-        "name": "涤纶",
-        "percentage": 100
-      }
-    ],
-    "tags": [
-      "Digital Print"
-    ],
-    "inStock": true,
-    "width": 150,
-    "weight": 60,
-    "hc": 93,
-    "createdAt": "2024-10-16",
-    "featured": true
-  },
-  {
-    "id": "prod-605",
-    "productNo": "605#",
-    "name": "麻纱",
-    "slug": "ma-sha",
-    "description": "麻纱面料，透气清爽",
-    "whitePrice": 2.8,
-    "colorPrice": 3.8,
-    "samplePrice": 5,
-    "price": 2.8,
-    "images": [
-      "/images/products/605_1.jpg",
-      "/images/products/605_2.jpg",
-      "/images/products/605_3.jpg"
-    ],
-    "category": "embroidery",
-    "fabricType": "Gauze",
-    "content": [
-      {
-        "name": "涤纶",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 65,
-    "createdAt": "2024-10-17",
-    "featured": false
-  },
-  {
-    "id": "prod-606",
-    "productNo": "606#",
-    "name": "40支棉感竹节",
-    "slug": "40zhi-mian-gan-zhu-jie",
-    "description": "棉感竹节面料，肌理丰富",
-    "whitePrice": 4.9,
-    "colorPrice": 4.9,
-    "price": 4.9,
-    "images": [
-      "/images/products/606_1.jpg",
-      "/images/products/606_2.jpg",
-      "/images/products/606_3.jpg"
-    ],
-    "category": "embroidery",
-    "fabricType": "Slub",
-    "content": [
-      {
-        "name": "聚酯纤维",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 95,
-    "createdAt": "2024-10-17",
-    "featured": false
-  },
-  {
-    "id": "prod-901",
-    "productNo": "901#",
-    "name": "2060洗水竹节",
-    "slug": "2060-xi-shui-zhu-jie",
-    "description": "洗水竹节棉布，柔软舒适",
-    "whitePrice": 4.9,
-    "colorPrice": 5.4,
-    "samplePrice": 8,
-    "price": 4.9,
-    "images": [
-      "/images/products/901_1.jpg",
-      "/images/products/901_2.jpg",
-      "/images/products/901_3.jpg",
-      "/images/products/901_4.jpg",
-      "/images/products/901_5.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton Slub",
-    "content": [
-      {
-        "name": "全棉",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 100,
-    "hc": 91,
-    "createdAt": "2024-10-20",
-    "featured": true
-  },
-  {
-    "id": "prod-903",
-    "productNo": "903#",
-    "name": "4438#高品质",
-    "slug": "4438-gao-pin-zhi",
-    "description": "高品质混纺面料",
-    "whitePrice": 6.2,
-    "colorPrice": 5.9,
-    "samplePrice": 9,
-    "price": 6.2,
-    "images": [
-      "/images/products/903_1.jpg",
-      "/images/products/903_2.jpg",
-      "/images/products/903_3.jpg",
-      "/images/products/903_4.jpg",
-      "/images/products/903_5.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton Linen Blend",
-    "content": [
-      {
-        "name": "棉",
-        "percentage": 50
-      },
-      {
-        "name": "亚麻",
-        "percentage": 30
-      },
-      {
-        "name": "涤纶",
-        "percentage": 20
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 140,
-    "weight": 180,
-    "hc": 99,
-    "createdAt": "2024-10-20",
-    "featured": false
-  },
-  {
-    "id": "prod-904",
-    "productNo": "904#",
-    "name": "加厚砂洗竹节（高品质）",
-    "slug": "jia-hou-sha-xi-zhu-jie",
-    "description": "加厚砂洗竹节，高品质全棉",
-    "whitePrice": 6.7,
-    "colorPrice": 7.1,
-    "samplePrice": 10,
-    "price": 6.7,
-    "images": [
-      "/images/products/904_1.jpg",
-      "/images/products/904_2.jpg",
-      "/images/products/904_3.jpg",
-      "/images/products/904_4.jpg",
-      "/images/products/904_5.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton Slub",
-    "content": [
-      {
-        "name": "全棉",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 145,
-    "weight": 145,
-    "hc": 91,
-    "createdAt": "2024-10-21",
-    "featured": false
-  },
-  {
-    "id": "prod-912",
-    "productNo": "912#",
-    "name": "加厚双层平布",
-    "slug": "jia-hou-shuang-ceng-ping-bu",
-    "description": "双层织造，厚实保暖",
-    "whitePrice": 6.9,
-    "colorPrice": 7.2,
-    "samplePrice": 10,
-    "price": 6.9,
-    "images": [
-      "/images/products/912_1.jpg",
-      "/images/products/912_2.jpg",
-      "/images/products/912_3.jpg",
-      "/images/products/912_4.jpg",
-      "/images/products/912_5.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton Double Layer",
-    "content": [
-      {
-        "name": "棉",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 125,
-    "hc": 91,
-    "createdAt": "2024-10-21",
-    "featured": false
-  },
-  {
-    "id": "prod-905",
-    "productNo": "905#",
-    "name": "双层绒布",
-    "slug": "shuang-ceng-rong-bu",
-    "description": "双层绒面，柔软温暖",
-    "whitePrice": 6.3,
-    "colorPrice": 6.8,
-    "samplePrice": 9,
-    "price": 6.3,
-    "images": [
-      "/images/products/905_1.jpg",
-      "/images/products/905_2.jpg",
-      "/images/products/905_3.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton Fleece",
-    "content": [
-      {
-        "name": "全棉",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 135,
-    "weight": 125,
-    "hc": 91,
-    "createdAt": "2024-10-22",
-    "featured": false
-  },
-  {
-    "id": "prod-906",
-    "productNo": "906#",
-    "name": "12+12粘麻竹节砂洗",
-    "slug": "12-12-nian-ma-zhu-jie-sha-xi",
-    "description": "粘麻竹节砂洗面料，质感独特",
-    "whitePrice": 9.3,
-    "colorPrice": 8.8,
-    "samplePrice": 12,
-    "price": 9.3,
-    "images": [
-      "/images/products/906_1.jpg",
-      "/images/products/906_2.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Viscose Linen Blend",
-    "content": [
-      {
-        "name": "粘胶",
-        "percentage": 70
-      },
-      {
-        "name": "亚麻",
-        "percentage": 30
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 140,
-    "weight": 210,
-    "hc": 97,
-    "createdAt": "2024-10-22",
-    "featured": false
-  },
-  {
-    "id": "prod-907",
-    "productNo": "907#",
-    "name": "20支洗水缎",
-    "slug": "20zhi-xi-shui-duan",
-    "description": "20支纱洗水缎面，光泽柔和",
-    "whitePrice": 4.9,
-    "colorPrice": 5.3,
-    "samplePrice": 8,
-    "price": 4.9,
-    "images": [
-      "/images/products/907_1.jpg",
-      "/images/products/907_2.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton Satin",
-    "content": [
-      {
-        "name": "全棉",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 140,
-    "weight": 130,
-    "hc": 91,
-    "createdAt": "2024-10-23",
-    "featured": false
-  },
-  {
-    "id": "prod-908",
-    "productNo": "908#",
-    "name": "9088半工艺",
-    "slug": "9088-ban-gong-yi",
-    "description": "9088半工艺处理，轻薄舒适",
-    "whitePrice": 3.8,
-    "colorPrice": 4.3,
-    "price": 3.8,
-    "images": [
-      "/images/products/908_1.jpg",
-      "/images/products/908_2.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton",
-    "content": [
-      {
-        "name": "全棉",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 60,
-    "createdAt": "2024-10-23",
-    "featured": false
-  },
-  {
-    "id": "prod-909",
-    "productNo": "909#",
-    "name": "9088全工艺",
-    "slug": "9088-quan-gong-yi",
-    "description": "9088全工艺处理，质感升级",
-    "whitePrice": 4.5,
-    "colorPrice": 5.1,
-    "price": 4.5,
-    "images": [
-      "/images/products/909_1.jpg",
-      "/images/products/909_2.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton",
-    "content": [
-      {
-        "name": "全棉",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 75,
-    "createdAt": "2024-10-24",
-    "featured": false
-  },
-  {
-    "id": "prod-910",
-    "productNo": "910#",
-    "name": "40支平纹仿天丝",
-    "slug": "40zhi-ping-wen-fang-tian-si",
-    "description": "40支纱平纹，仿天丝质感",
-    "whitePrice": 6.2,
-    "colorPrice": 6.6,
-    "samplePrice": 9,
-    "price": 6.2,
-    "images": [
-      "/images/products/910_1.jpg",
-      "/images/products/910_2.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton Tencel-Like",
-    "content": [
-      {
-        "name": "全棉",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 156,
-    "weight": 125,
-    "hc": 92,
-    "createdAt": "2024-10-24",
-    "featured": false
-  },
-  {
-    "id": "prod-911",
-    "productNo": "911#",
-    "name": "天然麻",
-    "slug": "tian-ran-ma",
-    "description": "天然麻质面料，透气清爽",
-    "whitePrice": 6.6,
-    "colorPrice": 6.9,
-    "samplePrice": 10,
-    "price": 6.6,
-    "images": [
-      "/images/products/911_1.jpg",
-      "/images/products/911_2.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Linen Blend",
-    "content": [
-      {
-        "name": "棉",
-        "percentage": 50
-      },
-      {
-        "name": "人棉",
-        "percentage": 50
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 150,
-    "weight": 140,
-    "hc": 91,
-    "createdAt": "2024-10-25",
-    "featured": false
-  },
-  {
-    "id": "prod-913",
-    "productNo": "913#",
-    "name": "24支砂洗竹节",
-    "slug": "24zhi-sha-xi-zhu-jie",
-    "description": "24支砂洗竹节棉布",
-    "whitePrice": 5.8,
-    "samplePrice": 8,
-    "price": 5.8,
-    "images": [
-      "/images/products/913_1.jpg",
-      "/images/products/913_2.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton Slub",
-    "content": [
-      {
-        "name": "棉",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 145,
-    "weight": 110,
-    "hc": 91,
-    "createdAt": "2024-10-25",
-    "featured": false
-  },
-  {
-    "id": "prod-914",
-    "productNo": "914#",
-    "name": "高密2060竹节",
-    "slug": "gao-mi-2060-zhu-jie",
-    "description": "高密度2060竹节棉布",
-    "whitePrice": 5.6,
-    "colorPrice": 6.1,
-    "samplePrice": 8,
-    "price": 5.6,
-    "images": [
-      "/images/products/914_1.jpg",
-      "/images/products/914_2.jpg",
-      "/images/products/914_3.jpg"
-    ],
-    "category": "cotton",
-    "fabricType": "Cotton Slub",
-    "content": [
-      {
-        "name": "棉",
-        "percentage": 100
-      }
-    ],
-    "tags": [],
-    "inStock": true,
-    "width": 145,
-    "weight": 120,
-    "hc": 91,
-    "createdAt": "2024-10-26",
-    "featured": false
-  },
-  {
-    "id": "prod-501",
-    "productNo": "501#",
-    "name": "乐富丝竹节麻（红富竹节）",
-    "slug": "le-fu-si-zhu-jie-ma",
-    "description": "乐富丝竹节麻，全涤材质，适合多种用途",
-    "whitePrice": 2,
-    "colorPrice": 2.1,
-    "samplePrice": 5,
-    "price": 2,
-    "images": [],
-    "category": "tencel",
-    "fabricType": "Polyester",
-    "content": [
-      {
-        "name": "全涤",
-        "percentage": 100
-      }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 150,
-    "weight": 135,
-    "hc": 91,
-    "createdAt": "2024-11-20",
-    "featured": false
-  },
-  {
-    "id": "prod-502",
-    "productNo": "502#",
-    "name": "乐富丝双色平纹（平纹麻）",
-    "slug": "le-fu-si-shuang-se-ping-wen",
-    "description": "乐富丝双色平纹麻，全涤材质，质地平整",
-    "whitePrice": 3.6,
-    "colorPrice": 3.8,
-    "samplePrice": 6,
-    "price": 3.6,
-    "images": [],
-    "category": "tencel",
-    "fabricType": "Polyester",
-    "content": [
-      {
-        "name": "全涤",
-        "percentage": 100
-      }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 150,
-    "weight": 135,
-    "hc": 91,
-    "createdAt": "2024-11-20",
-    "featured": false
-  },
-  {
-    "id": "prod-507",
-    "productNo": "507#",
-    "name": "乐富丝乱麻",
-    "slug": "le-fu-si-luan-ma",
-    "description": "乐富丝乱麻，涤纶氨纶混纺，微弹舒适",
-    "whitePrice": 4,
-    "colorPrice": 4.1,
-    "samplePrice": 6,
-    "price": 4,
-    "images": [],
-    "category": "tencel",
-    "fabricType": "Polyester Blend",
-    "content": [
-      {
-        "name": "涤纶",
-        "percentage": 97
-      },
-      {
-        "name": "氨纶",
-        "percentage": 3
-      }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 150,
-    "weight": 135,
-    "hc": 91,
-    "createdAt": "2024-11-20",
-    "featured": false
-  },
-  {
-    "id": "prod-508",
-    "productNo": "508#",
-    "name": "乐富丝雪纺麻",
-    "slug": "le-fu-si-xue-fang-ma",
-    "description": "乐富丝雪纺麻，全涤雪纺质感，轻盈飘逸",
-    "whitePrice": 2.4,
-    "colorPrice": 2.6,
-    "samplePrice": 6,
-    "price": 2.4,
-    "images": [],
-    "category": "tencel",
-    "fabricType": "Polyester",
-    "content": [
-      {
-        "name": "全涤",
-        "percentage": 100
-      }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 150,
-    "weight": 135,
-    "hc": 91,
-    "createdAt": "2024-11-20",
-    "featured": false
-  },
-  {
-    "id": "prod-A801",
-    "productNo": "A801#",
-    "name": "曲天丝",
-    "slug": "qu-tian-si-a801",
-    "description": "曲天丝",
-    "whitePrice": 5.2,
-    "colorPrice": 5.5,
-    "samplePrice": 7,
-    "price": 5.2,
-    "images": [],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      { "name": "天丝", "percentage": 90 },
-      { "name": "涤纶", "percentage": 10 }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 150,
-    "weight": 58,
-    "hc": 91,
-    "createdAt": "2024-11-20",
-    "featured": false
-  },
-  {
-    "id": "prod-B801",
-    "productNo": "B801#",
-    "name": "曲天丝",
-    "slug": "qu-tian-si-b801",
-    "description": "曲天丝",
-    "whitePrice": 4.6,
-    "colorPrice": 4.7,
-    "samplePrice": 5,
-    "price": 4.6,
-    "images": [],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      { "name": "天丝", "percentage": 90 },
-      { "name": "涤纶", "percentage": 10 }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 150,
-    "weight": 55,
-    "hc": 91,
-    "createdAt": "2024-11-20",
-    "featured": false
-  },
-  {
-    "id": "prod-703",
-    "productNo": "703#",
-    "name": "天丝麻",
-    "slug": "tian-si-ma-703",
-    "description": "天丝麻",
-    "colorPrice": 5.7,
-    "samplePrice": 8,
-    "price": 5.7,
-    "images": [],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      { "name": "涤纶", "percentage": 50 },
-      { "name": "人棉", "percentage": 50 }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 150,
-    "weight": 165,
-    "hc": 99,
-    "createdAt": "2024-11-20",
-    "featured": false
-  },
-  {
-    "id": "prod-713",
-    "productNo": "713#",
-    "name": "天丝棉",
-    "slug": "tian-si-mian-713",
-    "description": "天丝棉",
-    "colorPrice": 6.3,
-    "samplePrice": 8,
-    "price": 6.3,
-    "images": [],
-    "category": "tencel",
-    "fabricType": "Tencel Blend",
-    "content": [
-      { "name": "涤纶", "percentage": 30 },
-      { "name": "人棉", "percentage": 70 }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 150,
-    "weight": 140,
-    "hc": 99,
-    "createdAt": "2024-11-20",
-    "featured": false
-  },
-  {
-    "id": "prod-726",
-    "productNo": "726#",
-    "name": "32支斜纹",
-    "slug": "32-zhi-xie-wen-726",
-    "description": "32支斜纹",
-    "colorPrice": 6.6,
-    "samplePrice": 8,
-    "price": 6.6,
-    "images": [],
-    "category": "tencel",
-    "fabricType": "Blend",
-    "content": [
-      { "name": "涤纶", "percentage": 60 },
-      { "name": "人棉", "percentage": 40 }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 150,
-    "weight": 145,
-    "hc": 99,
-    "createdAt": "2024-11-20",
-    "featured": false
-  },
-  {
-    "id": "prod-746",
-    "productNo": "746#",
-    "name": "3236免洗牛仔",
-    "slug": "3236-mian-xi-niu-zai",
-    "description": "3236免洗牛仔",
-    "colorPrice": 8.6,
-    "samplePrice": 10,
-    "price": 8.6,
-    "images": [],
-    "category": "denim",
-    "fabricType": "Denim",
-    "content": [
-      { "name": "涤纶", "percentage": 30 },
-      { "name": "人棉", "percentage": 70 }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 150,
-    "weight": 160,
-    "hc": 99,
-    "createdAt": "2024-11-20",
-    "featured": false
-  },
-  {
-    "id": "prod-915",
-    "productNo": "915#",
-    "name": "高密洗水皱",
-    "slug": "gao-mi-xi-shui-zhou-915",
-    "description": "高密洗水皱",
-    "whitePrice": 5.3,
-    "colorPrice": 5.8,
-    "samplePrice": 7,
-    "price": 5.3,
-    "images": [],
-    "category": "cotton",
-    "fabricType": "Cotton",
-    "content": [
-      { "name": "棉", "percentage": 100 }
-    ],
-    "tags": ["New"],
-    "inStock": true,
-    "width": 145,
-    "weight": 135,
-    "hc": 91,
-    "createdAt": "2024-11-20",
-    "featured": false
-  }
+    {
+        "id": "prod-801",
+        "myid": "T108",
+        "productNo": "801#",
+        "name": "涤天丝（曲天丝）",
+        "fullname": "涤天丝55克",
+        "slug": "121a04657bce602b",
+        "description": "",
+        "whitePrice": 4.3,
+        "colorPrice": 4.6,
+        "samplePrice": 7.0,
+        "fullPrice": 5.05,
+        "images": [
+            "/images/products/801/00.png",
+            "/images/products/801/01.jpg",
+            "/images/products/801/02.jpg",
+            "/images/products/801/03.jpg",
+            "/images/products/801/04.jpg",
+            "/images/products/801/05.jpg",
+            "/images/products/801/06.jpg",
+            "/images/products/801/07.jpg",
+            "/images/products/801/08.jpg",
+            "/images/products/801/09.jpg",
+            "/images/products/801/10.jpg",
+            "/images/products/801/11.jpg",
+            "/images/products/801/index.png",
+            "/images/products/801/part10.png",
+            "/images/products/801/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 90
+            },
+            {
+                "name": "涤纶",
+                "percentage": 10
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 55,
+        "metersPerKg": 12.12,
+        "empty": 91,
+        "keywords": [
+            "涤天丝55克",
+            "226色",
+            "801#",
+            "涤天丝（曲天丝）",
+            "150cm",
+            "55g",
+            "90%天丝10%涤"
+        ],
+        "colors": 226,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-802",
+        "myid": "T208",
+        "productNo": "802#",
+        "name": "天丝仙女条",
+        "fullname": "天丝仙女条65克",
+        "slug": "3c17d907b28e1e55",
+        "description": "",
+        "whitePrice": 4.5,
+        "colorPrice": 4.7,
+        "samplePrice": 6.0,
+        "fullPrice": 5.16,
+        "images": [
+            "/images/products/802/00.png",
+            "/images/products/802/01.jpg",
+            "/images/products/802/02.jpg",
+            "/images/products/802/03.jpg",
+            "/images/products/802/04.jpg",
+            "/images/products/802/05.jpg",
+            "/images/products/802/06.jpg",
+            "/images/products/802/07.jpg",
+            "/images/products/802/08.jpg",
+            "/images/products/802/09.jpg",
+            "/images/products/802/10.jpg",
+            "/images/products/802/index.png",
+            "/images/products/802/part10.png",
+            "/images/products/802/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 75
+            },
+            {
+                "name": "锦纶",
+                "percentage": 25
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 65,
+        "metersPerKg": 10.26,
+        "empty": 91,
+        "keywords": [
+            "天丝仙女条65克",
+            "141色",
+            "802#",
+            "天丝仙女条",
+            "150cm",
+            "65g",
+            "75%天丝25%锦纶"
+        ],
+        "colors": 141,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-803",
+        "myid": "T308",
+        "productNo": "803#",
+        "name": "天丝彩虹条（曲丝皱）",
+        "fullname": "天丝彩虹条58克",
+        "slug": "b34813e3e9cf746c",
+        "description": "",
+        "whitePrice": 7.1,
+        "colorPrice": 7.3,
+        "samplePrice": 10.0,
+        "fullPrice": 7.85,
+        "images": [
+            "/images/products/803/00.png",
+            "/images/products/803/01.jpg",
+            "/images/products/803/index.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 80
+            },
+            {
+                "name": "聚酯纤维",
+                "percentage": 20
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 58,
+        "metersPerKg": 11.49,
+        "empty": 93,
+        "keywords": [
+            "天丝彩虹条58克",
+            "0色",
+            "803#",
+            "天丝彩虹条（曲丝皱）",
+            "150cm",
+            "58g",
+            "80%天丝20%聚酯纤维"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-804",
+        "myid": "T408",
+        "productNo": "804#",
+        "name": "天丝千鸟格",
+        "fullname": "天丝千鸟格58克",
+        "slug": "9b39da64d50661a4",
+        "description": "",
+        "whitePrice": 7.8,
+        "colorPrice": 8.0,
+        "samplePrice": 10.0,
+        "fullPrice": 8.6,
+        "images": [
+            "/images/products/804/00.png",
+            "/images/products/804/01.jpg",
+            "/images/products/804/index.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 80
+            },
+            {
+                "name": "聚酯纤维",
+                "percentage": 20
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 58,
+        "metersPerKg": 11.49,
+        "empty": 93,
+        "keywords": [
+            "天丝千鸟格58克",
+            "0色",
+            "804#",
+            "天丝千鸟格",
+            "150cm",
+            "58g",
+            "80%天丝20%聚酯纤维"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-805",
+        "myid": "T508",
+        "productNo": "805#",
+        "name": "加密花丝皱",
+        "fullname": "加密花丝皱65克",
+        "slug": "eed6d5bbabe4db7f",
+        "description": "",
+        "whitePrice": 3.3,
+        "colorPrice": 3.4,
+        "samplePrice": 5.0,
+        "fullPrice": 3.66,
+        "images": [
+            "/images/products/805/00.png",
+            "/images/products/805/01.jpg",
+            "/images/products/805/02.jpg",
+            "/images/products/805/03.jpg",
+            "/images/products/805/04.jpg",
+            "/images/products/805/05.jpg",
+            "/images/products/805/06.jpg",
+            "/images/products/805/07.jpg",
+            "/images/products/805/08.jpg",
+            "/images/products/805/09.jpg",
+            "/images/products/805/10.jpg",
+            "/images/products/805/index.png",
+            "/images/products/805/part10.png",
+            "/images/products/805/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 80
+            },
+            {
+                "name": "棉",
+                "percentage": 20
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 65,
+        "metersPerKg": 10.26,
+        "empty": 93,
+        "keywords": [
+            "加密花丝皱65克",
+            "132色",
+            "805#",
+            "加密花丝皱",
+            "150cm",
+            "65g",
+            "80%涤20%棉"
+        ],
+        "colors": 132,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-806",
+        "myid": "T608",
+        "productNo": "806#",
+        "name": "洛施棉 (彩珠纱）",
+        "fullname": "洛施棉60克",
+        "slug": "d768c7c8bfdc14c7",
+        "description": "",
+        "whitePrice": 3.7,
+        "colorPrice": 3.9,
+        "samplePrice": 6.0,
+        "fullPrice": 4.29,
+        "images": [
+            "/images/products/806/00.png",
+            "/images/products/806/01.jpg",
+            "/images/products/806/02.jpg",
+            "/images/products/806/03.jpg",
+            "/images/products/806/04.jpg",
+            "/images/products/806/05.jpg",
+            "/images/products/806/index.png",
+            "/images/products/806/part10.png",
+            "/images/products/806/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "人棉",
+                "percentage": 68
+            },
+            {
+                "name": "锦纶",
+                "percentage": 32
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 60,
+        "metersPerKg": 11.11,
+        "empty": 91,
+        "keywords": [
+            "洛施棉60克",
+            "77色",
+            "806#",
+            "洛施棉 (彩珠纱）",
+            "150cm",
+            "60g",
+            "68%人棉32%锦纶"
+        ],
+        "colors": 77,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-807",
+        "myid": "T708",
+        "productNo": "807#",
+        "name": "喜之麻（单丝横条）",
+        "fullname": "喜之麻80克",
+        "slug": "b00aa66de79ce82c",
+        "description": "",
+        "whitePrice": 5.8,
+        "colorPrice": 6.0,
+        "samplePrice": 9.0,
+        "fullPrice": 6.59,
+        "images": [
+            "/images/products/807/00.png",
+            "/images/products/807/01.jpg",
+            "/images/products/807/02.jpg",
+            "/images/products/807/03.jpg",
+            "/images/products/807/04.jpg",
+            "/images/products/807/05.jpg",
+            "/images/products/807/06.jpg",
+            "/images/products/807/07.jpg",
+            "/images/products/807/index.png",
+            "/images/products/807/output_merged.png",
+            "/images/products/807/part10.png",
+            "/images/products/807/part20.png",
+            "/images/products/807/script.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "人棉",
+                "percentage": 85
+            },
+            {
+                "name": "锦纶",
+                "percentage": 15
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 80,
+        "metersPerKg": 8.33,
+        "empty": 91,
+        "keywords": [
+            "喜之麻80克",
+            "83色",
+            "807#",
+            "喜之麻（单丝横条）",
+            "150cm",
+            "80g",
+            "85%人棉15%锦纶"
+        ],
+        "colors": 83,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-808",
+        "myid": "T808",
+        "productNo": "808#",
+        "name": "天丝皱（仙女皱）",
+        "fullname": "天丝皱65克",
+        "slug": "79dba6e7a0c5ed52",
+        "description": "",
+        "whitePrice": 4.1,
+        "colorPrice": 4.3,
+        "samplePrice": 6.0,
+        "fullPrice": 4.73,
+        "images": [
+            "/images/products/808/00.png",
+            "/images/products/808/01.jpg",
+            "/images/products/808/02.jpg",
+            "/images/products/808/03.jpg",
+            "/images/products/808/04.jpg",
+            "/images/products/808/05.jpg",
+            "/images/products/808/06.jpg",
+            "/images/products/808/07.jpg",
+            "/images/products/808/08.jpg",
+            "/images/products/808/09.jpg",
+            "/images/products/808/10.jpg",
+            "/images/products/808/11.jpg",
+            "/images/products/808/12.jpg",
+            "/images/products/808/13.jpg",
+            "/images/products/808/index.png",
+            "/images/products/808/part10.png",
+            "/images/products/808/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 65
+            },
+            {
+                "name": "锦纶",
+                "percentage": 35
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 65,
+        "metersPerKg": 10.26,
+        "empty": 91,
+        "keywords": [
+            "天丝皱65克",
+            "162色",
+            "808#",
+            "天丝皱（仙女皱）",
+            "150cm",
+            "65g",
+            "65%天丝35%锦纶"
+        ],
+        "colors": 162,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-809",
+        "myid": "T908",
+        "productNo": "809#",
+        "name": "闪光天丝",
+        "fullname": "闪光天丝60克",
+        "slug": "f8f6b5246e91166b",
+        "description": "",
+        "whitePrice": 5.0,
+        "colorPrice": 5.2,
+        "samplePrice": 7.0,
+        "fullPrice": 5.71,
+        "images": [
+            "/images/products/809/00.png",
+            "/images/products/809/01.jpg",
+            "/images/products/809/02.jpg",
+            "/images/products/809/03.jpg",
+            "/images/products/809/04.jpg",
+            "/images/products/809/05.jpg",
+            "/images/products/809/06.jpg",
+            "/images/products/809/07.jpg",
+            "/images/products/809/index.png",
+            "/images/products/809/part10.png",
+            "/images/products/809/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 75
+            },
+            {
+                "name": "锦纶",
+                "percentage": 25
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 60,
+        "metersPerKg": 11.11,
+        "empty": 91,
+        "keywords": [
+            "闪光天丝60克",
+            "58色",
+            "809#",
+            "闪光天丝",
+            "150cm",
+            "60g",
+            "75#天丝25#锦纶"
+        ],
+        "colors": 58,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-810",
+        "myid": "T018",
+        "productNo": "810#",
+        "name": "亮丝麻",
+        "fullname": "亮丝麻50克",
+        "slug": "88ee465ac83a2055",
+        "description": "",
+        "whitePrice": 5.2,
+        "colorPrice": 5.4,
+        "samplePrice": 7.0,
+        "fullPrice": 5.93,
+        "images": [
+            "/images/products/810/00.png",
+            "/images/products/810/01.jpg",
+            "/images/products/810/02.jpg",
+            "/images/products/810/03.jpg",
+            "/images/products/810/04.jpg",
+            "/images/products/810/05.jpg",
+            "/images/products/810/index.png",
+            "/images/products/810/part10.png",
+            "/images/products/810/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "锦纶",
+                "percentage": 23
+            },
+            {
+                "name": "涤纶",
+                "percentage": 77
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 50,
+        "metersPerKg": 13.33,
+        "empty": 91,
+        "keywords": [
+            "亮丝麻50克",
+            "61色",
+            "810#",
+            "亮丝麻",
+            "150cm",
+            "50g",
+            "23%锦77%涤"
+        ],
+        "colors": 61,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-811",
+        "myid": "T118",
+        "productNo": "811#",
+        "name": "天丝蚂蚁皱           （天丝树皮皱）",
+        "fullname": "天丝蚂蚁皱65克",
+        "slug": "b1cef616ac1b7483",
+        "description": "",
+        "whitePrice": 5.1,
+        "colorPrice": 5.3,
+        "samplePrice": 7.0,
+        "fullPrice": 5.82,
+        "images": [
+            "/images/products/811/00.png",
+            "/images/products/811/01.jpg",
+            "/images/products/811/02.jpg",
+            "/images/products/811/03.jpg",
+            "/images/products/811/04.jpg",
+            "/images/products/811/05.jpg",
+            "/images/products/811/06.jpg",
+            "/images/products/811/07.jpg",
+            "/images/products/811/index.png",
+            "/images/products/811/part10.png",
+            "/images/products/811/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 36
+            },
+            {
+                "name": "锦纶",
+                "percentage": 28
+            },
+            {
+                "name": "人棉",
+                "percentage": 13
+            },
+            {
+                "name": "聚酯纤维",
+                "percentage": 23
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 65,
+        "metersPerKg": 10.26,
+        "empty": 91,
+        "keywords": [
+            "天丝蚂蚁皱65克",
+            "71色",
+            "811#",
+            "天丝蚂蚁皱           （天丝树皮皱）",
+            "150cm",
+            "65g",
+            "36%天丝 28%锦纶\n13%人棉 23%聚酯纤维"
+        ],
+        "colors": 71,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-812",
+        "myid": "T218",
+        "productNo": "812#",
+        "name": "天丝波浪条",
+        "fullname": "天丝波浪条65克",
+        "slug": "045eff8de9cd5c2d",
+        "description": "",
+        "whitePrice": 6.7,
+        "colorPrice": 6.9,
+        "samplePrice": 8.0,
+        "fullPrice": 7.42,
+        "images": [
+            "/images/products/812/00.png",
+            "/images/products/812/01.jpg",
+            "/images/products/812/index.png",
+            "/images/products/812/part10.png",
+            "/images/products/812/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 80
+            },
+            {
+                "name": "锦纶",
+                "percentage": 20
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 65,
+        "metersPerKg": 10.26,
+        "empty": 93,
+        "keywords": [
+            "天丝波浪条65克",
+            "0色",
+            "812#",
+            "天丝波浪条",
+            "150cm",
+            "65g",
+            "80%天丝20%锦纶"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-813",
+        "myid": "T318",
+        "productNo": "813#",
+        "name": "天丝牙签条\n（天丝小辣椒）",
+        "fullname": "天丝牙签条85克",
+        "slug": "18d0dc96a6a9639c",
+        "description": "",
+        "whitePrice": 4.3,
+        "colorPrice": 4.5,
+        "samplePrice": 6.0,
+        "fullPrice": 4.95,
+        "images": [
+            "/images/products/813/00.png",
+            "/images/products/813/01.jpg",
+            "/images/products/813/02.jpg",
+            "/images/products/813/03.jpg",
+            "/images/products/813/04.jpg",
+            "/images/products/813/05.jpg",
+            "/images/products/813/06.jpg",
+            "/images/products/813/07.jpg",
+            "/images/products/813/08.jpg",
+            "/images/products/813/09.jpg",
+            "/images/products/813/10.jpg",
+            "/images/products/813/11.jpg",
+            "/images/products/813/12.jpg",
+            "/images/products/813/13.jpg",
+            "/images/products/813/index.png",
+            "/images/products/813/part10.png",
+            "/images/products/813/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 85
+            },
+            {
+                "name": "锦纶",
+                "percentage": 15
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 85,
+        "metersPerKg": 7.84,
+        "empty": 91,
+        "keywords": [
+            "天丝牙签条85克",
+            "143色",
+            "813#",
+            "天丝牙签条\n（天丝小辣椒）",
+            "150cm",
+            "85g",
+            "85%天丝15%锦纶"
+        ],
+        "colors": 143,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-814",
+        "myid": "T418",
+        "productNo": "814#",
+        "name": "天丝闪光皱",
+        "fullname": "天丝闪光皱68克",
+        "slug": "0df80ce2d14575bd",
+        "description": "",
+        "whitePrice": 6.1,
+        "colorPrice": 6.3,
+        "samplePrice": 8.0,
+        "fullPrice": 6.92,
+        "images": [
+            "/images/products/814/00.png",
+            "/images/products/814/01.jpg",
+            "/images/products/814/02.jpg",
+            "/images/products/814/03.jpg",
+            "/images/products/814/04.jpg",
+            "/images/products/814/05.jpg",
+            "/images/products/814/06.jpg",
+            "/images/products/814/index.png",
+            "/images/products/814/part10.png",
+            "/images/products/814/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "尼龙",
+                "percentage": 25
+            },
+            {
+                "name": "天丝",
+                "percentage": 75
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 148,
+        "weight": 68,
+        "metersPerKg": 9.94,
+        "empty": 91,
+        "keywords": [
+            "天丝闪光皱68克",
+            "49色",
+            "814#",
+            "天丝闪光皱",
+            "148cm",
+            "68g",
+            "25%尼龙75%天丝"
+        ],
+        "colors": 49,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-815",
+        "myid": "T518",
+        "productNo": "815#",
+        "name": "蚕丝字母条（春蚕丝）",
+        "fullname": "蚕丝字母条80克",
+        "slug": "8c62b204d48c5911",
+        "description": "",
+        "whitePrice": 4.1,
+        "colorPrice": 4.3,
+        "samplePrice": 6.0,
+        "fullPrice": 4.73,
+        "images": [
+            "/images/products/815/00.png",
+            "/images/products/815/01.jpg",
+            "/images/products/815/02.jpg",
+            "/images/products/815/03.jpg",
+            "/images/products/815/04.jpg",
+            "/images/products/815/05.jpg",
+            "/images/products/815/06.jpg",
+            "/images/products/815/index.png",
+            "/images/products/815/part10.png",
+            "/images/products/815/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "人棉",
+                "percentage": 80
+            },
+            {
+                "name": "锦纶",
+                "percentage": 20
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 80,
+        "metersPerKg": 8.33,
+        "empty": 91,
+        "keywords": [
+            "蚕丝字母条80克",
+            "59色",
+            "815#",
+            "蚕丝字母条（春蚕丝）",
+            "150cm",
+            "80g",
+            "80%人棉 20%锦纶"
+        ],
+        "colors": 59,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-816",
+        "myid": "T618",
+        "productNo": "816#",
+        "name": "高密天丝666",
+        "fullname": "666高密天丝120克",
+        "slug": "bd3e4c4ec4175d8d",
+        "description": "",
+        "whitePrice": 5.0,
+        "colorPrice": 5.2,
+        "samplePrice": 7.0,
+        "fullPrice": 5.71,
+        "images": [
+            "/images/products/816/00.png",
+            "/images/products/816/01.jpg",
+            "/images/products/816/02.jpg",
+            "/images/products/816/03.jpg",
+            "/images/products/816/04.jpg",
+            "/images/products/816/05.jpg",
+            "/images/products/816/index.png",
+            "/images/products/816/part10.png",
+            "/images/products/816/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "人棉",
+                "percentage": 65
+            },
+            {
+                "name": "聚酯纤维",
+                "percentage": 35
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 120,
+        "metersPerKg": 5.56,
+        "empty": 91,
+        "keywords": [
+            "666高密天丝120克",
+            "91色",
+            "816#",
+            "高密天丝666",
+            "150cm",
+            "120g",
+            "65%人棉35%聚酯纤维"
+        ],
+        "colors": 91,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-817",
+        "myid": "T718",
+        "productNo": "817#",
+        "name": "天丝竹节（加密高品质）",
+        "fullname": "天丝竹节85克",
+        "slug": "18f385602de20545",
+        "description": "",
+        "whitePrice": 3.7,
+        "colorPrice": 3.9,
+        "samplePrice": 6.0,
+        "fullPrice": 4.29,
+        "images": [
+            "/images/products/817/00.png",
+            "/images/products/817/01.jpg",
+            "/images/products/817/index.png",
+            "/images/products/817/part10.png",
+            "/images/products/817/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "人棉",
+                "percentage": 65
+            },
+            {
+                "name": "涤纶",
+                "percentage": 35
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 85,
+        "metersPerKg": 7.84,
+        "empty": 91,
+        "keywords": [
+            "天丝竹节85克",
+            "95色",
+            "817#",
+            "天丝竹节（加密高品质）",
+            "150cm",
+            "85g",
+            "65%人棉35%涤"
+        ],
+        "colors": 95,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-818",
+        "myid": "T818",
+        "productNo": "818#",
+        "name": "天丝亚运条",
+        "fullname": "天丝亚运条80克",
+        "slug": "19324686577ad533",
+        "description": "",
+        "whitePrice": 4.3,
+        "colorPrice": 4.5,
+        "samplePrice": 7.0,
+        "fullPrice": 4.95,
+        "images": [
+            "/images/products/818/00.png",
+            "/images/products/818/01.jpg",
+            "/images/products/818/02.jpg",
+            "/images/products/818/03.jpg",
+            "/images/products/818/04.jpg",
+            "/images/products/818/05.jpg",
+            "/images/products/818/06.jpg",
+            "/images/products/818/07.jpg",
+            "/images/products/818/index.png",
+            "/images/products/818/part10.png",
+            "/images/products/818/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 78
+            },
+            {
+                "name": "锦纶",
+                "percentage": 22
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 80,
+        "metersPerKg": 8.33,
+        "empty": 91,
+        "keywords": [
+            "天丝亚运条80克",
+            "59色",
+            "818#",
+            "天丝亚运条",
+            "150cm",
+            "80g",
+            "78%天丝22%锦纶"
+        ],
+        "colors": 59,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-819",
+        "myid": "T918",
+        "productNo": "819#",
+        "name": "朗姆",
+        "fullname": "朗姆58g",
+        "slug": "97f1ca28ae0194aa",
+        "description": "",
+        "whitePrice": 4.1,
+        "colorPrice": 4.3,
+        "samplePrice": 6.0,
+        "fullPrice": 4.73,
+        "images": [],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 148,
+        "weight": 58,
+        "metersPerKg": 11.65,
+        "empty": 91,
+        "keywords": [
+            "朗姆58g",
+            "0色",
+            "819#",
+            "朗姆",
+            "148cm",
+            "58g",
+            "100%全涤"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-822",
+        "myid": "T228",
+        "productNo": "822#",
+        "name": "加厚醋酸天丝",
+        "fullname": "加厚醋酸天丝73克",
+        "slug": "3a63d5f40913db3a",
+        "description": "",
+        "whitePrice": 8.5,
+        "colorPrice": 8.7,
+        "samplePrice": 10.0,
+        "fullPrice": 9.56,
+        "images": [
+            "/images/products/822/00.png",
+            "/images/products/822/01.jpg",
+            "/images/products/822/index.png",
+            "/images/products/822/part10.png",
+            "/images/products/822/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 80
+            },
+            {
+                "name": "涤纶",
+                "percentage": 12
+            },
+            {
+                "name": "醋酸",
+                "percentage": 8
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 73,
+        "metersPerKg": 9.13,
+        "empty": 91,
+        "keywords": [
+            "加厚醋酸天丝73克",
+            "18色",
+            "822#",
+            "加厚醋酸天丝",
+            "150cm",
+            "73g",
+            "80%天丝12%涤纶8%醋酸"
+        ],
+        "colors": 18,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-823",
+        "myid": "T328",
+        "productNo": "823#",
+        "name": "天丝亚麻",
+        "fullname": "天丝亚麻85克",
+        "slug": "09fec81b7da2314a",
+        "description": "",
+        "whitePrice": 7.4,
+        "colorPrice": 7.6,
+        "samplePrice": 10.0,
+        "fullPrice": 8.35,
+        "images": [
+            "/images/products/823/00.png",
+            "/images/products/823/01.jpg",
+            "/images/products/823/02.jpg",
+            "/images/products/823/03.jpg",
+            "/images/products/823/04.jpg",
+            "/images/products/823/05.jpg",
+            "/images/products/823/06.jpg",
+            "/images/products/823/07.jpg",
+            "/images/products/823/index.png",
+            "/images/products/823/part10.png",
+            "/images/products/823/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "锦纶",
+                "percentage": 35
+            },
+            {
+                "name": "天丝",
+                "percentage": 55
+            },
+            {
+                "name": "麻",
+                "percentage": 10
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 155,
+        "weight": 85,
+        "metersPerKg": 7.59,
+        "empty": 91,
+        "keywords": [
+            "天丝亚麻85克",
+            "65色",
+            "823#",
+            "天丝亚麻",
+            "155cm",
+            "85g",
+            "35%锦纶55%天丝10%麻"
+        ],
+        "colors": 65,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-825",
+        "myid": "T528",
+        "productNo": "825#",
+        "name": "加厚曲天丝",
+        "fullname": "加厚曲天丝80克",
+        "slug": "a0b86d0537635f1b",
+        "description": "",
+        "whitePrice": 7.6,
+        "colorPrice": 7.8,
+        "samplePrice": 10.0,
+        "fullPrice": 8.57,
+        "images": [
+            "/images/products/825/00.png",
+            "/images/products/825/01.jpg",
+            "/images/products/825/02.jpg",
+            "/images/products/825/03.jpg",
+            "/images/products/825/04.jpg",
+            "/images/products/825/05.jpg",
+            "/images/products/825/index.png",
+            "/images/products/825/part10.png",
+            "/images/products/825/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 85
+            },
+            {
+                "name": "涤纶",
+                "percentage": 15
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 80,
+        "metersPerKg": 8.33,
+        "empty": 91,
+        "keywords": [
+            "加厚曲天丝80克",
+            "43色",
+            "825#",
+            "加厚曲天丝",
+            "150cm",
+            "80g",
+            "85%天丝15%涤纶"
+        ],
+        "colors": 43,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-826",
+        "myid": "T628",
+        "productNo": "826#",
+        "name": "沙面平纹",
+        "fullname": "沙面平纹140克",
+        "slug": "1a534f8d9673a9f2",
+        "description": "",
+        "whitePrice": 5.3,
+        "colorPrice": 5.5,
+        "samplePrice": 7.0,
+        "fullPrice": 6.04,
+        "images": [
+            "/images/products/826/00.png",
+            "/images/products/826/01.jpg",
+            "/images/products/826/02.jpg",
+            "/images/products/826/03.jpg",
+            "/images/products/826/04.jpg",
+            "/images/products/826/05.jpg",
+            "/images/products/826/06.jpg",
+            "/images/products/826/07.jpg",
+            "/images/products/826/08.jpg",
+            "/images/products/826/09.jpg",
+            "/images/products/826/index.png",
+            "/images/products/826/part10.png",
+            "/images/products/826/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 65
+            },
+            {
+                "name": "人棉",
+                "percentage": 25
+            },
+            {
+                "name": "锦纶",
+                "percentage": 10
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 140,
+        "metersPerKg": 4.76,
+        "empty": 91,
+        "keywords": [
+            "沙面平纹140克",
+            "111色",
+            "826#",
+            "沙面平纹",
+            "150cm",
+            "140g",
+            "65%全棉25%人棉10%锦纶"
+        ],
+        "colors": 111,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-827",
+        "myid": "T728",
+        "productNo": "827#",
+        "name": "香格麻",
+        "fullname": "香格麻160克",
+        "slug": "3a0a639466b69752",
+        "description": "",
+        "whitePrice": 5.0,
+        "colorPrice": 5.2,
+        "samplePrice": 7.0,
+        "fullPrice": 5.71,
+        "images": [
+            "/images/products/827/00.png",
+            "/images/products/827/01.jpg",
+            "/images/products/827/02.jpg",
+            "/images/products/827/03.jpg",
+            "/images/products/827/04.jpg",
+            "/images/products/827/05.jpg",
+            "/images/products/827/06.jpg",
+            "/images/products/827/index.png",
+            "/images/products/827/part10.png",
+            "/images/products/827/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "人棉",
+                "percentage": 56
+            },
+            {
+                "name": "聚酯纤维",
+                "percentage": 44
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 160,
+        "metersPerKg": 4.17,
+        "empty": 91,
+        "keywords": [
+            "香格麻160克",
+            "66色",
+            "827#",
+            "香格麻",
+            "150cm",
+            "160g",
+            "56%人棉 44%聚酯纤维"
+        ],
+        "colors": 66,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-828",
+        "myid": "T828",
+        "productNo": "828#",
+        "name": "韩国棉",
+        "fullname": "韩国棉120克",
+        "slug": "dc70a150e8bb1ffe",
+        "description": "",
+        "whitePrice": 5.0,
+        "colorPrice": 5.2,
+        "samplePrice": 7.0,
+        "fullPrice": 5.71,
+        "images": [
+            "/images/products/828/00.png",
+            "/images/products/828/01.jpg",
+            "/images/products/828/02.jpg",
+            "/images/products/828/03.jpg",
+            "/images/products/828/04.jpg",
+            "/images/products/828/05.jpg",
+            "/images/products/828/06.jpg",
+            "/images/products/828/07.jpg",
+            "/images/products/828/08.jpg",
+            "/images/products/828/09.jpg",
+            "/images/products/828/10.jpg",
+            "/images/products/828/11.jpg",
+            "/images/products/828/12.jpg",
+            "/images/products/828/index.png",
+            "/images/products/828/part10.png",
+            "/images/products/828/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "锦纶",
+                "percentage": 15
+            },
+            {
+                "name": "人棉",
+                "percentage": 85
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 120,
+        "metersPerKg": 5.56,
+        "empty": 91,
+        "keywords": [
+            "韩国棉120克",
+            "89色",
+            "828#",
+            "韩国棉",
+            "150cm",
+            "120g",
+            "15%锦纶85%人棉"
+        ],
+        "colors": 89,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-829",
+        "myid": "T928",
+        "productNo": "829#",
+        "name": "复古棉",
+        "fullname": "复古棉145克",
+        "slug": "780690f791a5076d",
+        "description": "",
+        "whitePrice": 6.0,
+        "colorPrice": 6.2,
+        "samplePrice": 9.0,
+        "fullPrice": 6.81,
+        "images": [
+            "/images/products/829/00.png",
+            "/images/products/829/01.jpg",
+            "/images/products/829/02.jpg",
+            "/images/products/829/03.jpg",
+            "/images/products/829/04.jpg",
+            "/images/products/829/05.jpg",
+            "/images/products/829/06.jpg",
+            "/images/products/829/index.png",
+            "/images/products/829/part10.png",
+            "/images/products/829/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "锦纶",
+                "percentage": 15
+            },
+            {
+                "name": "人棉",
+                "percentage": 85
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 145,
+        "metersPerKg": 4.6,
+        "empty": 91,
+        "keywords": [
+            "复古棉145克",
+            "76色",
+            "829#",
+            "复古棉",
+            "150cm",
+            "145g",
+            "15%锦纶85%人棉"
+        ],
+        "colors": 76,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-830",
+        "myid": "T038",
+        "productNo": "830#",
+        "name": "平纹麻（亚麻平纹）",
+        "fullname": "平纹麻110克",
+        "slug": "b3ca3aa1224ce92d",
+        "description": "",
+        "whitePrice": 6.1,
+        "colorPrice": 6.3,
+        "samplePrice": 8.0,
+        "fullPrice": 6.92,
+        "images": [
+            "/images/products/830/00.png",
+            "/images/products/830/01.jpg",
+            "/images/products/830/02.jpg",
+            "/images/products/830/03.jpg",
+            "/images/products/830/04.jpg",
+            "/images/products/830/05.jpg",
+            "/images/products/830/06.jpg",
+            "/images/products/830/07.jpg",
+            "/images/products/830/08.jpg",
+            "/images/products/830/09.jpg",
+            "/images/products/830/index.png",
+            "/images/products/830/part10.png",
+            "/images/products/830/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "人棉",
+                "percentage": 70
+            },
+            {
+                "name": "锦纶",
+                "percentage": 18
+            },
+            {
+                "name": "亚麻",
+                "percentage": 12
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 110,
+        "metersPerKg": 6.06,
+        "empty": 91,
+        "keywords": [
+            "平纹麻110克",
+            "72色",
+            "830#",
+            "平纹麻（亚麻平纹）",
+            "150cm",
+            "110g",
+            "70%人棉18%锦纶12#亚麻"
+        ],
+        "colors": 72,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-831",
+        "myid": "T138",
+        "productNo": "831#",
+        "name": "乱麻格（单丝乱条）",
+        "fullname": "乱麻格120克",
+        "slug": "aaf2c716f554726b",
+        "description": "",
+        "whitePrice": 4.5,
+        "colorPrice": 4.7,
+        "samplePrice": 7.0,
+        "fullPrice": 5.16,
+        "images": [
+            "/images/products/831/00.png",
+            "/images/products/831/01.jpg",
+            "/images/products/831/02.jpg",
+            "/images/products/831/03.jpg",
+            "/images/products/831/04.jpg",
+            "/images/products/831/05.jpg",
+            "/images/products/831/06.jpg",
+            "/images/products/831/07.jpg",
+            "/images/products/831/08.jpg",
+            "/images/products/831/09.jpg",
+            "/images/products/831/10.jpg",
+            "/images/products/831/11.jpg",
+            "/images/products/831/index.png",
+            "/images/products/831/part10.png",
+            "/images/products/831/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "人棉",
+                "percentage": 80
+            },
+            {
+                "name": "锦纶",
+                "percentage": 20
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 120,
+        "metersPerKg": 5.56,
+        "empty": 91,
+        "keywords": [
+            "乱麻格120克",
+            "189色",
+            "831#",
+            "乱麻格（单丝乱条）",
+            "150cm",
+            "120g",
+            "80%人棉20%锦纶"
+        ],
+        "colors": 189,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-832",
+        "myid": "T238",
+        "productNo": "832#",
+        "name": "双股树皮皱（纤维麻）",
+        "fullname": "双股树皮皱130g",
+        "slug": "efb19f165ab5c2e9",
+        "description": "",
+        "whitePrice": 4.5,
+        "colorPrice": 4.7,
+        "samplePrice": 7.0,
+        "fullPrice": 5.16,
+        "images": [
+            "/images/products/832/00.png",
+            "/images/products/832/01.jpg",
+            "/images/products/832/02.jpg",
+            "/images/products/832/03.jpg",
+            "/images/products/832/04.jpg",
+            "/images/products/832/05.jpg",
+            "/images/products/832/06.jpg",
+            "/images/products/832/07.jpg",
+            "/images/products/832/08.jpg",
+            "/images/products/832/09.jpg",
+            "/images/products/832/10.jpg",
+            "/images/products/832/11.jpg",
+            "/images/products/832/12.jpg",
+            "/images/products/832/index.png",
+            "/images/products/832/part10.png",
+            "/images/products/832/part20.png"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "锦纶",
+                "percentage": 15
+            },
+            {
+                "name": "人棉",
+                "percentage": 85
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 130,
+        "metersPerKg": 5.13,
+        "empty": 91,
+        "keywords": [
+            "双股树皮皱130g",
+            "123色",
+            "832#",
+            "双股树皮皱（纤维麻）",
+            "150cm",
+            "130g",
+            "15%锦纶85%人棉"
+        ],
+        "colors": 123,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-A801",
+        "myid": "T108A",
+        "productNo": "A801#",
+        "name": "曲天丝",
+        "fullname": "曲天丝",
+        "slug": "cad4178c0de7509c",
+        "description": "",
+        "whitePrice": 5.2,
+        "colorPrice": 5.5,
+        "samplePrice": 7.0,
+        "fullPrice": 6.04,
+        "images": [
+            "/images/products/A801/01.jpg",
+            "/images/products/A801/02.jpg"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 90
+            },
+            {
+                "name": "涤纶",
+                "percentage": 10
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 58,
+        "metersPerKg": 11.49,
+        "empty": 91,
+        "keywords": [
+            "曲天丝",
+            "88色",
+            "A801#",
+            "曲天丝",
+            "150cm",
+            "58g",
+            "90%天丝10%涤"
+        ],
+        "colors": 88,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-B801",
+        "myid": "T108B",
+        "productNo": "B801#",
+        "name": "曲天丝",
+        "fullname": "曲天丝",
+        "slug": "cad4178c0de7509c",
+        "description": "",
+        "whitePrice": 4.5,
+        "colorPrice": 4.6,
+        "samplePrice": 5.0,
+        "fullPrice": 4.6,
+        "images": [
+            "/images/products/B801/01.jpg",
+            "/images/products/B801/02.jpg",
+            "/images/products/B801/03.jpg"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 90
+            },
+            {
+                "name": "涤纶",
+                "percentage": 10
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 55,
+        "metersPerKg": 12.12,
+        "empty": 100,
+        "keywords": [
+            "曲天丝",
+            "88色",
+            "B801#",
+            "曲天丝",
+            "150cm",
+            "55g",
+            "90%天丝10%涤"
+        ],
+        "colors": 88,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-703",
+        "myid": "N307",
+        "productNo": "703#",
+        "name": "天丝麻",
+        "fullname": "天丝麻165-170克",
+        "slug": "39eedf3cfdc7e928",
+        "description": "",
+        "whitePrice": 0.0,
+        "colorPrice": 5.7,
+        "samplePrice": 8.0,
+        "fullPrice": 5.76,
+        "images": [
+            "/images/products/703/01.jpg",
+            "/images/products/703/02.jpg",
+            "/images/products/703/03.jpg"
+        ],
+        "category": "仿牛仔",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 50
+            },
+            {
+                "name": "人棉",
+                "percentage": 50
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 165,
+        "metersPerKg": 4.04,
+        "empty": 99,
+        "keywords": [
+            "天丝麻165-170克",
+            "0色",
+            "703#",
+            "天丝麻",
+            "150cm",
+            "165-170g",
+            "50%涤50%人棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-713",
+        "myid": "N317",
+        "productNo": "713#",
+        "name": "天丝棉",
+        "fullname": "天丝棉140-145克",
+        "slug": "1f8f916621cd1975",
+        "description": "",
+        "whitePrice": 0.0,
+        "colorPrice": 6.3,
+        "samplePrice": 8.0,
+        "fullPrice": 6.36,
+        "images": [
+            "/images/products/713/01.jpg",
+            "/images/products/713/02.jpg",
+            "/images/products/713/03.jpg"
+        ],
+        "category": "仿牛仔",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 30
+            },
+            {
+                "name": "人棉",
+                "percentage": 70
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 140,
+        "metersPerKg": 4.76,
+        "empty": 99,
+        "keywords": [
+            "天丝棉140-145克",
+            "0色",
+            "713#",
+            "天丝棉",
+            "150cm",
+            "140-145g",
+            "30%涤70%人棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-726",
+        "myid": "N627",
+        "productNo": "726#",
+        "name": "32支斜纹",
+        "fullname": "32支斜纹145克",
+        "slug": "5c6a5e788c043c5f",
+        "description": "",
+        "whitePrice": 0.0,
+        "colorPrice": 6.6,
+        "samplePrice": 8.0,
+        "fullPrice": 6.67,
+        "images": [
+            "/images/products/726/01.jpg",
+            "/images/products/726/02.jpg"
+        ],
+        "category": "仿牛仔",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 60
+            },
+            {
+                "name": "人棉",
+                "percentage": 40
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 145,
+        "metersPerKg": 4.6,
+        "empty": 99,
+        "keywords": [
+            "32支斜纹145克",
+            "0色",
+            "726#",
+            "32支斜纹",
+            "150cm",
+            "145g",
+            "60%涤40%人棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-746",
+        "myid": "N647",
+        "productNo": "746#",
+        "name": "3236免洗牛仔",
+        "fullname": "3236免洗牛仔160克",
+        "slug": "3f1e5b0368e189cc",
+        "description": "",
+        "whitePrice": 0.0,
+        "colorPrice": 8.6,
+        "samplePrice": 10.0,
+        "fullPrice": 8.69,
+        "images": [
+            "/images/products/746/01.jpg",
+            "/images/products/746/02.jpg",
+            "/images/products/746/03.jpg"
+        ],
+        "category": "仿牛仔",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 30
+            },
+            {
+                "name": "人棉",
+                "percentage": 70
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 160,
+        "metersPerKg": 4.17,
+        "empty": 99,
+        "keywords": [
+            "3236免洗牛仔160克",
+            "0色",
+            "746#",
+            "3236免洗牛仔",
+            "150cm",
+            "160g",
+            "30%涤70%人棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-501",
+        "myid": "L105",
+        "productNo": "501#",
+        "name": "乐丽丝玲珑麻（起皱竹节）",
+        "fullname": "乐丽丝玲珑麻135克",
+        "slug": "7549794362d6a1e4",
+        "description": "",
+        "whitePrice": 3.2,
+        "colorPrice": 3.3,
+        "samplePrice": 5.0,
+        "fullPrice": 3.63,
+        "images": [
+            "/images/products/501/00.png",
+            "/images/products/501/01.jpg",
+            "/images/products/501/02.jpg",
+            "/images/products/501/03.jpg",
+            "/images/products/501/04.jpg",
+            "/images/products/501/05.jpg",
+            "/images/products/501/06.jpg",
+            "/images/products/501/07.jpg",
+            "/images/products/501/index.png",
+            "/images/products/501/part10.png",
+            "/images/products/501/part20.png"
+        ],
+        "category": "乐丽丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 135,
+        "metersPerKg": 4.94,
+        "empty": 91,
+        "keywords": [
+            "乐丽丝玲珑麻135克",
+            "88色",
+            "501#",
+            "乐丽丝玲珑麻（起皱竹节）",
+            "150cm",
+            "135g",
+            "100%全涤"
+        ],
+        "colors": 88,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-502",
+        "myid": "L205",
+        "productNo": "502#",
+        "name": "乐丽丝双色平纹（平纹麻）",
+        "fullname": "乐丽丝双色平纹135克",
+        "slug": "51d108f6a222321c",
+        "description": "",
+        "whitePrice": 3.4,
+        "colorPrice": 3.6,
+        "samplePrice": 6.0,
+        "fullPrice": 3.96,
+        "images": [
+            "/images/products/502/00.png",
+            "/images/products/502/01.jpg",
+            "/images/products/502/02.jpg",
+            "/images/products/502/03.jpg",
+            "/images/products/502/04.jpg",
+            "/images/products/502/05.jpg",
+            "/images/products/502/06.jpg",
+            "/images/products/502/07.jpg",
+            "/images/products/502/08.jpg",
+            "/images/products/502/index.png",
+            "/images/products/502/part10.png",
+            "/images/products/502/part20.png"
+        ],
+        "category": "乐丽丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 135,
+        "metersPerKg": 4.94,
+        "empty": 91,
+        "keywords": [
+            "乐丽丝双色平纹135克",
+            "70色",
+            "502#",
+            "乐丽丝双色平纹（平纹麻）",
+            "150cm",
+            "135g",
+            "100%全涤"
+        ],
+        "colors": 70,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-503",
+        "myid": "L305",
+        "productNo": "503#",
+        "name": "乐丽丝直条（隐条）",
+        "fullname": "乐丽丝直条135克",
+        "slug": "8b54c3f9389b8b83",
+        "description": "",
+        "whitePrice": 4.7,
+        "colorPrice": 4.9,
+        "samplePrice": 8.0,
+        "fullPrice": 5.38,
+        "images": [
+            "/images/products/503/00.png",
+            "/images/products/503/01.jpg",
+            "/images/products/503/02.jpg",
+            "/images/products/503/03.jpg",
+            "/images/products/503/04.jpg",
+            "/images/products/503/05.jpg",
+            "/images/products/503/06.jpg",
+            "/images/products/503/07.jpg",
+            "/images/products/503/index.png",
+            "/images/products/503/part10.png",
+            "/images/products/503/part20.png"
+        ],
+        "category": "乐丽丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 135,
+        "metersPerKg": 4.94,
+        "empty": 91,
+        "keywords": [
+            "乐丽丝直条135克",
+            "66色",
+            "503#",
+            "乐丽丝直条（隐条）",
+            "150cm",
+            "135g",
+            "100%全涤"
+        ],
+        "colors": 66,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-504",
+        "myid": "L405",
+        "productNo": "504#",
+        "name": "乐丽丝波浪条",
+        "fullname": "乐丽丝波浪条135克",
+        "slug": "cf0e9fb582080269",
+        "description": "",
+        "whitePrice": 4.7,
+        "colorPrice": 4.9,
+        "samplePrice": 8.0,
+        "fullPrice": 5.38,
+        "images": [
+            "/images/products/504/00.png",
+            "/images/products/504/01.jpg",
+            "/images/products/504/02.jpg",
+            "/images/products/504/03.jpg",
+            "/images/products/504/04.jpg",
+            "/images/products/504/05.jpg",
+            "/images/products/504/06.jpg",
+            "/images/products/504/07.jpg",
+            "/images/products/504/08.jpg",
+            "/images/products/504/index.png",
+            "/images/products/504/part10.png",
+            "/images/products/504/part20.png"
+        ],
+        "category": "乐丽丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 135,
+        "metersPerKg": 4.94,
+        "empty": 91,
+        "keywords": [
+            "乐丽丝波浪条135克",
+            "66色",
+            "504#",
+            "乐丽丝波浪条",
+            "150cm",
+            "135g",
+            "100%全涤"
+        ],
+        "colors": 66,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-505",
+        "myid": "L505",
+        "productNo": "505#",
+        "name": "乐丽丝宝格丽（珍珠条）",
+        "fullname": "乐丽丝宝格丽135克",
+        "slug": "7faed2ba7e6b28bf",
+        "description": "",
+        "whitePrice": 4.8,
+        "colorPrice": 5.0,
+        "samplePrice": 8.0,
+        "fullPrice": 5.49,
+        "images": [
+            "/images/products/505/00.png",
+            "/images/products/505/01.jpg",
+            "/images/products/505/02.jpg",
+            "/images/products/505/03.jpg",
+            "/images/products/505/04.jpg",
+            "/images/products/505/05.jpg",
+            "/images/products/505/06.jpg",
+            "/images/products/505/07.jpg",
+            "/images/products/505/08.jpg",
+            "/images/products/505/index.png",
+            "/images/products/505/part10.png",
+            "/images/products/505/part20.png"
+        ],
+        "category": "乐丽丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 135,
+        "metersPerKg": 4.94,
+        "empty": 91,
+        "keywords": [
+            "乐丽丝宝格丽135克",
+            "66色",
+            "505#",
+            "乐丽丝宝格丽（珍珠条）",
+            "150cm",
+            "135g",
+            "100%全涤"
+        ],
+        "colors": 66,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-506",
+        "myid": "L605",
+        "productNo": "506#",
+        "name": "乐丽丝菱形条",
+        "fullname": "乐丽丝菱形条135克",
+        "slug": "2b09067fb2d1fd15",
+        "description": "",
+        "whitePrice": 4.5,
+        "colorPrice": 4.7,
+        "samplePrice": 8.0,
+        "fullPrice": 5.16,
+        "images": [
+            "/images/products/506/00.png",
+            "/images/products/506/01.jpg",
+            "/images/products/506/02.jpg",
+            "/images/products/506/03.jpg",
+            "/images/products/506/04.jpg",
+            "/images/products/506/05.jpg",
+            "/images/products/506/06.jpg",
+            "/images/products/506/07.jpg",
+            "/images/products/506/index.png",
+            "/images/products/506/part10.png",
+            "/images/products/506/part20.png"
+        ],
+        "category": "乐丽丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 135,
+        "metersPerKg": 4.94,
+        "empty": 91,
+        "keywords": [
+            "乐丽丝菱形条135克",
+            "66色",
+            "506#",
+            "乐丽丝菱形条",
+            "150cm",
+            "135g",
+            "100%全涤"
+        ],
+        "colors": 66,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-507",
+        "myid": "L705",
+        "productNo": "507#",
+        "name": "乐丽丝仿麻",
+        "fullname": "乐丽丝仿麻135克",
+        "slug": "c815a1f63678b890",
+        "description": "",
+        "whitePrice": 3.8,
+        "colorPrice": 3.9,
+        "samplePrice": 6.0,
+        "fullPrice": 4.29,
+        "images": [
+            "/images/products/507/00.png",
+            "/images/products/507/01.jpg",
+            "/images/products/507/02.jpg",
+            "/images/products/507/03.jpg",
+            "/images/products/507/04.jpg",
+            "/images/products/507/05.jpg",
+            "/images/products/507/06.jpg",
+            "/images/products/507/07.jpg",
+            "/images/products/507/08.jpg",
+            "/images/products/507/09.jpg",
+            "/images/products/507/10.jpg",
+            "/images/products/507/index.png",
+            "/images/products/507/part10.png",
+            "/images/products/507/part20.png"
+        ],
+        "category": "乐丽丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 97
+            },
+            {
+                "name": "氨纶",
+                "percentage": 3
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 135,
+        "metersPerKg": 4.94,
+        "empty": 91,
+        "keywords": [
+            "乐丽丝仿麻135克",
+            "88色",
+            "507#",
+            "乐丽丝仿麻",
+            "150cm",
+            "135g",
+            "97%涤纶3%氨纶"
+        ],
+        "colors": 88,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-508",
+        "myid": "L805",
+        "productNo": "508#",
+        "name": "乐丽丝猫眼",
+        "fullname": "乐丽丝猫眼135克",
+        "slug": "c65de1e7e99eeb4c",
+        "description": "",
+        "whitePrice": 3.2,
+        "colorPrice": 3.4,
+        "samplePrice": 6.0,
+        "fullPrice": 3.74,
+        "images": [
+            "/images/products/508/00.png",
+            "/images/products/508/01.jpg",
+            "/images/products/508/02.jpg",
+            "/images/products/508/03.jpg",
+            "/images/products/508/04.jpg",
+            "/images/products/508/05.jpg",
+            "/images/products/508/06.jpg",
+            "/images/products/508/07.jpg",
+            "/images/products/508/08.jpg",
+            "/images/products/508/index.png",
+            "/images/products/508/part10.png",
+            "/images/products/508/part20.png"
+        ],
+        "category": "乐丽丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 135,
+        "metersPerKg": 4.94,
+        "empty": 91,
+        "keywords": [
+            "乐丽丝猫眼135克",
+            "70色",
+            "508#",
+            "乐丽丝猫眼",
+            "150cm",
+            "135g",
+            "100%全涤"
+        ],
+        "colors": 70,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-101",
+        "myid": "T101",
+        "productNo": "101#",
+        "name": "天维丝（天丝字母条）",
+        "fullname": "天维丝（天丝字母条）",
+        "slug": "79f265b010f1e6fb",
+        "description": "",
+        "whitePrice": 6.4,
+        "colorPrice": 6.6,
+        "samplePrice": 10.0,
+        "fullPrice": 7.25,
+        "images": [
+            "/images/products/101/01.jpg",
+            "/images/products/101/02.jpg",
+            "/images/products/101/03.jpg"
+        ],
+        "category": "天丝",
+        "type": "面料",
+        "content": [
+            {
+                "name": "天丝",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 95,
+        "metersPerKg": 7.02,
+        "empty": 91,
+        "keywords": [
+            "天维丝（天丝字母条）",
+            "88色",
+            "101#",
+            "天维丝（天丝字母条）",
+            "150cm",
+            "95g",
+            "100%莱塞尔天丝"
+        ],
+        "colors": 88,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-601",
+        "myid": "X106",
+        "productNo": "601#",
+        "name": "75D珍珠雪纺",
+        "fullname": "75D珍珠雪纺85克",
+        "slug": "420592a424d0d61a",
+        "description": "",
+        "whitePrice": 3.1,
+        "colorPrice": 3.9,
+        "samplePrice": 5.0,
+        "fullPrice": 4.29,
+        "images": [
+            "/images/products/601/01.jpg",
+            "/images/products/601/02.jpg"
+        ],
+        "category": "绣花印花底布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 85,
+        "metersPerKg": 7.84,
+        "empty": 91,
+        "keywords": [
+            "75D珍珠雪纺85克",
+            "0色",
+            "601#",
+            "75D珍珠雪纺",
+            "150cm",
+            "85g",
+            "100%全涤"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-602",
+        "myid": "X206",
+        "productNo": "602#",
+        "name": "75D雪纺皱",
+        "fullname": "75D雪纺皱85克",
+        "slug": "36d8ea1be359d624",
+        "description": "",
+        "whitePrice": 3.1,
+        "colorPrice": 3.7,
+        "samplePrice": 5.0,
+        "fullPrice": 4.07,
+        "images": [
+            "/images/products/602/01.jpg",
+            "/images/products/602/02.jpg",
+            "/images/products/602/03.jpg"
+        ],
+        "category": "绣花印花底布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 85,
+        "metersPerKg": 7.84,
+        "empty": 91,
+        "keywords": [
+            "75D雪纺皱85克",
+            "0色",
+            "602#",
+            "75D雪纺皱",
+            "150cm",
+            "85g",
+            "100%全涤"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-603",
+        "myid": "X306",
+        "productNo": "603#",
+        "name": "30D真丝皱",
+        "fullname": "30D真丝皱35克",
+        "slug": "bf0bf9b68cabcdd9",
+        "description": "",
+        "whitePrice": 3.65,
+        "colorPrice": 3.85,
+        "samplePrice": 5.0,
+        "fullPrice": 4.23,
+        "images": [
+            "/images/products/603/01.jpg",
+            "/images/products/603/02.jpg",
+            "/images/products/603/03.jpg",
+            "/images/products/603/04.jpg"
+        ],
+        "category": "绣花印花底布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 160,
+        "weight": 35,
+        "metersPerKg": 17.86,
+        "empty": 91,
+        "keywords": [
+            "30D真丝皱35克",
+            "0色",
+            "603#",
+            "30D真丝皱",
+            "160cm",
+            "35g",
+            "100%全涤"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-604",
+        "myid": "X406",
+        "productNo": "604#",
+        "name": "全涤闪光天丝\n（可数码印花）",
+        "fullname": "全涤闪光天丝60克",
+        "slug": "8d2ff56bf2bcb564",
+        "description": "",
+        "whitePrice": 6.3,
+        "colorPrice": 0.0,
+        "samplePrice": 7.0,
+        "fullPrice": 6.3,
+        "images": [
+            "/images/products/604/01.jpg",
+            "/images/products/604/02.jpg",
+            "/images/products/604/03.jpg"
+        ],
+        "category": "绣花印花底布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 60,
+        "metersPerKg": 11.11,
+        "empty": 93,
+        "keywords": [
+            "全涤闪光天丝60克",
+            "0色",
+            "604#",
+            "全涤闪光天丝\n（可数码印花）",
+            "150cm",
+            "60g",
+            "100%全涤"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-605",
+        "myid": "X506",
+        "productNo": "605#",
+        "name": "麻纱",
+        "fullname": "麻纱65克",
+        "slug": "8002532ccf4c0d7c",
+        "description": "",
+        "whitePrice": 2.9,
+        "colorPrice": 3.8,
+        "samplePrice": 5.0,
+        "fullPrice": 3.88,
+        "images": [
+            "/images/products/605/01.jpg",
+            "/images/products/605/02.jpg",
+            "/images/products/605/03.jpg"
+        ],
+        "category": "绣花印花底布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 65,
+        "metersPerKg": 10.26,
+        "empty": 98,
+        "keywords": [
+            "麻纱65克",
+            "0色",
+            "605#",
+            "麻纱",
+            "150cm",
+            "65g",
+            "100%全涤"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-606",
+        "myid": "X606",
+        "productNo": "606#",
+        "name": "40支棉感竹节",
+        "fullname": "40支棉感竹节95克",
+        "slug": "addc5f8300dda44c",
+        "description": "",
+        "whitePrice": 4.9,
+        "colorPrice": 0.0,
+        "samplePrice": 0.0,
+        "fullPrice": 4.9,
+        "images": [
+            "/images/products/606/01.jpg",
+            "/images/products/606/02.jpg",
+            "/images/products/606/03.jpg"
+        ],
+        "category": "绣花印花底布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "聚酯纤维",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 95,
+        "metersPerKg": 7.02,
+        "empty": 100,
+        "keywords": [
+            "40支棉感竹节95克",
+            "0色",
+            "606#",
+            "40支棉感竹节",
+            "150cm",
+            "95g",
+            "100%聚酯纤维"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-607",
+        "myid": "X706",
+        "productNo": "607#",
+        "name": "双碱雪纺皱",
+        "fullname": "双碱雪纺皱85克",
+        "slug": "3661f0fe41c029a2",
+        "description": "",
+        "whitePrice": 3.9,
+        "colorPrice": 0.0,
+        "samplePrice": 5.0,
+        "fullPrice": 3.9,
+        "images": [
+            "/images/products/607/01.jpg",
+            "/images/products/607/02.jpg",
+            "/images/products/607/03.jpg"
+        ],
+        "category": "绣花印花底布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 85,
+        "metersPerKg": 7.84,
+        "empty": 100,
+        "keywords": [
+            "双碱雪纺皱85克",
+            "0色",
+            "607#",
+            "双碱雪纺皱",
+            "150cm",
+            "85g",
+            "100%全涤"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-608",
+        "myid": "X806",
+        "productNo": "608#",
+        "name": "加密珍珠雪纺（高品质）",
+        "fullname": "加密珍珠雪纺100克",
+        "slug": "a8a18feba5e5e7e7",
+        "description": "",
+        "whitePrice": 3.9,
+        "colorPrice": 4.1,
+        "samplePrice": 6.0,
+        "fullPrice": 4.51,
+        "images": [
+            "/images/products/608/01.jpg"
+        ],
+        "category": "绣花印花底布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 100,
+        "metersPerKg": 6.67,
+        "empty": 91,
+        "keywords": [
+            "加密珍珠雪纺100克",
+            "0色",
+            "608#",
+            "加密珍珠雪纺（高品质）",
+            "150cm",
+            "100g",
+            "100%全涤"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-609",
+        "myid": "X906",
+        "productNo": "609#",
+        "name": "花瑶皱",
+        "fullname": "花瑶皱85克",
+        "slug": "af9e0e36de3c56c5",
+        "description": "",
+        "whitePrice": 3.0,
+        "colorPrice": 0.0,
+        "samplePrice": 5.0,
+        "fullPrice": 3.0,
+        "images": [
+            "/images/products/609/01.jpg",
+            "/images/products/609/02.jpg",
+            "/images/products/609/03.jpg"
+        ],
+        "category": "绣花印花底布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "涤纶",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 152,
+        "weight": 85,
+        "metersPerKg": 7.74,
+        "empty": 91,
+        "keywords": [
+            "花瑶皱85克",
+            "0色",
+            "609#",
+            "花瑶皱",
+            "152cm",
+            "85g",
+            "100%全涤"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-901",
+        "myid": "M109",
+        "productNo": "901#",
+        "name": "2060洗水竹节",
+        "fullname": "2060洗水竹节100克",
+        "slug": "2f13d99cb5087df9",
+        "description": "",
+        "whitePrice": 4.7,
+        "colorPrice": 5.2,
+        "samplePrice": 8.0,
+        "fullPrice": 5.71,
+        "images": [
+            "/images/products/901/00.png",
+            "/images/products/901/01.jpg",
+            "/images/products/901/02.jpg",
+            "/images/products/901/03.jpg",
+            "/images/products/901/04.jpg",
+            "/images/products/901/05.jpg",
+            "/images/products/901/06.jpg",
+            "/images/products/901/07.jpg",
+            "/images/products/901/08.jpg",
+            "/images/products/901/09.jpg",
+            "/images/products/901/10.jpg",
+            "/images/products/901/11.jpg",
+            "/images/products/901/12.jpg",
+            "/images/products/901/13.jpg",
+            "/images/products/901/14.jpg",
+            "/images/products/901/15.jpg",
+            "/images/products/901/16.jpg",
+            "/images/products/901/17.jpg",
+            "/images/products/901/index.png",
+            "/images/products/901/part10.png",
+            "/images/products/901/part20.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 100,
+        "metersPerKg": 6.67,
+        "empty": 91,
+        "keywords": [
+            "2060洗水竹节100克",
+            "186色",
+            "901#",
+            "2060洗水竹节",
+            "150cm",
+            "100g",
+            "100%全棉"
+        ],
+        "colors": 186,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-903",
+        "myid": "M309",
+        "productNo": "903#",
+        "name": "4438#高品质",
+        "fullname": "4438高品质180克",
+        "slug": "9ae07557b91f18d1",
+        "description": "",
+        "whitePrice": 6.0,
+        "colorPrice": 5.7,
+        "samplePrice": 9.0,
+        "fullPrice": 5.76,
+        "images": [
+            "/images/products/903/00.png",
+            "/images/products/903/01.jpg",
+            "/images/products/903/02.jpg",
+            "/images/products/903/03.jpg",
+            "/images/products/903/04.jpg",
+            "/images/products/903/05.jpg",
+            "/images/products/903/06.jpg",
+            "/images/products/903/07.jpg",
+            "/images/products/903/08.jpg",
+            "/images/products/903/09.jpg",
+            "/images/products/903/10.jpg",
+            "/images/products/903/11.jpg",
+            "/images/products/903/12.jpg",
+            "/images/products/903/13.jpg",
+            "/images/products/903/14.jpg",
+            "/images/products/903/index.png",
+            "/images/products/903/part10.png",
+            "/images/products/903/part20.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 50
+            },
+            {
+                "name": "亚麻",
+                "percentage": 30
+            },
+            {
+                "name": "涤纶",
+                "percentage": 20
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 140,
+        "weight": 180,
+        "metersPerKg": 3.97,
+        "empty": 99,
+        "keywords": [
+            "4438高品质180克",
+            "168色",
+            "903#",
+            "4438#高品质",
+            "140cm",
+            "180g",
+            "50%棉30%亚麻20%涤"
+        ],
+        "colors": 168,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-904",
+        "myid": "M409",
+        "productNo": "904#",
+        "name": "加厚砂洗竹节（高品质）",
+        "fullname": "加厚砂洗竹节145克",
+        "slug": "c3e29ec1d1ab0283",
+        "description": "",
+        "whitePrice": 6.7,
+        "colorPrice": 7.1,
+        "samplePrice": 10.0,
+        "fullPrice": 7.8,
+        "images": [
+            "/images/products/904/00.png",
+            "/images/products/904/01.jpg",
+            "/images/products/904/02.jpg",
+            "/images/products/904/03.jpg",
+            "/images/products/904/04.jpg",
+            "/images/products/904/05.jpg",
+            "/images/products/904/06.jpg",
+            "/images/products/904/07.jpg",
+            "/images/products/904/08.jpg",
+            "/images/products/904/09.jpg",
+            "/images/products/904/10.jpg",
+            "/images/products/904/11.jpg",
+            "/images/products/904/12.jpg",
+            "/images/products/904/13.jpg",
+            "/images/products/904/14.jpg",
+            "/images/products/904/index.png",
+            "/images/products/904/part10.png",
+            "/images/products/904/part20.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 145,
+        "weight": 145,
+        "metersPerKg": 4.76,
+        "empty": 91,
+        "keywords": [
+            "加厚砂洗竹节145克",
+            "159色",
+            "904#",
+            "加厚砂洗竹节（高品质）",
+            "145cm",
+            "145g",
+            "100%全棉"
+        ],
+        "colors": 159,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-912",
+        "myid": "M219",
+        "productNo": "912#",
+        "name": "加厚双层平布",
+        "fullname": "加厚双层平布125克",
+        "slug": "0820d9f5bec2fa88",
+        "description": "",
+        "whitePrice": 7.1,
+        "colorPrice": 7.4,
+        "samplePrice": 10.0,
+        "fullPrice": 8.13,
+        "images": [
+            "/images/products/912/00.png",
+            "/images/products/912/01.jpg",
+            "/images/products/912/02.jpg",
+            "/images/products/912/03.jpg",
+            "/images/products/912/04.jpg",
+            "/images/products/912/05.jpg",
+            "/images/products/912/index.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 125,
+        "metersPerKg": 5.33,
+        "empty": 91,
+        "keywords": [
+            "加厚双层平布125克",
+            "86色",
+            "912#",
+            "加厚双层平布",
+            "150cm",
+            "125g",
+            "100%棉"
+        ],
+        "colors": 86,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-907",
+        "myid": "M709",
+        "productNo": "907#",
+        "name": "20支洗水皱",
+        "fullname": "20支洗水皱130克",
+        "slug": "dd32c9f2a581b541",
+        "description": "",
+        "whitePrice": 5.0,
+        "colorPrice": 5.4,
+        "samplePrice": 8.0,
+        "fullPrice": 5.93,
+        "images": [
+            "/images/products/907/00.png",
+            "/images/products/907/01.jpg",
+            "/images/products/907/02.jpg",
+            "/images/products/907/03.jpg",
+            "/images/products/907/04.jpg",
+            "/images/products/907/05.jpg",
+            "/images/products/907/06.jpg",
+            "/images/products/907/07.jpg",
+            "/images/products/907/08.jpg",
+            "/images/products/907/09.jpg",
+            "/images/products/907/10.jpg",
+            "/images/products/907/11.jpg",
+            "/images/products/907/index.png",
+            "/images/products/907/part10.png",
+            "/images/products/907/part20.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 140,
+        "weight": 130,
+        "metersPerKg": 5.49,
+        "empty": 91,
+        "keywords": [
+            "20支洗水皱130克",
+            "301色",
+            "907#",
+            "20支洗水皱",
+            "140cm",
+            "130g",
+            "100%全棉"
+        ],
+        "colors": 301,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-911",
+        "myid": "M119",
+        "productNo": "911#",
+        "name": "天然麻",
+        "fullname": "天然麻140克",
+        "slug": "1846b43fadb84e99",
+        "description": "",
+        "whitePrice": 6.6,
+        "colorPrice": 6.9,
+        "samplePrice": 10.0,
+        "fullPrice": 7.58,
+        "images": [
+            "/images/products/911/01.jpg",
+            "/images/products/911/02.jpg",
+            "/images/products/911/03.jpg"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 50
+            },
+            {
+                "name": "人棉",
+                "percentage": 50
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 145,
+        "metersPerKg": 4.6,
+        "empty": 91,
+        "keywords": [
+            "天然麻140克",
+            "171色",
+            "911#",
+            "天然麻",
+            "150cm",
+            "145g",
+            "50%棉50%人棉"
+        ],
+        "colors": 171,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-905",
+        "myid": "M509",
+        "productNo": "905#",
+        "name": "双层皱布",
+        "fullname": "双层皱布125克",
+        "slug": "46a7fb8848a5a361",
+        "description": "",
+        "whitePrice": 6.7,
+        "colorPrice": 7.2,
+        "samplePrice": 9.0,
+        "fullPrice": 7.91,
+        "images": [
+            "/images/products/905/00.png",
+            "/images/products/905/01.jpg",
+            "/images/products/905/02.jpg",
+            "/images/products/905/03.jpg",
+            "/images/products/905/index.png",
+            "/images/products/905/part10.png",
+            "/images/products/905/part20.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 135,
+        "weight": 125,
+        "metersPerKg": 5.93,
+        "empty": 91,
+        "keywords": [
+            "双层皱布125克",
+            "0色",
+            "905#",
+            "双层皱布",
+            "135cm",
+            "125g",
+            "100%全棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-906",
+        "myid": "M609",
+        "productNo": "906#",
+        "name": "12*12粘麻竹节砂洗",
+        "fullname": "12*12粘麻竹节砂洗210克",
+        "slug": "084c97dde9cfdefa",
+        "description": "",
+        "whitePrice": 9.3,
+        "colorPrice": 8.8,
+        "samplePrice": 12.0,
+        "fullPrice": 9.07,
+        "images": [
+            "/images/products/906/00.png",
+            "/images/products/906/01.jpg",
+            "/images/products/906/02.jpg",
+            "/images/products/906/index.png",
+            "/images/products/906/part10.png",
+            "/images/products/906/part20.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "粘",
+                "percentage": 70
+            },
+            {
+                "name": "亚麻",
+                "percentage": 30
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 140,
+        "weight": 210,
+        "metersPerKg": 3.4,
+        "empty": 97,
+        "keywords": [
+            "12*12粘麻竹节砂洗210克",
+            "0色",
+            "906#",
+            "12*12粘麻竹节砂洗",
+            "140cm",
+            "210g",
+            "70%粘30%亚麻"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-908",
+        "myid": "M809",
+        "productNo": "908#",
+        "name": "9088半工艺",
+        "fullname": "9088半工艺60克",
+        "slug": "edd5f3deccc73eef",
+        "description": "",
+        "whitePrice": 4.2,
+        "colorPrice": 4.6,
+        "samplePrice": 6.0,
+        "fullPrice": 4.6,
+        "images": [
+            "/images/products/908/00.png",
+            "/images/products/908/01.jpg",
+            "/images/products/908/02.jpg",
+            "/images/products/908/index.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 60,
+        "metersPerKg": 11.11,
+        "empty": 100,
+        "keywords": [
+            "9088半工艺60克",
+            "0色",
+            "908#",
+            "9088半工艺",
+            "150cm",
+            "60g",
+            "100%全棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-909",
+        "myid": "M909",
+        "productNo": "909#",
+        "name": "9088全工艺",
+        "fullname": "9088全工艺75克",
+        "slug": "e5667bb21ab10d67",
+        "description": "",
+        "whitePrice": 4.9,
+        "colorPrice": 5.4,
+        "samplePrice": 7.0,
+        "fullPrice": 5.4,
+        "images": [
+            "/images/products/909/01.jpg",
+            "/images/products/909/02.jpg"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 150,
+        "weight": 75,
+        "metersPerKg": 8.89,
+        "empty": 100,
+        "keywords": [
+            "9088全工艺75克",
+            "0色",
+            "909#",
+            "9088全工艺",
+            "150cm",
+            "75g",
+            "100%全棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-910",
+        "myid": "M019",
+        "productNo": "910#",
+        "name": "40支平纹仿天丝",
+        "fullname": "40支平纹仿天丝125克",
+        "slug": "c9bfabb814fa49f9",
+        "description": "",
+        "whitePrice": 7.0,
+        "colorPrice": 7.5,
+        "samplePrice": 9.0,
+        "fullPrice": 8.15,
+        "images": [
+            "/images/products/910/01.jpg",
+            "/images/products/910/02.jpg"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 156,
+        "weight": 125,
+        "metersPerKg": 5.13,
+        "empty": 92,
+        "keywords": [
+            "40支平纹仿天丝125克",
+            "0色",
+            "910#",
+            "40支平纹仿天丝",
+            "156cm",
+            "125g",
+            "100%全棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-913",
+        "myid": "M319",
+        "productNo": "913#",
+        "name": "24支砂洗竹节",
+        "fullname": "24支砂洗竹节110克",
+        "slug": "da7824d4422e7db9",
+        "description": "",
+        "whitePrice": 5.8,
+        "colorPrice": 0.0,
+        "samplePrice": 8.0,
+        "fullPrice": 5.8,
+        "images": [
+            "/images/products/913/01.jpg",
+            "/images/products/913/02.jpg"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 145,
+        "weight": 110,
+        "metersPerKg": 6.27,
+        "empty": 91,
+        "keywords": [
+            "24支砂洗竹节110克",
+            "0色",
+            "913#",
+            "24支砂洗竹节",
+            "145cm",
+            "110g",
+            "100%棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-914",
+        "myid": "M419",
+        "productNo": "914#",
+        "name": "高密2060竹节",
+        "fullname": "高密2060竹节120克",
+        "slug": "688940a85e7be8ae",
+        "description": "",
+        "whitePrice": 5.6,
+        "colorPrice": 6.1,
+        "samplePrice": 8.0,
+        "fullPrice": 6.7,
+        "images": [
+            "/images/products/914/01.jpg",
+            "/images/products/914/02.jpg",
+            "/images/products/914/03.jpg"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 145,
+        "weight": 120,
+        "metersPerKg": 5.75,
+        "empty": 91,
+        "keywords": [
+            "高密2060竹节120克",
+            "0色",
+            "914#",
+            "高密2060竹节",
+            "145cm",
+            "120g",
+            "100%棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-915",
+        "myid": "M519",
+        "productNo": "915#",
+        "name": "高密洗水皱",
+        "fullname": "高密洗水皱135克",
+        "slug": "5f822b8b7ba13760",
+        "description": "",
+        "whitePrice": 5.3,
+        "colorPrice": 5.8,
+        "samplePrice": 7.0,
+        "fullPrice": 6.37,
+        "images": [
+            "/images/products/915/00.png",
+            "/images/products/915/01.jpg",
+            "/images/products/915/02.jpg",
+            "/images/products/915/03.jpg",
+            "/images/products/915/04.jpg",
+            "/images/products/915/index.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 145,
+        "weight": 135,
+        "metersPerKg": 5.11,
+        "empty": 91,
+        "keywords": [
+            "高密洗水皱135克",
+            "0色",
+            "915#",
+            "高密洗水皱",
+            "145cm",
+            "135g",
+            "100%棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-916",
+        "myid": "M619",
+        "productNo": "916#",
+        "name": "洗水皱（145克）",
+        "fullname": "洗水皱145克",
+        "slug": "8d01b8a60fa5e072",
+        "description": "",
+        "whitePrice": 6.8,
+        "colorPrice": 7.0,
+        "samplePrice": 9.0,
+        "fullPrice": 7.69,
+        "images": [
+            "/images/products/916/00.png",
+            "/images/products/916/01.jpg",
+            "/images/products/916/02.jpg",
+            "/images/products/916/03.jpg",
+            "/images/products/916/04.jpg",
+            "/images/products/916/05.jpg",
+            "/images/products/916/06.jpg",
+            "/images/products/916/index.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "棉",
+                "percentage": 100
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 140,
+        "weight": 145,
+        "metersPerKg": 4.93,
+        "empty": 91,
+        "keywords": [
+            "洗水皱145克",
+            "0色",
+            "916#",
+            "洗水皱（145克）",
+            "140cm",
+            "145g",
+            "100%棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-917",
+        "myid": "M719",
+        "productNo": "917#",
+        "name": "12*12竹节长车",
+        "fullname": "12*12竹节长车185克",
+        "slug": "9665be8af0c1e5bc",
+        "description": "",
+        "whitePrice": 8.3,
+        "colorPrice": 8.0,
+        "samplePrice": 11.0,
+        "fullPrice": 8.08,
+        "images": [
+            "/images/products/917/00.png",
+            "/images/products/917/01.jpg",
+            "/images/products/917/02.jpg",
+            "/images/products/917/03.jpg",
+            "/images/products/917/04.jpg",
+            "/images/products/917/05.jpg",
+            "/images/products/917/06.jpg",
+            "/images/products/917/08.jpg",
+            "/images/products/917/97.jpg",
+            "/images/products/917/index.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "人棉",
+                "percentage": 70
+            },
+            {
+                "name": "亚麻",
+                "percentage": 30
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 140,
+        "weight": 185,
+        "metersPerKg": 3.86,
+        "empty": 99,
+        "keywords": [
+            "12*12竹节长车185克",
+            "0色",
+            "917#",
+            "12*12竹节长车",
+            "140cm",
+            "185g",
+            "70%人棉30%亚麻"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-918",
+        "myid": "M819",
+        "productNo": "918#",
+        "name": "5147麻棉",
+        "fullname": "5147麻棉200克",
+        "slug": "7e278e2f38dc259c",
+        "description": "",
+        "whitePrice": 7.9,
+        "colorPrice": 7.5,
+        "samplePrice": 10.0,
+        "fullPrice": 7.58,
+        "images": [
+            "/images/products/918/00.png",
+            "/images/products/918/01.jpg",
+            "/images/products/918/02.jpg",
+            "/images/products/918/03.jpg",
+            "/images/products/918/04.jpg",
+            "/images/products/918/05.jpg",
+            "/images/products/918/06.jpg",
+            "/images/products/918/07.jpg",
+            "/images/products/918/index.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "亚麻",
+                "percentage": 30
+            },
+            {
+                "name": "人棉",
+                "percentage": 30
+            },
+            {
+                "name": "涤纶",
+                "percentage": 30
+            },
+            {
+                "name": "棉",
+                "percentage": 10
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 140,
+        "weight": 200,
+        "metersPerKg": 3.57,
+        "empty": 99,
+        "keywords": [
+            "5147麻棉200克",
+            "0色",
+            "918#",
+            "5147麻棉",
+            "140cm",
+            "200g",
+            "30%亚麻 30%人棉 30%涤 10%棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-919",
+        "myid": "M919",
+        "productNo": "919#",
+        "name": "2119苎麻棉",
+        "fullname": "2119苎麻棉140克",
+        "slug": "f05809c2d870fc3a",
+        "description": "",
+        "whitePrice": 7.5,
+        "colorPrice": 8.0,
+        "samplePrice": 10.0,
+        "fullPrice": 8.08,
+        "images": [
+            "/images/products/919/00.png",
+            "/images/products/919/01.jpg",
+            "/images/products/919/02.jpg",
+            "/images/products/919/03.jpg",
+            "/images/products/919/04.jpg",
+            "/images/products/919/05.jpg",
+            "/images/products/919/06.jpg",
+            "/images/products/919/index.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "苎麻",
+                "percentage": 10
+            },
+            {
+                "name": "棉",
+                "percentage": 90
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 140,
+        "weight": 140,
+        "metersPerKg": 5.1,
+        "empty": 99,
+        "keywords": [
+            "2119苎麻棉140克",
+            "0色",
+            "919#",
+            "2119苎麻棉",
+            "140cm",
+            "140g",
+            "10%苎麻 90%棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    },
+    {
+        "id": "prod-920",
+        "myid": "M029",
+        "productNo": "920#",
+        "name": "3068麻棉",
+        "fullname": "3068麻棉110克",
+        "slug": "e0a1e4d80938bc3b",
+        "description": "",
+        "whitePrice": 8.5,
+        "colorPrice": 8.0,
+        "samplePrice": 11.0,
+        "fullPrice": 8.08,
+        "images": [
+            "/images/products/920/00.png",
+            "/images/products/920/01.jpg",
+            "/images/products/920/02.jpg",
+            "/images/products/920/03.jpg",
+            "/images/products/920/04.jpg",
+            "/images/products/920/05.jpg",
+            "/images/products/920/06.jpg",
+            "/images/products/920/index.png"
+        ],
+        "category": "棉布",
+        "type": "面料",
+        "content": [
+            {
+                "name": "亚麻",
+                "percentage": 10
+            },
+            {
+                "name": "人棉",
+                "percentage": 80
+            },
+            {
+                "name": "棉",
+                "percentage": 10
+            }
+        ],
+        "tags": [],
+        "inStock": true,
+        "width": 140,
+        "weight": 110,
+        "metersPerKg": 6.49,
+        "empty": 99,
+        "keywords": [
+            "3068麻棉110克",
+            "0色",
+            "920#",
+            "3068麻棉",
+            "140cm",
+            "110g",
+            "10%亚麻 80%人棉 10%棉"
+        ],
+        "colors": 0,
+        "updatedAt": "2026-05-27",
+        "featured": false
+    }
 ]

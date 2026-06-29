@@ -205,11 +205,7 @@ class WechatConfig(Base):  # 定义微信配置类，继承自 Base
     """Wechat channel configuration."""  # 微信渠道配置的文档字符串
 
     enabled: bool = False  # 微信渠道是否启用标志，默认值为 False
-    token: str = ""  # 微信接口调用所需的 Token 字符串
-    base_url: str = ""  # 微信相关服务的基础请求地址 (baseUrl)
-    account_id: str = ""  # 微信关联的账号 ID (accountId)
-    user_id: str = ""  # 微信对应的用户 ID (userId)
-    saved_at: str = ""  # 凭据最后保存的时间戳 (savedAt)
+    cred_path: str = ""  # 凭据文件的绝对路径，包含 token、base_url 等配置信息
     allow_from: list[str] = Field(default_factory=list)  # 允许访问的用户ID列表
 
 

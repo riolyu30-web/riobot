@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>排名前20商品统计报告</title>
+    <!-- 引入 ECharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <!-- 引入 jQuery CDN，DataTables 依赖它 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- 引入 DataTables CSS 样式 -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <!-- 引入 DataTables JS 脚本 -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <!-- 自定义一些基础样式 -->
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h2 { text-align: center; margin-bottom: 20px; }
+        h3 { color: #333; margin-bottom: 15px; border-left: 4px solid #4CAF50; padding-left: 10px; }
+        .table-container { margin-bottom: 50px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow-x: auto; }
+        .chart-container { margin-bottom: 50px; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <!-- 报表主标题 -->
+    <h2>排名前20商品（商品名称）贸易数据综合报表</h2>
+    
+    <!-- 数据表格容器：总量统计 -->
+    <div class="table-container">
+        <h3>一、总量统计排名</h3>
+        <table id="dataTable" class="display" style="width:100%">
+    <thead><tr><th>序号</th><th>商品</th><th>米</th><th>千克</th><th>人民币合计</th><th>米价</th><th>千克价</th></tr></thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>聚酯变形长丝≥85％染色布</td>
+            <td data-order="15582311592.00">15,582,311,592.00</td>
+            <td data-order="3135620787.00">3,135,620,787.00</td>
+            <td data-order="85692834724.00">85,692,834,724.00</td>
+            <td data-order="5.50">5.50</td>
+            <td data-order="27.33">27.33</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>聚酯变形长丝≥85％印花布</td>
+            <td data-order="6750106479.00">6,750,106,479.00</td>
+            <td data-order="968491138.00">968,491,138.00</td>
+            <td data-order="24260078088.00">24,260,078,088.00</td>
+            <td data-order="3.59">3.59</td>
+            <td data-order="25.05">25.05</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>其他含聚酯短纤≥85%的布</td>
+            <td data-order="1350991332.00">1,350,991,332.00</td>
+            <td data-order="241351319.00">241,351,319.00</td>
+            <td data-order="7433988692.00">7,433,988,692.00</td>
+            <td data-order="5.50">5.50</td>
+            <td data-order="30.80">30.80</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>聚酯变形长丝≥85％色织布</td>
+            <td data-order="335798035.00">335,798,035.00</td>
+            <td data-order="106613402.00">106,613,402.00</td>
+            <td data-order="3635241012.00">3,635,241,012.00</td>
+            <td data-order="10.83">10.83</td>
+            <td data-order="34.10">34.10</td>
+        </tr>
+    </tbody>
+</table>
+
+    </div>
+
+    <!-- 数据表格容器：各月明细透视表 -->
+    <div class="table-container">
+        <h3>二、各月人民币金额合计透视表</h3>
+        <table id="pivotTable" class="display" style="width:100%">
+    <thead><tr><th>排名</th><th>商品</th><th>202501</th><th>202502</th><th>202503</th><th>202504</th><th>202505</th><th>202506</th><th>202507</th><th>202508</th><th>202509</th><th>202510</th><th>202511</th><th>202512</th><th>202601</th><th>202602</th><th>202603</th><th>202604</th></tr></thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>聚酯变形长丝≥85％染色布</td>
+            <td data-order="8129790859">8,129,790,859.00</td>
+            <td data-order="2325783370">2,325,783,370.00</td>
+            <td data-order="5057586391">5,057,586,391.00</td>
+            <td data-order="5861980403">5,861,980,403.00</td>
+            <td data-order="6187820711">6,187,820,711.00</td>
+            <td data-order="5416052289">5,416,052,289.00</td>
+            <td data-order="5097826466">5,097,826,466.00</td>
+            <td data-order="5809137922">5,809,137,922.00</td>
+            <td data-order="5308087151">5,308,087,151.00</td>
+            <td data-order="5088043982">5,088,043,982.00</td>
+            <td data-order="5804680780">5,804,680,780.00</td>
+            <td data-order="5736084722">5,736,084,722.00</td>
+            <td data-order="7299238214">7,299,238,214.00</td>
+            <td data-order="5520829139">5,520,829,139.00</td>
+            <td data-order="2398134371">2,398,134,371.00</td>
+            <td data-order="4651757954">4,651,757,954.00</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>聚酯变形长丝≥85％印花布</td>
+            <td data-order="2126977844">2,126,977,844.00</td>
+            <td data-order="652396193">652,396,193.00</td>
+            <td data-order="1467524258">1,467,524,258.00</td>
+            <td data-order="1615789015">1,615,789,015.00</td>
+            <td data-order="1669378648">1,669,378,648.00</td>
+            <td data-order="1501436050">1,501,436,050.00</td>
+            <td data-order="1557158068">1,557,158,068.00</td>
+            <td data-order="1666710197">1,666,710,197.00</td>
+            <td data-order="1640743795">1,640,743,795.00</td>
+            <td data-order="1552916050">1,552,916,050.00</td>
+            <td data-order="1654247621">1,654,247,621.00</td>
+            <td data-order="1749162469">1,749,162,469.00</td>
+            <td data-order="1913731346">1,913,731,346.00</td>
+            <td data-order="1468859896">1,468,859,896.00</td>
+            <td data-order="703105755">703,105,755.00</td>
+            <td data-order="1319940883">1,319,940,883.00</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>其他含聚酯短纤≥85%的布</td>
+            <td data-order="579166491">579,166,491.00</td>
+            <td data-order="186231427">186,231,427.00</td>
+            <td data-order="505998715">505,998,715.00</td>
+            <td data-order="477273609">477,273,609.00</td>
+            <td data-order="518500145">518,500,145.00</td>
+            <td data-order="478001052">478,001,052.00</td>
+            <td data-order="448333818">448,333,818.00</td>
+            <td data-order="477329757">477,329,757.00</td>
+            <td data-order="451884069">451,884,069.00</td>
+            <td data-order="428120263">428,120,263.00</td>
+            <td data-order="510949185">510,949,185.00</td>
+            <td data-order="522083312">522,083,312.00</td>
+            <td data-order="577257676">577,257,676.00</td>
+            <td data-order="470346154">470,346,154.00</td>
+            <td data-order="302034580">302,034,580.00</td>
+            <td data-order="500478439">500,478,439.00</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>聚酯变形长丝≥85％色织布</td>
+            <td data-order="307248411">307,248,411.00</td>
+            <td data-order="101898452">101,898,452.00</td>
+            <td data-order="196658673">196,658,673.00</td>
+            <td data-order="249642464">249,642,464.00</td>
+            <td data-order="268401133">268,401,133.00</td>
+            <td data-order="250023790">250,023,790.00</td>
+            <td data-order="237579995">237,579,995.00</td>
+            <td data-order="259497356">259,497,356.00</td>
+            <td data-order="236845095">236,845,095.00</td>
+            <td data-order="216225404">216,225,404.00</td>
+            <td data-order="247056218">247,056,218.00</td>
+            <td data-order="242225791">242,225,791.00</td>
+            <td data-order="269080315">269,080,315.00</td>
+            <td data-order="211972881">211,972,881.00</td>
+            <td data-order="125923186">125,923,186.00</td>
+            <td data-order="214961848">214,961,848.00</td>
+        </tr>
+    </tbody>
+</table>
+
+    </div>
+    
+    <!-- 图表容器：为 ECharts 准备一个定义了宽高的 DOM -->
+    <div class="chart-container">
+        <h3>三、各月人民币金额合计趋势图</h3>
+        <div id="main" style="width: 100%; height: 800px;"></div>
+    </div>
+    
+    <script type="text/javascript">
+        // 当文档加载完成后初始化 DataTable
+        $(document).ready(function() {
+            // 初始化总量统计表
+            $('#dataTable').DataTable({
+                "paging": false,       // 禁用分页，直接展示20条
+                "searching": false,    // 禁用搜索框
+                "info": false,         // 禁用左下角的表格信息
+                "order": [[ 4, "desc" ]] // 默认按第5列（索引4，人民币合计）进行降序排序
+            });
+            
+            // 初始化各月透视表
+            $('#pivotTable').DataTable({
+                "paging": false,       // 禁用分页
+                "searching": false,    // 禁用搜索框
+                "info": false,         // 禁用信息展示
+                "order": [[ 0, "asc" ]] // 默认按第1列（索引0，排名）进行升序排序
+            });
+        });
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '排名前20商品各月人民币金额合计趋势图'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ["\u805a\u916f\u53d8\u5f62\u957f\u4e1d\u226585\uff05\u67d3\u8272\u5e03", "\u805a\u916f\u53d8\u5f62\u957f\u4e1d\u226585\uff05\u5370\u82b1\u5e03", "\u5176\u4ed6\u542b\u805a\u916f\u77ed\u7ea4\u226585%\u7684\u5e03", "\u805a\u916f\u53d8\u5f62\u957f\u4e1d\u226585\uff05\u8272\u7ec7\u5e03"],
+                type: 'scroll', // 当图例过多时允许滚动
+                orient: 'vertical',
+                right: 10,
+                top: 20,
+                bottom: 20
+            },
+            grid: {
+                left: '3%',
+                right: '15%', // 留出右侧空间给图例
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ["202501", "202502", "202503", "202504", "202505", "202506", "202507", "202508", "202509", "202510", "202511", "202512", "202601", "202602", "202603", "202604"]
+            },
+            yAxis: {
+                type: 'value',
+                name: '人民币合计（元）'
+            },
+            series: [{"name": "\u805a\u916f\u53d8\u5f62\u957f\u4e1d\u226585\uff05\u67d3\u8272\u5e03", "type": "line", "data": [8129790859, 2325783370, 5057586391, 5861980403, 6187820711, 5416052289, 5097826466, 5809137922, 5308087151, 5088043982, 5804680780, 5736084722, 7299238214, 5520829139, 2398134371, 4651757954]}, {"name": "\u805a\u916f\u53d8\u5f62\u957f\u4e1d\u226585\uff05\u5370\u82b1\u5e03", "type": "line", "data": [2126977844, 652396193, 1467524258, 1615789015, 1669378648, 1501436050, 1557158068, 1666710197, 1640743795, 1552916050, 1654247621, 1749162469, 1913731346, 1468859896, 703105755, 1319940883]}, {"name": "\u5176\u4ed6\u542b\u805a\u916f\u77ed\u7ea4\u226585%\u7684\u5e03", "type": "line", "data": [579166491, 186231427, 505998715, 477273609, 518500145, 478001052, 448333818, 477329757, 451884069, 428120263, 510949185, 522083312, 577257676, 470346154, 302034580, 500478439]}, {"name": "\u805a\u916f\u53d8\u5f62\u957f\u4e1d\u226585\uff05\u8272\u7ec7\u5e03", "type": "line", "data": [307248411, 101898452, 196658673, 249642464, 268401133, 250023790, 237579995, 259497356, 236845095, 216225404, 247056218, 242225791, 269080315, 211972881, 125923186, 214961848]}]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

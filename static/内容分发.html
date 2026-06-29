@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台工作台</title>
+    <style>
+        body {
+            display: flex; /* 使用 Flexbox 布局 */
+            font-family: Arial, sans-serif; /* 设置字体 */
+            margin: 0; /* 移除默认外边距 */
+            height: 100vh; /* 设置高度为视口高度 */
+            box-sizing: border-box; /* 盒模型设置为边框盒 */
+        }
+        .column {
+            padding: 10px; /* 列内边距 */
+            border: 1px solid #ccc; /* 列边框 */
+            box-sizing: border-box; /* 盒模型设置为边框盒 */
+            overflow-y: auto; /* 允许垂直滚动 */
+        }
+        .column-1 {
+            flex: 1; /* 第一列占据 1 份空间 */
+            background-color: #f0f0f0; /* 背景颜色 */
+        }
+        .column-2 {
+            flex: 2; /* 第二列占据 2 份空间 */
+            background-color: #e0e0e0; /* 背景颜色 */
+        }
+        .column-3 {
+            flex: 1; /* 第三列占据 1 份空间 */
+            background-color: #d0d0d0; /* 背景颜色 */
+        }
+        .form-group {
+            margin-bottom: 10px; /* 表单组底部外边距 */
+        }
+        .form-group label {
+            display: block; /* 标签独占一行 */
+            margin-bottom: 5px; /* 标签底部外边距 */
+            font-weight: bold; /* 标签字体加粗 */
+        }
+        .form-group input[type="text"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%; /* 输入框、文本域和选择框宽度 */
+            padding: 8px; /* 内边距 */
+            border: 1px solid #ccc; /* 边框 */
+            border-radius: 4px; /* 圆角 */
+            box-sizing: border-box; /* 盒模型设置为边框盒 */
+        }
+        .form-group button {
+            width: 100%; /* 按钮宽度 */
+            padding: 8px 15px; /* 按钮内边距 */
+            background-color: #007bff; /* 按钮背景颜色 */
+            color: white; /* 按钮文字颜色 */
+            border: none; /* 无边框 */
+            border-radius: 4px; /* 圆角 */
+            cursor: pointer; /* 鼠标指针样式 */
+        }
+        .form-group button:hover {
+            background-color: #0056b3; /* 按钮悬停背景颜色 */
+        }
+        .styled-button {
+            padding: 8px 15px; /* 内边距 */
+            background-color: #007bff; /* 背景颜色 */
+            color: white; /* 文字颜色 */
+            border: none; /* 无边框 */
+            border-radius: 4px; /* 圆角 */
+            cursor: pointer; /* 鼠标指针样式 */
+        }
+        .styled-button:hover {
+            background-color: #0056b3; /* 悬停背景颜色 */
+        }
+        .green-button {
+            background-color: #28a745; /* 绿色背景 */
+        }
+        .green-button:hover {
+            background-color: #218838; /* 绿色悬停背景 */
+        }
+        .robot-list {
+            border-collapse: collapse; /* 边框合并 */
+            margin-top: 10px; /* 表格顶部外边距 */
+        }
+        table, th, td {
+            border: 1px solid #ccc; /* 表格、表头、单元格边框 */
+        }
+        th, td {
+            padding: 8px; /* 内边距 */
+            text-align: center; /* 文本居中对齐 */
+            vertical-align: middle; /* 垂直居中对齐 */
+        }
+        td {
+            font-size: 13px; /* 将表格内数据的字体变小 */
+        }
+        /* 使表格中“文案”列的内容左对齐 */
+        table tbody tr td:nth-child(5) {
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2; /* 表头背景颜色 */
+        }
+        ul {
+            list-style: none; /* 移除列表默认样式 */
+            padding: 0; /* 移除内边距 */
+        }
+        ul li {
+            display: flex; /* 使用 Flexbox 布局 */
+            align-items: center; /* 垂直居中 */
+            margin-bottom: 20px; /* 列表项底部外边距增加1倍 (原为5px) */
+            margin-top: 20px;
+        }
+        ul li input[type="checkbox"] {
+            margin-right: 10px; /* 复选框右侧外边距 */
+        }
+        .robot-list {
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+
+        }
+        .column-content {
+            padding: 10px; /* 内容区域内边距 */
+        }                     
+        .robot-radio {
+            margin-right: 10px; /* 单选框右侧外边距 */
+        }
+    </style>
+</head>
+<body>
+    <div class="column column-1">
+        <div class="column-content">
+            <form>
+                <div class="form-group">
+                    <button type="button" id="generateButton">生成</button>
+                </div>
+
+                <div class="form-group">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <label style="margin-bottom: 0;">参考图:</label>
+                        <button type="button" id="addReferenceImageButton" class="green-button" style="width: auto;">选择文件</button>
+                    </div>
+                    <input type="file" id="referenceImages" multiple accept="image/*" style="display: none;">
+                    <div id="thumbnailPreview" style="display: flex; flex-wrap: wrap; margin-top: 10px;"></div>
+                </div>
+                <div class="form-group">
+                    <label for="prompt">提示词:</label>
+                    <textarea id="prompt" rows="20"></textarea>
+                </div>                
+                <div class="form-group">
+                    <label for="prompt">尺寸:</label>
+                    <select id="generateSize">
+                        <option value="1024x1024" selected>1024x1024</option>
+                        <option value="1024x1536">1024x1536</option>
+                        <option value="1536x1024">1536x1024</option>
+                        <option value="2048x2048">2048x2048</option>
+                        <option value="2048x1152">2048x1152</option>
+                        <option value="3840x2160">3840x2160</option>
+                        <option value="2160x3840">2160x3840</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="column column-2">
+        <div class="column-content">
+            <div id="loadingIndicator" style="display: none; text-align: center; padding: 10px; color: #007bff;">正在生成图片，请稍候...</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 8%;">序号</th> <!-- 序号列 -->
+                        <th style="width: 5%;"><input type="checkbox" id="selectAllCheckbox"></th> <!-- 全选复选框列 -->
+                        <th style="width: 10%;">状态</th> <!-- 状态列表头 -->
+                        <th style="width: 20%;">缩略图</th> <!-- 缩略图列 -->
+                        <th style="width: 40%;">提示词</th> <!-- 文案列 -->
+                        <th style="width: 15%;">操作</th> <!-- 操作列 -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="column column-3">
+        <div class="column-content">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <button type="button" id="sendButton" class="styled-button" style="width: 80%;">发送</button>
+                <button type="button" id="loadRobotsButton" class="styled-button green-button" style="width: 18%;">加载</button>
+            </div>
+            <div id="sendingIndicator" style="display: none; text-align: center; margin-bottom: 10px; color: #007bff;">正在发送中...</div>
+            <ul class="robot-list">
+                <!-- List items will be added here -->
+            </ul>
+            <div class="form-group">
+                <label for="imageSpecSelect">规格:</label>
+                <select id="imageSpecSelect">
+                    <option value="原图" selected>原图</option>
+                    <option value="1:1">1:1(朋友圈/闲鱼/1688/FB)</option>
+                    <option value="4:3">4:5(INS)</option>
+                    <option value="16:9">16:9(抖音)</option>
+                    <option value="3:4">3:4(小红书)</option>
+                    <option value="9:16">9:16(油管/B站)</option>
+                    <option value="1.91:1">1.91:1(领英/FB)</option>
+                </select>
+            </div>
+            <div class="form-group"> <!-- 新增配图组件容器 -->
+                <div style="display: flex; align-items: center; gap: 10px;"> <!-- 弹性布局，垂直居中，元素间距10px -->
+                    <label style="margin-bottom: 0;">配图:</label> <!-- 配图标签 -->
+                    <button type="button" id="addDistributionImageBtn" class="styled-button green-button" style="width: auto;">选择文件</button> <!-- 选择配图文件按钮 -->
+                </div> <!-- 结束弹性布局容器 -->
+                <div id="distributionImagePreview" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;"></div> <!-- 新增：显示已选择配图的预览容器 -->
+                <input type="file" id="distributionImageInput" accept="image/*" multiple style="display: none;"> <!-- 隐藏的实际配图文件输入框，添加 multiple 属性 -->
+            </div> <!-- 结束配图组件容器 -->
+            <div class="form-group">
+                <label for="longTextInput">文案:</label>
+                <textarea id="longTextInput" rows="20"></textarea>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+<script>
+    const referenceImagesInput = document.getElementById('referenceImages');
+    const thumbnailPreview = document.getElementById('thumbnailPreview');
+    const addReferenceImageButton = document.getElementById('addReferenceImageButton');
+    const generateButton = document.getElementById('generateButton'); // 生成按钮
+    const promptInput = document.getElementById('prompt'); // 提示词输入框
+    const generateSizeSelect = document.getElementById('generateSize'); // 生成尺寸下拉框
+    const loadingIndicator = document.getElementById('loadingIndicator'); // 加载指示器
+    const tableBody = document.querySelector('.column-2 tbody'); // 中间栏表格的 tbody
+    const selectAllCheckbox = document.getElementById('selectAllCheckbox'); // 全选复选框
+    const sendButton = document.getElementById('sendButton'); // 发送按钮
+    const loadRobotsButton = document.getElementById('loadRobotsButton'); // 加载机器人按钮
+    const sendingIndicator = document.getElementById('sendingIndicator'); // 发送中指示器
+    const imageSpecSelect = document.getElementById('imageSpecSelect'); // 规格下拉框
+    const distributionImageInput = document.getElementById('distributionImageInput'); // 获取配图文件输入框元素
+    const addDistributionImageBtn = document.getElementById('addDistributionImageBtn'); // 获取配图选择按钮元素
+    const distributionImagePreview = document.getElementById('distributionImagePreview'); // 获取配图预览容器元素
+    const distributionList = document.querySelector('.column-3 ul'); // 第三栏的 ul 元素
+    console.log('distributionList element:', distributionList); // 调试信息：打印第三栏的 ul 元素
+
+    let selectedFiles = []; // 用于存储已选择的文件对象
+    let rowIndex = 1; // 全局计数器，用于表格行序号
+    let selectedDistributionFiles = []; // 用于存储已选择的配图文件数组
+
+    // --- LocalStorage 缓存逻辑 ---
+    const STORAGE_KEY = 'nanobot_generation_tasks'; // 定义 localStorage 的 key
+    let cachedTasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; // 从缓存读取任务，如果没有则为空数组
+
+    // 保存任务到缓存
+    function saveTasksToStorage() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cachedTasks)); // 将任务数组转为 JSON 字符串并保存
+    }
+
+    // 渲染单行任务到表格（用于页面加载时恢复）
+    function renderCachedTask(task) {
+        const newRow = tableBody.insertRow(); // 插入新行
+        newRow.setAttribute('id', task.id); // 设置行的唯一ID
+        newRow.dataset.prompt = task.prompt; // 存储原始提示词
+        newRow.dataset.generateSize = task.generateSize; // 存储生成尺寸
+        if (task.uploadedImagePath) {
+            newRow.dataset.imagePath = task.uploadedImagePath; // 存储上传的图片路径
+        }
+        if (task.absoluteImagePath) {
+            newRow.dataset.absoluteImagePath = task.absoluteImagePath; // 存储生成的绝对路径
+        }
+
+        const isFinished = task.resultImageUrl ? true : false; // 判断是否有结果图片
+
+        newRow.innerHTML = `
+            <td>${rowIndex--}</td> <!-- 序号 -->
+            <td><input type="checkbox" class="rowCheckbox"></td> <!-- 复选框 -->
+            <td class="task-status">${task.status}</td> <!-- 恢复状态 -->
+            <td>
+                <a href="${task.resultImageUrl || '#'}" target="_blank" class="image-link" style="display: ${isFinished ? 'inline-block' : 'none'}; margin: 0 auto;"> <!-- 使用a标签包裹图片并居中 -->
+                    <img src="${task.resultImageUrl || ''}" style="height: 100px; width: auto; display: block; margin: 0 auto;"> <!-- 缩略图居中 -->
+                </a>
+            </td>
+            <td>${task.prompt}</td> <!-- 提示词 -->
+            <td>
+                <button type="button" class="reuse-btn" style="padding: 2px 5px; font-size: 12px; margin-right: 5px;">复用</button>
+                <button type="button" class="delete-btn" style="padding: 2px 5px; font-size: 12px; background-color: #dc3545;">删除</button>
+            </td>
+        `;
+        const newCheckbox = newRow.querySelector('.rowCheckbox'); // 获取新行的复选框
+        newCheckbox.addEventListener('change', updateSelectAllCheckbox); // 绑定事件
+
+        // 绑定操作按钮事件
+        bindOperationEvents(newRow, task.id, task.prompt);
+    }
+
+    // 页面加载时恢复历史任务
+    function loadTasksOnStart() {
+        // 确保 rowIndex 从 cachedTasks 的长度开始倒序计数
+        rowIndex = cachedTasks.length; 
+        cachedTasks.forEach(task => {
+            // 如果刷新前任务还在生成中，由于请求已断开，强制标记为失败
+            if (task.status === '生成中') {
+                task.status = '失败(刷新中断)'; 
+            }
+            renderCachedTask(task); // 渲染该任务到表格
+        });
+        saveTasksToStorage(); // 保存可能更新的状态
+    }
+
+    // 执行初始化
+    loadTasksOnStart();
+
+    // 绑定行内的操作按钮事件（复用和删除）
+    function bindOperationEvents(row, taskId, promptText) {
+        const reuseBtn = row.querySelector('.reuse-btn');
+        const deleteBtn = row.querySelector('.delete-btn');
+
+        if (reuseBtn) {
+            reuseBtn.addEventListener('click', () => {
+                promptInput.value = promptText; // 将当前行的文案填入左侧提示词输入框
+            });
+        }
+
+        if (deleteBtn) {
+            deleteBtn.addEventListener('click', () => {
+                if (confirm('确定要删除这条记录吗？')) {
+                    // 1. 从 DOM 中移除该行
+                    row.remove();
+                    // 2. 从缓存数组中移除
+                    cachedTasks = cachedTasks.filter(task => task.id !== taskId);
+                    // 3. 更新 localStorage
+                    saveTasksToStorage();
+                    // 4. 更新全选复选框状态（可能某一行被删除后导致全选状态改变）
+                    updateSelectAllCheckbox();
+                }
+            });
+        }
+    }
+    // ----------------------------
+
+    addReferenceImageButton.addEventListener('click', () => {
+        referenceImagesInput.click(); // 触发文件输入框的点击事件
+    });
+
+    referenceImagesInput.addEventListener('change', function(event) {
+        const files = event.target.files;
+        if (files) {
+            for (const file of files) {
+                if (file.type.startsWith('image/')) {
+                    selectedFiles.push(file); // 将文件添加到数组
+                }
+            }
+            renderThumbnails(); // 重新渲染所有缩略图
+        }
+        referenceImagesInput.value = ''; // 清空文件输入框，以便再次选择相同文件
+    });
+
+    addDistributionImageBtn.addEventListener('click', () => { // 绑定配图选择按钮点击事件
+        distributionImageInput.click(); // 触发隐藏的配图文件输入框点击
+    }); // 结束配图选择按钮点击事件绑定
+
+    distributionImageInput.addEventListener('change', (event) => { // 绑定配图文件输入框内容改变事件
+        const files = event.target.files; // 获取选择的所有配图文件
+        if (files) { // 如果有选择配图文件
+            for (const file of files) {
+                if (file.type.startsWith('image/')) {
+                    selectedDistributionFiles.push(file); // 将文件添加到数组
+                }
+            }
+            renderDistributionThumbnails(); // 重新渲染所有缩略图
+        }
+        distributionImageInput.value = ''; // 清空文件输入框，以便再次选择相同文件
+    }); // 结束配图文件输入框内容改变事件绑定
+
+    function renderDistributionThumbnails() {
+        distributionImagePreview.innerHTML = ''; // 清空之前的预览
+
+        selectedDistributionFiles.forEach((file, index) => {
+            const thumbnailWrapper = document.createElement('div');
+            thumbnailWrapper.style.position = 'relative';
+            thumbnailWrapper.style.margin = '5px';
+
+            const img = document.createElement('img');
+            img.style.maxWidth = '100px';
+            img.style.maxHeight = '100px';
+            img.style.border = '1px solid #ddd';
+            img.style.borderRadius = '4px';
+            thumbnailWrapper.appendChild(img);
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = '删除';
+            deleteButton.style.position = 'absolute';
+            deleteButton.style.top = '0';
+            deleteButton.style.right = '0';
+            deleteButton.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
+            deleteButton.style.color = 'white';
+            deleteButton.style.border = 'none';
+            deleteButton.style.borderRadius = '4px';
+            deleteButton.style.padding = '2px 5px';
+            deleteButton.style.fontSize = '12px';
+            deleteButton.style.cursor = 'pointer';
+            deleteButton.style.display = 'flex';
+            deleteButton.style.justifyContent = 'center';
+            deleteButton.style.alignItems = 'center';
+            deleteButton.onclick = () => {
+                selectedDistributionFiles.splice(index, 1); // 从数组中移除文件
+                renderDistributionThumbnails(); // 重新渲染缩略图
+            };
+            thumbnailWrapper.appendChild(deleteButton);
+
+            distributionImagePreview.appendChild(thumbnailWrapper);
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    selectAllCheckbox.addEventListener('change', function() {
+        const checkboxes = tableBody.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = this.checked;
+        });
+    });
+
+    function renderThumbnails() {
+        thumbnailPreview.innerHTML = ''; // 清空之前的预览
+
+        selectedFiles.forEach((file, index) => {
+            const thumbnailWrapper = document.createElement('div');
+            thumbnailWrapper.style.position = 'relative';
+            thumbnailWrapper.style.margin = '5px';
+
+            const img = document.createElement('img');
+            img.style.maxWidth = '100px';
+            img.style.maxHeight = '100px';
+            img.style.border = '1px solid #ddd';
+            img.style.borderRadius = '4px';
+            thumbnailWrapper.appendChild(img);
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = '删除'; // 文本改为“删除”
+            deleteButton.style.position = 'absolute';
+            deleteButton.style.top = '0';
+            deleteButton.style.right = '0';
+            deleteButton.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
+            deleteButton.style.color = 'white';
+            deleteButton.style.border = 'none';
+            deleteButton.style.borderRadius = '4px'; // 改为圆角
+            deleteButton.style.padding = '2px 5px'; // 调整内边距
+            deleteButton.style.fontSize = '12px'; // 调整字体大小
+            deleteButton.style.cursor = 'pointer';
+            deleteButton.style.display = 'flex';
+            deleteButton.style.justifyContent = 'center';
+            deleteButton.style.alignItems = 'center';
+            deleteButton.onclick = () => {
+                selectedFiles.splice(index, 1); // 从数组中移除文件
+                renderThumbnails(); // 重新渲染缩略图
+            };
+            thumbnailWrapper.appendChild(deleteButton);
+
+            thumbnailPreview.appendChild(thumbnailWrapper); // 立即将容器添加到DOM中
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                img.src = e.target.result; // 图片加载完成后更新src
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    generateButton.addEventListener('click', () => { // 移除 async，因为主逻辑将变成非阻塞的
+        let prompt = promptInput.value; // 获取提示词 (改为 let 以便后续修改)
+        const generateSize = generateSizeSelect.value; // 获取生成尺寸
+        const hasImages = selectedFiles.length > 0; // 检查是否选择了图片
+
+        if (!prompt) { // 简单校验
+            alert('请输入提示词');
+            return;
+        }
+
+        // --- 提示词预处理：随机替换 {} 中的内容 ---
+        prompt = prompt.replace(/\{([^}]+)\}/g, (match, p1) => { // 匹配 {} 内的文本
+            const options = p1.split('/'); // 按 / 分割选项
+            const randomIndex = Math.floor(Math.random() * options.length); // 随机选择一个索引
+            return options[randomIndex]; // 返回选中的选项进行替换
+        }); // 结束提示词预处理
+
+        // 步骤1：立即在第二栏表格中增加一行新数据，状态为“生成中”
+        const taskId = `task-${Date.now()}-${Math.floor(Math.random() * 1000)}`; // 为任务行生成唯一ID
+        
+        // 创建任务对象并存入缓存
+        const newTask = {
+            id: taskId,
+            prompt: prompt,
+            generateSize: generateSize,
+            uploadedImagePath: '', // 初始为空，稍后更新
+            status: '生成中',
+            resultImageUrl: '' // 初始为空，稍后更新
+        };
+        cachedTasks.unshift(newTask); // 添加到缓存数组的开头
+        saveTasksToStorage(); // 保存到 localStorage
+
+        // 确保 rowIndex 从 cachedTasks 的长度开始倒序计数
+        rowIndex = cachedTasks.length; 
+
+        const newRow = tableBody.insertRow(0); // 插入新行到顶部
+        newRow.setAttribute('id', taskId); // 设置行的唯一ID
+        newRow.dataset.prompt = prompt; // 存储原始提示词
+        newRow.dataset.generateSize = generateSize; // 存储生成尺寸
+        
+        // 初始状态显示为生成中，图片为空
+        newRow.innerHTML = `
+            <td>${rowIndex--}</td> <!-- 序号 -->
+            <td><input type="checkbox" class="rowCheckbox"></td> <!-- 复选框 -->
+            <td class="task-status">生成中</td> <!-- 状态设为生成中 -->
+            <td>
+                <a href="#" target="_blank" class="image-link" style="display: none; margin: 0 auto;"> <!-- 使用a标签包裹图片并居中 -->
+                    <img src="" style="height: 100px; width: auto; display: block; margin: 0 auto;"> <!-- 缩略图居中 -->
+                </a>
+            </td>
+            <td>${prompt}</td> <!-- 提示词 -->
+            <td>
+                <button type="button" class="reuse-btn" style="padding: 2px 5px; font-size: 12px; margin-right: 5px;">复用</button>
+                <button type="button" class="delete-btn" style="padding: 2px 5px; font-size: 12px; background-color: #dc3545;">删除</button>
+            </td>
+        `;
+        const newCheckbox = newRow.querySelector('.rowCheckbox'); // 获取新行的复选框
+        newCheckbox.addEventListener('change', updateSelectAllCheckbox); // 绑定事件
+
+        // 绑定操作按钮事件
+        bindOperationEvents(newRow, taskId, prompt);
+
+        // 异步执行后续耗时操作，不阻塞UI
+        processGenerationTask(taskId, prompt, generateSize, hasImages, [...selectedFiles]); // 传入selectedFiles的副本，防止被后续操作清空
+        
+        // 清空输入（可选）
+        // promptInput.value = '';
+        // selectedFiles = [];
+        // renderThumbnails();
+    });
+
+    // 处理生成任务的异步函数
+    async function processGenerationTask(taskId, prompt, generateSize, hasImages, filesToUpload) {
+        const row = document.getElementById(taskId); // 获取对应的表格行
+        if (!row) return; // 如果行不存在（可能被删除了），则退出
+        const statusCell = row.querySelector('.task-status'); // 获取状态单元格
+        const imgElement = row.querySelector('img'); // 获取图片元素
+        const linkElement = row.querySelector('.image-link'); // 获取图片链接元素
+
+        let uploadedImagePath = ''; // 用于存储最终上传/合并后的图片路径
+
+        try {
+            // 步骤2 & 3：如果有选择参考图，调用上传和合并接口
+            if (hasImages && filesToUpload.length > 0) {
+                let uploadedPaths = []; // 存储上传路径
+
+                for (let i = 0; i < filesToUpload.length; i++) {
+                    const file = filesToUpload[i];
+                    const formData = new FormData();
+                    formData.append('file', file);
+
+                    const uploadRes = await fetch('/up', { // 调用上传接口
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (!uploadRes.ok) throw new Error(`第 ${i + 1} 张图片上传请求失败`);
+
+                    const uploadResult = await uploadRes.json();
+                    if (uploadResult.success && uploadResult.path) {
+                        uploadedPaths.push(uploadResult.path); // 保存成功上传的路径
+                    } else {
+                        throw new Error(uploadResult.message || `第 ${i + 1} 张图片上传失败`);
+                    }
+                }
+
+                if (uploadedPaths.length > 1) { // 如果有多张图片，调用合并接口
+                    const mergeRes = await fetch('/gpt/sync/merge', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ image_paths: uploadedPaths })
+                    });
+
+                    if (!mergeRes.ok) throw new Error('合并图片请求失败');
+
+                    const mergeResult = await mergeRes.json();
+                    if (mergeResult.status === 'success' && mergeResult.image_path) {
+                        uploadedImagePath = mergeResult.image_path; // 保存合并后的路径
+                    } else {
+                        throw new Error(mergeResult.message || '合并图片失败');
+                    }
+                } else {
+                    uploadedImagePath = uploadedPaths[0]; // 只有一张图片
+                }
+                row.dataset.imagePath = uploadedImagePath; // 将图片路径存储在行数据中，供后续发送使用
+                
+                // 更新缓存中的图片路径
+                const cachedTask = cachedTasks.find(t => t.id === taskId);
+                if (cachedTask) {
+                    cachedTask.uploadedImagePath = uploadedImagePath;
+                    saveTasksToStorage();
+                }
+            }
+
+            // 步骤4：调用生成接口 /gpt/sync/create
+            let data = {
+                prompt: prompt,
+                size: generateSize,
+                html_path: "",
+                prefix: ""
+            };
+
+            if (uploadedImagePath) {
+                data.image = uploadedImagePath; // 如果有图片路径，添加到请求数据中
+            }
+
+            const createRes = await fetch('/gpt/sync/create', { // 调用生成接口
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            if (!createRes.ok) throw new Error(`生成请求 HTTP 错误! 状态码: ${createRes.status}`);
+
+            const result = await createRes.json();
+
+            // 步骤5：根据返回结果更新表格行
+            if (result.status === 'success' && result.image_paths && result.image_paths.length > 0) {
+                statusCell.textContent = '已完成'; // 更新状态为已完成
+                
+                // 处理图片路径并显示
+                let p = result.image_paths[0].replace(/\\/g, '/'); 
+                let staticDirIndex = p.indexOf('/static/');
+                let imgUrl = p;
+                if (staticDirIndex !== -1) {
+                    imgUrl = p.substring(staticDirIndex + '/static/'.length);
+                }
+                imgElement.src = imgUrl; // 设置图片URL
+                linkElement.href = imgUrl; // 设置链接地址为图片URL，点击可在新标签页打开
+                linkElement.style.display = 'inline-block'; // 显示图片链接
+
+                // 更新缓存状态为成功
+                const cachedTask = cachedTasks.find(t => t.id === taskId);
+                if (cachedTask) {
+                    cachedTask.status = '已完成';
+                    cachedTask.resultImageUrl = imgUrl;
+                    cachedTask.absoluteImagePath = result.image_paths[0]; // 保存绝对路径用于发送
+                    saveTasksToStorage();
+                }
+                row.dataset.absoluteImagePath = result.image_paths[0]; // 保存绝对路径到行数据
+            } else if (result.status === 'error') {
+                throw new Error(result.message || '生成返回错误状态');
+            } else {
+                throw new Error('生成返回数据格式不正确');
+            }
+
+        } catch (error) {
+            // 处理任何步骤中发生的错误
+            statusCell.textContent = '失败'; // 更新状态为失败
+            console.error(`任务 ${taskId} 执行失败:`, error);
+            
+            // 更新缓存状态为失败
+            const cachedTask = cachedTasks.find(t => t.id === taskId);
+            if (cachedTask) {
+                cachedTask.status = '失败';
+                saveTasksToStorage();
+            }
+            // alert(`任务执行失败: ${error.message}`); // 可选：是否弹出错误提示
+        }
+    }
+
+    function updateSelectAllCheckbox() {
+        const checkboxes = tableBody.querySelectorAll('.rowCheckbox');
+        const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+        selectAllCheckbox.checked = allChecked;
+    }
+
+    sendButton.addEventListener('click', async () => { // 发送按钮点击事件
+        // 1、获取第二栏目的打勾的数据
+        const selectedRows = []; // 存储选中的行
+        tableBody.querySelectorAll('tr').forEach(row => { // 遍历表格所有行
+            const checkbox = row.querySelector('.rowCheckbox'); // 获取行内的复选框
+            if (checkbox && checkbox.checked) { // 如果复选框存在且被选中
+                selectedRows.push(row); // 将该行加入数组
+            }
+        });
+
+        // 2、获取单选的配置路径作为参数
+        const selectedRobot = document.querySelector('input[name="robot-select"]:checked'); // 获取选中的单选框
+        if (!selectedRobot) { // 如果没有选中任何机器人
+            alert('请选择一个机器人配置！'); // 提示用户
+            return; // 退出函数
+        }
+        const configPath = selectedRobot.value; // 获取选中的配置路径作为参数
+
+        // 3、获取文案内容
+        const textContent = document.getElementById('longTextInput').value.trim(); // 获取并去除首尾空格的文案内容
+
+        // 判断：如果没有任务也没有文案且没有配图，提示用户
+        if (selectedRows.length === 0 && textContent === '' && selectedDistributionFiles.length === 0) { // 如果任务、文案和配图都为空
+            alert('请选择要发送的任务、输入文案或选择配图！'); // 提示用户
+            return; // 退出函数
+        }
+
+        sendingIndicator.style.display = 'block'; // 显示发送中提示
+        sendButton.disabled = true; // 禁用发送按钮防止重复点击
+
+        try { // 使用 try-finally 确保提示最终会被隐藏
+            // 4、如果文案输入框不为空，调用 /wx/message
+            if (textContent !== '') { // 判断文案是否为空
+                try { // 尝试发送文案
+                    const messageRes = await fetch('/wx/message', { // 发送 POST 请求
+                        method: 'POST', // 请求方法为 POST
+                        headers: { 'Content-Type': 'application/json' }, // 设置请求头
+                        body: JSON.stringify({ text: textContent, path: configPath }) // 请求体包含文案和配置路径
+                    });
+                    if (!messageRes.ok) throw new Error(`发送文案失败: ${messageRes.status}`); // 检查响应状态
+                    console.log('文案发送成功'); // 打印成功日志
+                } catch (error) { // 捕获异常
+                    console.error(error); // 打印错误信息
+                    alert('文案发送失败: ' + error.message); // 提示发送失败
+                }
+            }
+
+            // 4.5、如果有配图，上传并发送配图
+            if (selectedDistributionFiles.length > 0) { // 判断是否选择了配图
+                for (const file of selectedDistributionFiles) { // 遍历所有选中的配图文件
+                    try {
+                        const formData = new FormData(); // 创建 FormData 对象
+                        formData.append('file', file); // 添加文件到 FormData
+
+                        const uploadRes = await fetch('/up', { // 调用上传接口
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        if (!uploadRes.ok) throw new Error(`配图 ${file.name} 上传请求失败`);
+
+                        const uploadResult = await uploadRes.json();
+                        if (uploadResult.success && uploadResult.path) {
+                            const imagePath = uploadResult.path; // 获取上传后的图片路径
+                            const imageRes = await fetch('/wx/media', { // 发送图片
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ path: configPath, file_path: imagePath, spec: imageSpecSelect.value }) // 添加规格参数
+                            });
+                            if (!imageRes.ok) throw new Error(`配图 ${file.name} 发送失败: ${imageRes.status}`);
+                            console.log(`配图 ${file.name} 发送成功`);
+                        } else {
+                            throw new Error(uploadResult.message || `配图 ${file.name} 上传失败`);
+                        }
+                    } catch (error) {
+                        console.error(error);
+                        alert(`配图发送失败: ${error.message}`);
+                    }
+                }
+            }
+
+
+            // 5、勾选图片一张一张调用 /wx/media
+            if (selectedRows.length > 0) { // 如果有选中的任务
+                for (const row of selectedRows) { // 遍历选中的每一行
+                    let imagePath = row.dataset.absoluteImagePath; // 获取行数据中的绝对图片路径
+                    
+                    // 兼容老数据：如果没有绝对路径，则尝试通过相对路径拼接，或者使用参考图路径
+                    if (!imagePath) {
+                        const cachedTask = cachedTasks.find(t => t.id === row.id); // 从缓存查找该任务
+                        if (cachedTask && cachedTask.resultImageUrl) { // 如果缓存中有相对路径
+                            let relPath = cachedTask.resultImageUrl.replace(/\//g, '\\'); // 将正斜杠替换为反斜杠
+                            if (relPath.startsWith('\\')) relPath = relPath.substring(1); // 移除开头的斜杠
+                            imagePath = 'C:\\develop\\nanobot\\static\\' + relPath; // 拼接为完整的绝对路径
+                        } else if (row.dataset.imagePath) { // 如果只有参考图路径
+                            imagePath = row.dataset.imagePath; // 回退使用参考图路径
+                        }
+                    }
+
+                    if (imagePath) { // 如果图片路径存在
+                        try { // 尝试发送图片
+                            const mediaRes = await fetch('/wx/media', { // 发送 POST 请求
+                                method: 'POST', // 请求方法为 POST
+                                headers: { 'Content-Type': 'application/json' }, // 设置请求头
+                                body: JSON.stringify({ 
+                                    file_path: imagePath, 
+                                    path: configPath,
+                                    spec: imageSpecSelect.value // 传入选中的图片规格
+                                }) // 请求体包含图片路径、配置路径和规格
+                            });
+                            if (!mediaRes.ok) throw new Error(`发送图片失败: ${mediaRes.status}`); // 检查响应状态
+                            console.log(`图片 ${imagePath} 发送成功`); // 打印成功日志
+                        } catch (error) { // 捕获异常
+                            console.error(error); // 打印错误信息
+                            alert(`图片发送失败: ` + error.message); // 提示发送失败
+                        }
+                    } else { // 如果没有绝对路径
+                        console.warn('该行没有生成完整的绝对图片路径', row); // 打印警告信息
+                    }
+                }
+                
+                // 发送完成后，取消所有勾选
+                selectedRows.forEach(row => { // 遍历所有选中的行
+                    const checkbox = row.querySelector('.rowCheckbox'); // 获取复选框
+                    if (checkbox) checkbox.checked = false; // 取消勾选
+                });
+                updateSelectAllCheckbox(); // 更新全选复选框的状态
+            }
+            
+            alert('发送流程执行完毕！'); // 提示发送完成
+        } finally {
+            sendingIndicator.style.display = 'none'; // 隐藏发送中提示
+            sendButton.disabled = false; // 恢复发送按钮状态
+        }
+    });
+
+    async function loadRobots() { // 定义加载机器人的函数
+        distributionList.innerHTML = ''; // 清空现有列表
+        try { // 尝试执行请求
+            const response = await fetch('/wx/list'); // 调用 /wx/list 接口
+            if (!response.ok) { // 如果响应不正常
+                throw new Error(`HTTP error! status: ${response.status}`); // 抛出错误
+            }
+            const robotData = await response.json(); // 获取机器人配置数组
+
+            if (robotData.success && Array.isArray(robotData.response)) { // 如果成功且响应为数组
+                robotData.response.forEach((filePath, index) => { // 遍历配置
+                    const filename = filePath.split(/\\|\//).pop(); // 从路径中提取文件名
+                    const robotName = filename.replace('.json', ''); // 移除 .json 后缀
+                    const listItem = document.createElement('li'); // 创建列表项
+                    // 生成唯一ID以便关联label和radio
+                    const radioId = `robot-radio-${index}`; 
+                    listItem.innerHTML = `
+                        <input type="radio" id="${radioId}" name="robot-select" value="${filePath}" class="robot-radio"> <!-- 单选框 -->
+                        <label for="${radioId}" style="cursor: pointer;">${robotName}</label> <!-- 机器人名称 (使用label包裹实现点击选中) -->
+                    `;
+                    distributionList.appendChild(listItem); // 添加到列表中
+                });
+            } else { // 否则
+                alert('获取机器人配置失败或数据格式不正确。'); // 提示失败
+            }
+        } catch (error) { // 捕获错误
+            console.error('Error loading robot configurations:', error); // 打印错误
+            alert('加载机器人配置失败: ' + error.message); // 提示错误信息
+        }
+    }
+
+    loadRobotsButton.addEventListener('click', loadRobots); // 绑定点击事件
+
+    // 页面打开时自动调用加载机器人功能
+    loadRobots(); // 自动调用加载功能
+</script>
+</html>

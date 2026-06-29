@@ -203,8 +203,9 @@ def jiekou_banaan_pro(prompt: str, images: list[dict], n: int = 1, size: str = "
         print(f"Error calling jiekou_banaan_pro: {e}") # 打印错误信息
         return None # 发生错误时返回空值
 
-def jiekou_gpt_image(prompt: str, prefix: str, n: int = 1, size: str = "1536x1024", quality: str = "low", background: str = "auto", moderation: str = "auto", output_format: str = "png") -> list[str]: # 定义生成GPT图片的接口函数并返回路径列表
-    url = "https://api.jiekou.ai/v3/gpt-image-2-text-to-image" # 设置接口请求的URL地址
+def jiekou_gpt_image(prompt: str, prefix: str, n: int = 1, size: str = "1536x1024", quality: str = "low", background: str = "auto", moderation: str = "low", output_format: str = "png") -> list[str]: # 定义生成GPT图片的接口函数并返回路径列表
+    #url = "https://api.jiekou.ai/v3/gpt-image-2-text-to-image" # 设置接口请求的URL地址
+    url = "https://api.highwayapi.ai/v3/gpt-image-2-text-to-image" # 设置接口请求的URL地址
     payload = { # 构造请求的载荷数据字典
         "n": n, # 设置生成图片的数量
         "size": size, # 设置图片的尺寸规格
@@ -220,7 +221,7 @@ def jiekou_gpt_image(prompt: str, prefix: str, n: int = 1, size: str = "1536x102
     } # 结束头部字典的定义
     proxies = {"http": None, "https": None} # 禁用代理以避免网络连接错误
     try: # 开始尝试执行网络请求
-        response = requests.post(url, json=payload, headers=headers, proxies=proxies) # 发送POST请求并获取响应，同时绕过系统代理
+        response = requests.post(url, json=payload, headers=headers) # 发送POST请求并获取响应，同时绕过系统代理
         response.raise_for_status() # 如果响应状态码不是200则抛出异常
         print(response.text) # 在控制台打印接口返回的原始文本
         return download_images(response.text, prefix=prefix) # 解析响应并下载图片到本地，返回路径列表
@@ -229,7 +230,8 @@ def jiekou_gpt_image(prompt: str, prefix: str, n: int = 1, size: str = "1536x102
         return None # 发生错误时返回空值
 
 def jiekou_gpt_image_edit(image_path: str, prompt: str, prefix: str, mask_path: str = None, n: int = 1, size: str = "1536x1024", quality: str = "low", background: str = "auto", output_format: str = "png") -> list[str]: # 定义编辑GPT图片的接口函数并返回路径列表
-    url = "https://api.jiekou.ai/v3/gpt-image-2-edit" # 设置编辑图片的接口URL
+    #url = "https://api.jiekou.ai/v3/gpt-image-2-edit" # 设置编辑图片的接口URL
+    url = "https://api.highwayapi.ai/v3/gpt-image-2-edit" # 设置编辑图片的接口URL
     payload = { # 初始化请求载荷字典
         "n": n, # 设置生成的图片数量
         "prompt": prompt, # 设置修改图片的提示词
@@ -245,9 +247,8 @@ def jiekou_gpt_image_edit(image_path: str, prompt: str, prefix: str, mask_path: 
         "Content-Type": "application/json", # 设置请求体格式为JSON
         "Authorization": f"Bearer {JIEKOU_API_KEY}" # 配置API访问授权令牌
     } # 结束请求头字典的定义
-    proxies = {"http": None, "https": None} # 显式禁用网络代理
     try: # 进入网络请求尝试块
-        response = requests.post(url, json=payload, headers=headers, proxies=proxies) # 发起POST异步请求，禁用代理设置
+        response = requests.post(url, json=payload, headers=headers) # 发起POST异步请求，禁用代理设置
         response.raise_for_status() # 验证HTTP响应状态是否正常
         print(response.text) # 在终端打印接口返回的原始数据
         return download_images(response.text, prefix=prefix) # 调用辅助函数将返回的图片保存至本地并返回路径
@@ -300,9 +301,8 @@ def jiekou_query_task_status(task_id: str, out_dir: str = "./static/temp", prefi
         "Content-Type": "application/json", # 指定请求内容类型为 JSON 格式
         "Authorization": f"Bearer {JIEKOU_API_KEY}" # 设置 API 授权令牌
     } # 结束头部字典定义
-    proxies = {"http": None, "https": None} # 禁用代理以避免网络连接错误
     try: # 开始尝试执行网络请求
-        response = requests.get(url, headers=headers, proxies=proxies) # 发送 GET 请求并获取响应
+        response = requests.get(url, headers=headers) # 发送 GET 请求并获取响应
         response.raise_for_status() # 检查响应状态码是否正常
         result = response.json() # 解析响应 JSON
         task_info = result.get("task", {}) # 获取任务信息，如果不存在则返回空字典

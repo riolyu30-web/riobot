@@ -1,19 +1,37 @@
 {% extends "sqladmin/list.html" %}
 
 {% block content %}
+    <!-- 自定义模态框：选择销售人员 -->
+    <div id="salesModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 20px; border-radius: 8px; width: 300px; max-width: 90%;">
+            <h4 style="margin-top: 0;">选择销售人员</h4>
+            <div id="salesList" style="margin: 15px 0; max-height: 200px; overflow-y: auto;">
+                <!-- 销售人员列表将动态加载到这里 -->
+                <div>加载中...</div>
+            </div>
+            <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                <button class="btn btn-secondary" onclick="document.getElementById('salesModal').style.display='none'">取消</button>
+                <button class="btn btn-primary" onclick="confirmAddFriends()">确定</button>
+            </div>
+        </div>
+    </div>
+
     <div style="display: flex; justify-content: flex-end; margin-bottom: 0.5rem; margin-top: -0.5rem;margin-right: 0.5rem; gap: 0.5rem;">
-        <button class="btn btn-success" onclick="linkOpportunities(this)">
-            <i class="fa-solid fa-handshake"></i> 链接商机
+        <button class="btn btn-success" id="addFriendsBtn" onclick="showSalesModal()">
+            <i class="fa-solid fa-user-plus"></i> 添加好友
         </button>
     </div>
     
     <script>
-    // 定义链接商机的函数
-    function linkOpportunities(btn) {
+    // 全局变量保存选中的客户ID
+    let selectedPks = [];
+
+    // 显示选择销售人员的模态框
+    function showSalesModal() {
         // 获取所有被勾选的多选框元素
         const checkboxes = document.querySelectorAll('input.select-box:checked');
-        // 初始化一个空数组用于存放选中的 ID
-        const pks = [];
+        // 初始化全局数组用于存放选中的 ID
+        selectedPks = [];
         // 遍历所有被勾选的多选框
         checkboxes.forEach(cb => {
             // 获取当前多选框的父级 td 元素
@@ -23,26 +41,89 @@
             // 如果找到了隐藏 input 元素并且它有值
             if (hiddenInput && hiddenInput.value) {
                 // 将值转换为整数并存入数组
-                pks.push(parseInt(hiddenInput.value));
+                selectedPks.push(parseInt(hiddenInput.value));
             }
         });
         
         // 检查数组是否为空
-        if (pks.length === 0) {
+        if (selectedPks.length === 0) {
             // 弹出提示要求用户勾选
-            alert("请先勾选需要链接商机的客户");
+            alert("请先勾选需要添加好友的客户");
             // 结束函数执行
             return;
         }
+
+        // 显示模态框
+        const modal = document.getElementById('salesModal');
+        modal.style.display = 'flex';
         
+        // 获取销售人员列表的容器
+        const salesListDiv = document.getElementById('salesList');
+        salesListDiv.innerHTML = '<div>加载中...</div>';
+
+        // 发起请求获取销售人员列表
+        fetch('/sales/all')
+            .then(response => response.json())
+            .then(data => {
+                // 清空加载提示
+                salesListDiv.innerHTML = '';
+                // 如果没有销售人员数据
+                if (!data || data.length === 0) {
+                    salesListDiv.innerHTML = '<div style="color: red;">未找到销售人员，请先添加销售人员</div>';
+                    return;
+                }
+                
+                // 遍历销售数据生成单选框
+                data.forEach((sale, index) => {
+                    // 创建单选框容器
+                    const div = document.createElement('div');
+                    div.style.marginBottom = '8px';
+                    
+                    // 默认选中第一个
+                    const checkedStr = index === 0 ? 'checked' : '';
+                    
+                    // 设置内部 HTML
+                    div.innerHTML = `
+                        <label style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                            <input type="radio" name="sales_id" value="${sale.id}" ${checkedStr}>
+                            ${sale.name}
+                        </label>
+                    `;
+                    // 将选项添加到列表中
+                    salesListDiv.appendChild(div);
+                });
+            })
+            .catch(error => {
+                // 请求失败时显示错误
+                salesListDiv.innerHTML = `<div style="color: red;">获取销售人员失败: ${error}</div>`;
+            });
+    }
+
+    // 确认添加好友的操作
+    function confirmAddFriends() {
+        // 获取选中的销售人员单选框
+        const selectedRadio = document.querySelector('input[name="sales_id"]:checked');
+        if (!selectedRadio) {
+            alert("请先选择一位销售人员");
+            return;
+        }
+        
+        // 获取选中的销售人员ID
+        const salesId = parseInt(selectedRadio.value);
+        
+        // 隐藏模态框
+        document.getElementById('salesModal').style.display = 'none';
+
+        // 获取按钮元素以更新状态
+        const btn = document.getElementById('addFriendsBtn');
         // 保存原始文本和状态
         const originalText = btn.innerHTML;
         // 修改按钮为加载状态
-        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在链接中，请稍候...';
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在添加中，请稍候...';
         btn.disabled = true;
         
-        // 向后端发送链接商机的 POST 请求
-        fetch('/contact/link_opportunity', {
+        // 向后端发送添加好友的 POST 请求
+        fetch('/contact/add_friend', {
             // 指定请求方法为 POST
             method: 'POST',
             // 设置请求头
@@ -50,8 +131,8 @@
                 // 声明发送 JSON 格式的数据
                 'Content-Type': 'application/json'
             },
-            // 将数据对象转换为 JSON 字符串并发送
-            body: JSON.stringify({ pks: pks })
+            // 将数据对象转换为 JSON 字符串并发送（包含 pks 和 sales_id）
+            body: JSON.stringify({ pks: selectedPks, sales_id: salesId })
         })
         // 将响应转换为 JSON 格式
         .then(response => response.json())
@@ -60,10 +141,10 @@
             // 如果后端返回了错误信息
             if (data.detail) {
                 // 弹出失败提示
-                alert('链接失败: ' + data.detail);
+                alert('添加失败: ' + data.detail);
             } else {
                 // 弹出成功提示
-                alert(data.message || '链接完成');
+                alert(data.message || '添加完成');
                 // 刷新当前页面以显示最新数据
                 window.location.reload();
             }

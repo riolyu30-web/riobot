@@ -1,0 +1,888 @@
+{
+    "code": 0,
+    "data": {
+        "data": [
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 88391.03171446844
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 20:45:39",
+                    "minPrice": 426.0,
+                    "offerImageUrl": "img/ibank/O1CN01LYG9ot25wHBgWEl3z_!!2206750687590-0-cib.jpg",
+                    "offerId": 776261247066,
+                    "detailUrl": "https://detail.1688.com/offer/776261247066.html",
+                    "maxPrice": 566.0,
+                    "offerExpireTime": "2036-06-10 17:02:15",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031910,
+                    "offerTitle": "JIN口三醋酸 TH理论家肌理感三醋脂纤维混纺无袖伞摆连衣裙N9606",
+                    "basePrice": "426.0",
+                    "memberId": "b2b-22067506875908e577"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "identity": "svip",
+                    "shopName": "南通长兆时装有限公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://sanwenyu.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-22067506875908e577"
+                },
+                "seUvIndex": {
+                    "value": 117632.04361762723
+                },
+                "payOrdAmtIndex": {
+                    "value": 1856.9892320157378
+                },
+                "repeatRate": {
+                    "value": 0.1567
+                },
+                "payOrdAmtRank": {
+                    "value": 7828
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 776261247066
+                },
+                "activeInquiryUserIndex": {
+                    "value": 1095.920817299484
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 1
+                },
+                "rank": {
+                    "value": 1
+                },
+                "scorefh": {
+                    "value": 3.99
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 0.05198776758409786
+                },
+                "scorehm": {
+                    "value": 4.96
+                },
+                "activeInquiryUserRank": {
+                    "value": 747.0
+                },
+                "scorexy": {
+                    "value": 4.67
+                },
+                "memberId": {
+                    "value": "b2b-22067506875908e577"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.990016299426511
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.30208874132206
+                },
+                "ipvUvIndex": {
+                    "value": 83739.48175953413
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 03:58:51",
+                    "minPrice": 7.5,
+                    "offerImageUrl": "img/ibank/O1CN01x5DUWp2Gh7vcU9BPP_!!2219683869046-0-cib.jpg",
+                    "offerId": 1011601922182,
+                    "detailUrl": "https://detail.1688.com/offer/1011601922182.html",
+                    "maxPrice": 9.5,
+                    "offerExpireTime": "2036-01-22 00:36:05",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031919,
+                    "offerTitle": "夏季大码短袖T恤女士200斤胖mm加肥加大宽松半袖上衣打底衫",
+                    "basePrice": "7.5",
+                    "memberId": "b2b-221968386904661012"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "shopName": "揭阳市揭东区锡场镇桂展服装网店",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop8623c52870h90.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-221968386904661012"
+                },
+                "seUvIndex": {
+                    "value": 124453.81368832073
+                },
+                "payOrdAmtIndex": {
+                    "value": 2997.9105893761734
+                },
+                "repeatRate": {
+                    "value": 0.1161
+                },
+                "payOrdAmtRank": {
+                    "value": 3036
+                },
+                "cateScoreHm": {
+                    "value": 4.825231512224473
+                },
+                "itemId": {
+                    "value": 1011601922182
+                },
+                "activeInquiryUserIndex": {
+                    "value": 637.55181065129
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 2
+                },
+                "rank": {
+                    "value": 2
+                },
+                "scorefh": {
+                    "value": 4.56
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.3929222911346224
+                },
+                "scorehm": {
+                    "value": 4.83
+                },
+                "activeInquiryUserRank": {
+                    "value": 3243.0
+                },
+                "scorexy": {
+                    "value": 3.89
+                },
+                "memberId": {
+                    "value": "b2b-221968386904661012"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 83524.10643186512
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 06:31:25",
+                    "minPrice": 19.9,
+                    "offerImageUrl": "img/ibank/O1CN0106Ms8r1poSaNPejol_!!2219567585407-0-cib.jpg",
+                    "offerId": 927451550060,
+                    "detailUrl": "https://detail.1688.com/offer/927451550060.html",
+                    "maxPrice": 20.13,
+                    "offerExpireTime": "2035-10-10 15:20:35",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031871,
+                    "offerTitle": "纯亚麻阔腿裤女2025年夏季直筒休闲长裤时尚百搭宽松薄款棉..棉麻",
+                    "basePrice": "19.9",
+                    "memberId": "b2b-22195675854073fb42"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "shopName": "浦江县云馨服装厂",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop1y781584359u5.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-22195675854073fb42"
+                },
+                "seUvIndex": {
+                    "value": 148580.44081838056
+                },
+                "payOrdAmtIndex": {
+                    "value": 14385.278990750754
+                },
+                "repeatRate": {
+                    "value": 0.1449
+                },
+                "payOrdAmtRank": {
+                    "value": 67
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 927451550060
+                },
+                "activeInquiryUserIndex": {
+                    "value": 1796.3510337823827
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 3
+                },
+                "rank": {
+                    "value": 3
+                },
+                "scorefh": {
+                    "value": 4.58
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.09678825118751906
+                },
+                "scorehm": {
+                    "value": 4.92
+                },
+                "activeInquiryUserRank": {
+                    "value": 148.0
+                },
+                "scorexy": {
+                    "value": 2.91
+                },
+                "memberId": {
+                    "value": "b2b-22195675854073fb42"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 79484.73752738614
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-12 14:21:42",
+                    "minPrice": 24.0,
+                    "offerImageUrl": "img/ibank/O1CN01k4RcPW1YcEcbXeXrW_!!2221449163079-0-cib.jpg",
+                    "offerId": 1043597375508,
+                    "detailUrl": "https://detail.1688.com/offer/1043597375508.html",
+                    "maxPrice": 26.0,
+                    "offerExpireTime": "2036-04-16 16:12:23",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031919,
+                    "offerTitle": "正肩纯棉V领小飞袖短袖t恤女2026新款收腰修身显瘦白色上衣夏秋季",
+                    "basePrice": "24.0",
+                    "memberId": "b2b-22214491630799c37a"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAAA",
+                    "identity": "svip",
+                    "shopName": "广州念心制衣有限公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://shop7qy6061l69578.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-22214491630799c37a"
+                },
+                "seUvIndex": {
+                    "value": 152602.56808009
+                },
+                "payOrdAmtIndex": {
+                    "value": 17664.397126277298
+                },
+                "repeatRate": {
+                    "value": 0.0965
+                },
+                "payOrdAmtRank": {
+                    "value": 36
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 1043597375508
+                },
+                "activeInquiryUserIndex": {
+                    "value": 1603.1217293365335
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 4
+                },
+                "rank": {
+                    "value": 4
+                },
+                "scorefh": {
+                    "value": 4.58
+                },
+                "isCjgcSlr": {
+                    "value": "Y"
+                },
+                "seSpvChangeRate": {
+                    "value": 0.0068419157364061935
+                },
+                "scorehm": {
+                    "value": 4.98
+                },
+                "activeInquiryUserRank": {
+                    "value": 221.0
+                },
+                "scorexy": {
+                    "value": 4.3
+                },
+                "memberId": {
+                    "value": "b2b-22214491630799c37a"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.990016299426511
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.30208874132206
+                },
+                "ipvUvIndex": {
+                    "value": 78888.24086562313
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-14 03:40:18",
+                    "minPrice": 8.9,
+                    "offerImageUrl": "img/ibank/O1CN01djvcHj2Gh7wbAYPMb_!!2219683869046-0-cib.jpg",
+                    "offerId": 1040183987612,
+                    "detailUrl": "https://detail.1688.com/offer/1040183987612.html",
+                    "maxPrice": 13.9,
+                    "offerExpireTime": "2036-04-06 19:29:44",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031919,
+                    "offerTitle": "2026早春新款极简风正肩夏季短袖T恤女白色宽松显瘦百搭上衣潮女",
+                    "basePrice": "8.9",
+                    "memberId": "b2b-221968386904661012"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "shopName": "揭阳市揭东区锡场镇桂展服装网店",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop8623c52870h90.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-221968386904661012"
+                },
+                "seUvIndex": {
+                    "value": 138521.36701727763
+                },
+                "payOrdAmtIndex": {
+                    "value": 7193.83156806702
+                },
+                "repeatRate": {
+                    "value": 0.1161
+                },
+                "payOrdAmtRank": {
+                    "value": 418
+                },
+                "cateScoreHm": {
+                    "value": 4.825231512224473
+                },
+                "itemId": {
+                    "value": 1040183987612
+                },
+                "activeInquiryUserIndex": {
+                    "value": 1002.5819044542732
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 5
+                },
+                "rank": {
+                    "value": 5
+                },
+                "scorefh": {
+                    "value": 4.56
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 0.3453696320765463
+                },
+                "scorehm": {
+                    "value": 4.83
+                },
+                "activeInquiryUserRank": {
+                    "value": 972.0
+                },
+                "scorexy": {
+                    "value": 3.89
+                },
+                "memberId": {
+                    "value": "b2b-221968386904661012"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.990016299426511
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.30208874132206
+                },
+                "ipvUvIndex": {
+                    "value": 78449.69422952631
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 18:35:10",
+                    "minPrice": 7.9,
+                    "offerImageUrl": "img/ibank/O1CN01DK14RW2Gh7skcvDA7_!!2219683869046-0-cib.jpg",
+                    "offerId": 948165471275,
+                    "detailUrl": "https://detail.1688.com/offer/948165471275.html",
+                    "maxPrice": 9.9,
+                    "offerExpireTime": "2036-01-22 00:36:23",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031919,
+                    "offerTitle": "白色圆领中袖t恤女春秋2025新款修身五分袖七分袖内搭打底衫上衣",
+                    "basePrice": "7.9",
+                    "memberId": "b2b-221968386904661012"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "shopName": "揭阳市揭东区锡场镇桂展服装网店",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop8623c52870h90.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-221968386904661012"
+                },
+                "seUvIndex": {
+                    "value": 108394.48914512231
+                },
+                "payOrdAmtIndex": {
+                    "value": 1307.946617868176
+                },
+                "repeatRate": {
+                    "value": 0.1161
+                },
+                "payOrdAmtRank": {
+                    "value": 14753
+                },
+                "cateScoreHm": {
+                    "value": 4.825231512224473
+                },
+                "itemId": {
+                    "value": 948165471275
+                },
+                "activeInquiryUserIndex": {
+                    "value": 435.0783363513765
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 6
+                },
+                "rank": {
+                    "value": 6
+                },
+                "scorefh": {
+                    "value": 4.56
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.02135678391959799
+                },
+                "scorehm": {
+                    "value": 4.83
+                },
+                "activeInquiryUserRank": {
+                    "value": 7983.0
+                },
+                "scorexy": {
+                    "value": 3.89
+                },
+                "memberId": {
+                    "value": "b2b-221968386904661012"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 76943.73705468202
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 06:42:34",
+                    "minPrice": 83.0,
+                    "offerImageUrl": "img/ibank/O1CN01N8axM11LRcNsGzNDI_!!2201243211296-0-cib.jpg",
+                    "offerId": 963845551892,
+                    "detailUrl": "https://detail.1688.com/offer/963845551892.html",
+                    "maxPrice": 85.0,
+                    "offerExpireTime": "2035-08-10 16:07:28",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031910,
+                    "offerTitle": "米色连衣裙女夏设计感小众斜肩一字领短袖收腰显瘦辣妹气质a字裙",
+                    "basePrice": "83.0",
+                    "memberId": "b2b-220124321129639f61"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AA",
+                    "shopName": "广州梵鸽国际服装有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://lanqieer688.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-220124321129639f61"
+                },
+                "seUvIndex": {
+                    "value": 112753.36450484509
+                },
+                "payOrdAmtIndex": {
+                    "value": 459.58372228743974
+                },
+                "repeatRate": {
+                    "value": 0.0877
+                },
+                "payOrdAmtRank": {
+                    "value": 70870
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 963845551892
+                },
+                "activeInquiryUserIndex": {
+                    "value": 435.0783363513765
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 7
+                },
+                "rank": {
+                    "value": 7
+                },
+                "scorefh": {
+                    "value": 3.43
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.027835051546391754
+                },
+                "scorehm": {
+                    "value": 4.92
+                },
+                "activeInquiryUserRank": {
+                    "value": 7924.0
+                },
+                "scorexy": {
+                    "value": 4.65
+                },
+                "memberId": {
+                    "value": "b2b-220124321129639f61"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 75299.14565006044
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 07:26:29",
+                    "minPrice": 39.0,
+                    "offerImageUrl": "img/ibank/O1CN01DLmcxB1QUQwXp5k74_!!2219788421979-0-cib.jpg",
+                    "offerId": 1035559012612,
+                    "detailUrl": "https://detail.1688.com/offer/1035559012612.html",
+                    "maxPrice": 39.0,
+                    "offerExpireTime": "2036-03-21 01:43:22",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031918,
+                    "offerTitle": "韩系天丝亚麻绑带开叉衬衫女温柔气质短袖上衣",
+                    "basePrice": "39.0",
+                    "memberId": "b2b-221978842197966782"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AA",
+                    "shopName": "广州市米小景服饰商行（个人独资）",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop9193i29355396.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-221978842197966782"
+                },
+                "seUvIndex": {
+                    "value": 111070.02342300233
+                },
+                "payOrdAmtIndex": {
+                    "value": 1104.3693518701475
+                },
+                "repeatRate": {
+                    "value": 0.2091
+                },
+                "payOrdAmtRank": {
+                    "value": 19693
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 1035559012612
+                },
+                "activeInquiryUserIndex": {
+                    "value": 158.49630845352658
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 8
+                },
+                "rank": {
+                    "value": 8
+                },
+                "scorefh": {
+                    "value": 4.17
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.3509544787077827
+                },
+                "scorehm": {
+                    "value": 5.0
+                },
+                "activeInquiryUserRank": {
+                    "value": 45713.0
+                },
+                "scorexy": {
+                    "value": 3.67
+                },
+                "memberId": {
+                    "value": "b2b-221978842197966782"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.990016299426511
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.30208874132206
+                },
+                "ipvUvIndex": {
+                    "value": 75146.19162019907
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-10 15:02:48",
+                    "minPrice": 5.5,
+                    "offerImageUrl": "img/ibank/O1CN01OwhI3q2GA93dQtV6j_!!2975698974.jpg",
+                    "offerId": 990916842238,
+                    "detailUrl": "https://detail.1688.com/offer/990916842238.html",
+                    "maxPrice": 9.5,
+                    "offerExpireTime": "2036-06-03 14:38:12",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031919,
+                    "offerTitle": "t恤女半袖夏季韩版新款纯白色V领宽松简约女士短袖体恤打底衫",
+                    "basePrice": "5.5",
+                    "memberId": "b2b-221968386904661012"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "shopName": "揭阳市揭东区锡场镇桂展服装网店",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop8623c52870h90.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-221968386904661012"
+                },
+                "seUvIndex": {
+                    "value": 117067.84597500507
+                },
+                "payOrdAmtIndex": {
+                    "value": 2556.2245045585732
+                },
+                "repeatRate": {
+                    "value": 0.1161
+                },
+                "payOrdAmtRank": {
+                    "value": 4214
+                },
+                "cateScoreHm": {
+                    "value": 4.825231512224473
+                },
+                "itemId": {
+                    "value": 990916842238
+                },
+                "activeInquiryUserIndex": {
+                    "value": 814.8476672257821
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 9
+                },
+                "rank": {
+                    "value": 9
+                },
+                "scorefh": {
+                    "value": 4.56
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.4897959183673469
+                },
+                "scorehm": {
+                    "value": 4.83
+                },
+                "activeInquiryUserRank": {
+                    "value": 1743.0
+                },
+                "scorexy": {
+                    "value": 3.89
+                },
+                "memberId": {
+                    "value": "b2b-221968386904661012"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.990016299426511
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.30208874132206
+                },
+                "ipvUvIndex": {
+                    "value": 74853.54734741815
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-11 06:48:49",
+                    "minPrice": 5.5,
+                    "offerImageUrl": "img/ibank/O1CN013wU4PL2Gh7tS9TRdP_!!2219683869046-0-cib.jpg",
+                    "offerId": 964501769574,
+                    "detailUrl": "https://detail.1688.com/offer/964501769574.html",
+                    "maxPrice": 9.9,
+                    "offerExpireTime": "2036-01-22 00:36:22",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031919,
+                    "offerTitle": "春秋季薄款内搭打底衫长袖t恤休闲简约宽松大码女士正肩上衣",
+                    "basePrice": "5.5",
+                    "memberId": "b2b-221968386904661012"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "shopName": "揭阳市揭东区锡场镇桂展服装网店",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop8623c52870h90.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-221968386904661012"
+                },
+                "seUvIndex": {
+                    "value": 100292.78212229858
+                },
+                "payOrdAmtIndex": {
+                    "value": 236.5079362927063
+                },
+                "repeatRate": {
+                    "value": 0.1161
+                },
+                "payOrdAmtRank": {
+                    "value": 163735
+                },
+                "cateScoreHm": {
+                    "value": 4.825231512224473
+                },
+                "itemId": {
+                    "value": 964501769574
+                },
+                "activeInquiryUserIndex": {
+                    "value": 767.6920830239251
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 10
+                },
+                "rank": {
+                    "value": 10
+                },
+                "scorefh": {
+                    "value": 4.56
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.011461318051575931
+                },
+                "scorehm": {
+                    "value": 4.83
+                },
+                "activeInquiryUserRank": {
+                    "value": 2008.0
+                },
+                "scorexy": {
+                    "value": 3.89
+                },
+                "memberId": {
+                    "value": "b2b-221968386904661012"
+                }
+            }
+        ],
+        "recordCount": 200
+    },
+    "message": "操作成功",
+    "traceId": "215041ca17813796469253949ef316"
+}

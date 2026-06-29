@@ -115,3 +115,6 @@ def handle_new_messages(friend, messages):
 #     close_weixin=False
 # )
 '''
+
+from pyweixin import Moments
+Moments.dump_friend_posts(friend='陈惠琳',number=10,save_detail=True)

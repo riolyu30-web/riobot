@@ -1,0 +1,80 @@
+{
+  "主图视频": "",
+  "商品主图": [
+    "A high-resolution close-up shot of Tencel polyester blend fabric, showing its smooth, silky texture and subtle sheen, elegant gentle folds, soft natural lighting, photorealistic, 8k --ar 1:1",
+    "A piece of flowing Tencel polyester fabric draped beautifully over a stand, demonstrating its excellent drape and softness, light pastel colors, professional studio lighting, textile photography --ar 1:1",
+    "Macro detail of the woven texture of a Tencel polyester fabric, highlighting the fine yarn and dense weave, breathable and lightweight appearance, crisp focus --ar 1:1",
+    "A stylish flat lay of Tencel polyester fabric swatches in different colors, neatly arranged with tailoring scissors and a measuring tape, aesthetic textile presentation --ar 1:1"
+  ],
+  "白底图": "A neatly folded square of Tencel polyester fabric, pure white background, no shadows, no logo, clear edges, high-quality e-commerce product photography --ar 1:1",
+  "选型视频": [],
+  "基础信息模板": "",
+  "商品标题": "高品质涤天丝曲天丝混纺面料 柔软舒适 垂感极佳 服装面料现货",
+  "类目属性": {
+    "成分及含量": "90%天丝 10%涤纶",
+    "纱支": "",
+    "密度": "",
+    "幅宽": "150cm",
+    "具体用途": ["连衣裙", "衬衫", "休闲服", "阔腿裤"],
+    "适用季节": ["春季", "夏季"],
+    "品牌": "无"
+  },
+  "自定义产品属性": [],
+  "销售信息模板": "",
+  "产品规格": {
+    "颜色": ["白色", "彩色"],
+    "规格": []
+  },
+  "计量单位": "米",
+  "区间报价": [
+    {
+      "购买数量": 1,
+      "单价": 4.1
+    }
+  ],
+  "可售总量": 99999,
+  "混批": {
+    "支持混批": true
+  },
+  "更多设置": {
+    "网上订购": "支持",
+    "库存扣减设置": "下单时扣减",
+    "上架时间": "立即上架"
+  },
+  "发货服务": [
+    {
+      "购买数量": 1,
+      "库存上限": 99999,
+      "发货时间": "48小时"
+    }
+  ],
+  "包换服务": "不支持",
+  "退货服务": "7天无理由退货",
+  "品质服务": ["材质保障"],
+  "服务包": "不支持",
+  "私密商品": {
+    "图片私密": false,
+    "价格私密": false
+  },
+  "发货地址": "请选择发货地址",
+  "运费模板": "请选择运费模板",
+  "件重尺": {
+    "长(cm)": "",
+    "宽(cm)": "",
+    "高(cm)": "",
+    "体积(cm³)": "",
+    "重量(g)": 55
+  },
+  "跨境资质关联": [],
+  "跨境增值服务": {
+    "可提供外语说明书": false,
+    "可提供外语包装": false,
+    "支持跨境贴标": false,
+    "支持贴箱唛": false
+  },
+  "商品详情": {
+    "图文详情": "A seamless long vertical e-commerce detail page design for Tencel polyester fabric. Top section: Beautiful lifestyle shots of models wearing elegant Tencel dresses. Middle section: Clean infographics highlighting 90% Tencel and 10% Polyester composition, breathability, and softness icons. Bottom section: Macro texture shots and color palette options. Modern, minimalist, and premium visual style.",
+    "详情视频": ""
+  },
+  "自定义分类": ""
+}

@@ -46,6 +46,10 @@
         /* 设置复制按钮的淡蓝色背景和深蓝色文字 */
         .btn-copy:hover { background-color: #d2e3fc; }
         /* 设置复制按钮悬停时的背景颜色加深 */
+        .btn-send { background-color: #e6f4ea; color: #137333; }
+        /* 设置发送按钮的淡绿色背景和深绿色文字 */
+        .btn-send:hover { background-color: #ceead6; }
+        /* 设置发送按钮悬停时的背景颜色加深 */
         .btn-delete { background-color: #fce8e6; color: #d93025; }
         /* 设置删除按钮的淡红色背景和深红色文字 */
         .btn-delete:hover { background-color: #fad2cf; }
@@ -118,7 +122,7 @@
                         ul.appendChild(li);
                     });
 
-                    // 遍历后端返回的 HTML 文件数组
+                    // 遍历后端返回的文件数组（包含 IMAGE、VIDEO、FILE、VOICE 媒体及普通文件）
                     data.files.forEach(file => {
                         // 调用 createListItem 函数创建一个文件列表项
                         const li = createListItem(file, false, columnIndex);
@@ -152,8 +156,27 @@
             const iconSpan = document.createElement('span');
             // 为图标元素添加特定的 CSS 类名
             iconSpan.className = 'item-icon';
-            // 根据是否是目录，设置不同的 Emoji 图标（文件夹或文档）
-            iconSpan.textContent = isDir ? '📁' : '📄';
+            // 根据是否是目录以及文件扩展名，设置不同的 Emoji 图标（对应 IMAGE、VIDEO、VOICE、FILE）
+            if (isDir) {
+                // 如果是目录，显示文件夹图标
+                iconSpan.textContent = '📁';
+            } else {
+                // 将文件名转为小写，以便进行正则匹配
+                const lowerName = item.name.toLowerCase();
+                // 匹配常见的图片扩展名 (IMAGE)
+                if (lowerName.match(/\.(jpg|jpeg|png|gif|webp|bmp)$/)) {
+                    iconSpan.textContent = '🖼️';
+                // 匹配常见的视频扩展名 (VIDEO)
+                } else if (lowerName.match(/\.(mp4|mov|avi|mkv|webm)$/)) {
+                    iconSpan.textContent = '🎬';
+                // 匹配常见的音频扩展名 (VOICE)
+                } else if (lowerName.match(/\.(mp3|wav|m4a|ogg|silk|flac)$/)) {
+                    iconSpan.textContent = '🎵';
+                // 其他情况则默认为普通文件图标 (FILE)
+                } else {
+                    iconSpan.textContent = '📄';
+                }
+            }
 
             // 动态创建一个用于存放名称的 span 元素
             const nameSpan = document.createElement('span');
@@ -177,7 +200,7 @@
                     loadDirectory(item.relative_path, columnIndex + 1);
                 };
             } else {
-                // 如果当前项是普通 HTML 文件，创建一个超链接元素 a
+                // 如果当前项是普通文件或媒体文件（IMAGE、VIDEO、FILE、VOICE 等），创建一个超链接元素 a
                 const a = document.createElement('a');
                 // 设置超链接的 href 属性为根路径加上该文件的相对路径，以在新标签页或当前页打开
                 a.href = '/' + item.relative_path;
@@ -225,8 +248,57 @@
             // 将复制按钮追加到按钮组容器中
             btnGroup.appendChild(copyBtn);
 
-            // 判断如果当前项不是目录（即文件），才添加删除按钮
+            // 判断如果当前项不是目录（即文件），才添加发送按钮和删除按钮
             if (!isDir) {
+                // 动态创建一个“发送”按钮元素
+                const sendBtn = document.createElement('button');
+                // 设置发送按钮显示的文本内容
+                sendBtn.textContent = '发送';
+                // 为发送按钮添加特定的 CSS 类名
+                sendBtn.className = 'btn-send';
+                // 为发送按钮绑定点击事件
+                sendBtn.onclick = (e) => {
+                    // 阻止点击事件向上冒泡
+                    e.stopPropagation();
+                    // 确定文件的媒体类型
+                    let mediaType = 3; // 默认为 FILE(3)
+                    const lowerName = item.name.toLowerCase();
+                    if (lowerName.match(/\.(jpg|jpeg|png|gif|webp|bmp)$/)) {
+                        mediaType = 1; // IMAGE
+                    } else if (lowerName.match(/\.(mp4|mov|avi|mkv|webm)$/)) {
+                        mediaType = 2; // VIDEO
+                    } else if (lowerName.match(/\.(mp3|wav|m4a|ogg|silk|flac)$/)) {
+                        mediaType = 4; // VOICE
+                    }
+                    
+                    // 弹出确认框
+                    if (confirm(`确定要将文件 ${item.name} 发送到微信吗？`)) {
+                        // 发送 POST 请求到微信发送接口
+                        fetch('/wx/media', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                file_path: item.absolute_path,
+                                media_type: mediaType
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(res => {
+                            if (res.success) {
+                                alert('发送成功！');
+                            } else {
+                                alert(res.detail || res.message || '发送失败！');
+                            }
+                        })
+                        .catch(err => {
+                            console.error('发送请求失败:', err);
+                            alert('请求异常，发送失败！');
+                        });
+                    }
+                };
+                // 将发送按钮追加到按钮组容器中
+                btnGroup.appendChild(sendBtn);
+
                 // 动态创建一个“删除”按钮元素
                 const deleteBtn = document.createElement('button');
                 // 设置删除按钮显示的文本内容

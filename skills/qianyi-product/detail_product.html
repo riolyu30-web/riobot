@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品详情</title>
+    <style>
+        body {
+            margin: 0; /* 移除默认的 body 外边距 */
+            display: flex; /* 使用 flexbox 布局 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            min-height: 100vh; /* 最小高度为视口高度 */
+            background-color: #f0f0f0; /* 设置背景颜色 */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 设置字体 */
+        }
+
+        .image-container {
+            position: relative; /* 相对定位，用于定位子元素 */
+            width: 1024px; /* 图片容器宽度 */
+            height: 1024px; /* 图片容器高度 */
+            overflow: hidden; /* 隐藏超出容器的内容 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+            border-radius: 8px; /* 圆角边框 */
+        }
+
+        .product-image {
+            width: 100%; /* 图片宽度占满容器 */
+            height: 100%; /* 图片高度占满容器 */
+            display: block; /* 块级显示，移除图片底部空白 */
+            object-fit: cover; /* 裁剪图片以填充容器 */
+        }
+
+        .top-left-label {
+            position: absolute; /* 绝对定位 */
+            top: 0; /* 顶部对齐 */
+            left: 0; /* 左侧对齐 */
+            z-index: 10; /* 确保在主图片上方 */
+            width: 260px; /* 根据图片实际大小调整 */
+            padding: 20px; /* 内边距 */
+            height: auto; /* 保持图片比例 */
+        }
+
+        .navbar {
+            position: absolute; /* 绝对定位 */
+            bottom: 20px; /* 距离底部 20px */
+            left: 50%; /* 从左侧 50% 开始 */
+            transform: translateX(-50%); /* 水平居中 */
+            width: calc(100% - 100px); /* 导航条宽度，留出左右边距 */
+            max-width: 924px; /* 最大宽度，适应 1024px 图片 */
+            background-color: rgba(255, 255, 255, 0.15); /* 半透明背景 */
+            backdrop-filter: blur(10px); /* 毛玻璃效果 */
+            -webkit-backdrop-filter: blur(10px); /* Safari 兼容性 */
+            border-radius: 30px; /* 圆角边框 */
+            padding: 15px 20px; /* 内边距 */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* 边框 */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 阴影 */
+            display: flex; /* 使用 flexbox 布局 */
+            align-items: center; /* 垂直居中对齐 */
+            justify-content: flex-start; /* 左对齐 */
+            gap: 20px; /* 元素之间的间距 */
+        }
+
+        .source-factory-badge {
+            background-color: #f0d800; /* 浅灰色背景 */
+            color: #333; /* 深色文字 */
+            padding: 8px 40px; /* 内边距 */
+            border-radius: 30px; /* 圆角 */
+            font-weight: bold; /* 字体加粗 */
+            font-size: 3.6em; /* 字体大小 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 阴影 */
+            white-space: nowrap; /* 防止文字换行 */
+        }
+
+        .product-info {
+            flex-grow: 1; /* 占据剩余空间 */
+            text-align: left; /* 文字左对齐 */
+            color: #000000; /* 深色文字 */
+            line-height: 1.4; /* 行高 */
+            /* 科技感样式 - subtle white glow */
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.7), 0 0 8px rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.5px; /* 字母间距 */
+        }
+
+        .product-info p {
+            margin: 0; /* 移除段落默认外边距 */
+            font-size: 2.8em; /* 默认字体大小 */
+        }
+
+        .info-line-1 {
+            font-size: 1.5em; /* 第一行字体大小 */
+        }
+
+        .info-line-2 {
+            font-size: 1em; /* 第二行字体大小 */
+            opacity: 0.9; /* 第二行文字透明度 */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="c:\develop\nanobot\skills\qianyi-product\label.png" alt="标签" class="top-left-label"> <!-- 左上角标签图片 -->
+        <img src="c:\develop\nanobot\skills\qianyi-product\images\products\801\00.png"  alt="产品图片" class="product-image"> <!-- 产品图片 -->
+        <div class="navbar">
+            <div class="source-factory-badge">
+                现货
+            </div>
+            <div class="product-info">
+                <p class="info-line-1">克重:73g/㎡ 幅宽:150CM</p>
+                <p class="info-line-2">25%锦纶 8%亚麻 </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

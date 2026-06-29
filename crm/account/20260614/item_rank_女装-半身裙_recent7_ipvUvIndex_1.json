@@ -1,0 +1,896 @@
+{
+    "code": 0,
+    "data": {
+        "data": [
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 59093.008859648384
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 20:41:28",
+                    "minPrice": 80.0,
+                    "offerImageUrl": "img/ibank/O1CN01rh5xii1XF2smjPcDr_!!2213970992893-0-cib.jpg",
+                    "offerId": 941239216119,
+                    "maxPrice": 85.0,
+                    "detailUrl": "https://detail.1688.com/offer/941239216119.html",
+                    "offerExpireTime": "2036-06-10 12:06:59",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031912,
+                    "offerTitle": "亚麻色多彩蝴蝶印花开衩亚麻长裙2025新款今年流行爆款半身裙夏季",
+                    "basePrice": "80.0",
+                    "memberId": "b2b-221397099289351ddc"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AA",
+                    "shopName": "东莞欧韩波西米亚服装有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://boximiya.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-221397099289351ddc"
+                },
+                "seUvIndex": {
+                    "value": 135992.31801582535
+                },
+                "payOrdAmtIndex": {
+                    "value": 835.1296397780825
+                },
+                "repeatRate": {
+                    "value": 0.0506
+                },
+                "payOrdAmtRank": {
+                    "value": 2027
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 941239216119
+                },
+                "activeInquiryUserIndex": {
+                    "value": 110.07989949305193
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 1
+                },
+                "rank": {
+                    "value": 1
+                },
+                "scorefh": {
+                    "value": 4.56
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.34225060407317914
+                },
+                "scorehm": {
+                    "value": 4.84
+                },
+                "activeInquiryUserRank": {
+                    "value": 6500.0
+                },
+                "scorexy": {
+                    "value": 2.56
+                },
+                "memberId": {
+                    "value": "b2b-221397099289351ddc"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 53332.53673691767
+                },
+                "item": {
+                    "offerUpdateTime": "2026-05-20 10:22:03",
+                    "minPrice": 79.0,
+                    "offerImageUrl": "img/ibank/O1CN01GsZjcs1LRcOSywbiM_!!2201243211296-0-cib.jpg",
+                    "offerId": 981028504238,
+                    "maxPrice": 81.0,
+                    "detailUrl": "https://detail.1688.com/offer/981028504238.html",
+                    "offerExpireTime": "2035-09-22 20:30:22",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031912,
+                    "offerTitle": "半身裙女设计感小众不规则剪裁中长款鹿纹灯芯绒花苞裙a字裙秋装",
+                    "basePrice": "79.0",
+                    "memberId": "b2b-220124321129639f61"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AA",
+                    "shopName": "广州梵鸽国际服装有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://lanqieer688.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-220124321129639f61"
+                },
+                "seUvIndex": {
+                    "value": 51421.29496595301
+                },
+                "payOrdAmtIndex": {
+                    "value": 0.7975394452223554
+                },
+                "repeatRate": {
+                    "value": 0.0877
+                },
+                "payOrdAmtRank": {
+                    "value": 259016
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 981028504238
+                },
+                "activeInquiryUserIndex": {
+                    "value": 73.70571133340127
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 2
+                },
+                "rank": {
+                    "value": 2
+                },
+                "scorefh": {
+                    "value": 3.43
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.3611111111111111
+                },
+                "scorehm": {
+                    "value": 4.92
+                },
+                "activeInquiryUserRank": {
+                    "value": 9925.0
+                },
+                "scorexy": {
+                    "value": 4.65
+                },
+                "memberId": {
+                    "value": "b2b-220124321129639f61"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 50145.48346712893
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 12:33:16",
+                    "minPrice": 49.0,
+                    "offerImageUrl": "img/ibank/O1CN01S7GD1r1RqhpXs6bjb_!!2207836532163-0-cib.jpg",
+                    "offerId": 915700535564,
+                    "maxPrice": 49.0,
+                    "detailUrl": "https://detail.1688.com/offer/915700535564.html",
+                    "offerExpireTime": "2036-06-08 13:20:30",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031912,
+                    "offerTitle": "锦意丝欧若风复古抽绳工装裙A字裙安全裤休闲百搭显瘦半身裙短裙",
+                    "basePrice": "49.0",
+                    "memberId": "b2b-2207836532163c2001"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "identity": "svip",
+                    "shopName": "义乌市圣罗凡服饰有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://ruigege.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2207836532163c2001"
+                },
+                "seUvIndex": {
+                    "value": 141324.9849616472
+                },
+                "payOrdAmtIndex": {
+                    "value": 3244.481402623467
+                },
+                "repeatRate": {
+                    "value": 0.2117
+                },
+                "payOrdAmtRank": {
+                    "value": 128
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 915700535564
+                },
+                "activeInquiryUserIndex": {
+                    "value": 303.18322199143586
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 3
+                },
+                "rank": {
+                    "value": 3
+                },
+                "scorefh": {
+                    "value": 4.58
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.02627511591962906
+                },
+                "scorehm": {
+                    "value": 4.95
+                },
+                "activeInquiryUserRank": {
+                    "value": 1548.0
+                },
+                "scorexy": {
+                    "value": 4.65
+                },
+                "memberId": {
+                    "value": "b2b-2207836532163c2001"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 48276.31095909572
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 18:00:50",
+                    "minPrice": 126.0,
+                    "offerImageUrl": "img/ibank/O1CN01rj0PsR1kqgUo7Zmjg_!!4216024735-0-cib.jpg",
+                    "offerId": 1026471828184,
+                    "maxPrice": 129.0,
+                    "detailUrl": "https://detail.1688.com/offer/1026471828184.html",
+                    "offerExpireTime": "2036-06-08 15:32:38",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031912,
+                    "offerTitle": "THE MIND时髦条纹撞色针织裙2026春慵懒风抽绳松紧腰半身裙T6190C",
+                    "basePrice": "126.0",
+                    "memberId": "b2b-4216024735b55fd"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAAA",
+                    "shopName": "广州六米商贸有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://themind.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-4216024735b55fd"
+                },
+                "seUvIndex": {
+                    "value": 146884.92610425758
+                },
+                "payOrdAmtIndex": {
+                    "value": 2348.9317150468705
+                },
+                "repeatRate": {
+                    "value": 0.0946
+                },
+                "payOrdAmtRank": {
+                    "value": 281
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 1026471828184
+                },
+                "activeInquiryUserIndex": {
+                    "value": 979.192395667982
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 4
+                },
+                "rank": {
+                    "value": 4
+                },
+                "scorefh": {
+                    "value": 3.94
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.39521647374816143
+                },
+                "scorehm": {
+                    "value": 5.0
+                },
+                "activeInquiryUserRank": {
+                    "value": 67.0
+                },
+                "scorexy": {
+                    "value": 4.66
+                },
+                "memberId": {
+                    "value": "b2b-4216024735b55fd"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 45207.60033316797
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 12:19:57",
+                    "minPrice": 68.0,
+                    "offerImageUrl": "img/ibank/O1CN01x3DLcW2MpGfxfCAvl_!!2220140209876-0-cib.jpg",
+                    "offerId": 1035693979058,
+                    "maxPrice": 76.0,
+                    "detailUrl": "https://detail.1688.com/offer/1035693979058.html",
+                    "offerExpireTime": "2036-03-26 02:30:37",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031912,
+                    "offerTitle": "LiHuiEr李慧儿 悬风 设计感绝美纱半裙春夏蓬蓬超仙高级百褶长裙",
+                    "basePrice": "68.0",
+                    "memberId": "b2b-2220140209876873db"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AA",
+                    "shopName": "广州夏午服装有限责任公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop86ff4523180v8.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-2220140209876873db"
+                },
+                "seUvIndex": {
+                    "value": 115711.41017861401
+                },
+                "payOrdAmtIndex": {
+                    "value": 598.6013216673746
+                },
+                "repeatRate": {
+                    "value": 0.0274
+                },
+                "payOrdAmtRank": {
+                    "value": 3261
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 1035693979058
+                },
+                "activeInquiryUserIndex": {
+                    "value": 255.04760749114212
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 5
+                },
+                "rank": {
+                    "value": 5
+                },
+                "scorefh": {
+                    "value": 3.7
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.3273092369477912
+                },
+                "scorehm": {
+                    "value": 4.71
+                },
+                "activeInquiryUserRank": {
+                    "value": 2110.0
+                },
+                "scorexy": {
+                    "value": 4.56
+                },
+                "memberId": {
+                    "value": "b2b-2220140209876873db"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 45135.7576738284
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-14 02:23:11",
+                    "minPrice": 133.0,
+                    "offerImageUrl": "img/ibank/O1CN01eF8xAB24aSmnb1kTI_!!2213088277407-0-cib.jpg",
+                    "offerId": 1029301154526,
+                    "maxPrice": 138.0,
+                    "detailUrl": "https://detail.1688.com/offer/1029301154526.html",
+                    "offerExpireTime": "2036-03-08 11:49:01",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031912,
+                    "offerTitle": "哥家专柜品质春夏新款港风蓝色印花苎麻a字松紧腰A字半身裙女",
+                    "basePrice": "133.0",
+                    "memberId": "b2b-22130882774078221d"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAA",
+                    "identity": "svip",
+                    "shopName": "郴州市北湖区甄选服饰贸易商行(个体工商户)",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop2514l68928546.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-22130882774078221d"
+                },
+                "seUvIndex": {
+                    "value": 82303.90400369189
+                },
+                "payOrdAmtIndex": {
+                    "value": 830.6834915571962
+                },
+                "repeatRate": {
+                    "value": 0.1042
+                },
+                "payOrdAmtRank": {
+                    "value": 2046
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 1029301154526
+                },
+                "activeInquiryUserIndex": {
+                    "value": 684.9542895515915
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {},
+                "ipvUvRank": {
+                    "value": 6
+                },
+                "rank": {
+                    "value": 6
+                },
+                "scorefh": {
+                    "value": 4.57
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 1.2184300341296928
+                },
+                "scorehm": {
+                    "value": 4.87
+                },
+                "activeInquiryUserRank": {
+                    "value": 195.0
+                },
+                "scorexy": {
+                    "value": 4.58
+                },
+                "memberId": {
+                    "value": "b2b-22130882774078221d"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 4.211005459508597
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.333561526521383
+                },
+                "ipvUvIndex": {
+                    "value": 44497.77599497672
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 23:53:13",
+                    "minPrice": 14.6,
+                    "offerImageUrl": "img/ibank/O1CN01aUyVYH28Csrj9iagY_!!3038937897-0-cib.jpg",
+                    "offerId": 947224968691,
+                    "maxPrice": 16.3,
+                    "detailUrl": "https://detail.1688.com/offer/947224968691.html",
+                    "offerExpireTime": "2036-05-22 18:07:14",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031912,
+                    "offerTitle": "丝格图跨境宽松山本裙裤女夏高腰显瘦半身裙小个子垂感冰丝阔腿裤",
+                    "basePrice": "14.6",
+                    "memberId": "b2b-3038937897180e9"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAAA",
+                    "identity": "svip",
+                    "shopName": "柳州市柳江区丝格图服装厂",
+                    "realBusiness": true,
+                    "shopUrl": "https://shop1479314676698.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-3038937897180e9"
+                },
+                "seUvIndex": {
+                    "value": 143505.87611157988
+                },
+                "payOrdAmtIndex": {
+                    "value": 2354.7030315237935
+                },
+                "repeatRate": {
+                    "value": 0.3488
+                },
+                "payOrdAmtRank": {
+                    "value": 278
+                },
+                "cateScoreHm": {
+                    "value": 4.839766365144611
+                },
+                "itemId": {
+                    "value": 947224968691
+                },
+                "activeInquiryUserIndex": {
+                    "value": 182.66925491209258
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 7
+                },
+                "rank": {
+                    "value": 7
+                },
+                "scorefh": {
+                    "value": 4.49
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.022041166380789023
+                },
+                "scorehm": {
+                    "value": 4.99
+                },
+                "activeInquiryUserRank": {
+                    "value": 3390.0
+                },
+                "scorexy": {
+                    "value": 4.69
+                },
+                "memberId": {
+                    "value": "b2b-3038937897180e9"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 44058.32925057337
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-14 02:20:49",
+                    "minPrice": 53.0,
+                    "offerImageUrl": "img/ibank/O1CN01XFsqUC1LvqZmpVssJ_!!2209299171362-0-cib.jpg",
+                    "offerId": 1043433194439,
+                    "maxPrice": 53.0,
+                    "detailUrl": "https://detail.1688.com/offer/1043433194439.html",
+                    "offerExpireTime": "2036-05-25 15:45:23",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031912,
+                    "offerTitle": "y2k美式复古跨境街头哥特时尚数字拼接网裙甜心水洗宽松A字裙短裙",
+                    "basePrice": "53.0",
+                    "memberId": "b2b-220929917136211ae7"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AA",
+                    "shopName": "义乌市深馆服饰有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop8991977268t08.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-220929917136211ae7"
+                },
+                "seUvIndex": {
+                    "value": 85101.47727642524
+                },
+                "payOrdAmtIndex": {
+                    "value": 63.59731659913086
+                },
+                "repeatRate": {
+                    "value": 0.3245
+                },
+                "payOrdAmtRank": {
+                    "value": 40214
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 1043433194439
+                },
+                "activeInquiryUserIndex": {
+                    "value": 85.83634564597742
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 8
+                },
+                "rank": {
+                    "value": 8
+                },
+                "scorefh": {
+                    "value": 3.35
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 8.307017543859649
+                },
+                "scorehm": {
+                    "value": 4.75
+                },
+                "activeInquiryUserRank": {
+                    "value": 7752.0
+                },
+                "scorexy": {
+                    "value": 4.65
+                },
+                "memberId": {
+                    "value": "b2b-220929917136211ae7"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 42393.81439116773
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 11:55:38",
+                    "minPrice": 119.0,
+                    "offerImageUrl": "img/ibank/O1CN01DYQs0u1o5HzZCcoCc_!!3518795173-0-cib.jpg",
+                    "offerId": 1053744189789,
+                    "maxPrice": 119.0,
+                    "detailUrl": "https://detail.1688.com/offer/1053744189789.html",
+                    "offerExpireTime": "2036-05-26 17:54:30",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031912,
+                    "offerTitle": "时简【米底碎斑】细碎印花长裙高腰鱼尾灵动下摆半身裙女夏81350",
+                    "basePrice": "119.0",
+                    "memberId": "b2b-3518795173812f7"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AAAAA",
+                    "identity": "svip",
+                    "shopName": "时简(广州)商贸有限公司",
+                    "realBusiness": true,
+                    "shopUrl": "https://shop0132525449053.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-3518795173812f7"
+                },
+                "seUvIndex": {
+                    "value": 132088.00819749513
+                },
+                "payOrdAmtIndex": {
+                    "value": 3632.122571420856
+                },
+                "repeatRate": {
+                    "value": 0.2335
+                },
+                "payOrdAmtRank": {
+                    "value": 96
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 1053744189789
+                },
+                "activeInquiryUserIndex": {
+                    "value": 1419.8784266112489
+                },
+                "isPm": {
+                    "value": "Y"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 9
+                },
+                "rank": {
+                    "value": 9
+                },
+                "scorefh": {
+                    "value": 4.03
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": 0.20335395636600456
+                },
+                "scorehm": {
+                    "value": 4.92
+                },
+                "activeInquiryUserRank": {
+                    "value": 23.0
+                },
+                "scorexy": {
+                    "value": 4.65
+                },
+                "memberId": {
+                    "value": "b2b-3518795173812f7"
+                }
+            },
+            {
+                "cateScoreXy": {
+                    "value": 3.9360118907924524
+                },
+                "statDate": {
+                    "value": "2026-06-12"
+                },
+                "cateScoreFh": {
+                    "value": 4.201770319956166
+                },
+                "ipvUvIndex": {
+                    "value": 42140.771077764104
+                },
+                "item": {
+                    "offerUpdateTime": "2026-06-13 12:25:39",
+                    "minPrice": 19.5,
+                    "offerImageUrl": "img/ibank/O1CN01v6eom81GL8gMD5ScH_!!2217780050605-0-cib.jpg",
+                    "offerId": 933943974486,
+                    "maxPrice": 20.5,
+                    "detailUrl": "https://detail.1688.com/offer/933943974486.html",
+                    "offerExpireTime": "2036-05-26 18:18:51",
+                    "class": "com.alibaba.b2bopen.dto.OfferDTO",
+                    "categoryID": 1031912,
+                    "offerTitle": "新款工装半身裙裤女夏季速干冰丝高腰a字短裤裙防走光宽松短裙子",
+                    "basePrice": "19.5",
+                    "memberId": "b2b-22177800506051b787"
+                },
+                "shop": {
+                    "tradeMedalGrade": "AA",
+                    "shopName": "义乌市贝倍彩服饰有限公司",
+                    "realBusiness": false,
+                    "shopUrl": "https://shop604t83l032166.1688.com",
+                    "tp": true,
+                    "class": "com.alibaba.b2bopen.dto.ShopDTO",
+                    "memberId": "b2b-22177800506051b787"
+                },
+                "seUvIndex": {
+                    "value": 146124.2234520833
+                },
+                "payOrdAmtIndex": {
+                    "value": 2476.41311640566
+                },
+                "repeatRate": {
+                    "value": 0.1347
+                },
+                "payOrdAmtRank": {
+                    "value": 243
+                },
+                "cateScoreHm": {
+                    "value": 4.826515684893821
+                },
+                "itemId": {
+                    "value": 933943974486
+                },
+                "activeInquiryUserIndex": {
+                    "value": 110.07989949305193
+                },
+                "isPm": {
+                    "value": "N"
+                },
+                "isZgcSlr": {
+                    "value": "Y"
+                },
+                "ipvUvRank": {
+                    "value": 10
+                },
+                "rank": {
+                    "value": 10
+                },
+                "scorefh": {
+                    "value": 4.43
+                },
+                "isCjgcSlr": {},
+                "seSpvChangeRate": {
+                    "value": -0.09362026017160255
+                },
+                "scorehm": {
+                    "value": 5.0
+                },
+                "activeInquiryUserRank": {
+                    "value": 6470.0
+                },
+                "scorexy": {
+                    "value": 4.1
+                },
+                "memberId": {
+                    "value": "b2b-22177800506051b787"
+                }
+            }
+        ],
+        "recordCount": 200
+    },
+    "message": "操作成功",
+    "traceId": "215041ca17813796519284972ef316"
+}

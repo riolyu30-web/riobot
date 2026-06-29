@@ -8,8 +8,8 @@ from nanobot.bus.events import InboundMessage, OutboundMessage
 from nanobot.bus.queue import MessageBus
 # 导入 BaseChannel 基类
 from nanobot.channels.base import BaseChannel
-# 导入 CRM 相关的模型：任务、商机、消息记录和获取数据库会话的方法
-from crm.models import get_session, Task, Opportunity, Message
+# 导入 CRM 相关的模型：任务、好友（对应原商机概念）和获取数据库会话的方法
+from crm.models import get_session, Task, Friend
 # 导入 pyweixin 中的 Messages 模块用于发送消息
 from pyweixin import Messages
 
@@ -54,41 +54,31 @@ class CRMChannel(BaseChannel):
         try:
             # 获取数据库会话对象
             db = get_session()
-            # 根据消息中的 chat_id 查询对应的商机（chat_id 存储了商机 ID）
-            opp = db.query(Opportunity).filter(Opportunity.id == int(msg.chat_id)).first()
-            # 如果成功查询到商机
-            if opp:
+            # 根据消息中的 chat_id 查询对应的好友（chat_id 存储了好友 ID）
+            friend = db.query(Friend).filter(Friend.id == int(msg.chat_id)).first()
+            # 如果成功查询到好友
+            if friend:
                 # 使用异步锁，保证同一时间只有一个任务能操作微信 UI
                 async with self._send_lock:
                     # 由于 send_messages_to_friend 是同步阻塞调用，通过 to_thread 将其放入独立线程执行，防止阻塞主事件循环
                     await asyncio.to_thread(
                         Messages.send_messages_to_friend,
-                        friend=opp.name,
+                        friend=friend.nickname,
                         messages=[msg.content]
                     )
                 # 记录发送成功的日志信息
-                logger.info(f"成功通过 CRM 渠道发送消息给 {opp.name}")
+                logger.info(f"成功通过 CRM 渠道发送消息给 {friend.nickname}")
                 
-                #更新历史对话记录
-                new_message = Message(
-                    opportunity_id=opp.id,
-                    sender="AI助手",  # 标识这是由系统/机器人发出的消息
-                    content=msg.content
-                )
-                db.add(new_message)                
-                # 更新任务的状态和响应内容
-                # 查找属于该商机的正在处理中的任务（可能是在轮询时刚刚被设置为 '处理中' 的任务）
-                task = db.query(Task).filter(Task.opportunity_id == opp.id, Task.status == '处理中').order_by(Task.created_at.desc()).first()
+                # 查找属于该好友的正在处理中的任务（可能是在轮询时刚刚被设置为 '处理中' 的任务）
+                task = db.query(Task).filter(Task.friend_id == friend.id, Task.status == '处理中').order_by(Task.created_at.desc()).first()
                 if task:
-                    task.response = msg.content
                     task.status = '已完成'
                 db.commit()
-                #更新历史对话记录
                 
-            # 如果没有找到对应的商机或客户
+            # 如果没有找到对应的好友或客户
             else:
                 # 记录警告日志
-                logger.warning(f"无法发送消息：未找到对应的商机或客户 (ID: {msg.chat_id})")
+                logger.warning(f"无法发送消息：未找到对应的好友或客户 (ID: {msg.chat_id})")
         # 捕获异常
         except Exception as e:
             # 记录错误日志
@@ -107,35 +97,22 @@ class CRMChannel(BaseChannel):
             try:
                 # 获取数据库会话
                 db = get_session()
-                # 查询状态为 待办中 的任务，按创建时间升序排列并获取第一条（即最远的任务）
-                task = db.query(Task).filter(Task.status == '待办中').order_by(Task.created_at.asc()).first()
+                # 查询状态为 待执行 的任务，按创建时间升序排列并获取第一条（即最远的任务）
+                task = db.query(Task).filter(Task.status == '待执行').order_by(Task.created_at.asc()).first()
                 # 如果查询到了这样的任务
                 if task:
-                    # 1. 判断是否为“对话”任务，不是则跳过处理（但仍更新状态）
-                    # 2. 判断 opportunity_id 是否存在，不存在则跳过
-                    if task.type == '对话' and task.opportunity_id:
-                        # 3. 获取关联的商机对象，不存在则跳过
-                        opp = db.query(Opportunity).filter(Opportunity.id == task.opportunity_id).first()
-                        if opp:
-                         
-                            # 根据商机 ID 查询最近 50 条历史聊天记录，按时间降序取 50 条，再翻转回升序
-                            messages = db.query(Message).filter(Message.opportunity_id == opp.id).order_by(Message.created_at.desc()).limit(50).all()
-                            messages.reverse()
+                    # 1. 判断 friend_id 是否存在，不存在则跳过
+                    if task.friend_id:
+                        # 2. 获取关联的好友对象，不存在则跳过
+                        friend = db.query(Friend).filter(Friend.id == task.friend_id).first()
+                        if friend:
                             
-                            # 4. 组装客户等级、阶段、备注和聊天记录（如果不为空）
-                            content_parts = [f"任务内容: {task.content}"]
-                            if opp.contact:
-                                content_parts.append(f"客户名称: {opp.contact.name}")
-                            if opp.level:
-                                content_parts.append(f"客户等级: {opp.level}")
-                            if opp.stage:
-                                content_parts.append(f"当前阶段: {opp.stage}")
-                            if opp.remark:
-                                content_parts.append(f"备注: {opp.remark}")
-                                
-                            if messages:
-                                history_str = "\n".join([f"{m.sender}: {m.content}" for m in messages])
-                                content_parts.append(f"最近聊天记录:\n{history_str}")
+                            # 3. 组装客户等级、备注等信息
+                            content_parts = [f"任务内容: {task.description}"]
+                            if friend.contact:
+                                content_parts.append(f"客户名称: {friend.contact.name}")
+                            if friend.level:
+                                content_parts.append(f"客户等级: {friend.level}")
                                 
                             # 将所有部分拼接成最终内容
                             content = "\n".join(content_parts)
@@ -146,17 +123,17 @@ class CRMChannel(BaseChannel):
                                 identity=f"[sales][read_file]",
                                 # 设置渠道名称为当前渠道
                                 channel="crm",
-                                # 设置发送者 ID，如果客户存在则使用客户手机号，否则为商机名称
-                                sender_id=str(opp.contact.phone) if getattr(opp, 'contact', None) else str(opp.name),
-                                # 设置聊天 ID 为当前商机 ID
-                                chat_id=str(opp.id),
+                                # 设置发送者 ID，如果客户存在则使用客户手机号，否则为好友昵称
+                                sender_id=str(friend.contact.phone) if getattr(friend, 'contact', None) else str(friend.nickname),
+                                # 设置聊天 ID 为当前好友 ID
+                                chat_id=str(friend.id),
                                 # 填入刚刚构造好的内容
                                 content=content
                             )
                             # 将构造好的消息发送到消息总线
                             await self.bus.publish_inbound(inbound_msg)
-                            # 记录日志说明已发送该商机的任务
-                            logger.info(f"已向总线发送商机 (ID: {opp.id}) 的对话任务。")
+                            # 记录日志说明已发送该好友的任务
+                            logger.info(f"已向总线发送好友 (ID: {friend.id}) 的对话任务。")
                     # 为了防止任务被重复处理，将任务状态更新为 处理中
                     task.status = '处理中'
                     # 提交数据库事务
